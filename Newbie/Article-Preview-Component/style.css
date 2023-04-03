@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Manrope", sans-serif;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.card,
+.card__caption,
+.card__bottom,
+.card__byline,
+.card__byline div,
+.card__socmed {
+  display: flex;
+}
+
+.card,
+.card__bottom,
+.card__byline,
+.card__socmed {
+  align-items: center;
+}
+
+.card,
+.card__caption,
+.card__byline div {
+  flex-direction: column;
+}
+
+.card__description,
+.card__author,
+.card__socmed h2 {
+  font-size: 1.3rem;
+}
+
+.card__description,
+.card__date,
+.card__button {
+  color: hsl(214, 17%, 51%);
+}
+
+.card__header,
+.card__author {
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+
+.card__bottom,
+.card__button {
+  transition: all 0.3s;
+}
+
+.card__byline img,
+.card__button {
+  border-radius: 50px;
+}
+
+main {
+  margin: 0 2rem 4rem;
+}
+
+.card {
+  max-width: 35rem;
+  border-radius: 10px;
+
+  background-color: #fff;
+}
+
+.card__image {
+  width: 100%;
+  height: 22rem;
+  vertical-align: bottom;
+  border-radius: 10px 10px 0 0;
+
+  object-fit: cover;
+  object-position: 0% 17%;
+}
+
+.card__caption {
+  gap: 1.5rem;
+  margin: 3rem 3.4rem 2.5rem;
+}
+
+.card__header {
+  font-size: 1.8rem;
+}
+
+.card__description {
+  line-height: 2rem;
+}
+
+.card__bottom {
+  position: relative;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1.5rem 4.4rem 1.5rem 3.4rem;
+}
+
+.card__byline {
+  gap: 1.5rem;
+}
+
+.card__byline div {
+  gap: 0.05rem;
+}
+
+.card__date {
+  font-size: 1.2rem;
+}
+
+.card__byline img {
+  width: 4rem;
+}
+
+.card__socmed {
+  position: absolute;
+  z-index: -1;
+  gap: 1rem;
+  padding: 1.12rem 0 1.12rem;
+  pointer-events: none;
+}
+
+.card__socmed h2 {
+  margin-right: 0.2rem;
+
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+
+  color: hsl(212, 23%, 69%);
+}
+
+.card__link img {
+  width: 1.7rem;
+  vertical-align: middle;
+}
+
+.card__button {
+  padding: 0.6rem;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.card__button svg {
+  vertical-align: text-top;
+}
+
+.card__button:hover {
+  background-color: hsl(214, 17%, 51%);
+  color: #fff;
+}
+
+.card__bottom.card__bottom--socmed-show {
+  border-radius: 0 0 10px 10px;
+  background-color: hsl(217, 19%, 35%);
+}
+
+.card__bottom--socmed-show .card__byline {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.card__bottom--socmed-show .card__socmed {
+  position: static;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

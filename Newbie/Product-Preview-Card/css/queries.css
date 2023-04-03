@@ -1,0 +1,74 @@
+@media (min-width: 800px) {
+  .break--mobile {
+    display: none;
+  }
+
+  .break--desktop {
+    display: block;
+  }
+
+  .card {
+    flex-direction: row;
+    gap: 0;
+    padding-bottom: 0;
+  }
+
+  .card__image {
+    width: 31rem;
+  }
+
+  .card__textbox {
+    padding: 3rem 4rem;
+    gap: 0rem;
+  }
+
+  .card__category {
+    padding-bottom: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .card__name {
+    padding-bottom: 2rem;
+    font-size: 3.65rem;
+    line-height: 3rem;
+  }
+
+  .card__description {
+    padding-bottom: 3rem;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  .card__pricebox {
+    display: flex;
+    align-items: center;
+    padding-bottom: 3rem;
+    gap: 2rem;
+  }
+
+  .card__newprice {
+    font-size: 3.7rem;
+  }
+
+  .card__oldprice {
+    font-size: 1.35rem;
+  }
+
+  .card__button {
+    gap: 1rem;
+  }
+
+  .card__button img {
+    width: 1.5rem;
+  }
+
+  .card__button span {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}

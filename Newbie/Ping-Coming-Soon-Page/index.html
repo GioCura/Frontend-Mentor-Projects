@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <script defer src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/96ca7334c6.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.svg" alt="the Ping logo" class="logo" />
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__details">
+        <h1 class="hero__announcement">We are launching <span>soon!</span></h1>
+        <p class="hero__subscribe">Subscribe and get notified</p>
+        <form class="hero__cta" novalidate spellcheck="false">
+            <input
+            id="email"
+            type="email"
+            name="Email"
+            class="cta__email"
+            placeholder="Your email address..."
+            required
+          />
+          <p class="email__error"></p>
+          <button type="submit">Notify Me</button>
+        </form>
+        </div>
+        <img
+          src="images/illustration-dashboard.png"
+          alt="An illustration of the Ping app"
+          class="hero__illustration"
+        />
+      </sec>
+    </main>
+
+    <footer>
+      <ul class="socials">
+        <li class="social">
+          <a href="https://www.facebook.com/" aria-label="Facebook link"
+            ><i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </li>
+        <li class="social">
+          <a href="https://twitter.com/" aria-label="Twitter link"
+            ><i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li class="social">
+          <a href="https://www.instagram.com/" aria-label="Instagram link"
+            ><i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

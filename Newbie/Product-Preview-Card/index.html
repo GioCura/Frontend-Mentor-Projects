@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Product preview card component</title>
+  </head>
+  <body>
+    <main>
+      <article class="card">
+        <picture>
+          <source
+            media="(min-width: 800px)"
+            srcset="images/image-product-desktop.jpg"
+          />
+          <source
+            media="(min-width: 0)"
+            srcset="images/image-product-mobile.jpg"
+          />
+          <img
+            src="images/image-product-mobile.jpg"
+            alt="A picture of Chanel perfume"
+            class="card__image"
+          />
+        </picture>
+        <div class="card__textbox">
+          <h1 class="card__category">Perfume</h1>
+          <p class="card__name">
+            Gabrielle<br class="break--desktop" />
+            Essence<br class="break--mobile" />
+            Eau<br class="break--desktop" />
+            De Parfum
+          </p>
+          <p class="card__description">
+            A floral, solar and voluptuous<br />
+            interpretation composed by <br class="break--desktop" />
+            Olivier<br class="break--mobile" />
+            Polge, Perfumer-Creator<br class="break--desktop" />
+            for the House of<br class="break--mobile" />
+            CHANEL.<br />
+          </p>
+          <div class="card__pricebox">
+            <p class="card__newprice">$149.99</p>
+            <p class="card__oldprice">$169.99</p>
+          </div>
+          <button class="card__button">
+            <img src="images/icon-cart.svg" alt="" />
+            <span>Add to Cart</span>
+          </button>
+        </div>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/GioCura" target="_blank"
+        >Gio Cura</a
+      >.
+    </div>
+  </footer>
+</html>

@@ -1,0 +1,129 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 70.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 1260px) {
+  .social__testimonials {
+    height: 27rem;
+  }
+
+  .social__testimonial {
+    width: 35rem;
+    padding: 3.6rem 3.9rem 4rem 3.2rem;
+  }
+
+  .social__testimonial--1 {
+    align-self: start;
+  }
+
+  .social__testimonial--2 {
+    align-self: center;
+  }
+
+  .social__testimonial--3 {
+    align-self: end;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 801px) {
+  .social {
+    row-gap: 3.27rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-height: 800px) {
+  .social {
+    height: 95vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    justify-content: center;
+    background-image: url(images/bg-pattern-top-desktop.svg),
+      url(images/bg-pattern-bottom-desktop.svg);
+    background-size: 40vw 43vh, 77vw 89vh;
+  }
+
+  .social {
+    max-width: 124.2rem;
+    display: grid;
+    grid-template-areas:
+      "head head . rate rate"
+      "test test test test test";
+    padding: 8rem 4rem;
+  }
+
+  .social__header {
+    grid-area: head;
+    width: 44rem;
+    text-align: left;
+  }
+
+  .social__header h1 {
+    margin-bottom: 2.4rem;
+    font-size: 5.4rem;
+    line-height: 4.6rem;
+    word-spacing: -0.3rem;
+    letter-spacing: -0.1rem;
+  }
+
+  .social__ratings {
+    grid-area: rate;
+
+    width: clamp(48rem, 50vw, 53rem);
+    max-width: initial;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.2rem;
+  }
+
+  .social__rating {
+    width: clamp(40rem, 41vw, 44rem);
+    flex-direction: row;
+    padding: 1.8rem 2.8rem;
+    gap: 2.8rem;
+  }
+
+  .social__rating h2 {
+    font-size: 1.7rem;
+  }
+
+  .social__rating--reviews {
+    align-self: start;
+  }
+
+  .social__rating--guru {
+    align-self: center;
+  }
+
+  .social__rating--besttech {
+    align-self: end;
+  }
+
+  .social__testimonials {
+    grid-area: test;
+    display: flex;
+    gap: 2.8rem;
+  }
+
+  .testimonial__bio {
+    gap: 2.2rem;
+  }
+
+  .social__testimonial blockquote {
+    line-height: 2.4rem;
+  }
+
+  .social__testimonial:not(:last-child) {
+    margin-bottom: initial;
+  }
+}

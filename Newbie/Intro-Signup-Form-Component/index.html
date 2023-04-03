@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <script defer src="script.js"></script>
+
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </section>
+      <div class="signup">
+        <div class="signup__promo">
+          <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
+        </div>
+        <form class="signup__form" novalidate>
+          <div>
+            <input
+              id="first-name"
+              class="signup__name"
+              type="text"
+              placeholder="First Name"
+              name="First Name"
+              required
+            />
+            <img src="images/icon-error.svg" alt="" class="error__icon" />
+            <p class="error error__name" aria-live="polite"></p>
+          </div>
+          <div>
+            <input
+              id="last-name"
+              class="signup__name"
+              type="text"
+              placeholder="Last Name"
+              name="Last Name"
+              required
+            />
+            <img src="images/icon-error.svg" alt="" class="error__icon" />
+            <p class="error error_name" aria-live="polite"></p>
+          </div>
+          <div>
+            <input
+              id="email"
+              type="email"
+              placeholder="Email Address"
+              name="Email Address"
+              required
+            />
+            <img src="images/icon-error.svg" alt="" class="error__icon" />
+            <p class="error error__email" aria-live="polite"></p>
+          </div>
+          <div>
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              name="Password"
+              required
+              minlength="8"
+            />
+            <img src="images/icon-error.svg" alt="" class="error__icon" />
+            <p class="error error__password" aria-live="polite"></p>
+          </div>
+          <button class="signup__button">Claim your free trial</button>
+          <p class="signup__reminder">
+            By clicking the button, you are agreeing to our
+            <span>Terms and Services</span>
+          </p>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:root {
+  /* header */
+  --darkblue: hsl(238, 29%, 16%);
+  --softred: hsl(14, 88%, 65%);
+
+  /* background */
+  --softviolet: hsl(273, 75%, 66%);
+  --softblue: hsl(240, 73%, 65%);
+
+  /* text */
+  --darkgray: hsl(237, 12%, 33%);
+  --medgray: hsl(240, 6%, 50%);
+  --lightgray: hsl(240, 5%, 91%);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.25rem;
+  font-family: "Kumbh Sans", sans-serif;
+  background: linear-gradient(var(--softviolet), var(--softblue));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.card,
+.card__imagebox {
+  position: relative;
+}
+
+.card__box,
+.card__image,
+.card__shadow {
+  position: absolute;
+}
+
+.card,
+.card__question {
+  display: flex;
+}
+
+.card__accordion h1,
+.attribution {
+  text-align: center;
+}
+
+.card__accordion h1,
+.card__answer--active .card__question {
+  font-weight: 700;
+}
+
+.card__box,
+.card__question,
+.card__arrow {
+  transition: all 0.3s;
+}
+
+.card__accordion h1,
+.card__question {
+  color: var(--darkblue);
+}
+
+.card__item:hover .card__question,
+.card__arrow {
+  color: var(--softred);
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+.card__box {
+  width: 19rem;
+  transform: translate(-9.2rem, 21rem);
+  opacity: 0;
+}
+
+.card {
+  flex-direction: column;
+  height: 53.24rem;
+  margin: 10rem 2rem 1rem;
+  border-radius: 20px;
+  overflow: visible;
+  box-shadow: -5px 25px 50px rgb(0 0 0 / 35%);
+  background: #fff;
+}
+
+.card__imagebox {
+  height: 12.4rem;
+  align-self: center;
+}
+
+.card__image {
+  z-index: 2;
+  min-width: 25rem;
+  transform: translate(-12.5rem, -11.4rem);
+}
+
+.card__shadow {
+  width: 24rem;
+  transform: translate(-12rem, -0.2rem);
+}
+
+.card__accordion {
+  padding: 0 2.5rem 4.2rem;
+}
+
+.card__accordion h1 {
+  margin-bottom: 1rem;
+  font-size: 3.4rem;
+  text-transform: uppercase;
+}
+
+.card__item {
+  padding: 1.8rem 0 0.8rem;
+  border-bottom: 2px solid var(--lightgray);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.card__question {
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1.35rem;
+}
+
+.card__arrow {
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(0.3rem);
+}
+
+.card__answer {
+  height: 0;
+  padding-right: 1.6rem;
+  line-height: 1.6rem;
+  overflow: hidden;
+  color: var(--medgray);
+}
+
+.card__item.card__answer--active {
+  padding: 1.8rem 0 1.8rem;
+}
+
+.card__item:hover.card__answer--active .card__question {
+  color: inherit;
+}
+
+.card__answer--active .card__arrow {
+  transform: rotate(180deg);
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.attribution {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.attribution a {
+  color: #fff;
+}

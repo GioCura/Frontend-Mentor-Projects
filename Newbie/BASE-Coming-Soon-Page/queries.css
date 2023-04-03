@@ -1,0 +1,108 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 70.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero__imagebox {
+    background-position: initial;
+  }
+}
+
+@media (min-width: 600px) {
+  body {
+    display: grid;
+    grid-template-areas:
+      "head img"
+      "details img"
+      "details img";
+    grid-template-columns: 1.36fr 1fr;
+    background: url(images/bg-pattern-desktop.svg), var(--mainbg);
+    background-repeat: no-repeat;
+    background-size: 64% 100vh;
+  }
+
+  header {
+    grid-area: head;
+    justify-self: center;
+    width: clamp(24rem, 50vw, 44rem);
+    margin: 6.5rem 3.5rem 3rem;
+  }
+
+  .hero {
+    max-width: 44rem;
+    justify-self: center;
+    text-align: left;
+  }
+
+  .hero__imagebox {
+    grid-area: img;
+    height: 100%;
+    margin-bottom: 0;
+    background-image: url(images/hero-desktop.jpg);
+  }
+
+  .logo {
+    width: 14.5rem;
+  }
+
+  .hero__description {
+    margin-bottom: 4.5rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+
+  .hero__cta {
+    padding: 2rem 3.2rem;
+  }
+
+  #email {
+    font-size: 1.6rem;
+  }
+
+  #email::placeholder {
+    opacity: 0.4;
+  }
+
+  .email__button {
+    padding: 1.8rem 4.2rem 1.8rem 4.6rem;
+    border-radius: 50px;
+  }
+
+  .error__icon {
+    width: 5.5%;
+    right: 11rem;
+  }
+
+  .email__error,
+  .email__success {
+    font-size: 1.32rem;
+    bottom: -45%;
+  }
+
+  .email__success {
+    font-size: 1.32rem;
+    bottom: -45%;
+  }
+
+  .button__wrapper {
+    right: -0.4rem;
+  }
+
+  .invalid ~ .button__wrapper > .email__button {
+    padding: 1.9rem 4.2rem 1.9rem 4.6rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}

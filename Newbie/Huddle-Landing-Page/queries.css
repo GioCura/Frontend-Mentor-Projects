@@ -1,0 +1,142 @@
+/* //////////////////// */
+/* DESKTOP - LARGE */
+/* //////////////////// */
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1799px) {
+  html {
+    font-size: 68%;
+  }
+}
+
+/* //////////////////// */
+/* LAPTOPS AND SMALL DESKTOPS */
+/* //////////////////// */
+
+@media (min-width: 1380px) {
+  .logo {
+    margin-bottom: 5rem;
+  }
+
+  .hero {
+    align-items: initial;
+  }
+
+  .hero__illustration {
+    width: clamp(55rem, 50vw, 74rem);
+  }
+
+  .hero__content {
+    margin-top: 5rem;
+  }
+
+  .hero__copy h1 {
+    margin-right: 3.4rem;
+  }
+}
+
+/* //////////////////// */
+/* TABLET */
+/* //////////////////// */
+
+@media (min-width: 1024px) and (max-width: 1379px) {
+  .hero__illustration {
+    width: clamp(35rem, 40vw, 55rem);
+  }
+
+  .logo {
+    margin-bottom: 0rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    background-image: url(images/bg-desktop.svg);
+    background-size: 91.5vw 100vh;
+  }
+
+  main {
+    margin: 3rem 6rem 0rem;
+  }
+
+  .hero {
+    flex-direction: row;
+    margin-bottom: initial;
+    gap: 5rem;
+  }
+
+  .logo {
+    width: 21.5rem;
+  }
+
+  .hero__illustration {
+    margin-bottom: initial;
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    margin-right: 1rem;
+  }
+
+  .hero__copy {
+    text-align: initial;
+  }
+
+  .hero__copy h1 {
+    margin-bottom: 1.8rem;
+    font-size: clamp(3.2rem, 2.7vw, 3.8rem);
+    line-height: clamp(4.5rem, 4vw, 5.8rem);
+  }
+
+  .hero__copy p {
+    font-size: clamp(1.8rem, 1.3vw, 1.85rem);
+    line-height: 2.7rem;
+  }
+
+  .hero__cta {
+    align-self: initial;
+    width: 38%;
+    padding: 1.3rem 0;
+    font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  }
+
+  .socmed {
+    align-self: flex-end;
+    gap: 1.2rem;
+  }
+
+  .socmed__link {
+    padding: 1.2rem 1.35rem;
+  }
+
+  .socmed__link i {
+    width: 2rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  main {
+    margin: 3rem;
+    padding: 0 2rem;
+  }
+
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .hero__illustration {
+    margin-bottom: 4rem;
+  }
+
+  .hero__copy h1 {
+    margin-bottom: 2rem;
+  }
+}

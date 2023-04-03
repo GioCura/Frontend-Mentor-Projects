@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+  transition: font-size 0.3s ease-in-out;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+:root {
+  --violet: hsl(257, 40%, 49%);
+  --magenta: hsl(300, 69%, 71%);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Open Sans", sans-serif;
+  color: #fff;
+  background-image: url(images/bg-mobile.svg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-color: var(--violet);
+}
+
+main,
+.hero,
+.hero__content,
+.socmed {
+  display: flex;
+}
+
+main,
+.hero,
+.hero__content {
+  flex-direction: column;
+}
+
+.hero__cta,
+.socmed {
+  align-self: center;
+}
+
+.hero__copy,
+.socmed__link {
+  text-align: center;
+}
+
+.hero__copy h1,
+.hero__cta {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  min-height: 90vh;
+  max-width: 130rem;
+  justify-content: space-between;
+  margin: 2.2rem 3rem 0;
+}
+
+.hero {
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  width: clamp(13rem, 22vw, 20rem);
+  margin-bottom: 3rem;
+}
+
+.hero__illustration {
+  width: clamp(30.5rem, 62vw, 56rem);
+  margin-bottom: 1.8rem;
+}
+
+.hero__content {
+  gap: clamp(2rem, 4.5vw, 4rem);
+}
+
+.hero__copy h1 {
+  margin-bottom: 1.5rem;
+  font-size: clamp(2.35rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: clamp(3.5rem, 5vw, 4rem);
+}
+
+.hero__copy p {
+  font-size: clamp(1.64rem, 3vw, 2.6rem);
+  line-height: clamp(2.2rem, 5vw, 4.5rem);
+  opacity: 0.85;
+}
+
+.hero__cta {
+  width: 65%;
+  font-size: clamp(1.4rem, 2.8vw, 2.6rem);
+  padding: 0.8rem 0;
+  border-radius: 40px;
+  box-shadow: 1px 4px 10px hsl(0deg 0% 0% / 53%);
+  transition: all 0.3s;
+  background-color: #fff;
+  color: var(--violet);
+}
+
+.hero__cta:hover {
+  color: #fff;
+  background-color: var(--magenta);
+}
+
+.socmed {
+  gap: clamp(0.8rem, 3vw, 2rem);
+}
+
+.socmed__link {
+  padding: clamp(0.8rem, 1.5vw, 1.2rem) clamp(0.95rem, 1.7vw, 1.35rem);
+  border-radius: 50%;
+  border: 1px solid white;
+  transition: all 0.3s;
+}
+
+.socmed__link i {
+  width: clamp(1.2rem, 3vw, 2.2rem);
+  font-size: clamp(1.2rem, 2.5vw, 2.2rem);
+}
+
+.socmed__link:hover {
+  color: var(--magenta);
+  border-color: var(--magenta);
+}

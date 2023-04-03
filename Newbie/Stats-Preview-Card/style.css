@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  --font1: "Lexend Deca", sans-serif;
+  --font2: "Inter", sans-serif;
+  --fw-base: 400;
+  --fw-bold: 700;
+  --clr-mainbg: hsl(233, 46%, 7%);
+  --clr-cardbg: hsl(246, 38%, 16%);
+  --clr-accent: hsl(276, 55%, 60%);
+  --clr-white1: hsl(180, 4%, 95%);
+  --clr-white2: hsla(0, 0%, 85%, 0.75);
+  --clr-white3: hsla(0, 0%, 93%, 0.6);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--font1);
+  font-size: 1.5rem;
+  color: var(--clr-white2);
+  background-color: var(--clr-mainbg);
+}
+
+.card,
+.card__stats li {
+  display: flex;
+  flex-direction: column;
+}
+
+.card,
+.card picture {
+  position: relative;
+}
+
+.card__title,
+.card__amount {
+  font-family: var(--font2);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white1);
+}
+
+.card {
+  max-width: 50rem;
+  padding-bottom: 3rem;
+  margin: 2rem;
+  border-radius: 10px;
+  gap: 2.5rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: var(--clr-cardbg);
+}
+
+.card__image {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.card picture::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: hsl(281, 99%, 27%);
+}
+
+.card__title {
+  margin: 0 3rem 2rem;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+}
+
+.card__title span {
+  color: var(--clr-accent);
+}
+
+.card__description {
+  margin: 0 3rem 4rem;
+  line-height: 2.4rem;
+}
+
+.card__stats li {
+  gap: 0.5rem;
+}
+
+.card__stats li:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+
+.card__amount {
+  font-size: 2.2rem;
+}
+
+.card__stat {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  color: var(--clr-white3);
+}
+
+/* .attribution {
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: var(--fw-bold);
+  display: none;
+}
+
+.attribution a {
+  color: var(--clr-accent);
+} */

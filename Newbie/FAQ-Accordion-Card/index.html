@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
+    <script defer src="script.js"></script>
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body onload="preloadAnswer()">
+    <main>
+      <article class="card">
+        <img
+          src="images/illustration-box-desktop.svg"
+          alt=""
+          class="card__box"
+        />
+        <div class="card__imagebox">
+          <img
+            src="images/illustration-woman-online-mobile.svg"
+            alt=""
+            class="card__image"
+          />
+          <img src="images/bg-pattern-mobile.svg" alt="" class="card__shadow" />
+        </div>
+        <div class="card__accordion">
+          <h1>FAQ</h1>
+          <div class="card__item">
+            <div class="card__question">
+              <p>How many team members can I invite?</p>
+              <svg width="10" height="7" class="card__arrow">
+                <path
+                  d="M1 .799l4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="card__answer">
+              You can invite up to 2 additional users on the Free plan. There is
+              no limit on team members for the Premium plan.
+            </div>
+          </div>
+
+          <div class="card__item card__answer--active">
+            <div class="card__question">
+              <p>What is the maximum file upload size?</p>
+              <svg width="10" height="7" class="card__arrow">
+                <path
+                  d="M1 .799l4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="card__answer">
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__question">
+              <p>How do I reset my password?</p>
+              <svg width="10" height="7" class="card__arrow">
+                <path
+                  d="M1 .799l4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="card__answer">
+              Click “Forgot password” from the login page or “Change password”
+              from your profile page. A reset link will be emailed to you.
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__question">
+              <p>Can I cancel my subscription?</p>
+              <svg width="10" height="7" class="card__arrow">
+                <path
+                  d="M1 .799l4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="card__answer">
+              Yes! Send us a message and we'll process your request no questions
+              asked.
+            </div>
+          </div>
+
+          <div class="card__item">
+            <div class="card__question">
+              <p>Do you provide additional support?</p>
+              <svg width="10" height="7" class="card__arrow">
+                <path
+                  d="M1 .799l4 4 4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </div>
+            <div class="card__answer">
+              Chat and email support is available 24/7. Phone lines are open
+              during normal business hours.
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/GioCura" target="_blank"
+        >Gio Cura</a
+      >.
+    </footer>
+  </body>
+</html>

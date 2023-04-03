@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  background-color: hsl(30, 38%, 92%);
+}
+
+button {
+  border: none;
+  text-decoration: none;
+}
+
+main {
+  margin-bottom: 4rem;
+}
+
+.card,
+.card__textbox,
+.card__pricebox,
+.card__button {
+  display: flex;
+}
+
+.card,
+.card__button {
+  justify-content: center;
+}
+
+.card__pricebox,
+.card__button {
+  align-items: center;
+}
+
+.card,
+.card__textbox {
+  flex-direction: column;
+}
+
+.card {
+  padding-bottom: 2.5rem;
+  gap: 1.5rem;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 100%);
+}
+
+.card__image {
+  vertical-align: bottom;
+  width: 35rem;
+}
+
+.card__textbox {
+  align-self: center;
+  gap: 1.2rem;
+}
+
+.card__category,
+.card__description,
+.card__oldprice {
+  color: hsl(228, 12%, 48%);
+}
+
+.card__category {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.38rem;
+}
+
+.card__name,
+.card__newprice {
+  font-family: "Fraunces", serif;
+}
+
+.card__name {
+  font-size: 3.25rem;
+  line-height: 3.2rem;
+  color: hsl(212, 21%, 14%);
+}
+
+.card__description {
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+}
+
+.card__pricebox {
+  gap: 2rem;
+}
+
+.card__newprice {
+  font-size: 3.5rem;
+  color: hsl(158, 36%, 37%);
+}
+
+.card__oldprice {
+  font-size: 1.25rem;
+  text-decoration: line-through;
+}
+
+.card__button {
+  width: 100%;
+  gap: 0.8rem;
+  padding: 1.6rem;
+  border-radius: 10px;
+
+  transition: all 0.3s;
+  cursor: pointer;
+  background-color: hsl(158, 36%, 37%);
+}
+
+.card__button img {
+  width: 1.4rem;
+}
+
+.card__button span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(30, 38%, 92%);
+}
+
+.card__button:hover {
+  background-color: hsl(158, 36%, 22%);
+}
+
+.break--desktop {
+  display: none;
+}
+
+.attribution {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

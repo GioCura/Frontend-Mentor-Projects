@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+form input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(153, 59%, 51%);
+  --blue: hsl(247, 32%, 48%);
+  --darkblue: hsl(249, 10%, 26%);
+  --grayblue: hsl(246, 25%, 77%);
+
+  --font: "Poppins", sans-serif;
+  --fw-1: 400;
+  --fw-2: 500;
+  --fw-3: 600;
+  --fw-4: 700;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-family: var(--font);
+  background-image: url(images/bg-intro-mobile.png);
+  background-color: var(--red);
+}
+
+main {
+  max-width: 65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+  margin: 6rem 2rem;
+}
+
+.hero,
+.signup__promo,
+.signup__reminder {
+  text-align: center;
+}
+
+.hero p,
+.signup__button,
+.signup__reminder {
+  font-weight: var(--fw-2);
+}
+
+.hero h1,
+.signup__promo p span,
+.signup__reminder span {
+  font-weight: var(--fw-4);
+}
+
+.error,
+.signup__reminder span {
+  color: var(--red);
+}
+
+.signup__form input,
+input:focus.invalid {
+  color: var(--darkblue);
+}
+
+.hero h1 {
+  margin-bottom: 2.5rem;
+  line-height: 3rem;
+  font-size: 2.6rem;
+  color: hsl(30, 100%, 99%);
+}
+
+.hero p {
+  padding: 0 1.4rem;
+  color: hsl(355, 92%, 95%);
+}
+
+.signup__promo {
+  padding: 1.8rem 5.5rem;
+  border-radius: 6px;
+  margin-bottom: 2.8rem;
+  font-size: 1.55rem;
+  box-shadow: 0 6.5px 1px rgba(0, 0, 0, 0.2);
+  background-color: var(--blue);
+}
+
+.signup__promo p {
+  color: hsl(256, 32%, 88%);
+}
+
+.signup__promo p span {
+  color: hsl(262, 100%, 98%);
+}
+
+.signup__form {
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 1px rgba(0, 0, 0, 0.17);
+  background-color: #fff;
+}
+
+.signup__form div {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+.signup__form input {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  margin-bottom: 0.65rem;
+  border: 0.7px solid var(--grayblue);
+  border-radius: 3px;
+  font-weight: var(--fw-3);
+}
+
+input::placeholder {
+  color: hsl(252, 2%, 48%);
+}
+
+input:focus {
+  outline: 1.5px solid var(--darkblue);
+}
+
+.error__icon {
+  position: absolute;
+  display: none;
+  top: 22%;
+  right: 6%;
+  pointer-events: none;
+}
+
+input.invalid {
+  border: 2px solid var(--red);
+  color: var(--red);
+}
+
+input:focus.invalid {
+  outline: none;
+}
+
+.invalid + .error__icon {
+  display: block;
+}
+
+.error {
+  text-align: right;
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: var(--fw-1);
+  opacity: 0.8;
+}
+
+.signup__button {
+  width: 100%;
+  padding: 1.5rem 2rem 1.1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 1.65rem;
+  color: hsl(157, 100%, 93%);
+  background-color: var(--green);
+  box-shadow: 0 4px 1px hsla(153, 56%, 35%, 0.73);
+  transition: all 0.3s;
+}
+
+.signup__button:hover {
+  background-color: hsl(154, 65%, 68%);
+}
+
+.signup__reminder {
+  padding: 0 1.6rem;
+  font-size: 1.1rem;
+  color: var(--grayblue);
+}

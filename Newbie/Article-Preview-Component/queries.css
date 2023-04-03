@@ -1,0 +1,77 @@
+@media (min-width: 800px) {
+  .card {
+    flex-direction: row;
+    max-width: 71rem;
+  }
+
+  .card__image {
+    width: 27.5rem;
+    height: 27rem;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card__caption {
+    margin: 3rem 3.4rem 1rem;
+  }
+
+  .card__bottom {
+    padding: 1rem 4.4em 3rem 3.4rem;
+  }
+
+  .card__socmed {
+    padding: 1.5rem 4rem;
+    border-radius: 8px;
+    background-color: hsl(217, 19%, 35%);
+    filter: drop-shadow(4px 8px 8px hsla(216, 20%, 20%, 0.12));
+
+    top: -70%;
+    left: 58.5%;
+    opacity: 0;
+
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+
+  .card__socmed h2 {
+    font-size: 1.1rem;
+  }
+
+  .card__socmed:after {
+    content: "";
+    border: 1.2rem solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+  }
+
+  .card__bottom.card__bottom--socmed-show {
+    background-color: inherit;
+    border-radius: 0;
+  }
+
+  .card__bottom--socmed-show .card__byline {
+    pointer-events: auto;
+    position: static;
+    z-index: 1;
+  }
+
+  .card__bottom--socmed-show .card__socmed {
+    position: absolute;
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+}

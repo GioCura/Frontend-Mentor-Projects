@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1,
+h2 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input {
+  display: none;
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --lightgray: hsl(217, 12%, 63%);
+  --medgray: hsl(216, 12%, 54%);
+  --medgraytrans: hsla(216, 12%, 54%, 0.12);
+  --darkblue: hsl(213, 19%, 18%);
+  --darkbluetrans: hsl(213, 19%, 18%, 0.7);
+  --darkestblue: hsl(216, 12%, 8%);
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  background-color: var(--darkestblue);
+}
+
+.form,
+.form picture,
+.form__ratings,
+.thanks {
+  display: flex;
+}
+
+.form picture,
+.form__ratings,
+.thanks {
+  align-items: center;
+}
+
+.form picture,
+.form__ratings {
+  justify-content: center;
+}
+
+.form,
+.thanks {
+  flex-direction: column;
+}
+
+.form__rating:hover,
+input:checked + .form__rating,
+.thanks h1 {
+  font-weight: 700;
+}
+
+.card,
+.form__rating:hover,
+input:checked + .form__rating,
+.attribution {
+  color: var(--white);
+}
+
+.form__submit:hover,
+.thanks__selection,
+.attribution a {
+  color: var(--orange);
+}
+
+.form picture,
+.form__rating,
+.form__submit {
+  border-radius: 50px;
+}
+
+.form__rating,
+.form__submit {
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form picture,
+.thanks__selection,
+.form__rating {
+  background-color: var(--medgraytrans);
+}
+
+.thanks,
+.attribution {
+  text-align: center;
+}
+
+main {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  position: relative;
+  width: 32.5rem;
+  height: 34rem;
+  padding: 2.5rem 2.4rem 2.8rem;
+  border-radius: 15px;
+  font-size: 1.5rem;
+  background-color: var(--darkbluetrans);
+}
+
+.card p {
+  font-size: 1.4rem;
+  color: var(--lightgray);
+}
+
+.form picture {
+  width: 3.75rem;
+  height: 3.75rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form__star {
+  width: 1.4rem;
+}
+
+.form h1 {
+  font-size: 2.45rem;
+  margin-bottom: 1.2rem;
+}
+
+.form p {
+  margin-bottom: 3.4rem;
+  line-height: 1.8rem;
+}
+
+.form__ratings {
+  margin-bottom: 3.4rem;
+  gap: 1.8rem;
+}
+
+.form__rating {
+  padding: 1.2rem 1.7rem;
+  font-size: 1.3rem;
+  color: var(--medgray);
+}
+
+.form__rating:hover {
+  background-color: var(--orange);
+}
+
+input:checked + .form__rating {
+  background-color: var(--medgray);
+}
+
+.form__submit {
+  padding: 1.25rem 1rem;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background-color: var(--orange);
+}
+
+.form__submit:hover {
+  background-color: var(--white);
+}
+
+.thanks {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: all 0.7s;
+}
+
+.thanks__icon {
+  width: 14rem;
+  margin-bottom: 2.2rem;
+}
+
+.thanks__selection {
+  width: 15.5rem;
+  padding: 0.6rem 0.3rem 0.3rem;
+  border-radius: 20px;
+  margin-bottom: 2.5rem;
+  font-size: 1.3rem;
+}
+
+.thanks h1 {
+  margin-bottom: 1.2rem;
+  font-size: 2.4rem;
+}
+
+.thanks p {
+  line-height: 2.1rem;
+}
+
+.thanks--show-yes .form {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.thanks--show-yes .thanks {
+  position: static;
+  opacity: 1;
+}
+
+.attribution {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  html {
+    font-size: 67%;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+  html {
+    font-size: 65%;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 35rem;
+    height: 34.2rem;
+    padding: 2.5rem 2.7rem 2.8rem;
+    border-radius: 25px;
+  }
+
+  .form picture {
+    margin-bottom: 2.4rem;
+  }
+
+  .form p,
+  .thanks p {
+    font-size: 1.28rem;
+  }
+
+  .form p {
+    margin-bottom: 3.4rem;
+  }
+
+  .form__ratings {
+    margin-bottom: 3.8rem;
+  }
+
+  .form__rating {
+    padding: 1.3rem 1.8rem;
+  }
+
+  .thanks p {
+    padding: 0 0.2rem;
+  }
+}

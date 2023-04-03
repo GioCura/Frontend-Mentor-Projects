@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.8rem;
+  background-image: url(images/bg-pattern-top.svg),
+    url(images/bg-pattern-bottom.svg);
+  background-position: right 45vw bottom 45vh, left 45vw top 45vh;
+  background-repeat: no-repeat, no-repeat;
+  color: var(--grayblue);
+  background-color: var(--darkcyan);
+}
+
+:root {
+  --darkcyan: hsl(185, 75%, 39%);
+  --darkblue: hsl(229, 23%, 23%);
+  --grayblue: hsl(227, 10%, 46%);
+  --darkgray: hsl(0, 0%, 59%);
+}
+
+.card__biodata,
+.card__statbox,
+.card__stat {
+  display: flex;
+}
+
+.card__biodata,
+.card__statbox {
+  justify-content: center;
+}
+
+.card,
+.card__avatar {
+  background-color: #fff;
+}
+
+.card {
+  width: 33rem;
+  border-radius: 15px;
+  margin: 0 2.5rem 1rem;
+  box-shadow: 5px 39px 42px hsl(0deg 0% 0% / 11%);
+  text-align: center;
+  transition: all 0.5s;
+  background-image: url(images/bg-pattern-card.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.card__avatar {
+  width: 10.3rem;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  margin-top: 8.5rem;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.card__name,
+.card__amount {
+  font-weight: 700;
+  color: var(--darkblue);
+}
+
+.card__biodata {
+  gap: 0.7rem;
+  margin-bottom: 0.65rem;
+}
+
+.card__name {
+  word-spacing: -0.1rem;
+}
+
+.card__location {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid hsla(0, 0%, 59%, 0.4);
+  font-size: 1.4rem;
+}
+
+.card__statbox {
+  padding: 2.2rem 1.2rem 2.2rem 0;
+  gap: 5rem;
+}
+
+.card__stat {
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card__amount {
+  text-transform: uppercase;
+}
+
+.card__stat h3 {
+  font-size: 1rem;
+  letter-spacing: 0.13rem;
+}
+
+.attribution {
+  display: none;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.attribution a {
+  text-decoration: underline;
+  transition: all 0.3s;
+  color: yellow;
+  text-decoration-color: transparent;
+}
+
+.attribution a:hover {
+  font-size: 1.4rem;
+  text-decoration-color: inherit;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .card {
+    width: 33.5rem;
+  }
+}

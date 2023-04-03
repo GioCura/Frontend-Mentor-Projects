@@ -1,0 +1,66 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 70.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 580px) {
+  .cards {
+    grid-template-areas:
+      "comm comm"
+      "subs why";
+    grid-template-columns: 49% 51%;
+  }
+
+  .card__community {
+    grid-area: comm;
+    padding: 3.5rem;
+  }
+
+  .card__community > .card__title {
+    font-size: 2.4rem;
+  }
+
+  .card__subtitle {
+    font-size: 1.8rem;
+  }
+
+  .card__details {
+    font-size: 1.6rem;
+  }
+
+  .card__subscription {
+    grid-area: subs;
+    padding: 4rem;
+  }
+
+  .card__subscription p {
+    font-size: 1.64rem;
+    margin-bottom: 3.3rem;
+  }
+
+  .card__why {
+    grid-area: why;
+    padding: 4rem;
+  }
+
+  .card__why > .card__title {
+    font-size: 1.84rem;
+  }
+
+  .card__reasons li {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}

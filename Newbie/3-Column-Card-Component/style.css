@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lexend Deca", sans-serif;
+  background-color: hsl(0, 0%, 95%);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+main,
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  margin: 5rem 0rem 5rem 0rem;
+}
+
+.card__title,
+.card__button--sedans:hover,
+.card__button--suvs:hover,
+.card__button--luxury:hover {
+  color: hsl(0, 0%, 95%);
+}
+
+.card {
+  width: 31rem;
+  padding: 5rem 3.75rem;
+  gap: 2.5rem;
+}
+
+.card__logo {
+  width: 5rem;
+}
+
+.card__title {
+  font-family: "Big Shoulders Display", cursive;
+  font-size: 3.5rem;
+  letter-spacing: 0.1rem;
+
+  text-transform: uppercase;
+}
+
+.card--sedans {
+  border-radius: 10px 10px 0 0;
+  background-color: hsl(31, 77%, 52%);
+}
+
+.card--suvs {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.card--luxury {
+  border-radius: 0 0 10px 10px;
+  background-color: hsl(179, 100%, 13%);
+}
+
+.card__text {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+.card__button {
+  align-items: center;
+  width: 59%;
+  padding: 0.8rem 2rem 0.8rem 2rem;
+
+  border: 1px solid transparent;
+  border-radius: 50px;
+
+  font-size: 1.4rem;
+
+  transition: all 0.3s;
+  background-color: hsl(0, 0%, 95%);
+}
+
+.card__button--sedans {
+  color: hsl(31, 77%, 52%);
+}
+
+.card__button--suvs {
+  color: hsl(184, 100%, 22%);
+}
+
+.card__button--luxury {
+  color: hsl(179, 100%, 13%);
+}
+
+.card__button:hover {
+  background-color: transparent;
+  border-color: hsl(0, 0%, 95%);
+}
+
+.attribution {
+  padding-bottom: 5rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 900px) {
+  body {
+    justify-content: center;
+  }
+
+  main {
+    flex-direction: row;
+    margin: 0 0 5rem 0;
+  }
+
+  .card {
+    width: 30rem;
+    padding: 5.5rem 4.5rem;
+    gap: 2.5rem;
+  }
+
+  .card__text {
+    padding-bottom: 5rem;
+  }
+
+  .card--sedans {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card--luxury {
+    border-radius: 0px 10px 10px 0px;
+  }
+}

@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+h1,
+button,
+input,
+input::placeholder {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+:root {
+  --desaturatedred: hsl(0, 36%, 70%);
+  --softred: hsl(0, 93%, 68%);
+  --darkgrayred: hsl(0, 6%, 24%);
+  --mainbg: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --buttonbg: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+
+  --font: "Josefin Sans", sans-serif;
+  --fw-1: 300;
+  --fw-2: 400;
+  --fw-3: 600;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-weight: var(--fw-2);
+  font-size: 1.6rem;
+  color: var(--desaturatedred);
+  background: var(--mainbg);
+}
+
+header {
+  margin: 2.5rem 3.5rem;
+}
+
+.hero__cta,
+.email__button,
+.email__button > * {
+  position: relative;
+}
+
+.button__wrapper,
+.email__button::before,
+.error__icon,
+.email__error,
+.email__success {
+  position: absolute;
+}
+
+.email__button::before,
+.error__icon,
+.email__error,
+.email__success {
+  transition: all 0.3s;
+}
+
+.hero__description,
+#email {
+  font-size: 1.36rem;
+}
+
+.email__error,
+.email__success {
+  bottom: -58%;
+  font-size: 1.12rem;
+  pointer-events: none;
+}
+
+.email__button::before,
+.error__icon,
+.email__error,
+.email__success {
+  opacity: 0;
+}
+
+.invalid ~ .error__icon,
+.invalid ~ .email__error,
+.valid ~ .email__success {
+  opacity: 1;
+}
+
+.hero__title span,
+#email {
+  color: var(--darkgrayred);
+}
+
+.logo {
+  width: 9rem;
+}
+
+.hero__imagebox {
+  height: clamp(25rem, 55vw, 31rem);
+  width: 100%;
+  margin-bottom: 3rem;
+  background-image: url(images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero {
+  text-align: center;
+  margin: 0 3.5rem;
+}
+
+.hero__title {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: var(--fw-1);
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  letter-spacing: clamp(8px, 1.1vw, 15px);
+  line-height: clamp(3.6rem, 6vw, 6.8rem);
+}
+
+.hero__title span {
+  font-weight: var(--fw-3);
+}
+
+.hero__description {
+  margin-bottom: 2.6rem;
+  line-height: 2.2rem;
+}
+
+.hero__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.2rem;
+  border-radius: 30px;
+  /*   outline: 1px solid hsla(0, 36%, 70%, 0.8); */
+  /*    fixes Safari outline with rounded corners bug*/
+  box-shadow: 0 0 0 1px hsla(0, 36%, 70%, 0.8);
+  overflow: visible;
+}
+
+#email {
+  width: 72%;
+}
+
+#email::placeholder {
+  color: var(--desaturatedred);
+}
+
+.button__wrapper {
+  right: -0.3rem;
+}
+
+.email__button {
+  padding: 0.8rem 2.2rem 0.8rem 2.6rem;
+  border-radius: 30px;
+  background: var(--buttonbg);
+  box-shadow: 5px 10px 20px hsla(0, 36%, 70%, 0.6);
+  overflow: hidden;
+}
+
+.email__button::before {
+  content: "";
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  background: linear-gradient(135deg, hsl(0, 78%, 91%), hsl(359, 82%, 89%));
+}
+
+.email__button:hover::before {
+  opacity: 1;
+}
+
+.hero__cta:has(.invalid) {
+  /*   border: 2px solid var(--softred); */
+  box-shadow: 0 0 0 2px var(--softred);
+}
+
+.error__icon {
+  width: 5.5%;
+  right: 7rem;
+}
+
+.email__error {
+  color: var(--softred);
+}
+
+.email__success {
+  color: green;
+}
+
+.invalid ~ .button__wrapper > .email__button {
+  padding: 0.9rem 2.2rem 0.9rem 2.6rem;
+}

@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Hanken Grotesk", sans-serif;
+  font-size: 1.8rem;
+}
+
+h1,
+h2 {
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+:root {
+  --red: hsl(0, 100%, 67%);
+  --yellow: hsl(39, 100%, 56%);
+  --teal: hsl(166, 100%, 37%);
+  --blue: hsl(234, 85%, 45%);
+
+  --redbg: hsl(0, 100%, 67%, 0.1);
+  --yellowbg: hsl(39, 100%, 56%, 0.1);
+  --tealbg: hsl(166, 100%, 37%, 0.1);
+  --bluebg: hsl(234, 85%, 45%, 0.1);
+
+  --paleblue: hsl(221, 100%, 96%);
+  --lavender: hsl(241, 100%, 89%);
+  --darkblue: hsl(224, 30%, 27%);
+
+  --bgblue1: hsl(241, 81%, 54%);
+  --bgblue2: hsl(252, 100%, 67%);
+
+  --circleblue1: hsla(256, 72%, 46%, 1);
+  --circleblue2: hsla(241, 72%, 46%, 0);
+}
+
+.card,
+.card__result,
+.card__result div,
+.card__criteria,
+.card__criterion,
+.card__criterion div {
+  display: flex;
+}
+
+.card,
+.card__result,
+.card__result div,
+.card__criteria {
+  flex-direction: column;
+}
+
+.card__score,
+.card__summary h2,
+.criterion__score,
+.criterion__total {
+  font-weight: 800;
+}
+
+.card__result,
+.card__criterion,
+.card__criterion div {
+  align-items: center;
+}
+
+.card__summary h2,
+.criterion__score,
+.criterion__total {
+  color: var(--darkblue);
+}
+
+.card__score,
+.card__grade {
+  color: #fff;
+}
+
+.card__total,
+.card__remark {
+  color: var(--lavender);
+}
+
+.card__criterion div,
+.card__button {
+  font-weight: 700;
+}
+
+.card__result,
+.card__button::before {
+  background: linear-gradient(var(--bgblue2) -8%, var(--bgblue1));
+}
+
+.card__result h1,
+.card__button {
+  color: var(--paleblue);
+}
+
+.card__button,
+.card__button > * {
+  position: relative;
+}
+
+.card__button,
+.card__button::before {
+  border-radius: 50px;
+}
+
+.card__result,
+.attribution {
+  text-align: center;
+}
+
+main {
+  margin-bottom: 2rem;
+}
+
+.card {
+  gap: 2.5rem;
+}
+
+.card__result {
+  padding: 2rem 0 4rem 0rem;
+  border-radius: 0 0 30px 30px;
+}
+
+.card__result h1 {
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  word-spacing: 0.15rem;
+  opacity: 0.8;
+}
+
+.card__result div {
+  width: 13rem;
+  padding: 2.5rem;
+  border-radius: 100px;
+  margin-bottom: 2rem;
+  background: linear-gradient(var(--circleblue1), var(--circleblue2) 95%);
+}
+
+.card__score {
+  font-size: 5rem;
+}
+
+.card__total {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.card__grade {
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+}
+
+.card__remark {
+  padding: 0px 6rem 0;
+  font-size: 1.5rem;
+}
+
+.card__summary {
+  padding: 0 2.5rem 2rem;
+}
+
+.card__summary h2 {
+  margin-bottom: 2.4rem;
+  font-size: 1.9rem;
+}
+
+.card__criteria {
+  gap: 1.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.card__criterion {
+  justify-content: space-between;
+  padding: 2rem 2rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+}
+
+.card__criterion div {
+  gap: 0.8rem;
+}
+
+.card__criterion img {
+  width: 1.8rem;
+}
+
+.criterion__total {
+  opacity: 0.5;
+}
+
+.card__criterion--reaction {
+  color: var(--red);
+  background-color: var(--redbg);
+}
+
+.card__criterion--memory {
+  color: var(--yellow);
+  background-color: var(--yellowbg);
+}
+
+.card__criterion--verbal {
+  color: var(--teal);
+  background-color: var(--tealbg);
+}
+
+.card__criterion--visual {
+  color: var(--blue);
+  background-color: var(--bluebg);
+}
+
+.card__button {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: var(--darkblue);
+}
+
+.card__button::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.card__button:hover::before {
+  opacity: 1;
+}
+
+.attribution {
+  padding-bottom: 4rem;
+  font-size: 1.1rem;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

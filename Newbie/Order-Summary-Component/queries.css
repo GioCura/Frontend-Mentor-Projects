@@ -1,0 +1,56 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 71.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 700px) {
+  body {
+    background-image: url(images/pattern-background-desktop.svg);
+  }
+}
+
+@media (min-width: 600px) and (min-height: 700px) {
+  .card__imagebox {
+    height: 20.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .card__title {
+    font-size: 2.65rem;
+  }
+
+  .card__plan {
+    margin: 0 4.6rem 2.8rem;
+    padding: 1.8rem 2.2rem;
+  }
+
+  .card__plan img {
+    width: 4.2rem;
+    margin-right: 1.7rem;
+  }
+
+  .plan__details {
+    gap: 0.3rem;
+  }
+
+  .card__payment {
+    margin: 0 4.6rem 2.6rem;
+  }
+
+  .card__cancel {
+    margin-bottom: 4.6rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}
