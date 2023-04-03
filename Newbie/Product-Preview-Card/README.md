@@ -24,7 +24,7 @@ Mobile
 
 ### Links
 
-- Live Site URL: [Live URL](https://gc5-qrcomponent.netlify.app)
+- [Live URL](https://gc6-productreviewcard.netlify.app/)
 
 ## My process
 

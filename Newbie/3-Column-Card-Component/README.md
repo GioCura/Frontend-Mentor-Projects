@@ -32,7 +32,7 @@ Mobile
 
 ### Links
 
-- Live Site URL: [Here](https://gc7-3columnpreview.netlify.app)
+- [Live Site](https://gc7-3columnpreview.netlify.app)
 
 ## My process
 

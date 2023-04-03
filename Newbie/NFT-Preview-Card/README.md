@@ -35,7 +35,7 @@ The mobile design
 
 ### Links
 
-- Live Site URL: [Here](https://gc12-nft-preview.netlify.app)
+- [Live Site](https://gc12-nft-preview.netlify.app)
 
 ## My process
 

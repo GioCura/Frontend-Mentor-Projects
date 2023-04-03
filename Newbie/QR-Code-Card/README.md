@@ -24,7 +24,7 @@ Mobile
 
 ### Links
 
-- Live Site URL: [Live Site](https://gc5-qrcomponent.netlify.app)
+- [Live Site](https://gc5-qrcomponent.netlify.app)
 
 ## My process
 

@@ -30,15 +30,15 @@ Users should be able to:
 ### Screenshot
 
 Desktop
-![Desktop](images/screenshot-desktop.jpg)
+![Desktop](images/screenshot-desktop.png)
 Desktop - Active and Error
-![Desktop - Active and Error](images/screenshot-desktop-active.jpg)
+![Desktop - Active and Error](images/screenshot-desktop-active.png)
 Mobile
-![Mobile](images/screenshot-mobile.jpg)
+![Mobile](images/screenshot-mobile.png)
 Mobile - Active and Error
-![Mobile - Active and Error](images/screenshot-mobile-active.jpg)
+![Mobile - Active and Error](images/screenshot-mobile-active.png)
 Small Laptops
-![Small Laptops](images/screenshot-laptop.jpg)
+![Small Laptops](images/screenshot-laptop.png)
 
 ### Links
 

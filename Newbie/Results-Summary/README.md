@@ -27,11 +27,11 @@ Users should be able to:
 ### Screenshot
 
 Desktop
-![Desktop](assets/images/screenshot-desktop.pngscreenshot.jpg)
+![Desktop](assets/images/screenshot-desktop.pngscreenshot.png)
 Desktop in Active State
-![Desktop in Active State](assets/images/screenshot-desktop.pngscreenshot.jpg)
+![Desktop in Active State](assets/images/screenshot-desktop.pngscreenshot.png)
 Mobile
-![Mobile](assets/images/screenshot-mobile.jpg)
+![Mobile](assets/images/screenshot-mobile.png)
 
 ### Links
 
