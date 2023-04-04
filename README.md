@@ -1,5 +1,11 @@
-A compilation of all the solutions I've made so far to challenges from Frontend Mentor. 
+All my solutions to Frontend Mentor challenges.
 
+TABLE OF CONTENTS
+
+JUNIOR CHALLENGES
+| Challenge | Code | Live URL |
+| :--- | :---: | :---: |
+| Fylo Data Storage Component | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Fylo-Data-Storage-Component) | [Live Site](https://gc23-fylo-data-storage.netlify.app) |
 
 NEWBIE CHALLENGES
 | Challenge | Code | Live URL |
