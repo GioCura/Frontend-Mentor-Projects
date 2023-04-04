@@ -58,15 +58,15 @@ body {
   color: var(--paleblue);
 }
 
-.card__details,
-.bar__progress {
-  position: relative;
-}
-
 .bar__progress:after,
 .card__tooltip {
   position: absolute;
   background-color: white;
+}
+
+.card__details,
+.bar__progress {
+  position: relative;
 }
 
 .cards,
@@ -74,12 +74,6 @@ body {
 .card__limits,
 .card__tooltip {
   display: flex;
-}
-
-.card__button,
-.card__details,
-.card__tooltip {
-  border-radius: 10px;
 }
 
 .details__storage span,
@@ -92,6 +86,12 @@ body {
 .card,
 .card__tooltip {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card__button,
+.card__details,
+.card__tooltip {
+  border-radius: 10px;
 }
 
 .cards {
@@ -193,6 +193,7 @@ body {
 }
 
 .card__tooltip {
+  bottom: -3.5rem;
   right: 25.5%;
   align-items: center;
   padding: 1.3rem 2.2rem;
@@ -211,7 +212,7 @@ body {
 
 .tooltip__amount {
   font-size: 3.5rem;
-  color: var(--darkblue);
+  color: var(--verydarkblue);
 }
 
 .tooltip__text {
