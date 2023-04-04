@@ -19,35 +19,50 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
+
     <title>Frontend Mentor | Fylo data storage component</title>
   </head>
   <body>
     <main class="cards">
-      <article class="card__left">
+      <article class="card card__header">
         <img src="images/logo.svg" alt="The Fylo Logo" class="card__logo" />
 
         <ul class="card__buttons">
           <li>
-            <button class="card__button card__button--doc"></button>
+            <button
+              class="card__button card__button--doc"
+              aria-label="document"
+            ></button>
           </li>
           <li>
-            <button class="card__button card__button--folder"></button>
+            <button
+              class="card__button card__button--folder"
+              aria-label="folder"
+            ></button>
           </li>
           <li>
-            <button class="card__button card__button--upload"></button>
+            <button
+              class="card__button card__button--upload"
+              aria-label="upload"
+            ></button>
           </li>
         </ul>
       </article>
-      <article class="card__right">
-        <h2>You've used 815 GB of your storage</h2>
+      <article class="card card__details">
+        <h2 class="details__storage">
+          You've used <span>815 GB</span> of your storage
+        </h2>
         <div class="card__bar">
-          <div class="bar__progress"><span></span></div>
+          <div class="bar__progress"></div>
         </div>
         <div class="card__limits">
           <span>0 GB</span>
           <span>1000 GB</span>
         </div>
-        <span class="card__tooltip">185 GB Left</span>
+        <div class="card__tooltip">
+          <span class="tooltip__amount">185</span> <span class="tooltip__text">GB Left</span>
       </article>
     </main>
 
