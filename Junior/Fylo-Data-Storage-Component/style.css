@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+:root {
+  --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+  --paleblue: hsl(243, 100%, 93%);
+  --grayishblue: hsl(229, 7%, 55%);
+  --darkblue: hsl(228, 56%, 26%);
+  --verydarkblue: hsl(229, 57%, 11%);
+
+  --font: "Raleway", sans-serif;
+  --fw-1: 400;
+  --fw-2: 700;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font);
+  font-weight: var(--fw-1);
+  font-size: 1.4rem;
+}
