@@ -1,3 +1,15 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 70.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
 @media (min-width: 700px) {
   body {
     align-items: center;
@@ -11,7 +23,7 @@
   }
 
   .card__header {
-    width: clamp(30rem, 25vw, 35rem);
+    width: clamp(30rem, 45vw, 35rem);
   }
 
   .card__details {
@@ -42,5 +54,11 @@
     position: absolute;
     top: 100%;
     right: 0rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 52.5%;
   }
 }

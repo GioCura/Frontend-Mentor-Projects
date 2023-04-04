@@ -63,7 +63,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  padding: 0 2.3rem 3.5rem;
+  /* padding: 0 2.3rem 3.5rem; */
+  padding: 3rem 2.3rem 6.5rem;
 }
 
 .card {
@@ -145,7 +146,7 @@ body {
 
 .bar__progress {
   height: 100%;
-  width: 74%;
+  width: 75%;
   border-radius: 50px;
   background: var(--gradient);
   position: relative;
@@ -157,7 +158,7 @@ body {
     width: 0%;
   }
   100% {
-    width: 74%;
+    width: 75%;
   }
 }
 
