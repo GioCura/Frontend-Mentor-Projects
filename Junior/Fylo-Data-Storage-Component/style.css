@@ -48,6 +48,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   font-family: var(--font);
   font-weight: var(--fw-1);
   font-size: 1.4rem;
@@ -98,6 +99,8 @@ body {
   flex-direction: column;
   gap: 1.6rem;
   padding: 3rem 2.3rem 6.5rem;
+  max-width: 58rem;
+  width: 100%;
 }
 
 .card {

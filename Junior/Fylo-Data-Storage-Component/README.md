@@ -59,6 +59,8 @@ In the html, they're simply `<div>`s stacked on top of each other:
 
 I used an absolutely-positioned pseudoelement to make the progress bar's icon (the white circle).
 
+Also, on making the card's widths responsive on the mobile layout, I couldn't figure out why `align-items` was making my card shrink despite it having a `max-width`. I solved the issue by adding an explicit `width` of `100`
+
 ### Continued development
 
 - I'd like to do more loading/progress bars. Especially functional ones.
@@ -66,6 +68,7 @@ I used an absolutely-positioned pseudoelement to make the progress bar's icon (t
 ### Useful resources
 
 - [This list of progress bars](https://alvarotrigo.com/blog/progress-bar-css/) helped me learn how to make the one in this project.
+- [This question on stack](https://stackoverflow.com/questions/35836415/flexbox-align-items-center-shrinks-a-childs-max-width) helped me figure out what's causing my width issue on mobile.
 
 ## Author
 
