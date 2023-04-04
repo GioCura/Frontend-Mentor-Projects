@@ -47,7 +47,6 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: center;
   font-family: var(--font);
   font-weight: var(--fw-1);
@@ -63,23 +62,22 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  /* padding: 0 2.3rem 3.5rem; */
   padding: 3rem 2.3rem 6.5rem;
 }
 
 .card {
-  background-color: var(--darkblue);
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--darkblue);
 }
 
 .card__header {
-  border-radius: 10px 80px 10px 10px;
   padding: 4rem;
+  border-radius: 10px 80px 10px 10px;
 }
 
 .card__logo {
-  margin-bottom: 3rem;
   width: 13.5rem;
+  margin-bottom: 3rem;
 }
 
 .card__buttons {
@@ -90,11 +88,11 @@ body {
 .card__button {
   width: 4.8rem;
   height: 4.8rem;
+  border-radius: 10px;
+  transition: all 0.3s;
   background-color: var(--verydarkblue);
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 10px;
-  transition: all 0.3s;
 }
 
 .card__button:hover {
@@ -114,14 +112,14 @@ body {
 }
 
 .card__details {
-  border-radius: 10px;
-  padding: 3rem 3.5rem 5rem;
   position: relative;
+  padding: 3rem 3.5rem 5rem;
+  border-radius: 10px;
 }
 
 .details__storage {
-  margin-bottom: 1.6rem;
   text-align: center;
+  margin-bottom: 1.6rem;
 }
 
 .details__storage span {
@@ -138,19 +136,19 @@ body {
 .card__bar {
   height: 2.3rem;
   width: 100%;
-  background-color: hsl(228, 55%, 18%);
+  padding: 0.4rem;
   margin-bottom: 1.2rem;
   border-radius: 50px;
-  padding: 0.4rem;
+  background-color: hsl(228, 55%, 18%);
 }
 
 .bar__progress {
   height: 100%;
   width: 75%;
   border-radius: 50px;
-  background: var(--gradient);
   position: relative;
   animation: 1s load forwards ease-in-out;
+  background: var(--gradient);
 }
 
 @keyframes load {
@@ -165,24 +163,24 @@ body {
 .bar__progress:after {
   content: "";
   position: absolute;
-  background-color: white;
-  width: 1.2rem;
-  height: 78%;
-  border-radius: 50%;
   top: 10%;
   right: 0.2rem;
+  height: 78%;
+  width: 1.2rem;
+  border-radius: 50%;
+  background-color: white;
 }
 
 .card__tooltip {
   position: absolute;
   bottom: -3.5rem;
+  right: 25.5%;
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  background-color: white;
-  border-radius: 10px;
   padding: 1.3rem 2.2rem;
-  right: 25.5%;
+  gap: 1.2rem;
+  border-radius: 10px;
+  background-color: white;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   animation: 0.5s fade ease-in-out;
 }
@@ -198,14 +196,14 @@ body {
 
 .tooltip__amount {
   font-size: 3.5rem;
-  color: var(--darkblue);
   font-weight: var(--fw-2);
+  color: var(--darkblue);
 }
 
 .tooltip__text {
   text-transform: uppercase;
-  color: var(--grayishblue);
-  font-weight: var(--fw-2);
-  font-size: 1.2rem;
   word-spacing: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: var(--fw-2);
+  color: var(--grayishblue);
 }

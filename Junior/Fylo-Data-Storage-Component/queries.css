@@ -49,11 +49,11 @@
 
   .card__tooltip::after {
     content: "";
+    position: absolute;
+    right: 0rem;
+    top: 100%;
     border: 1.2rem solid;
     border-color: white white transparent transparent;
-    position: absolute;
-    top: 100%;
-    right: 0rem;
   }
 }
 
