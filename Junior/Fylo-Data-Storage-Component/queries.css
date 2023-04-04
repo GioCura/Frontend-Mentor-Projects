@@ -1,0 +1,46 @@
+@media (min-width: 700px) {
+  body {
+    align-items: center;
+    background-image: url(images/bg-desktop.png);
+    background-position: bottom;
+    background-size: 100vw 52.5vh;
+  }
+
+  .cards {
+    flex-direction: row;
+  }
+
+  .card__header {
+    width: clamp(30rem, 25vw, 35rem);
+  }
+
+  .card__details {
+    width: clamp(30rem, 47vw, 50rem);
+    height: 15.8rem;
+    align-self: end;
+    padding: 4rem 3.5rem 5rem;
+  }
+
+  .details__storage {
+    text-align: left;
+  }
+
+  .card__bar {
+    margin-bottom: 0.8rem;
+  }
+
+  .card__tooltip {
+    bottom: 13.5rem;
+    right: 6.5%;
+    border-radius: 10px 10px 0 10px;
+  }
+
+  .card__tooltip::after {
+    content: "";
+    border: 1.2rem solid;
+    border-color: white white transparent transparent;
+    position: absolute;
+    top: 100%;
+    right: 0rem;
+  }
+}

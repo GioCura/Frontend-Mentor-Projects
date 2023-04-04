@@ -93,21 +93,23 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.card__button:hover {
+  background-color: hsl(230, 57%, 20%);
 }
 
 .card__button--doc {
   background-image: url(images/icon-document.svg);
-  /* background-size: 2.3rem; */
 }
 
 .card__button--folder {
   background-image: url(images/icon-folder.svg);
-  /* background-size: 2.6rem; */
 }
 
 .card__button--upload {
   background-image: url(images/icon-upload.svg);
-  /* background-size: 2.6rem; */
 }
 
 .card__details {
@@ -134,7 +136,6 @@ body {
 
 .card__bar {
   height: 2.3rem;
-  /* width: 25rem; */
   width: 100%;
   background-color: hsl(228, 55%, 18%);
   margin-bottom: 1.2rem;
@@ -167,7 +168,6 @@ body {
   width: 1.2rem;
   height: 78%;
   border-radius: 50%;
-  /* top: 0.1rem; */
   top: 10%;
   right: 0.2rem;
 }
@@ -183,6 +183,16 @@ body {
   padding: 1.3rem 2.2rem;
   right: 25.5%;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  animation: 0.5s fade ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .tooltip__amount {
