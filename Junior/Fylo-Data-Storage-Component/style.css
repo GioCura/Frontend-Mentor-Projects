@@ -194,10 +194,10 @@ body {
 
 .card__tooltip {
   bottom: -3.5rem;
-  right: 25.5%;
+  right: 23.5%;
   align-items: center;
   padding: 1.3rem 2.2rem;
-  gap: 1.2rem;
+  gap: 1rem;
   animation: 0.5s fade ease-in-out;
 }
 
@@ -211,7 +211,7 @@ body {
 }
 
 .tooltip__amount {
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--verydarkblue);
 }
 

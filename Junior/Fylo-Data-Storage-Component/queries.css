@@ -10,7 +10,7 @@
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 820px) {
   body {
     align-items: center;
     background-image: url(images/bg-desktop.png);
@@ -43,8 +43,8 @@
   }
 
   .card__tooltip {
-    bottom: 13.5rem;
-    right: 6.5%;
+    bottom: 13.2rem;
+    right: 7%;
     border-radius: 10px 10px 0 10px;
   }
 
@@ -52,7 +52,7 @@
     content: "";
     position: absolute;
     right: 0rem;
-    top: 100%;
+    top: 98%;
     border: 1.2rem solid;
     border-color: white white transparent transparent;
   }
