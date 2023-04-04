@@ -58,15 +58,49 @@ body {
   color: var(--paleblue);
 }
 
-.cards {
+.card__details,
+.bar__progress {
+  position: relative;
+}
+
+.bar__progress:after,
+.card__tooltip {
+  position: absolute;
+  background-color: white;
+}
+
+.cards,
+.card__buttons,
+.card__limits,
+.card__tooltip {
   display: flex;
+}
+
+.card__button,
+.card__details,
+.card__tooltip {
+  border-radius: 10px;
+}
+
+.details__storage span,
+.card__limits,
+.tooltip__amount,
+.tooltip__text {
+  font-weight: var(--fw-2);
+}
+
+.card,
+.card__tooltip {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cards {
   flex-direction: column;
   gap: 1.6rem;
   padding: 3rem 2.3rem 6.5rem;
 }
 
 .card {
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   background-color: var(--darkblue);
 }
 
@@ -81,14 +115,12 @@ body {
 }
 
 .card__buttons {
-  display: flex;
   gap: 1.6rem;
 }
 
 .card__button {
   width: 4.8rem;
   height: 4.8rem;
-  border-radius: 10px;
   transition: all 0.3s;
   background-color: var(--verydarkblue);
   background-repeat: no-repeat;
@@ -112,9 +144,7 @@ body {
 }
 
 .card__details {
-  position: relative;
   padding: 3rem 3.5rem 5rem;
-  border-radius: 10px;
 }
 
 .details__storage {
@@ -122,14 +152,8 @@ body {
   margin-bottom: 1.6rem;
 }
 
-.details__storage span {
-  font-weight: var(--fw-2);
-}
-
 .card__limits {
-  display: flex;
   justify-content: space-between;
-  font-weight: var(--fw-2);
   font-size: 1.2rem;
 }
 
@@ -146,7 +170,6 @@ body {
   height: 100%;
   width: 75%;
   border-radius: 50px;
-  position: relative;
   animation: 1s load forwards ease-in-out;
   background: var(--gradient);
 }
@@ -162,26 +185,18 @@ body {
 
 .bar__progress:after {
   content: "";
-  position: absolute;
   top: 10%;
   right: 0.2rem;
   height: 78%;
   width: 1.2rem;
   border-radius: 50%;
-  background-color: white;
 }
 
 .card__tooltip {
-  position: absolute;
-  bottom: -3.5rem;
   right: 25.5%;
-  display: flex;
   align-items: center;
   padding: 1.3rem 2.2rem;
   gap: 1.2rem;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
   animation: 0.5s fade ease-in-out;
 }
 
@@ -196,7 +211,6 @@ body {
 
 .tooltip__amount {
   font-size: 3.5rem;
-  font-weight: var(--fw-2);
   color: var(--darkblue);
 }
 
@@ -204,6 +218,5 @@ body {
   text-transform: uppercase;
   word-spacing: 0.2rem;
   font-size: 1.2rem;
-  font-weight: var(--fw-2);
   color: var(--grayishblue);
 }
