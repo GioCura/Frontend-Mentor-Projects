@@ -27,10 +27,10 @@
     <main>
       <header class="pricing">
         <h1>Our Pricing</h1>
-        <form class="pricing__plan">
-          <label for="plan">
+        <form>
+          <label for="plan" class="pricing__plan">
             <span>Annually</span>
-            <input type="checkbox" id="plan" name="Plan" />
+            <input type="checkbox" id="plan" name="Plan" class="plan__input" />
             <div class="plan__button"></div>
             <span>Monthly</span>
           </label>
@@ -40,7 +40,10 @@
       <section class="cards">
         <article class="card card--basic">
           <h2>Basic</h2>
-          <h3>&dollar;199.99</h3>
+          <div class="card__price">
+            <h3 class="card__price--annual">&dollar;199.99</h3>
+            <h3 class="card__price--monthly">&&dollar;19.99</h3>
+          </div>
           <ul class="card__features">
             <li>500 GB Storage</li>
             <li>2 Users Allowed</li>
@@ -50,7 +53,10 @@
         </article>
         <article class="card card--pro">
           <h2>Professional</h2>
-          <h3>&dollar;249.99</h3>
+          <div class="card__price">
+            <h3 class="card__price--annual">&dollar;249.99</h3>
+            <h3 class="card__price--monthly">&dollar;24.99</h3>
+          </div>
           <ul class="card__features">
             <li>1 TB Storage</li>
             <li>5 Users Allowed</li>
@@ -60,7 +66,10 @@
         </article>
         <article class="card card--master">
           <h2>Master</h2>
-          <h3>&dollar;399.99</h3>
+          <div class="card__price">
+            <h3 class="card__price--annual">&dollar;399.99</h3>
+            <h3 class="card__price--monthly">&dollar;39.99</h3>
+          </div>
           <ul class="card__features">
             <li>2 TB Storage</li>
             <li>10 Users Allowed</li>
@@ -70,8 +79,6 @@
         </article>
       </section>
     </main>
-
-    <!-- &dollar;19.99 &dollar;24.99 &dollar;39.99   -->
 
     <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 

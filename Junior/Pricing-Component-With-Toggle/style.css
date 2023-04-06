@@ -9,6 +9,33 @@ html {
   font-size: 62.5%;
 }
 
+h1,
+h2,
+h3,
+button {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+input {
+  display: none;
+}
+
 :root {
   --gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
   --verylightgrayishblue: hsl(240, 78%, 98%);
@@ -25,10 +52,102 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: var(--font);
   font-weight: var(--fw);
   font-size: 1.5rem;
+  background-color: var(--verylightgrayishblue);
+}
+
+main {
+  margin: 5rem 2.5rem;
+}
+
+.pricing {
+  margin-bottom: 6rem;
+}
+
+.pricing h1 {
+  font-size: 2.5rem;
+  color: var(--darkgrayishblue);
+  margin-bottom: 2.8rem;
+  text-align: center;
+}
+
+.pricing__plan {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+}
+
+.pricing__plan span {
+  font-size: 1.3rem;
+  color: var(--grayishblue);
+}
+
+.plan__button {
+  position: relative;
+  background: var(--gradient);
+  border-radius: 50px;
+  width: 4.5rem;
+  height: 2.8rem;
+}
+
+.plan__button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(hsl(237, 45%, 80%), hsl(237, 45%, 65%));
+  opacity: 0;
+  border-radius: 50px;
+  transition: all 0.3s;
+}
+
+.pricing__plan:hover .plan__button::after {
+  opacity: 1;
+}
+
+.plan__button::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  left: 0.4rem;
+  top: 0.4rem;
+  transition: all 0.3s;
+  z-index: 2;
+}
+
+.plan__input:checked ~ .plan__button::before {
+  left: 2.1rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background-color: white;
+  text-align: center;
+}
+
+.card--pro {
+  background: var(--gradient);
+}
+
+.card__price {
+  position: relative;
+}
+
+.card__price--monthly {
+  position: absolute;
+  opacity: 0;
 }
 
 /* .attribution {
