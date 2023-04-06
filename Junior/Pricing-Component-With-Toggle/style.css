@@ -57,8 +57,8 @@ body {
   background-color: var(--verylightgrayishblue);
   background-image: url(images/bg-top.svg);
   background-repeat: no-repeat;
-  background-position: 21rem -3rem;
   background-size: 32rem;
+  background-position: top -3rem right -16rem;
 }
 
 main {
