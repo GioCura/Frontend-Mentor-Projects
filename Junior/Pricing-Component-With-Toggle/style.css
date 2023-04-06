@@ -69,7 +69,7 @@ main {
 }
 
 .pricing h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: var(--darkgrayishblue);
   margin-bottom: 2.8rem;
   text-align: center;
@@ -78,11 +78,11 @@ main {
 .pricing__plan {
   display: flex;
   align-items: center;
-  gap: 1.7rem;
+  gap: 2.5rem;
 }
 
 .pricing__plan span {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--grayishblue);
 }
 
@@ -132,7 +132,7 @@ main {
 .cards {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   /* max-width: 50rem;
   width: 100%; */
 }
@@ -141,36 +141,92 @@ main {
   background-color: white;
   text-align: center;
   overflow: hidden;
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  color: var(--darkgrayishblue);
 }
 
 .card--pro {
   background: var(--gradient);
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  color: var(--darkgrayishblue);
+}
+
+.card--pro h2 {
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.card--pro > .card__price {
+  color: #fff;
 }
 
 .card__price {
   position: relative;
-  height: 1.9rem;
-  width: 100%;
+  font-size: 7rem;
+  border-bottom: 1px solid var(--lightgrayishblue);
+  color: var(--darkgrayishblue);
+  padding-bottom: 1.8rem;
+  /* height: 1.9rem;
+  width: 100%; */
+}
+
+.card__price span {
+  font-size: 3.6rem;
+}
+
+.card__price--annual,
+.card__price--monthly {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
 }
 
 .card__price--annual {
-  position: absolute;
+  /* position: absolute;
   left: 34.5%;
-  transition: all 0.5s;
+  transition: all 0.5s; */
 }
 
 .card__price--monthly {
   position: absolute;
-  right: 100%;
-  transition: all 0.5s;
+  opacity: 0;
+  /* right: 100%;
+  transition: all 0.5s; */
 }
 
-.monthly .card__price--monthly {
+/* .monthly .card__price--monthly {
   right: 40%;
+} */
+
+/* .monthly .card__price--annual {
+  left: 100%;
+} */
+
+.card__features {
+  margin-bottom: 3rem;
 }
 
-.monthly .card__price--annual {
-  left: 100%;
+.card__features li {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--lightgrayishblue);
+}
+
+.card__button {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: white;
+  background: var(--gradient);
+  width: 100%;
+  border-radius: 8px;
+  padding: 1.4rem;
 }
 
 /* .attribution {
@@ -179,4 +235,4 @@ main {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-} */
+} */ ;
