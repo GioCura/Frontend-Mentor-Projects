@@ -149,6 +149,7 @@ main {
   border-radius: 8px;
   color: var(--darkgrayishblue);
   box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
+  width: 31.67rem;
 }
 
 .card--pro {
@@ -177,8 +178,8 @@ main {
   border-bottom: 1px solid var(--lightgrayishblue);
   color: var(--darkgrayishblue);
   padding-bottom: 1.8rem;
-  /* height: 1.9rem;
-  width: 100%; */
+  height: 10.5rem;
+  /* width: 100%; */
 }
 
 .card__price span {
@@ -194,25 +195,24 @@ main {
 }
 
 .card__price--annual {
-  /* position: absolute;
-  left: 34.5%;
-  transition: all 0.5s; */
+  transition: all 0.3s ease-in-out;
 }
 
 .card__price--monthly {
-  position: absolute;
+  transform: translate(-100%, -100%);
+  transition: all 0.3s ease-in-out;
   opacity: 0;
-  /* right: 100%;
-  transition: all 0.5s; */
 }
 
-/* .monthly .card__price--monthly {
-  right: 40%;
-} */
+.monthly .card__price--monthly {
+  transform: translate(0%, -100%);
+  opacity: 1;
+}
 
-/* .monthly .card__price--annual {
-  left: 100%;
-} */
+.monthly .card__price--annual {
+  transform: translate(100%, 0%);
+  opacity: 0;
+}
 
 .card__features {
   margin-bottom: 3rem;
