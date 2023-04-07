@@ -51,7 +51,9 @@ Mobile
 
 ### What I learned
 
-The scripting for this project was more straightforward than I expected. I got to review `keydown` event listeners, because I needed to link the custom toggle I made using `button` to the `input` (which was set to `display: none`).
+The scripting for this project was more straightforward than I expected. I got to review the `keydown` event listener, because I needed to link the custom toggle I made via a `span` alongside an `input` (which was set to `display: none`).
+
+Initially, I used a `button` tag for the toggle. However, I learned that `button`s are not allowed inside `label`s. Since I changed it to `span`, however, I learned to use `tabindex="0"` to make it focusable by pressing the TAB key.
 
 Along the way, I learned that I had to disable the button's default behavior of refreshing the page upon click. I used `pointer-events: none` and `type="button"`.
 
