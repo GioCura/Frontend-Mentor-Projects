@@ -179,7 +179,7 @@ body {
 
 @keyframes load {
   0% {
-    width: 0%;
+    width: 4%;
   }
   100% {
     width: 75%;
