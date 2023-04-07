@@ -35,14 +35,11 @@
 
   .card {
     height: 41.3rem;
-    /* width: 31.67rem; */
     width: clamp(31.67rem, 30vw, 34.67rem);
   }
 
   .card--pro {
-    /* padding: 4.5rem 2.6rem; */
     padding: 4.85rem 2.6rem;
-    /* height: 44.2rem; */
     height: 45rem;
   }
 

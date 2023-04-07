@@ -73,10 +73,10 @@ main {
 }
 
 .pricing h1 {
+  text-align: center;
+  margin-bottom: 2.8rem;
   font-size: 3rem;
   color: var(--grayishblue);
-  margin-bottom: 2.8rem;
-  text-align: center;
 }
 
 .pricing__plan {
@@ -92,10 +92,10 @@ main {
 
 .plan__button {
   position: relative;
-  background: var(--gradient);
-  border-radius: 50px;
   width: 4.5rem;
   height: 2.8rem;
+  border-radius: 50px;
+  background: var(--gradient);
   pointer-events: none;
 }
 
@@ -106,9 +106,9 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
+  border-radius: 50px;
   background: linear-gradient(hsl(237, 45%, 80%), hsl(237, 45%, 65%));
   opacity: 0;
-  border-radius: 50px;
   transition: all 0.3s;
 }
 
@@ -118,15 +118,15 @@ main {
 
 .plan__button::before {
   content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0.4rem;
+  left: 0.4rem;
   width: 2rem;
   height: 2rem;
-  position: absolute;
-  background-color: #fff;
   border-radius: 50%;
-  left: 0.4rem;
-  top: 0.4rem;
+  background-color: #fff;
   transition: all 0.3s;
-  z-index: 2;
 }
 
 .plan__input:checked ~ .plan__button::before {
@@ -136,21 +136,20 @@ main {
 .cards {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  max-width: 43rem;
-  min-width: 31.67rem;
   width: 100%;
+  min-width: 31.67rem;
+  max-width: 43rem;
+  gap: 3rem;
 }
 
 .card {
-  background-color: white;
   text-align: center;
   overflow: hidden;
   padding: 3rem 2.6rem;
   border-radius: 8px;
-  color: var(--grayishblue);
   box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
-  /* width: 31.67rem; */
+  background-color: white;
+  color: var(--grayishblue);
 }
 
 .card--pro {
@@ -159,13 +158,13 @@ main {
 }
 
 .card h2 {
-  font-size: 1.6rem;
   margin-bottom: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .card--pro h2 {
-  color: #fff;
   font-size: 1.6rem;
+  color: #fff;
 }
 
 .card--pro > .card__price {
@@ -174,13 +173,11 @@ main {
 
 .card__price {
   position: relative;
-  font-size: 7rem;
-  /* border-bottom: 1px solid var(--lightgrayishblue); */
-  border-bottom: 1px solid #e6e6e6;
-  color: var(--darkgrayishblue);
-  padding-bottom: 1.8rem;
   height: 10.5rem;
-  /* width: 100%; */
+  padding-bottom: 1.8rem;
+  border-bottom: 1px solid #e6e6e6;
+  font-size: 7rem;
+  color: var(--darkgrayishblue);
 }
 
 .card--pro > .card__price {
@@ -221,12 +218,10 @@ main {
 
 .card__features {
   margin-bottom: 3rem;
-  /* color: var(--grayishblue); */
 }
 
 .card__features li {
   padding: 1.4rem 0;
-  /* border-bottom: 1px solid var(--lightgrayishblue); */
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -236,15 +231,15 @@ main {
 
 .card__button {
   position: relative;
+  width: 100%;
+  padding: 1.4rem;
+  border-radius: 8px;
   text-transform: uppercase;
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
-  color: white;
-  width: 100%;
-  padding: 1.4rem;
-  transition: all 0.3s;
   box-shadow: 0 0 0 1px transparent;
-  border-radius: 8px;
+  color: white;
+  transition: all 0.3s;
   overflow: hidden;
 }
 
@@ -259,8 +254,8 @@ main {
   right: 0;
   height: 100%;
   width: 100%;
-  transition: all 0.3s;
   background: var(--gradient);
+  transition: all 0.3s;
 }
 
 .card--pro > .card__button::before {
