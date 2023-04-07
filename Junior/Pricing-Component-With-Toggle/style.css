@@ -81,14 +81,14 @@ main {
 
 /* ~SHARED ATTRIBUTES~ */
 
-.plan__button,
+.plan__toggle,
 .card__button,
 .card__button > * {
   position: relative;
 }
 
-.plan__button::after,
-.plan__button::before,
+.plan__toggle::after,
+.plan__toggle::before,
 .card__button::before {
   position: absolute;
 }
@@ -113,12 +113,12 @@ main {
   color: #fff;
 }
 
-.plan__button,
+.plan__toggle,
 .card__button::before {
   background: var(--gradient1);
 }
 
-.plan__button::before,
+.plan__toggle::before,
 .card {
   background-color: #fff;
 }
@@ -128,20 +128,20 @@ main {
   background: #fff;
 }
 
-.plan__button::after,
+.plan__toggle::after,
 .card__price--monthly,
 .monthly .card__price--annual,
 .card__button:hover::before {
   opacity: 0;
 }
 
-.pricing__plan:hover .plan__button::after,
+.pricing__plan:hover .plan__toggle::after,
 .monthly .card__price--monthly {
   opacity: 1;
 }
 
-.plan__button::after,
-.plan__button::before,
+.plan__toggle::after,
+.plan__toggle::before,
 .card__button,
 .card__button::before {
   transition: all 0.3s;
@@ -175,14 +175,13 @@ main {
   color: var(--lightgrayishblue);
 }
 
-.plan__button {
+.plan__toggle {
   width: 5.6rem;
   height: 3.2rem;
   border-radius: 50px;
-  pointer-events: none;
 }
 
-.plan__button::after {
+.plan__toggle::after {
   content: "";
   top: 0;
   left: 0;
@@ -192,7 +191,7 @@ main {
   background: linear-gradient(hsl(237, 45%, 80%), hsl(237, 45%, 65%));
 }
 
-.plan__button::before {
+.plan__toggle::before {
   content: "";
   z-index: 2;
   top: 0.4rem;
@@ -202,7 +201,7 @@ main {
   border-radius: 50%;
 }
 
-.plan__input:checked ~ .plan__button::before {
+.plan__input:checked ~ .plan__toggle::before {
   left: 0.4rem;
 }
 

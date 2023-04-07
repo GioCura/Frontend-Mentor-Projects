@@ -1,5 +1,5 @@
 const planInputEl = document.querySelector(".plan__input");
-const planButtonEl = document.querySelector(".plan__button");
+const planToggleEl = document.querySelector(".plan__toggle");
 const cardPriceEl = document.querySelectorAll(".card__price");
 
 function togglePrice() {
@@ -8,7 +8,7 @@ function togglePrice() {
   });
 }
 
-planButtonEl.addEventListener("keydown", (e) => {
+planToggleEl.addEventListener("keydown", (e) => {
   if (e.key === " " || e.key === "Enter") {
     planInputEl.click();
   }
