@@ -65,22 +65,98 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 6rem;
   margin: 5rem 2.5rem;
 }
 
-.pricing {
-  margin-bottom: 6rem;
+/* ~SHARED ATTRIBUTES~ */
+
+.plan__button,
+.card__button,
+.card__button > * {
+  position: relative;
 }
+
+.plan__button::after,
+.plan__button::before,
+.card__button::before {
+  position: absolute;
+}
+
+.pricing__plan,
+.cards,
+.card__price--annual,
+.card__price--monthly {
+  display: flex;
+}
+
+.pricing h1,
+.card {
+  color: var(--grayishblue);
+}
+
+.card--pro,
+.card--pro h2,
+.card--pro > .card__price,
+.card--pro > .card__button:hover,
+.card__button {
+  color: #fff;
+}
+
+.plan__button,
+.card--pro,
+.card__button::before {
+  background: var(--gradient);
+}
+
+.plan__button::before,
+.card {
+  background-color: #fff;
+}
+
+.card--pro > .card__button::before,
+.card--pro > .card__button {
+  background: #fff;
+}
+
+.plan__button::after,
+.card__price--monthly,
+.monthly .card__price--annual,
+.card__button:hover::before {
+  opacity: 0;
+}
+
+.pricing__plan:hover .plan__button::after,
+.monthly .card__price--monthly {
+  opacity: 1;
+}
+
+.plan__button::after,
+.plan__button::before,
+.card__button,
+.card__button::before {
+  transition: all 0.3s;
+}
+
+.card__price--annual,
+.card__price--monthly {
+  transition: all 0.3s ease-in-out;
+}
+
+.card,
+.card__button {
+  overflow: hidden;
+}
+
+/* ~HEADER~ */
 
 .pricing h1 {
   text-align: center;
   margin-bottom: 2.8rem;
   font-size: 3rem;
-  color: var(--grayishblue);
 }
 
 .pricing__plan {
-  display: flex;
   align-items: center;
   gap: 2.5rem;
 }
@@ -91,50 +167,39 @@ main {
 }
 
 .plan__button {
-  position: relative;
   width: 4.5rem;
   height: 2.8rem;
   border-radius: 50px;
-  background: var(--gradient);
   pointer-events: none;
 }
 
 .plan__button::after {
   content: "";
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: 50px;
   background: linear-gradient(hsl(237, 45%, 80%), hsl(237, 45%, 65%));
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.pricing__plan:hover .plan__button::after {
-  opacity: 1;
 }
 
 .plan__button::before {
   content: "";
-  position: absolute;
   z-index: 2;
   top: 0.4rem;
   left: 0.4rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #fff;
-  transition: all 0.3s;
 }
 
 .plan__input:checked ~ .plan__button::before {
   left: 2.1rem;
 }
 
+/* ~CARDS~ */
+
 .cards {
-  display: flex;
   flex-direction: column;
   width: 100%;
   min-width: 31.67rem;
@@ -144,17 +209,9 @@ main {
 
 .card {
   text-align: center;
-  overflow: hidden;
   padding: 3rem 2.6rem;
   border-radius: 8px;
   box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
-  background-color: white;
-  color: var(--grayishblue);
-}
-
-.card--pro {
-  background: var(--gradient);
-  color: #fff;
 }
 
 .card h2 {
@@ -164,11 +221,6 @@ main {
 
 .card--pro h2 {
   font-size: 1.6rem;
-  color: #fff;
-}
-
-.card--pro > .card__price {
-  color: #fff;
 }
 
 .card__price {
@@ -189,30 +241,21 @@ main {
 
 .card__price--annual,
 .card__price--monthly {
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
 }
 
-.card__price--annual {
-  transition: all 0.3s ease-in-out;
-}
-
 .card__price--monthly {
   transform: translate(-100%, -100%);
-  transition: all 0.3s ease-in-out;
-  opacity: 0;
 }
 
 .monthly .card__price--monthly {
   transform: translate(0%, -100%);
-  opacity: 1;
 }
 
 .monthly .card__price--annual {
   transform: translate(100%, 0%);
-  opacity: 0;
 }
 
 .card__features {
@@ -229,7 +272,6 @@ main {
 }
 
 .card__button {
-  position: relative;
   width: 100%;
   padding: 1.4rem;
   border-radius: 8px;
@@ -237,32 +279,14 @@ main {
   font-size: 1.2rem;
   letter-spacing: 0.2rem;
   box-shadow: 0 0 0 1px transparent;
-  color: white;
-  transition: all 0.3s;
-  overflow: hidden;
-}
-
-.card__button > * {
-  position: relative;
 }
 
 .card__button::before {
   content: "";
-  position: absolute;
   top: 0;
   right: 0;
   height: 100%;
   width: 100%;
-  background: var(--gradient);
-  transition: all 0.3s;
-}
-
-.card--pro > .card__button::before {
-  background: #fff;
-}
-
-.card__button:hover::before {
-  opacity: 0;
 }
 
 .card__button:hover {
@@ -272,12 +296,10 @@ main {
 
 .card--pro > .card__button {
   color: #7579e3;
-  background: #fff;
   box-shadow: 0 0 0 1px transparent;
 }
 
 .card--pro > .card__button:hover {
-  color: #fff;
   background: transparent;
   box-shadow: 0 0 0 1px #fff;
 }
