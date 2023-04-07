@@ -14,6 +14,7 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowldgements](#acknowledgements)
 
 ## Overview
 
@@ -81,9 +82,13 @@ In conveying the price toggle, I decided to use `transform` properties to shift 
 
 I also discovered that I didn't need to use absolute positioning anymore as long as I gave a set height to the nesting element of both prices. The `transform` takes care of the rest.
 
+Additionally, to accurately depict the gradient, I learned that I had to give it a direction of `to right`.
+
 ### Continued development
 
 - It'd help me to do more challenges involving JS.
+
+- I need more practice with the different gradient settings.
 
 ### Useful resources
 
@@ -92,3 +97,7 @@ I also discovered that I didn't need to use absolute positioning anymore as long
 ## Author
 
 - Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)
+
+### Acknowledgements
+
+- [Dewslyse's solution](https://dewslyse.github.io/FEM_Solutions/pricing-component-with-toggle/) helped me figure out the gradient directions for this project.

@@ -37,7 +37,16 @@ input {
 }
 
 :root {
-  --gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  --gradient1: linear-gradient(
+    to right,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
+  --gradient2: linear-gradient(
+    to bottom,
+    hsl(236, 72%, 79%),
+    hsl(237, 63%, 64%)
+  );
   --verylightgrayishblue: hsl(240, 78%, 98%);
   --lightgrayishblue: hsl(234, 14%, 74%);
   --grayishblue: hsl(233, 13%, 49%);
@@ -105,9 +114,8 @@ main {
 }
 
 .plan__button,
-.card--pro,
 .card__button::before {
-  background: var(--gradient);
+  background: var(--gradient1);
 }
 
 .plan__button::before,
@@ -213,6 +221,10 @@ main {
   padding: 3rem 2.6rem;
   border-radius: 8px;
   box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card--pro {
+  background: var(--gradient2);
 }
 
 .card h2 {
