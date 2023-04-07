@@ -187,14 +187,14 @@ main {
   content: "";
   z-index: 2;
   top: 0.4rem;
-  left: 0.4rem;
+  left: 2.1rem;
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
 }
 
 .plan__input:checked ~ .plan__button::before {
-  left: 2.1rem;
+  left: 0.4rem;
 }
 
 /* ~CARDS~ */
