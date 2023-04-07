@@ -1,0 +1,59 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 65.5%;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 850px) {
+  main {
+    margin: 7rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 601px) {
+  body {
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-position: top right, bottom left;
+    /* background-size: 26.5vw 69vh, 26vw 41vh; */
+    background-size: 38rem 59rem, 38rem 35rem;
+  }
+
+  .cards {
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    max-width: initial;
+    width: initial;
+    min-width: initial;
+  }
+
+  .card {
+    height: 41.3rem;
+    /* width: 31.67rem; */
+    width: clamp(31.67rem, 30vw, 34.67rem);
+  }
+
+  .card--pro {
+    /* padding: 4.5rem 2.6rem; */
+    padding: 4.85rem 2.6rem;
+    /* height: 44.2rem; */
+    height: 45rem;
+  }
+
+  .card__price--annual,
+  .card__price--monthly {
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50%;
+  }
+}

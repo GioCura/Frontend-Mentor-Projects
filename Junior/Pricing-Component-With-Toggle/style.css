@@ -74,7 +74,7 @@ main {
 
 .pricing h1 {
   font-size: 3rem;
-  color: var(--darkgrayishblue);
+  color: var(--grayishblue);
   margin-bottom: 2.8rem;
   text-align: center;
 }
@@ -87,7 +87,7 @@ main {
 
 .pricing__plan span {
   font-size: 1.5rem;
-  color: var(--grayishblue);
+  color: var(--lightgrayishblue);
 }
 
 .plan__button {
@@ -137,8 +137,9 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  /* max-width: 50rem;
-  width: 100%; */
+  max-width: 43rem;
+  min-width: 31.67rem;
+  width: 100%;
 }
 
 .card {
@@ -147,9 +148,9 @@ main {
   overflow: hidden;
   padding: 3rem 2.6rem;
   border-radius: 8px;
-  color: var(--darkgrayishblue);
+  color: var(--grayishblue);
   box-shadow: 0px 12px 10px rgba(0, 0, 0, 0.08);
-  width: 31.67rem;
+  /* width: 31.67rem; */
 }
 
 .card--pro {
@@ -160,7 +161,6 @@ main {
 .card h2 {
   font-size: 1.6rem;
   margin-bottom: 1.2rem;
-  color: var(--darkgrayishblue);
 }
 
 .card--pro h2 {
@@ -175,11 +175,16 @@ main {
 .card__price {
   position: relative;
   font-size: 7rem;
-  border-bottom: 1px solid var(--lightgrayishblue);
+  /* border-bottom: 1px solid var(--lightgrayishblue); */
+  border-bottom: 1px solid #e6e6e6;
   color: var(--darkgrayishblue);
   padding-bottom: 1.8rem;
   height: 10.5rem;
   /* width: 100%; */
+}
+
+.card--pro > .card__price {
+  border-bottom: 1px solid #9fa5f8;
 }
 
 .card__price span {
@@ -216,11 +221,17 @@ main {
 
 .card__features {
   margin-bottom: 3rem;
+  /* color: var(--grayishblue); */
 }
 
 .card__features li {
   padding: 1.4rem 0;
-  border-bottom: 1px solid var(--lightgrayishblue);
+  /* border-bottom: 1px solid var(--lightgrayishblue); */
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.card--pro > .card__features li {
+  border-bottom: 1px solid #9fa5f8;
 }
 
 .card__button {
