@@ -67,6 +67,7 @@ main {
   align-items: center;
   gap: 6rem;
   margin: 5rem 2.5rem;
+  transition: margin 0.3s;
 }
 
 /* ~SHARED ATTRIBUTES~ */
@@ -152,13 +153,13 @@ main {
 
 .pricing h1 {
   text-align: center;
-  margin-bottom: 2.8rem;
-  font-size: 3rem;
+  margin-bottom: 3.8rem;
+  font-size: 3.2rem;
 }
 
 .pricing__plan {
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.4rem;
 }
 
 .pricing__plan span {
@@ -167,8 +168,8 @@ main {
 }
 
 .plan__button {
-  width: 4.5rem;
-  height: 2.8rem;
+  width: 5.6rem;
+  height: 3.2rem;
   border-radius: 50px;
   pointer-events: none;
 }
@@ -187,9 +188,9 @@ main {
   content: "";
   z-index: 2;
   top: 0.4rem;
-  left: 2.1rem;
-  width: 2rem;
-  height: 2rem;
+  left: 2.8rem;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 50%;
 }
 
@@ -259,11 +260,11 @@ main {
 }
 
 .card__features {
-  margin-bottom: 3rem;
+  margin-bottom: 3.2rem;
 }
 
 .card__features li {
-  padding: 1.4rem 0;
+  padding: 1.7rem 0;
   border-bottom: 1px solid #e6e6e6;
 }
 
