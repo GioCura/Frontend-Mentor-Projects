@@ -1,6 +1,6 @@
 # Frontend Mentor - Pricing component with toggle solution
 
-This is a solution to the [Pricing component with toggle challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Pricing component with toggle challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pricing-component-with-toggle-8vPwRMIC).
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Pricing component with toggle challenge on Frontend M
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,20 +27,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+Desktop
+![Desktop](images/screenshot-desktop.png)
+Desktop-Active
+![Desktop](images/screenshot-desktop-active.png)
+Mobile
+![Desktop](images/screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc24-pricing-component-toggle.com)
 
 ## My process
 
@@ -52,61 +45,50 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Vanilla JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+The scripting for this project was more straightforward than I expected. I got to review `keydown` event listeners, because I needed to link the custom toggle I made using `button` to the `input` (which was set to `display: none`).
 
-To see how you can add code snippets, see below:
+Along the way, I learned that I had to disable the button's default behavior of refreshing the page upon click. I used `pointer-events: none` and `type="button"`.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+To make the custom toggle activate the input, I used the `click()` function in my script:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+planButtonEl.addEventListener("keydown", (e) => {
+  if (e.key === " " || e.key === "Enter") {
+    planInputEl.click();
+  }
+});
+```
+
+In conveying the price toggle, I decided to use `transform` properties to shift the prices to the side:
+
+```
+.card__price--monthly {
+  transform: translate(-100%, -100%);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.monthly .card__price--monthly {
+  transform: translate(0%, -100%);
+  opacity: 1;
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I also discovered that I didn't need to use absolute positioning anymore as long as I gave a set height to the nesting element of both prices. The `transform` takes care of the rest.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- It'd help me to do more challenges involving JS.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This website](https://www.toptal.com/developers/keycode/space) contains all the keycodes. I used it when setting rules for my keydown script.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)

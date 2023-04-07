@@ -38,9 +38,17 @@
     width: clamp(31.67rem, 30vw, 34.67rem);
   }
 
+  .card--basic {
+    border-radius: 8px 0 0 8px;
+  }
+
   .card--pro {
-    padding: 4.85rem 2.6rem;
-    height: 45rem;
+    padding: 5.4rem 2.6rem;
+    height: 46rem;
+  }
+
+  .card--master {
+    border-radius: 0 8px 8px 0;
   }
 
   .card__price--annual,
