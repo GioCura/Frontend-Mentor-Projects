@@ -114,6 +114,7 @@ body {
 
 .card__dan > .card__quote {
   padding-right: 1.4rem;
+  opacity: 0.45;
 }
 
 .card__kira > .card__quote {
