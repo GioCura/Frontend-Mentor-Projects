@@ -13,6 +13,20 @@
 @media (min-width: 1024px) {
   body {
     align-items: center;
+    animation: 0.6s overflow forwards;
+  }
+
+  /* disables scrollbars only during on-load animation of cards */
+  @keyframes overflow {
+    0% {
+      overflow: hidden;
+    }
+    99% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
   }
 
   .cards {
@@ -21,13 +35,48 @@
       "dan dan john kira"
       "jean pat pat kira";
 
-    max-width: 115rem;
+    max-width: 115.5rem;
     grid-template-columns: repeat(4, 1fr);
     padding: 3.5rem 2.5rem;
+    column-gap: 3rem;
   }
 
   .card {
     max-width: initial;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    border: 3px solid transparent;
+    transition: all 0.5s;
+  }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    border: 3px solid transparent;
+    transition: all 0.5s;
+  }
+
+  .card:hover::after,
+  .card:hover::before {
+    width: 100%;
+    border: 3px solid gold;
+  }
+
+  .card:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.06);
   }
 
   .card__dan {
