@@ -48,24 +48,23 @@
     overflow: hidden;
   }
 
-  .card::before {
+  .card::before,
+  .card::after {
     content: "";
     position: absolute;
-    bottom: -0.1rem;
-    right: 0;
     width: 0;
     border: 3px solid transparent;
     transition: all 0.5s;
   }
 
+  .card::before {
+    bottom: -0.1rem;
+    right: 0;
+  }
+
   .card::after {
-    content: "";
-    position: absolute;
     top: -0.1rem;
     left: 0;
-    width: 0;
-    border: 3px solid transparent;
-    transition: all 0.5s;
   }
 
   .card:hover::after,
