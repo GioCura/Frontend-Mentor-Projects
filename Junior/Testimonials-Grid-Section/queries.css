@@ -33,22 +33,72 @@
   .card__dan {
     grid-area: dan;
     background-position: top right 8rem;
+    animation: 0.6s left ease-in-out;
+  }
+
+  @keyframes left {
+    0% {
+      transform: translate(-100%, 0%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
 
   .card__john {
     grid-area: john;
+    animation: 0.6s top ease-in-out;
+    transition: all 0.3s;
+  }
+
+  @keyframes top {
+    0% {
+      transform: translate(0%, -100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
 
   .card__jean {
     grid-area: jean;
+    animation: 0.6s left ease-in-out;
   }
 
   .card__pat {
     grid-area: pat;
+    animation: 0.6s bottom ease-in-out;
+  }
+
+  @keyframes bottom {
+    0% {
+      transform: translate(0%, 100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
 
   .card__kira {
     grid-area: kira;
+    animation: 0.6s right ease-in-out;
+  }
+
+  @keyframes right {
+    0% {
+      transform: translate(100%, 0%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0%, 0%);
+      opacity: 1;
+    }
   }
 
   .card__dan > .card__quote {
