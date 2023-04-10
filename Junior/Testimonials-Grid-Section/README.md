@@ -1,6 +1,6 @@
 # Frontend Mentor - Testimonials grid section solution
 
-This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Testimonials grid section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7).
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Testimonials grid section challenge on Frontend Mento
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -28,20 +25,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop](images/screenshot-desktop.png)
+![Desktop - Active](images/screenshot-desktop-active.png)
+![Mobile](images/screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc25-testimonials-grid.netlify.app)
 
 ## My process
 
@@ -52,59 +42,77 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- In making the desktop layout, I found that it was crucial to give each column `1fr` so that the cards would take up all the available space in the grid.
 
-To see how you can add code snippets, see below:
+- Once that was solved, I decided to have some fun and add some animations. First, the onload animation were done via `keyframes` and the `transform` attribute.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+- However, that animation was choppy because the `transform` was causing the body to get bigger, and thus produce scrollbars. I set the body to `overflow: hidden` however, that disables the ability of the viewer to scroll the page when zoomed in.
+
+- So, I figured setting `overflow: hidden` only on load would work. Again, I used keyframes:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  @keyframes overflow {
+    0% {
+      overflow: hidden;
+    }
+    99% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
+  }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- Aside from making the cards scale up on hover, I decided to make some animated borders. I learned that this could be done by using pseudoelements whose width starts at 0, then goes to 100% on hover:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```
+  .card::before,
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border: 3px solid transparent;
+    transition: all 0.5s;
+  }
+
+  .card::before {
+    bottom: -0.1rem;
+    right: 0;
+  }
+
+  .card::after {
+    top: -0.1rem;
+    left: 0;
+  }
+
+  .card:hover::after,
+  .card:hover::before {
+    width: 100%;
+    border: 3px solid gold;
+  }
+```
+
+- Although I decided not to implement it, I also learned how to make borders that animate from the center. It involves initially setting it to `50%` `left` or `right`, then setting it to `0` alongside making the `width` `100%` on hover.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+- I need more understanding and using `1fr` for grids.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- More custom animations!
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This forum thread](https://teamtreehouse.com/community/difference-between-fr-unit-and-auto-value-on-grid-item#:~:text=Since%20the%20browser%20found%20a,%2C%20currently%20just%20a%20number) helped me understand that setting `1fr` on a grid column, will let it take all the available space, whereas `auto` will give it just enough to fit.
+- [This stackoverflow question](https://stackoverflow.com/questions/55398733/start-css-underline-animation-from-center-instead-of-left) helped me understand how to make custom animated underlines.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+```
 
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+```
