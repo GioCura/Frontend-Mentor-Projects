@@ -1,2 +1,126 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+blockquote {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:root {
+  --medviolet: hsl(263, 55%, 52%);
+  --darkgrayblue: hsl(217, 19%, 35%);
+  --darkblackblue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+
+  --lightgray: hsl(0, 0%, 81%);
+  --lightgrayblue: hsl(210, 46%, 95%);
+
+  --font: "Barlow Semi Condensed", sans-serif;
+  --fw-1: 500;
+  --fw-2: 600;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  font-family: var(--font);
+  font-weight: var(--fw-1);
+  font-size: 1.3rem;
+  background-color: var(--lightgrayblue);
+  /* justify-content: center; */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2.5rem;
+}
+
+.card {
+  border-radius: 8px;
+  padding: 2.5rem 3.14rem 3rem;
+  color: var(--white);
+}
+
+.card__dan {
+  background-color: var(--medviolet);
+  background-image: url(images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 2.3rem;
+  background-size: 10rem;
+}
+
+.card__john {
+  background-color: var(--darkgrayblue);
+}
+
+.card__jean,
+.card__kira {
+  background-color: var(--white);
+  color: var(--darkgrayblue);
+}
+
+.card__pat {
+  background-color: var(--darkblackblue);
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+
+.card__avatar {
+  border-radius: 50%;
+  width: 3rem;
+  border: 2px solid hsla(0, 0%, 100%, 0.3);
+}
+
+.card__avatar--pat {
+  border: 2px solid hsla(263, 55%, 52%, 0.8);
+}
+
+.byline__title {
+  opacity: 0.5;
+  font-size: 1.1rem;
+}
+
+.card__bigquote {
+  font-weight: var(--fw-2);
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.card__quote {
+  /* font-weight: var(--fw-2); */
+  opacity: 0.7;
+  line-height: 1.8rem;
+}
+
+.card__dan > .card__quote {
+  padding-right: 1.4rem;
+}
+
+.card__kira > .card__quote {
+  padding-right: 0.1rem;
+}
+/* .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+} */
