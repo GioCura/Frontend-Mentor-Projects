@@ -1,0 +1,67 @@
+@media (min-width: 1900px) {
+  html {
+    font-size: 70.5%;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1899px) {
+  html {
+    font-size: 67.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    align-items: center;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-areas:
+      "dan dan john kira"
+      "jean pat pat kira";
+
+    max-width: 115rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 3.5rem 2.5rem;
+  }
+
+  .card {
+    max-width: initial;
+  }
+
+  .card__dan {
+    grid-area: dan;
+    background-position: top right 8rem;
+  }
+
+  .card__john {
+    grid-area: john;
+  }
+
+  .card__jean {
+    grid-area: jean;
+  }
+
+  .card__pat {
+    grid-area: pat;
+  }
+
+  .card__kira {
+    grid-area: kira;
+  }
+
+  .card__dan > .card__quote {
+    padding-right: initial;
+  }
+
+  .card__pat > .card__quote {
+    padding-right: 0.2rem;
+  }
+}
+
+@media (max-width: 374px) {
+  html {
+    font-size: 50.5%;
+  }
+}

@@ -32,33 +32,35 @@ blockquote {
 body {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  justify-content: center;
   font-family: var(--font);
   font-weight: var(--fw-1);
   font-size: 1.3rem;
   background-color: var(--lightgrayblue);
-  /* justify-content: center; */
 }
 
-main {
+.cards {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  padding: 4rem 2.5rem;
+  /* align-items: center; */
+  gap: 2.5rem;
+  padding: 6.5rem 2.5rem;
 }
 
 .card {
   border-radius: 8px;
   padding: 2.5rem 3.14rem 3rem;
   color: var(--white);
+  box-shadow: 0px 10px 18px rgba(0, 0, 0, 0.12);
+  max-width: 63rem;
 }
 
 .card__dan {
   background-color: var(--medviolet);
   background-image: url(images/bg-pattern-quotation.svg);
   background-repeat: no-repeat;
-  background-position: top right 2.3rem;
+  background-position: top right 2.8rem;
   background-size: 10rem;
 }
 
@@ -117,6 +119,7 @@ main {
 .card__kira > .card__quote {
   padding-right: 0.1rem;
 }
+
 /* .attribution {
   font-size: 11px;
   text-align: center;
