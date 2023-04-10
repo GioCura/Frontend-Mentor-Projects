@@ -51,7 +51,7 @@
   .card::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -0.1rem;
     right: 0;
     width: 0;
     border: 3px solid transparent;
@@ -61,7 +61,7 @@
   .card::after {
     content: "";
     position: absolute;
-    top: 0;
+    top: -0.1rem;
     left: 0;
     width: 0;
     border: 3px solid transparent;
