@@ -1,7 +1,57 @@
-.attribution {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+:root {
+  --limegreen: hsl(163, 72%, 41%);
+  --brightred: hsl(356, 69%, 56%);
+  --fb: hsl(208, 92%, 53%);
+  --tw: hsl(203, 89%, 53%);
+  --ig: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+  --yt: hsl(348, 97%, 39%);
+
+  /* Toggles */
+  --toggledark: linear-gradient(hsl(210, 78%, 56%)  hsl(146, 68%, 55%));
+  --togglelight: hsl(230, 22%, 74%);
+
+  /* Dark theme */
+
+  --darkbg: hsl(230, 17%, 14%);
+  --darkbgtop: hsl(232, 19%, 15%);
+  --darkbgcard: hsl(228, 28%, 20%);
+  --darktext1: hsl(228, 34%, 66%);
+  --darktext2: hsl(0, 0%, 100%);
+
+  /* Light Theme */
+
+  --lightbg: hsl(0, 0%, 100%);
+  --lightbgtop: hsl(225, 100%, 98%);
+  --lightbgcard: hsl(227, 47%, 96%);
+  --lighttext1: hsl(228, 12%, 44%);
+  --lighttext2: hsl(230, 17%, 14%);
+  
+  /* Fonts */
+  --font: "Inter", sans-serif;
+  --fw-1: 400;
+  --fw-2: 700;
+}
+
+/* .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
-}
+} */

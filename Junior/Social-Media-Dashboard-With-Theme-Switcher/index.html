@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -17,20 +24,60 @@
 
     <script defer src="script.js"></script>
 
-    <title>Frontend Mentor | [Challenge Name Here]</title>
+    <title>Frontend Mentor | Social Media Dashboard with Theme Switcher</title>
   </head>
   <body>
-    Social Media Dashboard Total Followers: 23,004 Dark Mode @nathanf 1987
-    Followers 12 Today @nathanf 1044 Followers 99 Today @realnathanf 11k
-    Followers 1099 Today Nathan F. 8239 Subscribers 144 Today Overview - Today
+    <header>
+      <div class="header__title">
+        <h1>Social Media Dashboard</h1>
+        <span>Total Followers: 23,004</span>
+      </div>
+      <div class="header__darkmode">
+        <span></span>
+        <form>
+          <label for="darkmode">
+            <input type="checkbox" id="darkmode" name="darkmode" />
+            <span class="darkmode__toggle" tabindex="0"></span>
+          </label>
+        </form>
+      </div>
+    </header>
+    <main class="dashboard">
+      <section class="dashboard__top" aria-label="The main dashboard">
+        <article class="card top__card top__card--fb">
+          <div class="card__account">
+            <div class="account__icon"></div>
+            <h4></h4>
+          </div>
+          <span class="card__number"></span>
+          <h3 class="card__stat"></h3>
+          <span class="card__rate"></span>
+        </article>
+      </section>
+      <section class="dashboard__bottom">
+        <h2>Overview - Today</h2>
+        <article class="card bottom__card">
+          <div>
+            <h3 class="card__stat"></h3>
+            <span class="card__number"></span>
+          </div>
+          <div>
+            <div class="account__icon"></div>
+            <span class="card__rate"></span>
+          </div>
+        </article>
+      </section>
+    </main>
+    Dark Mode @nathanf 1987 Followers 12 Today @nathanf 1044 Followers 99 Today
+    @realnathanf 11k Followers 1099 Today Nathan F. 8239 Subscribers 144 Today
     Page Views 87 3% Likes 52 2% Likes 5462 2257% Profile Views 52k 1375%
     Retweets 117 303% Likes 507 553% Likes 107 19% Total Views 1407 12%
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
   </body>
 </html>
