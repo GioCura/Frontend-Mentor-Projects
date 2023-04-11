@@ -1,0 +1,35 @@
+:root {
+  --limegreen: hsl(163, 72%, 41%);
+  --brightred: hsl(356, 69%, 56%);
+  --fb: hsl(208, 92%, 53%);
+  --tw: hsl(203, 89%, 53%);
+  --ig: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%))
+  --yt: hsl(348, 97%, 39%);
+
+  /* Toggles */
+  --toggledark: linear-gradient(to right, hsl(210, 78%, 56%),  hsl(146, 68%, 55%));
+  --togglelight: hsl(230, 22%, 74%);
+
+  /* Dark theme */
+
+  --darkbg: hsl(225, 17%, 14%);
+  --darkbgtop: hsl(232, 19%, 15%);
+  --darkbgcard: hsl(228, 28%, 20%);
+  --darktext1: hsl(231, 17%, 60%);
+  --darktext2: hsl(0, 0%, 100%);
+
+  /* Light Theme */
+
+  --lightbg: hsl(0, 0%, 100%);
+  --lightbgtop: hsl(225, 100%, 98%);
+  --lightbgcard: hsl(227, 47%, 96%);
+  --lighttext1: hsl(228, 12%, 44%);
+  --lighttext2: hsl(230, 17%, 14%);
+  
+  /* Fonts */
+  --font: "Inter", sans-serif;
+  --fw-1: 400;
+  --fw-2: 500;
+  --fw-3: 600;
+  --fw-4: 700;
+}

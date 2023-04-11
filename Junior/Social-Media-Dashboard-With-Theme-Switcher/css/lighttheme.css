@@ -1,0 +1,5 @@
+@import "root.css";
+
+.light {
+  background-color: var(--lightbg);
+}
