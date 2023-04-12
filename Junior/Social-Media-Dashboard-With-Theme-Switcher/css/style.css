@@ -285,12 +285,19 @@ header {
 
 /* DASHBOARD - TOP */
 
+.dashboard {
+  /* min-width: 32rem; */
+  min-width: 24rem;
+  max-width: 45rem;
+  width: 100%;
+}
+
 .dashboard__top {
   margin-bottom: 4rem;
 }
 
 .top__card {
-  width: 32rem;
+  /* width: 32rem; */
   padding: 2.8rem 0 2.2rem;
   position: relative;
   overflow: hidden;
