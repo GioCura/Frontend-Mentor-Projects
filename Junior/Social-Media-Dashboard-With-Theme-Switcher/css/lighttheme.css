@@ -3,3 +3,11 @@
 .light {
   background-color: var(--lightbg);
 }
+
+.light .header__darkmode:has(form:hover) {
+  color: var(--lighttext2);
+}
+
+.light::after {
+  background-color: var(--lightbgtop);
+}
