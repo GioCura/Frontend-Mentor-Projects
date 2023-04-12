@@ -44,11 +44,12 @@ body::after {
   position: absolute;
   content: "";
   width: 100%;
-  height: 24rem;
+  height: 23rem;
   background-color: var(--darkbgtop);
+  background-color: hsl(233, 20%, 16%);
   top: 0;
   z-index: -1;
-  border-radius: 0 0 25px 25px;
+  border-radius: 0 0 20px 20px;
   transition: all 0.3s;
 }
 
@@ -104,6 +105,19 @@ header {
 
 .darkmode__input {
   position: relative;
+  animation: 1s hideRipple forwards;
+}
+
+@keyframes hideRipple {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .darkmode__input:checked::after,
@@ -194,6 +208,12 @@ header {
   background-color: var(--darkbgcard);
   border-radius: 3px;
   text-align: center;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: var(--darkbgcardhover);
 }
 
 .card:not(:last-child) {
