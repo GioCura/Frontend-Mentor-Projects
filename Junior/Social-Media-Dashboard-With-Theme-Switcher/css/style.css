@@ -192,6 +192,7 @@ header {
 .bottom__card > * {
   opacity: 0;
   animation: 1s fadeIn forwards;
+  will-change: transform;
 }
 
 .top__card > * {
