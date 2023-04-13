@@ -290,7 +290,7 @@ header {
 
 .top__card {
   /* width: 32rem; */
-  padding: 2.8rem 0 2.2rem;
+  padding: 3rem 0 2.2rem;
   position: relative;
   overflow: hidden;
   animation: 0.8s flipCard ease-in-out forwards;
@@ -346,7 +346,7 @@ header {
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 /* Probably a design glitch, not an intentional style */
