@@ -369,6 +369,8 @@ header {
   animation: 0.8s fadeIn forwards;
   animation-delay: 1s;
   opacity: 0;
+  backface-visiblity: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .bottom__card {
