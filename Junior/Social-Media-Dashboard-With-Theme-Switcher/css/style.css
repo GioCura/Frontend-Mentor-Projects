@@ -13,8 +13,7 @@ html {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -80,7 +79,7 @@ header {
 
 .header__title h1 {
   font-size: 2.4rem;
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-4);
   margin-bottom: 0.4rem;
   color: var(--darktext2);
   transition: all 0.8s;
@@ -182,7 +181,7 @@ header {
 /* DASHBOARD - GENERAL ATTRIBUTES*/
 .card {
   background-color: var(--darkbgcard);
-  border-radius: 3px;
+  border-radius: 6px;
   text-align: center;
   transition: background-color 0.8s;
   cursor: pointer;
@@ -225,7 +224,7 @@ header {
 
 .account__icon--tw {
   background-image: url(../images/icon-twitter.svg);
-  transform: translateY(0.15rem);
+  /* transform: translateY(0.15rem); */
 }
 
 .account__icon--ig {
@@ -248,7 +247,7 @@ header {
   justify-content: center;
   gap: 0.4rem;
   font-size: 1.2rem;
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-4);
   transform: translateY(-0.45rem);
 }
 
@@ -332,7 +331,7 @@ header {
   justify-content: center;
 }
 
-.card__account h4 {
+.card__account h2 {
   font-weight: var(--fw-4);
   font-size: 1.1rem;
 }
@@ -359,7 +358,7 @@ header {
 
 .dashboard__bottom h2 {
   color: var(--darktext2);
-  font-weight: var(--fw-3);
+  font-weight: var(--fw-4);
   font-size: 2.4rem;
   /* margin-bottom: 3rem; */
   margin-bottom: 2.2rem;
@@ -371,7 +370,9 @@ header {
 
 .bottom__card {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 2.6rem;
   padding: 2.4rem 2.4rem 2rem;
   animation: 0.8s flipCard ease-in-out forwards;
   animation-delay: 0.6s;
@@ -379,24 +380,22 @@ header {
   will-change: transform;
 }
 
-.bottom__card--left {
-  text-align: left;
-}
-
-.bottom__card--right {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  justify-content: space-between;
-}
-
-.bottom__card--left > .card__stat {
-  /* font-weight: var(--fw-3); */
+.bottom__card--top > .card__stat {
   font-weight: var(--fw-4);
-  margin-bottom: 2rem;
 }
 
-.bottom__card--left > .card__number {
-  /* font-size: 2.8rem; */
+.bottom__card--bottom > .card__number {
   font-size: 3.1rem;
+}
+
+.bottom__card--top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom__card--bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
