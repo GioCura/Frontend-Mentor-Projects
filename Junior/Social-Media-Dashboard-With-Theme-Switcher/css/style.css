@@ -107,13 +107,14 @@ header {
 .darkmode__input {
   position: relative;
   animation: 1s hideRipple forwards;
+  transform: translateX(3rem);
 }
 
 .darkmode__input:checked::after,
 .darkmode__input:not(:checked)::before {
   position: absolute;
-  bottom: -1.3rem;
-  left: 0.3rem;
+  bottom: -2.2rem;
+  left: -2.6rem;
   border-radius: 50%;
   content: "";
   background: var(--toggledark);
