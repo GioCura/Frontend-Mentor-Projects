@@ -1,0 +1,51 @@
+/* Ripple effect upon clicking the toggle. */
+@keyframes ripple {
+  0% {
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.45;
+  }
+  100% {
+    height: 8rem;
+    width: 8rem;
+    opacity: 0;
+    bottom: -2.7rem;
+    left: -1.25rem;
+  }
+}
+
+/* Hides the ripple effect for the unchecked state upon page load. */
+@keyframes hideRipple {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flipCard {
+  0% {
+    transform: rotateX(-120deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

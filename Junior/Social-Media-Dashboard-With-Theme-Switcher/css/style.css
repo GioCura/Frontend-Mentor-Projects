@@ -1,4 +1,5 @@
 @import "root.css";
+@import "anims.css";
 
 * {
   margin: 0;
@@ -110,18 +111,6 @@ header {
   animation: 1s hideRipple forwards;
 }
 
-@keyframes hideRipple {
-  0% {
-    opacity: 0;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 .darkmode__input:checked::after,
 .darkmode__input:not(:checked)::before {
   position: absolute;
@@ -133,21 +122,6 @@ header {
   opacity: 1;
   animation: 0.8s ripple;
   box-shadow: 0px 2px 30px hsla(146, 68%, 55%, 0.8);
-}
-
-@keyframes ripple {
-  0% {
-    width: 5rem;
-    height: 5rem;
-    opacity: 0.45;
-  }
-  100% {
-    height: 8rem;
-    width: 8rem;
-    opacity: 0;
-    bottom: -2.7rem;
-    left: -1.25rem;
-  }
 }
 
 .darkmode__toggle {
@@ -212,6 +186,20 @@ header {
   text-align: center;
   transition: background-color 0.8s;
   cursor: pointer;
+}
+
+.top__card > *,
+.bottom__card > * {
+  opacity: 0;
+  animation: 1s fadeIn forwards;
+}
+
+.top__card > * {
+  animation-delay: 0.3s;
+}
+
+.bottom__card > * {
+  animation-delay: 0.7s;
 }
 
 .card:hover {
@@ -304,6 +292,8 @@ header {
   padding: 2.8rem 0 2.2rem;
   position: relative;
   overflow: hidden;
+  animation: 0.8s flipCard ease-in-out forwards;
+  opacity: 0;
 }
 
 .top__card::after {
@@ -377,6 +367,9 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 2.4rem 2.4rem 2rem;
+  animation: 0.8s flipCard ease-in-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 
 .bottom__card--left {
