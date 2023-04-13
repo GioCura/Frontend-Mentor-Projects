@@ -23,10 +23,7 @@ label {
 }
 
 input {
-  height: 0;
   width: 0;
-  transform: scale(0);
-  /* visibility: hidden; */
 }
 
 body {
