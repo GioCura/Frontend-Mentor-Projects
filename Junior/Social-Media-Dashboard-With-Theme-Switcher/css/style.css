@@ -215,6 +215,7 @@ header {
   width: 2rem;
   height: 2rem;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .account__icon--fb {
@@ -294,6 +295,7 @@ header {
   overflow: hidden;
   animation: 0.8s flipCard ease-in-out forwards;
   opacity: 0;
+  will-change: transform;
 }
 
 .top__card::after {
@@ -373,6 +375,7 @@ header {
   animation: 0.8s flipCard ease-in-out forwards;
   animation-delay: 0.6s;
   opacity: 0;
+  will-change: transform;
 }
 
 .bottom__card--left {
