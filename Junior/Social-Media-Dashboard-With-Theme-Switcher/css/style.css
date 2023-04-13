@@ -107,6 +107,8 @@ header {
 .darkmode__input {
   position: relative;
   animation: 1s hideRipple forwards;
+
+  /* Fixes safari bug -- checkbox still showing desipite width set to 0 */
   transform: translateX(3rem);
 }
 
