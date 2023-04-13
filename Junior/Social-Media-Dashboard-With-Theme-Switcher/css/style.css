@@ -9,7 +9,6 @@
 
 html {
   font-size: 62.5%;
-  display: block;
 }
 
 h1,
@@ -196,6 +195,8 @@ header {
   opacity: 0;
   animation: 1s fadeIn forwards;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .top__card > * {
@@ -300,6 +301,8 @@ header {
   animation: 0.8s flipCard ease-in-out forwards;
   opacity: 0;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .top__card::after {
@@ -370,6 +373,8 @@ header {
   animation: 0.8s fadeIn forwards;
   animation-delay: 1s;
   opacity: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .bottom__card {
@@ -382,6 +387,8 @@ header {
   animation-delay: 0.6s;
   opacity: 0;
   will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .bottom__card--top > .card__stat {
