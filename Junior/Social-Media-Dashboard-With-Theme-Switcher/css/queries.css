@@ -1,15 +1,5 @@
-/* @media (min-width: 600px) {
-  .dashboard__bottom h2 {
-    text-align: center;
-  }
-} */
-
-@media (min-width: 930px) and (max-height: 780px) {
+@media (min-width: 1024px) and (max-height: 780px) {
   .dashboard__top {
-    margin-bottom: 2rem;
-  }
-
-  .dashboard__bottom h2 {
     margin-bottom: 2rem;
   }
 }
@@ -20,23 +10,21 @@
   }
 }
 
-@media (min-width: 930px) {
+@media (min-width: 1024px) {
   .dashboard__top {
     grid-template-columns: repeat(4, 1fr);
   }
   .dashboard__bottom > div {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 600px) and (max-width: 929px) {
+@media (min-width: 600px) and (max-width: 1023px) {
   .dashboard__top {
     grid-template-columns: repeat(2, 1fr);
   }
   .dashboard__bottom > div {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
   }
 }
 
@@ -58,13 +46,19 @@
     flex-direction: row;
     justify-content: space-between;
     /* margin-bottom: 4.5rem; */
-    max-width: 113rem;
+    /* max-width: 113rem; */
+    max-width: 109rem;
     align-self: center;
+  }
+
+  .header__title h1 {
+    font-size: 2.75rem;
   }
 
   .dashboard {
     min-width: initial;
-    max-width: 113rem;
+    /* max-width: 113rem; */
+    max-width: 109rem;
     /* width: initial; */
     display: flex;
     flex-direction: column;
@@ -105,6 +99,10 @@
 
   .dashboard__bottom {
     width: 100%;
+  }
+
+  .dashboard__bottom h2 {
+    font-size: 2.45rem;
   }
 
   .bottom__card {

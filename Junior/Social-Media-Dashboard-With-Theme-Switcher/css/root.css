@@ -1,6 +1,8 @@
 :root {
-  --limegreen: hsl(171, 48%, 40%);
-  --brightred: hsl(351, 42%, 46%);
+  --limegreen1: hsl(171, 48%, 40%);
+  --limegreen2: hsl(163, 72%, 41%);
+  --brightred1: hsl(351, 42%, 46%);
+  --brightred2: hsl(356, 69%, 56%);
   --fb: hsl(208, 92%, 53%);
   --tw: hsl(203, 89%, 53%);
   --ig: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
@@ -28,6 +30,7 @@
   --lightbg: hsl(0, 0%, 100%);
   --lightbgtop: hsl(225, 100%, 98%);
   --lightbgcard: hsl(227, 47%, 96%);
+  --lightbgcardhover: hsl(232, 33%, 91%);
   --lighttext1: hsl(228, 12%, 44%);
   --lighttext2: hsl(230, 17%, 14%);
 

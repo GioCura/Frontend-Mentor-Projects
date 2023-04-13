@@ -2,12 +2,39 @@
 
 .light {
   background-color: var(--lightbg);
+  color: var(--lighttext1);
 }
 
 .light .header__darkmode:has(form:hover) {
+  color: var(--lighttext1);
+}
+
+.light .header__title h1,
+.light .card__number,
+.light .dashboard__bottom h2 {
   color: var(--lighttext2);
 }
 
 .light::after {
   background-color: var(--lightbgtop);
+}
+
+.light .header__title {
+  border-color: #a4a7b4;
+}
+
+.light .card {
+  background-color: var(--lightbgcard);
+}
+
+.light .card:hover {
+  background-color: var(--lightbgcardhover);
+}
+
+.light .rate__icon--up ~ span {
+  color: var(--limegreen2);
+}
+
+.light .rate__icon--down ~ span {
+  color: var(--brightred2);
 }
