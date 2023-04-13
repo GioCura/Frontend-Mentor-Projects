@@ -25,6 +25,8 @@ label {
 input {
   height: 0;
   width: 0;
+  transform: scale(0);
+  /* visibility: hidden; */
 }
 
 body {
@@ -132,6 +134,7 @@ header {
   background: var(--toggledark);
   transition: all 0.5s;
   box-shadow: 0px 5px 20px hsla(146, 68%, 55%, 0.1);
+  vertical-align: middle;
 }
 
 .darkmode__toggle:hover {
