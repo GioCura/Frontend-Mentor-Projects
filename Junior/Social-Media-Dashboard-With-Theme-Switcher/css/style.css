@@ -361,6 +361,9 @@ header {
   /* margin-bottom: 3rem; */
   margin-bottom: 2.2rem;
   transition: all 0.8s;
+  animation: 1s fadeIn forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
 }
 
 .bottom__card {
