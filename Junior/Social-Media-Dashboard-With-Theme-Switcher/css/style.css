@@ -9,6 +9,8 @@
 
 html {
   font-size: 62.5%;
+
+  /* fixes flash of unstyled content on Safari */
   display: block;
   visibility: visible;
 }
@@ -141,8 +143,7 @@ header,
 }
 
 /* for properly rendering on load animations */
-.card,
-.card__rate {
+.renderfix {
   will-change: transform;
 }
 
