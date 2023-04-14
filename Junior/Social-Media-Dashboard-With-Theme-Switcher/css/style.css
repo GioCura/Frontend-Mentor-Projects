@@ -234,11 +234,13 @@ header {
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
-  animation: 0.8s flipCard ease-in-out forwards;
+  opacity: 1;
+  /* animation: 0.8s flipCard ease-in-out forwards; */
 }
 
 .card > * {
-  animation: 1s fadeIn forwards;
+  opacity: 1;
+  /* animation: 1s fadeIn forwards; */
 }
 
 .card:hover {
@@ -369,7 +371,8 @@ header {
 
 .dashboard__bottom h2 {
   margin-bottom: 2.2rem;
-  animation: 0.8s fadeIn forwards;
+  opacity: 1;
+  /* animation: 0.8s fadeIn forwards; */
   animation-delay: 1s;
 }
 
