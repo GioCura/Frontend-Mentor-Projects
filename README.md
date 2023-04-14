@@ -8,6 +8,7 @@ JUNIOR CHALLENGES
 | Fylo Data Storage Component | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Fylo-Data-Storage-Component) | [Live Site](https://gc23-fylo-data-storage.netlify.app) |
 | Pricing Component With Toggle | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Pricing-Component-With-Toggle) | [Live Site](https://gc24-pricing-component-toggle.netlify.app/) |
 | Testimonials Grid Section | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Testimonials-Grid-Section) | [Live Site](https://gc25-testimonials-grid.netlify.app) |
+| Social Media Dashboard With Theme Switcher | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Social-Media-Dashboard-With-Theme-Switcher) | [Live Site](https://gc26-social-dashboard-theme-switcher.netlify.app/) |
 
 NEWBIE CHALLENGES
 | Challenge | Code | Live URL |
