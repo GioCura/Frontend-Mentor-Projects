@@ -1,5 +1,5 @@
 @import "root.css";
-@import "anims.css";
+/* @import "anims.css"; */
 
 * {
   margin: 0;
@@ -41,7 +41,7 @@ body {
   font-size: 1.4rem;
   color: var(--darktext1);
   background-color: var(--darkbg);
-  transition: background-color 0.8s;
+  /* transition: background-color 0.8s; */
 }
 
 body::after {
@@ -53,7 +53,7 @@ body::after {
   z-index: -1;
   border-radius: 0 0 20px 20px;
   background-color: var(--darkbgtop);
-  transition: background-color 0.8s;
+  /* transition: background-color 0.8s; */
 }
 
 /* HELPER CLASSES AND SHARED ATTRIBUTES */
@@ -119,11 +119,11 @@ header,
   background-color: var(--darkbgcard);
 }
 
-.darkmode__toggle::after,
-.darkmode__input:checked ~ .darkmode__toggle:hover::after,
-.card,
+/* .card,
 .card > *,
-.dashboard__bottom h2 {
+.dashboard__bottom h2 */
+.darkmode__toggle::after,
+.darkmode__input:checked ~ .darkmode__toggle:hover::after {
   opacity: 0;
 }
 
@@ -132,15 +132,15 @@ header,
   background-repeat: no-repeat;
 }
 
-.loadtrans {
+/* .loadtrans {
   transition: background 0.8s, color 0.8s, border-color 0.8s;
-}
+} */
 
-.header__darkmode > span,
+/* .header__darkmode > span,
 .darkmode__toggle,
 .darkmode__toggle::after {
   transition: all 0.5s;
-}
+} */
 
 /* for properly rendering on load animations */
 .renderfix {
@@ -217,7 +217,7 @@ header {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 }
 
 .darkmode__input:checked ~ .darkmode__toggle::before {
@@ -234,16 +234,18 @@ header {
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
-  animation: 0.8s flipCard ease-in-out forwards;
+  opacity: 1;
+  /* animation: 0.8s flipCard ease-in-out forwards; */
 }
 
 .card > * {
-  animation: 1s fadeIn forwards;
+  opacity: 1;
+  /* animation: 1s fadeIn forwards; */
 }
 
 .card:hover {
   background-color: var(--darkbgcardhover);
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
 }
 
 .card:not(:last-child) {
@@ -369,7 +371,8 @@ header {
 
 .dashboard__bottom h2 {
   margin-bottom: 2.2rem;
-  animation: 0.8s fadeIn forwards;
+  opacity: 1;
+  /* animation: 0.8s fadeIn forwards; */
   animation-delay: 1s;
 }
 
