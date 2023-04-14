@@ -59,7 +59,7 @@ body::after {
   transition: none;
 } */
 
-/* SHARED ATTRIBUTES */
+/* HELPER CLASSES AND SHARED ATTRIBUTES */
 .darkmode__input,
 .darkmode__toggle,
 .top__card {
@@ -75,13 +75,7 @@ body::after {
   position: absolute;
 }
 
-header,
-.header__darkmode,
-.card__rate,
-.card__account,
-.bottom__card,
-.bottom__card--top,
-.bottom__card--bottom {
+.flex {
   display: flex;
 }
 
@@ -90,10 +84,7 @@ header,
   flex-direction: column;
 }
 
-.header__darkmode,
-.card__rate,
-.card__account,
-.bottom__card--top {
+.aligncenter {
   align-items: center;
 }
 
@@ -102,15 +93,9 @@ header,
   justify-content: space-between;
 }
 
-header,
+.fullwidth,
 .darkmode__toggle::after,
-.dashboard,
-.top__card,
-.top__card::after,
-.dashboard__top,
-.bottom__card,
-.dashboard__bottom,
-.dashboard__bottom > div {
+.top__card::after {
   width: 100%;
 }
 
@@ -139,11 +124,10 @@ header,
 
 .darkmode__toggle::after,
 .darkmode__input:checked ~ .darkmode__toggle:hover::after,
+.card > *,
 .top__card,
-.top__card > *,
 .dashboard__bottom h2,
-.bottom__card,
-.bottom__card > * {
+.bottom__card {
   opacity: 0;
 }
 
@@ -152,13 +136,7 @@ header,
   background-repeat: no-repeat;
 }
 
-.header__title,
-.header__title h1,
-.card,
-.card__number,
-.rate__icon--up ~ span,
-.rate__icon--down ~ span,
-.dashboard__bottom h2 {
+.loadtrans {
   transition: background 0.8s, color 0.8s, border-color 0.8s;
 }
 
@@ -174,8 +152,6 @@ header,
 }
 
 /* for properly rendering on load animations */
-/* .top__card > *,
-.bottom__card > *, */
 .card__rate,
 .top__card,
 .bottom__card {

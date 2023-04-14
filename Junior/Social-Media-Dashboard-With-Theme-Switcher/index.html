@@ -36,12 +36,12 @@
     <title>Frontend Mentor | Social Media Dashboard with Theme Switcher</title>
   </head>
   <body>
-    <header>
-      <div class="header__title">
-        <h1>Social Media Dashboard</h1>
+    <header class="flex fullwidth">
+      <div class="header__title loadtrans">
+        <h1 class="loadtrans">Social Media Dashboard</h1>
         <span>Total Followers: 23,004</span>
       </div>
-      <div class="header__darkmode">
+      <div class="header__darkmode flex aligncenter">
         <span>Dark Mode</span>
         <form>
           <label for="darkmode">
@@ -59,164 +59,164 @@
       </div>
     </header>
 
-    <main class="dashboard">
+    <main class="dashboard fullwidth">
       <!-- TOP HALF -->
-      <section class="dashboard__top" aria-label="The main dashboard">
-        <article class="card top__card top__card--fb">
-          <div class="card__account">
+      <section class="dashboard__top fullwidth" aria-label="The main dashboard">
+        <article class="card top__card top__card--fb fullwidth loadtrans">
+          <div class="card__account flex aligncenter">
             <div class="account__icon account__icon--fb"></div>
             <h2>@nathanf</h2>
           </div>
-          <span class="card__number">1987</span>
+          <span class="card__number loadtrans">1987</span>
           <h3 class="card__stat">Followers</h3>
-          <div class="card__rate">
+          <div class="card__rate flex aligncenter">
             <div class="rate__icon rate__icon--up"></div>
-            <span class="rate__low">12 Today</span>
+            <span class="loadtrans">12 Today</span>
           </div>
         </article>
-        <article class="card top__card top__card--tw">
-          <div class="card__account">
+        <article class="card top__card top__card--tw fullwidth loadtrans">
+          <div class="card__account flex aligncenter">
             <div class="account__icon account__icon--tw"></div>
             <h2>@nathanf</h2>
           </div>
-          <span class="card__number">1044</span>
+          <span class="card__number loadtrans">1044</span>
           <h3 class="card__stat">Followers</h3>
-          <div class="card__rate">
+          <div class="card__rate flex aligncenter">
             <div class="rate__icon rate__icon--up"></div>
-            <span>99 Today</span>
+            <span class="loadtrans">99 Today</span>
           </div>
         </article>
-        <article class="card top__card top__card--ig">
-          <div class="card__account">
+        <article class="card top__card top__card--ig fullwidth loadtrans">
+          <div class="card__account flex aligncenter">
             <div class="account__icon account__icon--ig"></div>
             <h2>@realnathanf</h2>
           </div>
-          <span class="card__number">11k</span>
+          <span class="card__number loadtrans">11k</span>
           <h3 class="card__stat">Followers</h3>
-          <div class="card__rate">
+          <div class="card__rate flex aligncenter">
             <div class="rate__icon rate__icon--up"></div>
-            <span>1099 Today</span>
+            <span class="loadtrans">1099 Today</span>
           </div>
         </article>
-        <article class="card top__card top__card--yt">
-          <div class="card__account">
+        <article class="card top__card top__card--yt fullwidth loadtrans">
+          <div class="card__account flex aligncenter">
             <div class="account__icon account__icon--yt"></div>
             <h2>Nathan F.</h2>
           </div>
-          <span class="card__number">8239</span>
+          <span class="card__number loadtrans">8239</span>
           <h3 class="card__stat">Subscribers</h3>
-          <div class="card__rate">
+          <div class="card__rate flex aligncenter">
             <div class="rate__icon rate__icon--down"></div>
-            <span>144 Today</span>
+            <span class="loadtrans">144 Today</span>
           </div>
         </article>
       </section>
 
       <!-- BOTTOM HALF  -->
-      <section class="dashboard__bottom">
-        <h2>Overview - Today</h2>
+      <section class="dashboard__bottom fullwidth">
+        <h2 class="loadtrans">Overview - Today</h2>
         <div>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Page Views</h3>
               <div class="account__icon account__icon--fb"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">87</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">87</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--up"></div>
-                <span>3%</span>
+                <span class="loadtrans">3%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Likes</h3>
               <div class="account__icon account__icon--fb"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">52</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex fullwidth">
+              <span class="card__number loadtrans">52</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--down"></div>
-                <span>2%</span>
+                <span class="loadtrans">2%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Likes</h3>
               <div class="account__icon account__icon--ig"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">5462</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">5462</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--up"></div>
-                <span>2257%</span>
+                <span class="loadtrans">2257%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Profile Views</h3>
               <div class="account__icon account__icon--ig"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">52k</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">52k</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--up"></div>
-                <span>1375%</span>
+                <span class="loadtrans">1375%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Retweets</h3>
               <div class="account__icon account__icon--tw"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">117</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">117</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--up"></div>
-                <span>303%</span>
+                <span class="loadtrans">303%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Likes</h3>
               <div class="account__icon account__icon--tw"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">507</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">507</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--up"></div>
-                <span>553%</span>
+                <span class="loadtrans">553%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Likes</h3>
               <div class="account__icon account__icon--yt"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">107</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">107</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--down"></div>
-                <span>19%</span>
+                <span class="loadtrans">19%</span>
               </div>
             </div>
           </article>
-          <article class="card bottom__card">
-            <div class="bottom__card--top">
+          <article class="card bottom__card flex fullwidth loadtrans">
+            <div class="bottom__card--top flex aligncenter">
               <h3 class="card__stat">Total Views</h3>
               <div class="account__icon account__icon--yt"></div>
             </div>
-            <div class="bottom__card--bottom">
-              <span class="card__number">1407</span>
-              <div class="card__rate">
+            <div class="bottom__card--bottom flex">
+              <span class="card__number loadtrans">1407</span>
+              <div class="card__rate flex aligncenter">
                 <div class="rate__icon rate__icon--down"></div>
-                <span>12%</span>
+                <span class="loadtrans">12%</span>
               </div>
             </div>
           </article>
