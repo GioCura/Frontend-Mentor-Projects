@@ -118,7 +118,7 @@ However, since the animation happens at both checked and unchecked states, it fi
 }
 ```
 
-Flipping the cards themselves on-load was simple enough by using `transform: rotateY()` on the `keyframes`, as well as some well-timed `opacity` parameters. The problem was that the `transform` was causing the elements of the card to shift by a few pixels.
+Flipping the cards themselves on-load was simple enough by using `transform: rotateX()` on the `keyframes`, as well as some well-timed `opacity` parameters. The problem was that the `transform` was causing the elements of the card to shift by a few pixels.
 
 Eventually, I learned to counteract this by setting `will-change: transform` to the shifting elements. This attribute gives the broswer a hint of how a given element will render. Since `will-change` takes up a lot of resources, I made a script to reset it after a given time:
 
