@@ -10,6 +10,7 @@
 html {
   font-size: 62.5%;
   display: block;
+  visibility: visible;
 }
 
 h1,
