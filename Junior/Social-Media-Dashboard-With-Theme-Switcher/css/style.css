@@ -11,8 +11,8 @@ html {
   font-size: 62.5%;
 
   /* fixes flash of unstyled content on Safari */
-  /* display: block;
-  visibility: visible; */
+  display: block;
+  visibility: visible;
 }
 
 h1,
@@ -132,9 +132,9 @@ header,
   background-repeat: no-repeat;
 }
 
-/* .loadtrans {
+.loadtrans {
   transition: background 0.8s, color 0.8s, border-color 0.8s;
-} */
+}
 
 .header__darkmode > span,
 .darkmode__toggle,
@@ -234,13 +234,11 @@ header {
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
-  opacity: 1;
-  /* animation: 0.8s flipCard ease-in-out forwards; */
+  animation: 0.8s flipCard ease-in-out forwards;
 }
 
 .card > * {
-  opacity: 1;
-  /* animation: 1s fadeIn forwards; */
+  animation: 1s fadeIn forwards;
 }
 
 .card:hover {
@@ -371,8 +369,7 @@ header {
 
 .dashboard__bottom h2 {
   margin-bottom: 2.2rem;
-  opacity: 1;
-  /* animation: 0.8s fadeIn forwards; */
+  animation: 0.8s fadeIn forwards;
   animation-delay: 1s;
 }
 
@@ -393,9 +390,4 @@ header {
 
 .bottom__card--bottom {
   align-items: flex-end;
-}
-
-.header__title h1,
-.card__number {
-  color: var(--darktext2);
 }
