@@ -2,12 +2,8 @@
 
 const darkmodeInputEl = document.querySelector(".darkmode__input");
 const darkmodeToggleEl = document.querySelector(".darkmode__toggle");
-
-// For transitions that fire prematurely on load
-// Just place onload=noTransition() to element of choice.
-// function noTransition(e) {
-//   e.classList.remove("preload");
-// }
+const cardEl = document.querySelectorAll(".card");
+const cardRateEl = document.querySelectorAll(".card__rate");
 
 function toggleTheme() {
   document.body.classList.toggle("light");

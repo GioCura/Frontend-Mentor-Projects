@@ -54,11 +54,6 @@ body::after {
   transition: background-color 0.8s;
 }
 
-/* for transitions that fire prematurely on load */
-/* .preload {
-  transition: none;
-} */
-
 /* HELPER CLASSES AND SHARED ATTRIBUTES */
 .darkmode__input,
 .darkmode__toggle,
@@ -124,10 +119,9 @@ header,
 
 .darkmode__toggle::after,
 .darkmode__input:checked ~ .darkmode__toggle:hover::after,
+.card,
 .card > *,
-.top__card,
-.dashboard__bottom h2,
-.bottom__card {
+.dashboard__bottom h2 {
   opacity: 0;
 }
 
@@ -146,15 +140,9 @@ header,
   transition: all 0.5s;
 }
 
-.top__card,
-.bottom__card {
-  animation: 0.8s flipCard ease-in-out forwards;
-}
-
 /* for properly rendering on load animations */
-.card__rate,
-.top__card,
-.bottom__card {
+.card,
+.card__rate {
   will-change: transform;
 }
 
@@ -193,7 +181,6 @@ header {
   left: -2.6rem;
   border-radius: 50%;
   box-shadow: 0px 2px 30px hsla(146, 68%, 55%, 0.8);
-  /* opacity: 1; */
   animation: 0.8s ripple;
 }
 
@@ -222,10 +209,6 @@ header {
   opacity: 1;
 }
 
-/* .darkmode__input:checked ~ .darkmode__toggle:hover::after {
-  transition: all 0.3s;
-} */
-
 .darkmode__toggle::before {
   z-index: 2;
   top: 0.2rem;
@@ -250,19 +233,11 @@ header {
   text-align: center;
   border-radius: 6px;
   cursor: pointer;
+  animation: 0.8s flipCard ease-in-out forwards;
 }
 
-.top__card > *,
-.bottom__card > * {
+.card > * {
   animation: 1s fadeIn forwards;
-}
-
-.top__card > * {
-  animation-delay: 0.3s;
-}
-
-.bottom__card > * {
-  animation-delay: 0.9s;
 }
 
 .card:hover {
@@ -272,6 +247,14 @@ header {
 
 .card:not(:last-child) {
   margin-bottom: 2rem;
+}
+
+.top__card > * {
+  animation-delay: 0.3s;
+}
+
+.bottom__card > * {
+  animation-delay: 0.9s;
 }
 
 .account__icon {
@@ -286,7 +269,6 @@ header {
 
 .account__icon--tw {
   background-image: url(../images/icon-twitter.svg);
-  /* transform: translateY(0.15rem); */
 }
 
 .account__icon--ig {
