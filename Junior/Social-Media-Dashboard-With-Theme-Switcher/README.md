@@ -1,6 +1,6 @@
 # Frontend Mentor - Social media dashboard with theme switcher solution
 
-This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Social media dashboard with theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H).
 
 ## Table of contents
 
@@ -16,8 +16,6 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -30,20 +28,18 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+Desktop - Dark
+![Desktop - Dark](images/screenshot-desktop-dark.png)
+Desktop - Light
+![Desktop - Light](images/screenshot-desktop-light.png)
+Mobile - Dark
+![Mobile - Dark](images/screenshot-mobile-dark.png)
+Mobile - Light
+![Mobile - Light](images/screenshot-mobile-light.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc26-social-dashboard-theme-switcher.netlify.app/)
 
 ## My process
 
@@ -53,60 +49,135 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - CSS custom properties
 - Flexbox
 - CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned quite a lot doing this project, and implementing the extra animations.
 
-To see how you can add code snippets, see below:
+Mainly, I learned to make utility classes and split my style folders due to how many more lines of code I wrote.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+In writing the code itself, I got a lot of practice using combined selectors, pseudoclasses & elements, and animations.
+
+Coding the theme switch was straightforward enough . It only required a toggle that adds an active class. Since this is a theme change, I set the class right on the `<body>`:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+function toggleTheme() {
+  document.body.classList.toggle("light");
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+All the style changes were made using the active class in combined selectors. I made a separate stylesheet for it.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+In making the toggle's ripple effect, I learned that I could assign the ripple style to the `input` which is virtually hidden because its `width` is set to `0`. Despite that, the ripple will still show if I apply the style to the pseudoelements of its `:checked` and `:not(:checked)` states:
+
+```
+.darkmode__input:checked::after,
+.darkmode__input:not(:checked)::before {
+  bottom: -2.2rem;
+  left: -2.6rem;
+  border-radius: 50%;
+  box-shadow: 0px 2px 30px hsla(146, 68%, 55%, 0.8);
+  animation: 0.8s ripple;
+}
+```
+
+The `keyframes` causes the ripple to expand and slowly fade out. I just have to keep in mind to recenter the ripple at its widest state:
+
+```
+@keyframes ripple {
+  0% {
+    width: 5rem;
+    height: 5rem;
+    opacity: 0.45;
+  }
+  100% {
+    height: 8rem;
+    width: 8rem;
+    opacity: 0;
+    bottom: -3.3rem;
+    left: -4rem;
+  }
+}
+```
+
+However, since the animation happens at both checked and unchecked states, it fires immediately on load. The solution I made for this is to momentarily hide the `input` on-load via `keyframes`:
+
+```
+@keyframes hideRipple {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+Flipping the cards themselves on-load was simple enough by using `transform: rotateY()` on the `keyframes`, as well as some well-timed `opacity` parameters. The problem was that the `transform` was causing the elements of the card to shift by a few pixels.
+
+Eventually, I learned to counteract this by setting `will-change: transform` to the shifting elements. This attribute gives the broswer a hint of how a given element will render. Since `will-change` takes up a lot of resources, I made a script to reset it after a given time:
+
+```
+function renderFix() {
+  setTimeout(function () {
+    renderFixEl.forEach((e) => {
+      e.style.willChange = "auto";
+    });
+  }, 5000);
+}
+```
+
+All this rendering and animation, however, made the site jittery on Safari. I learned to counteract this by making a style declaration at the top of the `<head>` that hides the `html`...
+
+```
+  <head>
+    <style>
+      html {
+        display: none;
+        visibility: hidden;
+      }
+    </style>
+```
+
+...which is then countered by a declaration in my main stylesheet:
+
+```
+html {
+  display: block;
+  visibility: visible;
+}
+```
+
+Doing this hides the site's contents until the browser can start reading the stylesheet. I'll be reusing it for projects that require a lot of animations.
+
+Another funky glitch I only encountered on Safari was that the `input` was still visibile even with `width: 0`. Since it's next to the toggle anyway, I just pushed it behind that:
+
+```
+.darkmode__input {
+  transform: translateX(3rem);
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- I want to practice building larger projects that requires me to refactor and make helper classes.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- I based my toggle's ripple effect on [@frontendcharm's ripple radio button](https://www.instagram.com/frontendcharm/).
+- [This stackoverflow question](https://stackoverflow.com/questions/3221561/eliminate-flash-of-unstyled-content) helped me understand how to workaround the flash of unstyled content.
+- [This stackoverflow question](https://stackoverflow.com/questions/14729492/css3-transform-rotate-causing-1px-shift-in-chrome) led me to discovering the `will-change` attribute, which solved the site's rendering bug.
+- [The MDN page about `will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change) taught me to remove said attribute once I no longer need it.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you to Zellene for helping me debug the site on Safari.
