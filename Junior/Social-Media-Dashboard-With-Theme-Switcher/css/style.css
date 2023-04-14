@@ -394,3 +394,8 @@ header {
 .bottom__card--bottom {
   align-items: flex-end;
 }
+
+.header__title h1,
+.card__number {
+  color: var(--darktext2);
+}
