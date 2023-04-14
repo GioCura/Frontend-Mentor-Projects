@@ -32,27 +32,26 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding: 4rem 2.2rem;
   align-items: center;
   font-family: var(--font);
-  font-weight: var(--fw-1);
+  font-weight: var(--fw-4);
   font-size: 1.4rem;
-  padding: 4rem 2.2rem;
-  background-color: var(--darkbg);
   color: var(--darktext1);
+  background-color: var(--darkbg);
   transition: background-color 0.8s;
 }
 
 body::after {
-  position: absolute;
   content: "";
+  position: absolute;
+  top: 0;
   width: 100%;
   height: 23rem;
-  background-color: var(--darkbgtop);
-  background-color: hsl(233, 20%, 16%);
-  top: 0;
   z-index: -1;
   border-radius: 0 0 20px 20px;
-  transition: all 0.8s;
+  background-color: var(--darkbgtop);
+  transition: background-color 0.8s;
 }
 
 /* for transitions that fire prematurely on load */
@@ -60,54 +59,128 @@ body::after {
   transition: none;
 } */
 
+/* HELPER CLASSES AND SHARED ATTRIBUTES */
+.darkmode__input,
+.darkmode__toggle,
+.top__card {
+  position: relative;
+}
+
+.darkmode__input:checked::after,
+.darkmode__input:not(:checked)::before,
+.darkmode__toggle::after,
+.darkmode__toggle::before,
+.top__card::after {
+  content: "";
+  position: absolute;
+}
+
+.flex {
+  display: flex;
+}
+
+header,
+.bottom__card {
+  flex-direction: column;
+}
+
+.aligncenter {
+  align-items: center;
+}
+
+.bottom__card--top,
+.bottom__card--bottom {
+  justify-content: space-between;
+}
+
+.fullwidth,
+.darkmode__toggle::after,
+.top__card::after {
+  width: 100%;
+}
+
+.header__title h1,
+.dashboard__bottom h2 {
+  font-size: 2.4rem;
+}
+
+.header__title h1,
+.header__darkmode:has(form:hover),
+.card__number,
+.dashboard__bottom h2 {
+  color: var(--darktext2);
+}
+
+.darkmode__input:checked::after,
+.darkmode__input:not(:checked)::before,
+.darkmode__toggle {
+  background: var(--toggledark);
+}
+
+.darkmode__toggle::before,
+.card {
+  background-color: var(--darkbgcard);
+}
+
+.darkmode__toggle::after,
+.darkmode__input:checked ~ .darkmode__toggle:hover::after,
+.card > *,
+.top__card,
+.dashboard__bottom h2,
+.bottom__card {
+  opacity: 0;
+}
+
+.account__icon,
+.rate__icon {
+  background-repeat: no-repeat;
+}
+
+.loadtrans {
+  transition: background 0.8s, color 0.8s, border-color 0.8s;
+}
+
+.header__darkmode > span,
+.darkmode__toggle,
+.darkmode__toggle::after {
+  transition: all 0.5s;
+}
+
+.top__card,
+.bottom__card {
+  animation: 0.8s flipCard ease-in-out forwards;
+}
+
+/* for properly rendering on load animations */
+.card__rate,
+.top__card,
+.bottom__card {
+  will-change: transform;
+}
+
 /* HEADER */
 
 header {
-  display: flex;
-  flex-direction: column;
   align-self: start;
-  width: 100%;
   margin-bottom: 3.5rem;
 }
 
 .header__title {
   padding-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid;
   border-color: #313446;
-  margin-bottom: 1.5rem;
-  transition: all 0.8s;
 }
 
 .header__title h1 {
-  font-size: 2.4rem;
-  font-weight: var(--fw-4);
   margin-bottom: 0.4rem;
-  color: var(--darktext2);
-  transition: all 0.8s;
-}
-
-.header__title span {
-  font-weight: var(--fw-4);
-  transition: all 0.8s;
 }
 
 .header__darkmode {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-
-.header__darkmode span {
-  font-weight: var(--fw-4);
-  transition: all 0.5s;
-}
-
-.header__darkmode:has(form:hover) {
-  color: var(--darktext2);
 }
 
 .darkmode__input {
-  position: relative;
   animation: 1s hideRipple forwards;
 
   /* Fixes safari bug -- checkbox still showing desipite width set to 0 */
@@ -116,27 +189,21 @@ header {
 
 .darkmode__input:checked::after,
 .darkmode__input:not(:checked)::before {
-  position: absolute;
   bottom: -2.2rem;
   left: -2.6rem;
   border-radius: 50%;
-  content: "";
-  background: var(--toggledark);
-  opacity: 1;
-  animation: 0.8s ripple;
   box-shadow: 0px 2px 30px hsla(146, 68%, 55%, 0.8);
+  /* opacity: 1; */
+  animation: 0.8s ripple;
 }
 
 .darkmode__toggle {
-  position: relative;
   display: inline-block;
+  vertical-align: middle;
   width: 4.8rem;
   height: 2.4rem;
   border-radius: 50px;
-  background: var(--toggledark);
-  transition: all 0.5s;
   box-shadow: 0px 5px 20px hsla(146, 68%, 55%, 0.1);
-  vertical-align: middle;
 }
 
 .darkmode__toggle:hover {
@@ -144,15 +211,10 @@ header {
 }
 
 .darkmode__toggle::after {
-  content: "";
-  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
   border-radius: 50px;
-  opacity: 0;
-  transition: all 0.3s;
   background: var(--togglelight);
 }
 
@@ -160,14 +222,11 @@ header {
   opacity: 1;
 }
 
-.darkmode__input:checked ~ .darkmode__toggle:hover::after {
+/* .darkmode__input:checked ~ .darkmode__toggle:hover::after {
   transition: all 0.3s;
-  opacity: 0;
-}
+} */
 
 .darkmode__toggle::before {
-  position: absolute;
-  content: "";
   z-index: 2;
   top: 0.2rem;
   left: 0.4rem;
@@ -175,7 +234,6 @@ header {
   height: 2rem;
   border-radius: 50%;
   transition: all 0.3s;
-  background-color: var(--darkbgcard);
 }
 
 .darkmode__input:checked ~ .darkmode__toggle::before {
@@ -184,19 +242,19 @@ header {
 }
 
 /* DASHBOARD - GENERAL ATTRIBUTES*/
+.dashboard {
+  min-width: 24rem;
+}
+
 .card {
-  background-color: var(--darkbgcard);
-  border-radius: 6px;
   text-align: center;
-  transition: background-color 0.8s;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 .top__card > *,
 .bottom__card > * {
-  opacity: 0;
   animation: 1s fadeIn forwards;
-  will-change: transform;
 }
 
 .top__card > * {
@@ -219,7 +277,6 @@ header {
 .account__icon {
   width: 2rem;
   height: 2rem;
-  background-repeat: no-repeat;
   background-position: center;
 }
 
@@ -240,26 +297,16 @@ header {
   background-image: url(../images/icon-youtube.svg);
 }
 
-.card__number {
-  font-weight: var(--fw-4);
-  color: var(--darktext2);
-  transition: all 0.8s;
-}
-
 .card__rate {
-  display: flex;
-  align-items: center;
+  transform: translateY(-0.45rem);
   justify-content: center;
   gap: 0.4rem;
   font-size: 1.2rem;
-  font-weight: var(--fw-4);
-  transform: translateY(-0.45rem);
 }
 
 .rate__icon {
   width: 0.8rem;
   height: 0.4rem;
-  background-repeat: no-repeat;
 }
 
 .rate__icon--up {
@@ -268,7 +315,6 @@ header {
 
 .rate__icon--up ~ span {
   color: var(--limegreen1);
-  transition: all 0.8s;
 }
 
 .rate__icon--down {
@@ -277,38 +323,22 @@ header {
 
 .rate__icon--down ~ span {
   color: var(--brightred1);
-  transition: all 0.8s;
 }
 
 /* DASHBOARD - TOP */
-
-.dashboard {
-  /* min-width: 32rem; */
-  min-width: 24rem;
-  /* max-width: 45rem; */
-  width: 100%;
-}
 
 .dashboard__top {
   margin-bottom: 4rem;
 }
 
 .top__card {
-  /* width: 32rem; */
   padding: 3rem 0 2.2rem;
-  position: relative;
   overflow: hidden;
-  animation: 0.8s flipCard ease-in-out forwards;
-  opacity: 0;
-  will-change: transform;
 }
 
 .top__card::after {
-  position: absolute;
-  content: "";
   top: 0;
   left: 0;
-  width: 100%;
   height: 0.4rem;
 }
 
@@ -329,60 +359,42 @@ header {
 }
 
 .card__account {
-  display: flex;
+  justify-content: center;
   gap: 0.7rem;
   margin-bottom: 1.6rem;
-  align-items: center;
-  justify-content: center;
 }
 
 .card__account h2 {
-  font-weight: var(--fw-4);
   font-size: 1.1rem;
 }
 
 .top__card > .card__number {
   display: block;
-  font-size: 5rem;
   margin-bottom: 0.2rem;
+  font-size: 5rem;
 }
 
 .top__card > .card__stat {
   text-transform: uppercase;
+  font-weight: var(--fw-1);
   font-size: 1rem;
   letter-spacing: 0.5rem;
   margin-bottom: 3rem;
 }
 
-/* Probably a design glitch, not an intentional style */
-/* .rate__icon--up ~ .rate__low {
-  color: hsl(231, 11%, 75%);
-} */
-
 /* DASHBOARD - BOTTOM */
 
 .dashboard__bottom h2 {
-  color: var(--darktext2);
-  font-weight: var(--fw-4);
-  font-size: 2.4rem;
-  /* margin-bottom: 3rem; */
   margin-bottom: 2.2rem;
-  transition: all 0.8s;
   animation: 0.8s fadeIn forwards;
   animation-delay: 1s;
-  opacity: 0;
 }
 
 .bottom__card {
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
   gap: 2.6rem;
   padding: 2.4rem 2.4rem 2rem;
-  animation: 0.8s flipCard ease-in-out forwards;
   animation-delay: 0.6s;
-  opacity: 0;
-  will-change: transform;
 }
 
 .bottom__card--top > .card__stat {
@@ -393,14 +405,6 @@ header {
   font-size: 3.1rem;
 }
 
-.bottom__card--top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .bottom__card--bottom {
-  display: flex;
-  justify-content: space-between;
   align-items: flex-end;
 }

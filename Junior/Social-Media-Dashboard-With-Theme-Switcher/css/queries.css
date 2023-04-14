@@ -52,8 +52,8 @@
   header {
     flex-direction: row;
     justify-content: space-between;
-    max-width: 109rem;
     align-self: center;
+    max-width: 109rem;
   }
 
   .header__title h1 {
@@ -61,11 +61,11 @@
   }
 
   .dashboard {
-    min-width: initial;
-    max-width: 109rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: initial;
+    max-width: 109rem;
   }
 
   .header__title {
@@ -82,7 +82,6 @@
   .dashboard__bottom > div {
     display: grid;
     gap: 3rem;
-    width: 100%;
   }
 
   .card:not(:last-child) {
@@ -90,12 +89,7 @@
   }
 
   .top__card {
-    width: 100%;
     justify-self: center;
-  }
-
-  .dashboard__bottom {
-    width: 100%;
   }
 
   .dashboard__bottom h2 {
@@ -103,7 +97,6 @@
   }
 
   .bottom__card {
-    width: 100%;
     justify-self: center;
   }
 
