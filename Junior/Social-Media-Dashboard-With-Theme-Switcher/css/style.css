@@ -11,8 +11,8 @@ html {
   font-size: 62.5%;
 
   /* fixes flash of unstyled content on Safari */
-  display: block;
-  visibility: visible;
+  /* display: block;
+  visibility: visible; */
 }
 
 h1,
