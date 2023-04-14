@@ -132,9 +132,9 @@ header,
   background-repeat: no-repeat;
 }
 
-.loadtrans {
+/* .loadtrans {
   transition: background 0.8s, color 0.8s, border-color 0.8s;
-}
+} */
 
 .header__darkmode > span,
 .darkmode__toggle,
