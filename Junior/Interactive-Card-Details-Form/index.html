@@ -47,41 +47,78 @@
         <form class="details__form">
           <label for="name"
             >Cardholder Name
-            <input id="name" type="text" placeholder="e.g. Jane Appleseed" />
-            <p class="error error__name" aria-live="polite">Blegh</p>
+            <input
+              id="name"
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              name="Cardholder Name"
+              required
+            />
+            <p class="error error__name" aria-live="polite"></p>
           </label>
-          <div>
-            <label for="number">Card Number</label>
+          <label for="number"
+            >Card Number
             <input
               id="number"
-              type="number"
+              name="Card Number"
+              type="tel"
+              inputmode="numeric"
+              pattern="[0-9\s]{18, 19}"
+              maxlength="19"
               placeholder="e.g. 1234 5678 9123 0000"
+              required
             />
             <p class="error error__number" aria-live="polite"></p>
-          </div>
-          <div>
+          </label>
+          <div class="details__set">
             <fieldset>
               <legend>Exp. Date (MM/YY)</legend>
               <label for="mm"
-                ><input id="mm" type="number" name="mm" placeholder="MM"
-              /></label>
+                ><input
+                  id="mm"
+                  type="text"
+                  name="MM"
+                  maxlength="2"
+                  pattern="^(1[012]|0?[1-9])$"
+                  placeholder="MM"
+                  required
+                />
+              </label>
               <label for="yy"
-                ><input id="yy" type="number" name="yy" placeholder="yy"
+                ><input
+                  id="yy"
+                  type="text"
+                  name="YY"
+                  maxlength="2"
+                  pattern="[0-9\s]{2}"
+                  placeholder="yy"
+                  required
               /></label>
+              <p class="error error__mmyy" aria-live="polite"></p>
             </fieldset>
-            <div>
-              <label for="cvc">CVC</label>
-              <input id="cvc" type="number" placeholder="e.g. 123" />
-              <p class="error error__number" aria-live="polite"></p>
-            </div>
+            <label for="cvc"
+              >CVC
+              <input
+                id="cvc"
+                type="text"
+                name="CVC"
+                maxlength="4"
+                pattern="[0-9\s]{3,4}"
+                placeholder="e.g. 123"
+                required
+              />
+              <p class="error error__cvc" aria-live="polite"></p>
+            </label>
           </div>
           <button type="submit">Confirm</button>
         </form>
+        <section class="thanks">
+          <div class="thanks__icon"></div>
+          <h1>Thank you!</h1>
+          <span>We've added your card details</span>
+          <button>Continue</button>
+        </section>
       </section>
     </main>
-
-    <!-- Completed state start -->
-
-    Thank you! We've added your card details Continue
   </body>
 </html>
