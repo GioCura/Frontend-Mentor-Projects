@@ -31,9 +31,54 @@
     <title>Frontend Mentor | Interactive Card Details Form</title>
   </head>
   <body>
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
-    Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm
+    <main>
+      <div class="bg">
+        <div class="bg__card bg__card--front">
+          <div class="card__logo"></div>
+          <span>0000 0000 0000 0000</span>
+          <div class="card__info">
+            <span>Jane Appleseed</span>
+            <span>00/00</span>
+          </div>
+        </div>
+        <div class="bg__card bg__card--back"></div>
+      </div>
+      <section class="details" aria-label="Card details form">
+        <form class="details__form">
+          <label for="name"
+            >Cardholder Name
+            <input id="name" type="text" placeholder="e.g. Jane Appleseed" />
+            <p class="error error__name" aria-live="polite">Blegh</p>
+          </label>
+          <div>
+            <label for="number">Card Number</label>
+            <input
+              id="number"
+              type="number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <p class="error error__number" aria-live="polite"></p>
+          </div>
+          <div>
+            <fieldset>
+              <legend>Exp. Date (MM/YY)</legend>
+              <label for="mm"
+                ><input id="mm" type="number" name="mm" placeholder="MM"
+              /></label>
+              <label for="yy"
+                ><input id="yy" type="number" name="yy" placeholder="yy"
+              /></label>
+            </fieldset>
+            <div>
+              <label for="cvc">CVC</label>
+              <input id="cvc" type="number" placeholder="e.g. 123" />
+              <p class="error error__number" aria-live="polite"></p>
+            </div>
+          </div>
+          <button type="submit">Confirm</button>
+        </form>
+      </section>
+    </main>
 
     <!-- Completed state start -->
 
