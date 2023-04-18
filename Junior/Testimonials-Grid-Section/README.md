@@ -98,7 +98,7 @@ Users should be able to:
 
 - Although I decided not to implement it, I also learned how to make borders that animate from the center. It involves initially setting it to `50%` `left` or `right`, then setting it to `0` alongside making the `width` `100%` on hover.
 
-- I returned to this after my experiences with rendering issues in my [succeeding one](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Social-Media-Dashboard-With-Theme-Switcher). I implemented the same fixes via javascript.
+- I returned to this after my experiences with rendering issues in my [succeeding one](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Social-Media-Dashboard-With-Theme-Switcher). I implemented the same fixes via javascript. However, I find that `will-change` leads to blurry text. I shall disable the script for now.
 
 ### Continued development
 
