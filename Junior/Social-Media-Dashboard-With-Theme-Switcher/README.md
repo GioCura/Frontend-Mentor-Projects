@@ -124,12 +124,38 @@ Eventually, I learned to counteract this by setting `will-change: transform` to 
 
 ```
 function renderFix() {
-  setTimeout(function () {
+  timeout = setTimeout(function () {
     renderFixEl.forEach((e) => {
       e.style.willChange = "auto";
     });
   }, 5000);
 }
+```
+
+But this wasn't enough. Triggering the light theme after the `will-change` is reset to `auto` will still result in some shifting. To fix this, I added event listeners that set the value from transform to auto whenever the user interacts with the toggle.
+
+The below code reinstates the `transform` value. Note that it cancels the timeout to change the value to `auto` when the user mouses or focuses out of the toggle.
+
+```
+["mouseover", "focusin"].forEach(function (e) {
+  darkmodeToggleEl.addEventListener(e, function () {
+    clearTimeout(timeout);
+    renderFixEl.forEach((e) => {
+      e.style.willChange = "transform";
+    });
+  });
+});
+```
+
+This also taught me how to bind two events to one listener.
+
+I learned, too, that clicking on an object results in loss of focus. To counteract this, I manually reinstated the focus state upon activation of the toggle:
+
+```
+darkmodeInputEl.addEventListener("change", function () {
+  toggleTheme();
+  darkmodeToggleEl.focus();
+});
 ```
 
 All this rendering and animation, however, made the site jittery on Safari. I learned to counteract this by making a style declaration at the top of the `<head>` that hides the `html`...
@@ -173,6 +199,8 @@ Another funky glitch I only encountered on Safari was that the `input` was still
 - [This stackoverflow question](https://stackoverflow.com/questions/3221561/eliminate-flash-of-unstyled-content) helped me understand how to workaround the flash of unstyled content.
 - [This stackoverflow question](https://stackoverflow.com/questions/14729492/css3-transform-rotate-causing-1px-shift-in-chrome) led me to discovering the `will-change` attribute, which solved the site's rendering bug.
 - [The MDN page about `will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change) taught me to remove said attribute once I no longer need it.
+- [The stackoverflow thread](https://stackoverflow.com/questions/8796988/binding-multiple-events-to-a-listener-without-jquery) taught me to how to bind two events to a listener.
+- [This w3schools article](https://www.w3schools.com/jsref/met_win_cleartimeout.asp) taught me how to write a timeout function so that it can be called upon by `clearTimeout()`
 
 ## Author
 
