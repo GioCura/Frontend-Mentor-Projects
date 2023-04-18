@@ -1,15 +1,48 @@
 "use strict";
 
+// Background Card Elements
+const bgNumberEl = document.querySelector(".bg__number");
+const bgNameEl = document.querySelector(".bg__name");
+const bgMMEl = document.querySelector(".bg__mm");
+const bgYYEl = document.querySelector(".bg__yy");
+const bgCVCEl = document.querySelector(".bg__cvc");
+
+// Form Elements
 const detailsFormEl = document.querySelector(".details__form");
 const nameEl = document.querySelector(".input--name");
 const numberEl = document.querySelectorAll(".input--number");
+const cardNumberEl = document.querySelector(".input--cardnumber");
+const mmEl = document.querySelector(".input--mm");
+const yyEl = document.querySelector(".input--yy");
+const cvcEl = document.querySelector(".input--cvc");
 const numberElArray = [...document.querySelectorAll(".input--number")];
 
-let errorNameEl = document.querySelector(".error__name");
-let errorNumberEl = document.querySelectorAll(".error__number");
+const errorNameEl = document.querySelector(".error__name");
+const errorNumberEl = document.querySelectorAll(".error__number");
 let regExNumber = /^[0-9\s]*$/;
 
-// FORM VALIDATION WHILE USER IS INPUTTING DATA //
+// Match background card to input
+nameEl.addEventListener("input", function () {
+  bgNameEl.textContent = this.value;
+});
+
+cardNumberEl.addEventListener("input", function () {
+  bgNumberEl.textContent = this.value;
+});
+
+mmEl.addEventListener("input", function () {
+  bgMMEl.textContent = this.value;
+});
+
+yyEl.addEventListener("input", function () {
+  bgYYEl.textContent = this.value;
+});
+
+cvcEl.addEventListener("input", function () {
+  bgCVCEl.textContent = this.value;
+});
+
+// Form validation before submit //
 nameEl.addEventListener("change", () => {
   if (nameEl.validity.valid) {
     nameEl.classList.remove("invalid");
@@ -33,6 +66,11 @@ numberEl.forEach((el) => {
       numberElError(el);
     }
   });
+});
+
+// Automatically adding spaces every four digits
+cardNumberEl.addEventListener("keydown", function () {
+  this.value = this.value.replace(/(\d{4})(\d+)/g, "$1 $2");
 });
 
 // VALIDATION FORMULAS //

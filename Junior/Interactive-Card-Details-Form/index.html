@@ -34,14 +34,18 @@
     <main>
       <div class="bg">
         <div class="bg__card bg__card--front">
-          <div class="card__logo"></div>
-          <span>0000 0000 0000 0000</span>
-          <div class="card__info">
-            <span>Jane Appleseed</span>
-            <span>00/00</span>
+          <div class="bg__logo"></div>
+          <span class="bg__number">0000 0000 0000 0000</span>
+          <div class="bg__info">
+            <span class="bg__name">Jane Appleseed</span>
+            <div class="bg__exp">
+              <span class="bg__mm">00</span>/<span class="bg__yy">00</span>
+            </div>
           </div>
         </div>
-        <div class="bg__card bg__card--back"></div>
+        <div class="bg__card bg__card--back">
+          <span class="bg__cvc">000</span>
+        </div>
       </div>
       <section class="details" aria-label="Card details form">
         <form class="details__form" novalidate>
@@ -61,7 +65,7 @@
             >Card Number
             <input
               id="number"
-              class="input--number"
+              class="input--number input--cardnumber"
               name="Card Number"
               type="tel"
               inputmode="numeric"
@@ -79,7 +83,7 @@
               <label for="mm"
                 ><input
                   id="mm"
-                  class="input--number input--mmyy"
+                  class="input--number input--mmyy input--mm"
                   type="text"
                   name="MM"
                   maxlength="2"
@@ -91,7 +95,7 @@
               <label for="yy"
                 ><input
                   id="yy"
-                  class="input--number input--mmyy"
+                  class="input--number input--mmyy input--yy"
                   type="text"
                   name="YY"
                   maxlength="2"
@@ -106,7 +110,7 @@
             >CVC
             <input
               id="cvc"
-              class="input--number"
+              class="input--number input--cvc"
               type="text"
               name="CVC"
               minlength="3"
