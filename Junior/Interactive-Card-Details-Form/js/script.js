@@ -54,7 +54,9 @@ nameEl.addEventListener("change", () => {
 
 numberEl.forEach((el) => {
   el.addEventListener("change", () => {
+    // Gets the index of the input, then matches it to the corresponding error message element's index.
     let e = numberElArray.indexOf(el, 0) - 1;
+    // Readjusts elements with index values of 1 or 0 that were substracted by 1.
     if (e === -1 || e === 0) {
       e++;
     }
@@ -64,6 +66,21 @@ numberEl.forEach((el) => {
       errorNumberEl[e].textContent = "";
     } else {
       numberElError(el);
+    }
+  });
+});
+
+// Disables space for number inputs
+numberEl.forEach((el) => {
+  el.addEventListener("keydown", function (e) {
+    if (e.key === " ") {
+      e.preventDefault();
+      el.style.animation = ".5s shake";
+
+      el.addEventListener("animationend", function () {
+        el.style.animation = "none";
+        console.log("Yo!");
+      });
     }
   });
 });
@@ -84,13 +101,6 @@ function nameElError() {
 function numberElError(el) {
   let correctFormat = regExNumber.test(el.value);
   let e = numberElArray.indexOf(el, 0) - 1;
-
-  // if (e === -1) {
-  //   e = 0;
-  // } else if (e === 0) {
-  //   e++;
-  // }
-
   if (e === -1 || e === 0) {
     e++;
   }
