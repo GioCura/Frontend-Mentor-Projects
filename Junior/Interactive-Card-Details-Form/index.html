@@ -33,24 +33,26 @@
   <body>
     <main>
       <div class="bg">
-        <div class="bg__card bg__card--front">
-          <div class="bg__logo"></div>
-          <span class="bg__number">0000 0000 0000 0000</span>
-          <div class="bg__info">
-            <span class="bg__name">Jane Appleseed</span>
-            <div class="bg__exp">
-              <span class="bg__mm">00</span>/<span class="bg__yy">00</span>
-            </div>
-          </div>
-        </div>
         <div class="bg__card bg__card--back">
           <span class="bg__cvc">000</span>
+        </div>
+        <div class="bg__card bg__card--front">
+          <div class="bg__logo"></div>
+          <div class="bg__data">
+            <span class="bg__number">0000 0000 0000 0000</span>
+            <div class="bg__info">
+              <span class="bg__name">Jane Appleseed</span>
+              <div class="bg__exp">
+                <span class="bg__mm">00</span>/<span class="bg__yy">00</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <section class="details" aria-label="Card details form">
         <form class="details__form" novalidate>
-          <label for="name"
-            >Cardholder Name
+          <label for="name">
+            <span>Cardholder Name</span>
             <input
               class="input--name"
               id="name"
@@ -61,8 +63,8 @@
             />
             <p class="error error__name" aria-live="polite"></p>
           </label>
-          <label for="number"
-            >Card Number
+          <label for="number">
+            <span>Card Number</span>
             <input
               id="number"
               class="input--number input--cardnumber"
@@ -80,54 +82,56 @@
           <div class="details__set">
             <fieldset class="details__mmyy">
               <legend>Exp. Date (MM/YY)</legend>
-              <label for="mm"
-                ><input
-                  id="mm"
-                  class="input--number input--mmyy input--mm"
-                  type="text"
-                  name="MM"
-                  maxlength="2"
-                  pattern="^(1[012]|0?[1-9])$"
-                  placeholder="MM"
-                  required
-                />
-              </label>
-              <label for="yy"
-                ><input
-                  id="yy"
-                  class="input--number input--mmyy input--yy"
-                  type="text"
-                  name="YY"
-                  maxlength="2"
-                  pattern="[0-9\s]{2}"
-                  placeholder="YY"
-                  required
-              /></label>
+              <div>
+                <label for="mm"
+                  ><input
+                    id="mm"
+                    class="input--number input--mmyy input--mm"
+                    type="text"
+                    name="MM"
+                    maxlength="2"
+                    pattern="^(1[012]|0?[1-9])$"
+                    placeholder="MM"
+                    required
+                  />
+                </label>
+                <label for="yy"
+                  ><input
+                    id="yy"
+                    class="input--number input--mmyy input--yy"
+                    type="text"
+                    name="YY"
+                    maxlength="2"
+                    pattern="[0-9\s]{2}"
+                    placeholder="YY"
+                    required
+                /></label>
+              </div>
               <p class="error error__number" aria-live="polite"></p>
             </fieldset>
+            <label for="cvc">
+              <span>CVC</span>
+              <input
+                id="cvc"
+                class="input--number input--cvc"
+                type="text"
+                name="CVC"
+                minlength="3"
+                maxlength="4"
+                pattern="[0-9\s]{3,4}"
+                placeholder="e.g. 123"
+                required
+              />
+              <p class="error error__number" aria-live="polite"></p>
+            </label>
           </div>
-          <label for="cvc"
-            >CVC
-            <input
-              id="cvc"
-              class="input--number input--cvc"
-              type="text"
-              name="CVC"
-              minlength="3"
-              maxlength="4"
-              pattern="[0-9\s]{3,4}"
-              placeholder="e.g. 123"
-              required
-            />
-            <p class="error error__number" aria-live="polite"></p>
-          </label>
-          <button type="submit">Confirm</button>
+          <button class="form__button" type="submit">Confirm</button>
         </form>
         <section class="thanks">
           <div class="thanks__icon"></div>
           <h1>Thank you!</h1>
           <span>We've added your card details</span>
-          <button>Continue</button>
+          <button class="form__button">Continue</button>
         </section>
       </section>
     </main>

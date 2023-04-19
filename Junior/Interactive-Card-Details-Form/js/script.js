@@ -46,7 +46,7 @@ cvcEl.addEventListener("input", function () {
 nameEl.addEventListener("change", () => {
   if (nameEl.validity.valid) {
     nameEl.classList.remove("invalid");
-    errorNameEl.textContent = "";
+    // errorNameEl.textContent = "";
   } else {
     nameElError();
   }
@@ -122,6 +122,6 @@ function numberElError(el) {
   }
 
   if (el.validity.tooShort && correctFormat) {
-    errorNumberEl[e].textContent = "Value is too short";
+    errorNumberEl[e].textContent = "Incomplete";
   }
 }
