@@ -9,6 +9,7 @@ const bgCVCEl = document.querySelector(".bg__cvc");
 
 // Form Elements
 const detailsFormEl = document.querySelector(".details__form");
+const thanksEl = document.querySelector(".thanks");
 const nameEl = document.querySelector(".input--name");
 const numberEl = document.querySelectorAll(".input--number");
 const cardNumberEl = document.querySelector(".input--cardnumber");
@@ -16,6 +17,7 @@ const mmEl = document.querySelector(".input--mm");
 const yyEl = document.querySelector(".input--yy");
 const cvcEl = document.querySelector(".input--cvc");
 const numberElArray = [...document.querySelectorAll(".input--number")];
+const continueEl = document.querySelector(".form__continue");
 
 const errorNameEl = document.querySelector(".error__name");
 const errorNumberEl = document.querySelectorAll(".error__number");
@@ -63,11 +65,27 @@ numberEl.forEach((el) => {
 
     if (el.validity.valid) {
       el.classList.remove("invalid");
-      errorNumberEl[e].style.height = "0";
+      if (el === yyEl || el === mmEl) {
+        if (mmEl.validity.valid || yyEl.validity.valid) {
+          if (!mmEl.validity.valid || !yyEl.validity.valid) {
+            errorNumberEl[e].style.height =
+              errorNumberEl[e].scrollHeight + "px";
+          } else {
+            errorNumberEl[e].style.height = "0";
+          }
+        }
+      } else {
+        errorNumberEl[e].style.height = "0";
+      }
     } else {
       numberElError(el);
     }
   });
+});
+
+// Refreshes the page upon pressing
+continueEl.addEventListener("click", function () {
+  location.reload();
 });
 
 // Disables space for number inputs
@@ -83,6 +101,32 @@ numberEl.forEach((el) => {
 // Automatically adding spaces every four digits
 cardNumberEl.addEventListener("keydown", function () {
   this.value = this.value.replace(/(\d{4})(\d+)/g, "$1 $2");
+});
+
+// FORM VALIDATION WHEN USER PRESSES SUBMIT //
+
+detailsFormEl.addEventListener("submit", (event) => {
+  numberEl.forEach(function (el) {
+    event.preventDefault();
+
+    if (!el.validity.valid) {
+      numberElError(el);
+    }
+  });
+
+  if (!nameEl.validity.valid) {
+    nameElError();
+  }
+
+  if (
+    nameEl.validity.valid &&
+    cardNumberEl.validity.valid &&
+    mmEl.validity.valid &&
+    yyEl.validity.valid &&
+    cvcEl.validity.valid
+  ) {
+    formSuccess();
+  }
 });
 
 // VALIDATION FORMULAS //
@@ -130,4 +174,9 @@ function numberElError(el) {
     el.classList.add("invalid");
     errorNumberEl[e].style.height = errorNumberEl[e].scrollHeight + "px";
   }
+}
+
+function formSuccess() {
+  detailsFormEl.style.display = "none";
+  thanksEl.style.display = "flex";
 }
