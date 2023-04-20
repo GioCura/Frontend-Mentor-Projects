@@ -46,7 +46,7 @@ cvcEl.addEventListener("input", function () {
 nameEl.addEventListener("change", () => {
   if (nameEl.validity.valid) {
     nameEl.classList.remove("invalid");
-    // errorNameEl.textContent = "";
+    errorNameEl.style.height = "0";
   } else {
     nameElError();
   }
@@ -63,7 +63,7 @@ numberEl.forEach((el) => {
 
     if (el.validity.valid) {
       el.classList.remove("invalid");
-      errorNumberEl[e].textContent = "";
+      errorNumberEl[e].style.height = "0";
     } else {
       numberElError(el);
     }
@@ -75,12 +75,7 @@ numberEl.forEach((el) => {
   el.addEventListener("keydown", function (e) {
     if (e.key === " ") {
       e.preventDefault();
-      el.style.animation = ".5s shake";
-
-      el.addEventListener("animationend", function () {
-        el.style.animation = "none";
-        console.log("Yo!");
-      });
+      errorAnim(el);
     }
   });
 });
@@ -91,10 +86,20 @@ cardNumberEl.addEventListener("keydown", function () {
 });
 
 // VALIDATION FORMULAS //
+
+function errorAnim(el) {
+  el.style.animation = ".5s shake";
+
+  el.addEventListener("animationend", function () {
+    el.style.animation = "none";
+  });
+}
+
 function nameElError() {
   if (nameEl.validity.valueMissing) {
     nameEl.classList.add("invalid");
     errorNameEl.textContent = "Can't be blank";
+    errorNameEl.style.height = errorNameEl.scrollHeight + "px";
   }
 }
 
@@ -103,14 +108,6 @@ function numberElError(el) {
   let e = numberElArray.indexOf(el, 0) - 1;
   if (e === -1 || e === 0) {
     e++;
-  }
-
-  if (
-    el.validity.valueMissing ||
-    el.validity.patternMismatch ||
-    (el.validity.tooShort && correctFormat)
-  ) {
-    el.classList.add("invalid");
   }
 
   if (el.validity.valueMissing) {
@@ -123,5 +120,14 @@ function numberElError(el) {
 
   if (el.validity.tooShort && correctFormat) {
     errorNumberEl[e].textContent = "Incomplete";
+  }
+
+  if (
+    el.validity.valueMissing ||
+    el.validity.patternMismatch ||
+    (el.validity.tooShort && correctFormat)
+  ) {
+    el.classList.add("invalid");
+    errorNumberEl[e].style.height = errorNumberEl[e].scrollHeight + "px";
   }
 }
