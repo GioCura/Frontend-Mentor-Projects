@@ -1,6 +1,6 @@
 # Frontend Mentor - Interactive card details form solution
 
-This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw).
 
 ## Table of contents
 
@@ -15,8 +15,6 @@ This is a solution to the [Interactive card details form challenge on Frontend M
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -33,20 +31,18 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+Desktop
+![Desktop](images/screenshot-desktop.png)
+Desktop - Active
+![Desktop - Active](images/screenshot-desktop-active.png)
+Desktop - Complete
+![Desktop - Complete](images/screenshot-desktop-complete.png)
+Mobile
+![Mobile](images/screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live site](https://gc27-interactive-card-details-form.netlify.app/)
 
 ## My process
 
@@ -55,61 +51,131 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Vainlla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- I took this challenge on so I can practice more complex form validation.
 
-To see how you can add code snippets, see below:
+- This is the first time that I've used the `pattern` `input` attribute extensively. In doing so, I had to learn the basics of Regular Expressions, which can be used both in HTML and JS. I admit that I don't get it enough to be self-sufficient, but I found some very helpful resources in the process of making this project. Indeed, I depended so much on researched info for this one.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+- For styling the form, I learned to use the `fieldset` attribute to nest two inputs together. This was necessary for the MM/YY input. I also learned to override its default width setting by setting `min-width` to `0`.
+
+- In making a border with a linear-gradient, I learned to use the `background` attribute's `padding-box` and `border-box` properties:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+.details__form input {
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    var(--inputborder) border-box;
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+
+- Beyond that, the layout itself was straightforward. This time though, I finally used figma files for the first time. I can't overstate how easier this made my life.
+
+- A lot of the script here was based off of my previous projects. However, in optimizing the script, I learned to use `indexOf()`, `test()`, and `location.reload()`.
+
+I used `indexOf()` as a means to get the correct node index of each input's error message:
+
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+let e = numberElArray.indexOf(el, 0) - 1;
+if (e === -1 || e === 0) {
+e++;
+}
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+if (el.validity.valueMissing) {
+errorNumberEl[e].textContent = "Can't be blank";
+}
+
+```
+
+I used `test()` to match the input value to a regular expression:
+
+```
+
+let correctFormat = regExNumber.test(el.value);
+
+    if (el.validity.tooShort && correctFormat) {
+    errorNumberEl[e].textContent = "Incomplete";
+
+}
+
+```
+
+Then, I used `location.reload()` to reload the page upon the user's clicking of the continue button:
+
+```
+
+continueEl.addEventListener("click", function () {
+location.reload();
+});
+
+```
+
+Aside from new functions, I also wrote more complex script.
+
+Since the MM/YY input must only remove error messages when both are valid. I wrote this:
+
+```
+
+    if (el.validity.valid) {
+      el.classList.remove("invalid");
+      if (el === yyEl || el === mmEl) {
+        if (mmEl.validity.valid || yyEl.validity.valid) {
+          if (!mmEl.validity.valid || !yyEl.validity.valid) {
+            errorNumberEl[e].style.height =
+              errorNumberEl[e].scrollHeight + "px";
+          } else {
+            errorNumberEl[e].style.height = "0";
+          }
+        }
+      } else {
+        errorNumberEl[e].style.height = "0";
+      }
+    } else {
+      numberElError(el);
+    }
+
+```
+
+I also wrote an animation script that resets the style once it's finished, so that it is repeatable:
+
+```
+
+function errorAnim(el) {
+el.style.animation = ".5s shake";
+
+el.addEventListener("animationend", function () {
+el.style.animation = "none";
+});
+}
+
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- More forms, with more demanding validation criteria.
+- More practice making and using regular expressions.
+- More practice using figma files.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This SO thread](https://stackoverflow.com/questions/9004307/two-input-fields-inside-one-label) taught me to use `fieldset` for nesting two inputs together, as was required for the MM/YY inputs.
+- [This SO thread](https://stackoverflow.com/questions/34173608/regex-for-a-valid-month) showed me a proper way to make a regex for a valid month number.
+- [This SO thread](https://stackoverflow.com/questions/7459704/in-javascript-what-is-the-best-way-to-convert-a-nodelist-to-an-array) showed me how to convert a NodeList to an array, which I used in scripting the error messages.
+- [This SO thread](https://stackoverflow.com/questions/70362665/regex-add-space-in-string-if-the-word-is-longer-than-4-characters-and-have-numbe) taught me a very minimalist way of adding a space after 4 characters in the card number input field.
+- [This SO thread](https://stackoverflow.com/questions/27660423/fieldset-width-100-of-parent) taught me how to override the `fieldset`'s default width by using `min-width: 0;`
+- [This blog post](https://codyhouse.co/nuggets/css-gradient-borders) taught me how to make a gradient border.
+- [This W3Schools page](https://www.w3schools.com/jsref/met_loc_reload.asp) taught me how to trigger a reload event.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Thank you to all the people who contributed to the threads and articles I mentioned above.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thank you to Zellene for helping me debug the project on iOS devices.
