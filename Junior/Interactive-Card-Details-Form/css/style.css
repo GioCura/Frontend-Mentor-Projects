@@ -280,6 +280,7 @@ label[for="cvc"] {
 }
 
 .error {
+  display: block;
   height: 0;
   text-transform: initial;
   letter-spacing: initial;
