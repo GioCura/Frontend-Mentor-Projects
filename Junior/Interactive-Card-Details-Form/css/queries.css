@@ -119,5 +119,16 @@
 
   .details__set {
     margin-bottom: 3rem;
+    gap: 2rem;
+  }
+
+  .details__mmyy div {
+    width: 94.12%;
+    gap: 1rem;
+  }
+
+  label[for="cvc"] {
+    width: 50%;
+    width: 50.1313%;
   }
 }
