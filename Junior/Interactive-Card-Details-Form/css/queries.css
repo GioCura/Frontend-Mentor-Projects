@@ -21,10 +21,10 @@
     top: 0;
     left: 0;
     padding: 2.8rem 3.186rem 2.65rem 3.2rem;
-    /* animation: 0.8s frontAnim forwards; */
+    animation: 0.8s frontAnim forwards;
   }
 
-  /* @keyframes frontAnim {
+  @keyframes frontAnim {
     0% {
       transform: translate(20rem, 20rem);
       opacity: 0;
@@ -33,7 +33,7 @@
       transform: translate(0, 0);
       opacity: 1;
     }
-  } */
+  }
 
   .bg__logo {
     background-size: 8.4rem;
@@ -55,10 +55,10 @@
     top: initial;
     bottom: 0;
     right: 0;
-    /* animation: 0.8s backAnim forwards; */
+    animation: 0.8s backAnim forwards;
   }
 
-  /* @keyframes backAnim {
+  @keyframes backAnim {
     0% {
       transform: translate(-20rem, -20rem);
       opacity: 0;
@@ -67,7 +67,7 @@
       transform: translate(0, 0);
       opacity: 1;
     }
-  } */
+  }
 
   .bg__cvc {
     margin-top: 11.15rem;
@@ -96,12 +96,12 @@
   .details {
     max-width: 38.1rem;
     padding: 0;
-    /* animation: 0.8s formAnim forwards;
+    animation: 0.8s formAnim forwards;
     animation-delay: 0.5s;
-    opacity: 0; */
+    opacity: 0;
   }
 
-  /* @keyframes formAnim {
+  @keyframes formAnim {
     0% {
       transform: translateY(20rem);
       opacity: 0;
@@ -110,7 +110,7 @@
       transform: translateX(0);
       opacity: 1;
     }
-  } */
+  }
 
   label[for="name"],
   label[for="number"] {
