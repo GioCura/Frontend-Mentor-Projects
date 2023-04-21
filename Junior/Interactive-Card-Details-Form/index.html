@@ -42,7 +42,7 @@
           <div class="bg__data">
             <span class="bg__number">0000 0000 0000 0000</span>
             <div class="bg__info flex">
-              <span class="bg__name">Jane Appleseed</span>
+              <h1 class="bg__name">Jane Appleseed</h1>
               <div class="bg__exp">
                 <span class="bg__mm">00</span>/<span class="bg__yy">00</span>
               </div>
@@ -62,7 +62,7 @@
               name="Cardholder Name"
               required
             />
-            <p class="error error__name" aria-live="polite"></p>
+            <span class="error error__name" aria-live="polite"></span>
           </label>
           <label for="number" class="flex">
             <span>Card Number</span>
@@ -71,14 +71,13 @@
               class="input input--number input--cardnumber"
               name="Card Number"
               type="tel"
-              inputmode="numeric"
               pattern="[0-9\s]{18,19}"
               minlength="18"
               maxlength="19"
               placeholder="e.g. 1234 5678 9123 0000"
               required
             />
-            <p class="error error__number" aria-live="polite"></p>
+            <span class="error error__number" aria-live="polite"></span>
           </label>
           <div class="details__set flex fullwidth">
             <fieldset class="details__mmyy">
@@ -108,7 +107,7 @@
                     required
                 /></label>
               </div>
-              <p class="error error__number" aria-live="polite"></p>
+              <span class="error error__number" aria-live="polite"></span>
             </fieldset>
             <label for="cvc" class="flex">
               <span>CVC</span>
@@ -123,7 +122,7 @@
                 placeholder="e.g. 123"
                 required
               />
-              <p class="error error__number" aria-live="polite"></p>
+              <span class="error error__number" aria-live="polite"></span>
             </label>
           </div>
           <button class="form__button fullwidth" type="submit">Confirm</button>
