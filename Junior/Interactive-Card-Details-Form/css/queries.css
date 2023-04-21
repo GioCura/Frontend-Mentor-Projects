@@ -14,6 +14,7 @@
   .bg__card {
     width: 44.7rem;
     height: 24.5rem;
+    font-size: 1.4rem;
   }
 
   .bg__card--front {
@@ -46,7 +47,6 @@
   }
 
   .bg__info {
-    font-size: 1.4rem;
     letter-spacing: 0.2rem;
   }
 
@@ -71,7 +71,6 @@
   .bg__cvc {
     margin-top: 11.15rem;
     margin-right: 4.702rem;
-    font-size: 1.4rem;
     letter-spacing: 0.2rem;
   }
 }
