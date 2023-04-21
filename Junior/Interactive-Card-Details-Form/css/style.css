@@ -12,7 +12,8 @@ fieldset {
   border: none;
 }
 
-h1 {
+h1,
+h2 {
   font-family: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -119,7 +120,7 @@ main,
 .bg,
 .details__form label,
 .details__mmyy,
-.thanks h1 {
+.thanks h2 {
   text-transform: uppercase;
 }
 
@@ -305,7 +306,7 @@ div:has(.invalid) ~ .error {
   background-size: 8rem;
 }
 
-.thanks h1 {
+.thanks h2 {
   font-size: 2.8rem;
   letter-spacing: 0.342rem;
   margin-bottom: 1.6rem;
