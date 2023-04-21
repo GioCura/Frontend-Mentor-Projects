@@ -158,7 +158,9 @@ body,
 .bg__card {
   width: 28.6rem;
   height: 15.7rem;
+  border-radius: 10px;
   font-size: 0.9rem;
+  box-shadow: 0px 39px 60px rgba(0, 0, 0, 0.1425);
 }
 
 .bg__card--front {
@@ -190,7 +192,7 @@ body,
   justify-content: flex-end;
   top: 0;
   right: 1.6rem;
-  background: url(../images/bg-card-back.png);
+  background: url(../images/bg-card-back.png), #dbdce1;
   background-size: 100%;
 }
 
@@ -211,7 +213,7 @@ body,
   letter-spacing: 0.2rem;
 }
 
-.details__form label span,
+.label__name,
 .details__mmyy legend {
   margin-bottom: 0.9rem;
 }
