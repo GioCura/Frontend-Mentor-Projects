@@ -80,6 +80,20 @@
   body {
     background-position: left;
     background-size: 33.55vw 100vh;
+    animation: 1s overflow forwards;
+  }
+
+  /* disables scrollbars only during on-load animation */
+  @keyframes overflow {
+    0% {
+      overflow: hidden;
+    }
+    99% {
+      overflow: hidden;
+    }
+    100% {
+      overflow: visible;
+    }
   }
 
   main {
