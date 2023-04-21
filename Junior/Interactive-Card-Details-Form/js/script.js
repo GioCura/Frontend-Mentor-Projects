@@ -8,6 +8,7 @@ const bgYYEl = document.querySelector(".bg__yy");
 const bgCVCEl = document.querySelector(".bg__cvc");
 
 // Form Elements
+const detailsEl = document.querySelector(".details");
 const detailsFormEl = document.querySelector(".details__form");
 const thanksEl = document.querySelector(".thanks");
 const nameEl = document.querySelector(".input--name");
@@ -177,6 +178,5 @@ function numberElError(el) {
 }
 
 function formSuccess() {
-  detailsFormEl.style.display = "none";
-  thanksEl.style.display = "flex";
+  detailsEl.classList.toggle("success");
 }
