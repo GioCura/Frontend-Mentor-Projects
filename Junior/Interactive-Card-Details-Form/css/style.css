@@ -60,7 +60,7 @@ main {
   margin-bottom: 3rem;
 }
 
-/* Helper Classes and Shared Attributes */
+/* HELPER CLASSES AND SHARED ATTRIBUTES */
 .bg,
 .details,
 .details__form input {
@@ -84,11 +84,7 @@ main {
   pointer-events: none;
 }
 
-main,
-.bg,
-.details,
-.details__set,
-.form__button {
+.fullwidth {
   width: 100%;
 }
 
@@ -99,15 +95,7 @@ body,
   background-repeat: no-repeat;
 }
 
-body,
-main,
-.bg__card--front,
-.bg__info,
-.bg__card--back,
-.details__form label,
-.details__set,
-.details__mmyy div,
-.thanks {
+.flex {
   display: flex;
 }
 
@@ -159,6 +147,8 @@ body,
   transition: all 0.3s;
 }
 
+/* BACKGROUND */
+
 .bg {
   max-width: 37.5rem;
   height: 24.6rem;
@@ -209,6 +199,8 @@ body,
   margin-right: 3.702rem;
   letter-spacing: 0.129rem;
 }
+
+/* FORM */
 
 .details {
   padding: 0 2.4rem;

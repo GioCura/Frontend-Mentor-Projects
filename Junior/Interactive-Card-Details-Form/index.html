@@ -31,17 +31,17 @@
 
     <title>Frontend Mentor | Interactive Card Details Form</title>
   </head>
-  <body>
-    <main>
-      <div class="bg">
-        <div class="bg__card bg__card--back">
+  <body class="flex">
+    <main class="flex fullwidth">
+      <div class="bg fullwidth">
+        <div class="bg__card bg__card--back flex">
           <span class="bg__cvc">000</span>
         </div>
-        <div class="bg__card bg__card--front">
+        <div class="bg__card bg__card--front flex">
           <div class="bg__logo"></div>
           <div class="bg__data">
             <span class="bg__number">0000 0000 0000 0000</span>
-            <div class="bg__info">
+            <div class="bg__info flex">
               <span class="bg__name">Jane Appleseed</span>
               <div class="bg__exp">
                 <span class="bg__mm">00</span>/<span class="bg__yy">00</span>
@@ -50,9 +50,9 @@
           </div>
         </div>
       </div>
-      <section class="details" aria-label="Card details form">
+      <section class="details fullwidth" aria-label="Card details form">
         <form class="details__form" novalidate>
-          <label for="name">
+          <label for="name" class="flex">
             <span>Cardholder Name</span>
             <input
               class="input input--name"
@@ -64,7 +64,7 @@
             />
             <p class="error error__name" aria-live="polite"></p>
           </label>
-          <label for="number">
+          <label for="number" class="flex">
             <span>Card Number</span>
             <input
               id="number"
@@ -80,11 +80,11 @@
             />
             <p class="error error__number" aria-live="polite"></p>
           </label>
-          <div class="details__set">
+          <div class="details__set flex fullwidth">
             <fieldset class="details__mmyy">
               <legend>Exp. Date (MM/YY)</legend>
-              <div>
-                <label for="mm"
+              <div class="flex">
+                <label for="mm" class="flex"
                   ><input
                     id="mm"
                     class="input input--number input--mmyy input--mm"
@@ -96,7 +96,7 @@
                     required
                   />
                 </label>
-                <label for="yy"
+                <label for="yy" class="flex"
                   ><input
                     id="yy"
                     class="input input--number input--mmyy input--yy"
@@ -110,7 +110,7 @@
               </div>
               <p class="error error__number" aria-live="polite"></p>
             </fieldset>
-            <label for="cvc">
+            <label for="cvc" class="flex">
               <span>CVC</span>
               <input
                 id="cvc"
@@ -126,13 +126,15 @@
               <p class="error error__number" aria-live="polite"></p>
             </label>
           </div>
-          <button class="form__button" type="submit">Confirm</button>
+          <button class="form__button fullwidth" type="submit">Confirm</button>
         </form>
-        <section class="thanks">
+        <section class="thanks flex">
           <div class="thanks__icon"></div>
           <h1>Thank you!</h1>
           <span>We've added your card details</span>
-          <button class="form__button form__continue">Continue</button>
+          <button class="form__button form__continue fullwidth">
+            Continue
+          </button>
         </section>
       </section>
     </main>
