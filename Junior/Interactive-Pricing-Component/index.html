@@ -25,81 +25,85 @@
       <p>Sign-up for our 30-day trial. No credit card required.</p>
     </header>
 
-    <article class="pricing">
-      <div class="pricing__category category--100k">
-        <div class="pageviews">
-          <div class="pageviews__number">
-            <span class="number number--10k">10k</span>
-            <span class="number number--50k">50k</span>
-            <span class="number number--100k">100k</span>
-            <span class="number number--500k">500k</span>
-            <span class="number number--1m">1m</span>
-          </div>
-          <span>Pageviews</span>
-        </div>
-        <div class="rate">
-          <div class="rate__price">
-            <div class="price price__monthly">
-              <span class="number number--10k">$8</span>
-              <span class="number number--50k">$12</span>
-              <span class="number number--100k">$16</span>
-              <span class="number number--500k">$24</span>
-              <span class="number number--1m">$36</span>
+    <main>
+      <article class="pricing">
+        <div class="pricing__category category--100k">
+          <div class="pageviews">
+            <div class="pageviews__number">
+              <span class="number number--10k">10k</span>
+              <span class="number number--50k">50k</span>
+              <span class="number number--100k">100k</span>
+              <span class="number number--500k">500k</span>
+              <span class="number number--1m">1m</span>
             </div>
-            <div class="price price__yearly">
-              <span class="number number--10k">$6</span>
-              <span class="number number--50k">$9</span>
-              <span class="number number--100k">$12</span>
-              <span class="number number--500k">$18</span>
-              <span class="number number--1m">$27</span>
-            </div>
+            <span>Pageviews</span>
           </div>
-          <span class="period">/month</span>
+          <div class="rate">
+            <div class="rate__price">
+              <div class="price price__monthly">
+                <span class="number number--10k">$8</span>
+                <span class="number number--50k">$12</span>
+                <span class="number number--100k">$16</span>
+                <span class="number number--500k">$24</span>
+                <span class="number number--1m">$36</span>
+              </div>
+              <div class="price price__yearly">
+                <span class="number number--10k">$6</span>
+                <span class="number number--50k">$9</span>
+                <span class="number number--100k">$12</span>
+                <span class="number number--500k">$18</span>
+                <span class="number number--1m">$27</span>
+              </div>
+            </div>
+            <span class="period">/month</span>
+          </div>
         </div>
-      </div>
 
-      <div class="slider">
-        <input
-          type="range"
-          min="1"
-          max="5"
-          id="range"
-          step="any"
-          class="slider__input"
-        />
-        <p class="slider__measure"></p>
-      </div>
+        <div class="slider">
+          <input
+            type="range"
+            min="1"
+            max="5"
+            id="range"
+            step=".05"
+            class="slider__input"
+            autocomplete="off"
+          />
+          <p class="slider__measure"></p>
+        </div>
 
-      <label for="toggle">
-        <span>Monthly Billing</span>
-        <input
-          type="checkbox"
-          id="toggle"
-          name="toggle"
-          class="toggle__input"
-        />
-        <span class="toggle" tabindex="0"></span>
-        <span>Yearly Billing</span>
-        <span>25% discount</span>
-      </label>
+        <label for="toggle">
+          <span>Monthly Billing</span>
+          <input
+            type="checkbox"
+            id="toggle"
+            name="toggle"
+            class="toggle__input"
+            autocomplete="off"
+          />
+          <span class="toggle"></span>
+          <span>Yearly Billing</span>
+          <span>25% discount</span>
+        </label>
 
-      <div class="cta">
-        <ul class="cta__features">
-          <li>
-            <div class="check"></div>
-            <span>Unlimited websites</span>
-          </li>
-          <li>
-            <div class="check"></div>
-            <span>100% data ownership</span>
-          </li>
-          <li>
-            <div class="check"></div>
-            <span>Email reports</span>
-          </li>
-        </ul>
-      </div>
-      <button>Start my trial</button>
-    </article>
+        <div class="cta">
+          <ul class="cta__features">
+            <li>
+              <div class="check"></div>
+              <span>Unlimited websites</span>
+            </li>
+            <li>
+              <div class="check"></div>
+              <span>100% data ownership</span>
+            </li>
+            <li>
+              <div class="check"></div>
+              <span>Email reports</span>
+            </li>
+          </ul>
+        </div>
+        <button>Start my trial</button>
+      </article>
+    </main>
   </body>
 </html>

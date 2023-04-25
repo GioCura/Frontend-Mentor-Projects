@@ -43,3 +43,105 @@
   transform: translateY(0);
   pointer-events: auto;
 }
+
+.slider__input {
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(
+    to right,
+    #a4f3eb 0%,
+    #a4f3eb 50%,
+    #ecf0fb 50%,
+    #ecf0fb 100%
+  );
+  border-radius: 5px;
+  height: 8px;
+  width: 279px;
+  transition: background 450ms ease-in;
+  cursor: pointer;
+}
+
+/* .slider__input::-webkit-slider-runnable-track {
+  height: 8px;
+  width: 279px;
+
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.slider__input::-moz-range-track {
+  height: 8px;
+  width: 279px;
+
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.slider__input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: url(../images/icon-slider.svg), #10d8c4;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 15px 30px hsla(174, 100%, 50%, 0.6);
+  transition: background 0.3s;
+  cursor: grab;
+}
+
+.slider__input::-moz-range-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  background: url(../images/icon-slider.svg), #10d8c4;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 15px 30px hsla(174, 100%, 50%, 0.6);
+  transition: background 0.3s;
+  cursor: grab;
+}
+
+.slider__input:focus-visible {
+  outline: none;
+}
+
+.slider__input:focus-visible::-webkit-slider-thumb {
+  outline: 2px solid black;
+  outline-offset: 2.5px;
+}
+
+.slider__input:focus-visible::-moz-range-thumb {
+  outline: 2px solid black;
+  outline-offset: 2.5px;
+}
+
+.slider__input:hover::-webkit-slider-thumb {
+  background: url(../images/icon-slider.svg), #7aeadf;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider__input:hover::-moz-range-thumb {
+  background: url(../images/icon-slider.svg), #7aeadf;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.slider__input:active::-webkit-slider-thumb {
+  background: url(../images/icon-slider.svg), #24aea1;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: grabbing;
+}
+
+.slider__input:active::-moz-range-thumb {
+  background: url(../images/icon-slider.svg), #24aea1;
+  background-repeat: no-repeat;
+  background-position: center;
+}
