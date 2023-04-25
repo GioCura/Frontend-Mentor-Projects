@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
+    <script defer src="js/script.js"></script>
 
-  Pageviews
-  $ /month
+    <title>Frontend Mentor | Interactive pricing component</title>
+  </head>
+  <body>
+    <header>
+      <h1>Simple, traffic-based pricing</h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
 
-  Monthly Billing
-  Yearly Billing 25% discount
+    <article class="pricing">
+      <div>
+        <div class="pageviews">
+          <span><span class="pageviews__number"></span>Pageviews</span>
+        </div>
+        <div class="rate">
+          <span class="price"></span>
+          <span class="period">/month</span>
+        </div>
+      </div>
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+      <div class="slider">
+        <input type="range" min="1" max="5" id="range" step="any" />
+      </div>
 
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <label for="toggle">
+        <span>Monthly Billing</span>
+        <input type="checkbox" id="toggle" name="toggle" />
+        <span class="toggle" tabindex="0"></span>
+        <span>Yearly Billing</span>
+        <span>25% discount</span>
+      </label>
+
+      <div class="cta">
+        <ul class="cta__features">
+          <li>
+            <div class="check"></div>
+            <span>Unlimited websites</span>
+          </li>
+          <li>
+            <div class="check"></div>
+            <span>100% data ownership</span>
+          </li>
+          <li>
+            <div class="check"></div>
+            <span>Email reports</span>
+          </li>
+        </ul>
+      </div>
+      <button>Start my trial</button>
+    </article>
+  </body>
 </html>
