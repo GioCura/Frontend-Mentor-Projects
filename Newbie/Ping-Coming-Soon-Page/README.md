@@ -84,6 +84,8 @@ email.addEventListener("change", () => {
 }
 ```
 
+However, this feature is not adopted by Firefox as of this commit. So, I opted to add an invalid class to `.hero__details`.
+
 - I noticed that I was much quicker in deciding upon a responsive layout for this on small screens.
 
 ### Continued development

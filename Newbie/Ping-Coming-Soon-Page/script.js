@@ -1,5 +1,6 @@
 "use strict";
 
+const heroDetailsEl = document.querySelector(".hero__details");
 const form = document.querySelector(".hero__cta");
 const ctaEmail = document.querySelector(".cta__email");
 const email = document.getElementById("email");
@@ -12,6 +13,7 @@ ctaEmail.autocomplete = "on";
 email.addEventListener("change", () => {
   if (email.validity.valid) {
     email.className = "";
+    heroDetailsEl.className = "hero__details";
     const handle = setTimeout(() => {
       emailErrorEl.textContent = "";
       clearTimeout(handle);
@@ -32,6 +34,7 @@ form.addEventListener("submit", (event) => {
 function emailError() {
   if (email.validity.valueMissing || email.validity.typeMismatch) {
     email.className = "invalid";
+    heroDetailsEl.className = "hero__details invalid";
   }
 
   if (email.validity.valueMissing) {

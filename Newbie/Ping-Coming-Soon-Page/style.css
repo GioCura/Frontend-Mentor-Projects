@@ -102,7 +102,7 @@ body {
   margin-bottom: 5.5rem;
 }
 
-.hero__details:has(.invalid) {
+.invalid.hero__details {
   margin-bottom: 3.5rem;
 }
 
