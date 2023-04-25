@@ -2,12 +2,11 @@
 
 const heroDetailsEl = document.querySelector(".hero__details");
 const form = document.querySelector(".hero__cta");
-const ctaEmail = document.querySelector(".cta__email");
 const email = document.getElementById("email");
 const emailErrorEl = document.querySelector(".email__error");
 
 // REENABLES AUTOCOMPLETE (FOR FIREFOX)
-ctaEmail.autocomplete = "on";
+email.autocomplete = "on";
 
 // VALIDATES THE FORM BEFORE AND AFTER SUBMITTING //
 email.addEventListener("change", () => {

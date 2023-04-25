@@ -21,7 +21,7 @@
     margin-bottom: 7rem;
   }
 
-  .hero__details:has(.invalid) {
+  .invalid.hero__details {
     margin-bottom: inherit;
   }
 
