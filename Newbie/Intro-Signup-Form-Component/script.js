@@ -19,7 +19,7 @@ signupName.forEach((el) => {
   el.addEventListener("change", () => {
     if (el.validity.valid) {
       el.parentNode.children[2].textContent = "";
-      el.className = "";
+      el.classList.remove("invalid");
     } else {
       nameError(el);
     }
@@ -29,7 +29,7 @@ signupName.forEach((el) => {
 email.addEventListener("change", () => {
   if (email.validity.valid) {
     emailErrorEl.textContent = "";
-    email.className = "";
+    email.classList.remove("invalid");
   } else {
     emailError();
   }
@@ -38,7 +38,7 @@ email.addEventListener("change", () => {
 password.addEventListener("change", () => {
   if (password.validity.valid) {
     passwordErrorEl.textContent = "";
-    password.className = "";
+    password.classList.remove("invalid");
   } else {
     passwordError();
   }
@@ -70,14 +70,14 @@ signupFormEl.addEventListener("submit", (event) => {
 function nameError(el) {
   if (el.validity.valueMissing) {
     el.parentNode.children[2].textContent = `${el.name} cannot be empty`;
-    el.className = "invalid";
+    el.classList.add("invalid");
     el.placeholder = "";
   }
 }
 
 function emailError() {
   if (email.validity.valueMissing || email.validity.typeMismatch) {
-    email.className = "invalid";
+    email.classList.add("invalid");
     email.placeholder = "";
   }
 
@@ -90,7 +90,7 @@ function emailError() {
 
 function passwordError() {
   if (password.validity.valueMissing || password.validity.tooShort) {
-    password.className = "invalid";
+    password.classList.add("invalid");
     password.placeholder = "";
   }
 

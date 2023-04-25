@@ -85,8 +85,8 @@ main {
   color: var(--red);
 }
 
-.signup__form input,
-input:focus.invalid {
+.signup__form .input,
+.input:focus.invalid {
   color: var(--darkblue);
 }
 
@@ -131,7 +131,7 @@ input:focus.invalid {
   margin-bottom: 1.6rem;
 }
 
-.signup__form input {
+.signup__form .input {
   width: 100%;
   padding: 1.5rem 2rem;
   margin-bottom: 0.65rem;
@@ -140,11 +140,11 @@ input:focus.invalid {
   font-weight: var(--fw-3);
 }
 
-input::placeholder {
+.input::placeholder {
   color: hsl(252, 2%, 48%);
 }
 
-input:focus {
+.input:focus {
   outline: 1.5px solid var(--darkblue);
 }
 
@@ -156,12 +156,12 @@ input:focus {
   pointer-events: none;
 }
 
-input.invalid {
+.input.invalid {
   border: 2px solid var(--red);
   color: var(--red);
 }
 
-input:focus.invalid {
+.input:focus.invalid {
   outline: none;
 }
 
