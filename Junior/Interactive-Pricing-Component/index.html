@@ -26,23 +26,58 @@
     </header>
 
     <article class="pricing">
-      <div>
+      <div class="pricing__category category--100k">
         <div class="pageviews">
-          <span><span class="pageviews__number"></span>Pageviews</span>
+          <div class="pageviews__number">
+            <span class="number number--10k">10k</span>
+            <span class="number number--50k">50k</span>
+            <span class="number number--100k">100k</span>
+            <span class="number number--500k">500k</span>
+            <span class="number number--1m">1m</span>
+          </div>
+          <span>Pageviews</span>
         </div>
         <div class="rate">
-          <span class="price"></span>
+          <div class="rate__price">
+            <div class="price price__monthly">
+              <span class="number number--10k">$8</span>
+              <span class="number number--50k">$12</span>
+              <span class="number number--100k">$16</span>
+              <span class="number number--500k">$24</span>
+              <span class="number number--1m">$36</span>
+            </div>
+            <div class="price price__yearly">
+              <span class="number number--10k">$6</span>
+              <span class="number number--50k">$9</span>
+              <span class="number number--100k">$12</span>
+              <span class="number number--500k">$18</span>
+              <span class="number number--1m">$27</span>
+            </div>
+          </div>
           <span class="period">/month</span>
         </div>
       </div>
 
       <div class="slider">
-        <input type="range" min="1" max="5" id="range" step="any" />
+        <input
+          type="range"
+          min="1"
+          max="5"
+          id="range"
+          step="any"
+          class="slider__input"
+        />
+        <p class="slider__measure"></p>
       </div>
 
       <label for="toggle">
         <span>Monthly Billing</span>
-        <input type="checkbox" id="toggle" name="toggle" />
+        <input
+          type="checkbox"
+          id="toggle"
+          name="toggle"
+          class="toggle__input"
+        />
         <span class="toggle" tabindex="0"></span>
         <span>Yearly Billing</span>
         <span>25% discount</span>

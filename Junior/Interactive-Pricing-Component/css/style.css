@@ -1,0 +1,45 @@
+.pricing__category {
+  display: flex;
+}
+
+.pageviews__number {
+  position: relative;
+  height: 17px;
+  width: 32px;
+  /* overflow: hidden; */
+}
+
+.rate__price {
+  width: 16px;
+  height: 17px;
+  position: relative;
+}
+
+.price__monthly {
+  transition: all 0.5s;
+}
+
+.number,
+.price__yearly,
+.yearly .price__monthly {
+  transition: all 0.5s;
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(-2rem);
+  pointer-events: none;
+}
+
+.category--10k .number--10k,
+.category--50k .number--50k,
+.category--100k .number--100k,
+.category--500k .number--500k,
+.category--1m .number--1m,
+.yearly .price__yearly {
+  opacity: 1;
+  position: static;
+  transform: translateY(0);
+  pointer-events: auto;
+}
