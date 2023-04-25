@@ -5,6 +5,9 @@ const email = document.getElementById("email");
 const emailErrorEl = document.querySelector(".email__error");
 const emailSuccessEl = document.querySelector(".email__success");
 
+// REENABLES AUTOCOMPLETE //
+email.autocomplete = "on";
+
 // VALIDATES THE FORM BEFORE AND AFTER SUBMITTING //
 email.addEventListener("change", () => {
   if (email.validity.valid) {
@@ -27,6 +30,7 @@ form.addEventListener("submit", (event) => {
 function emailSuccess() {
   if (email.validity.valid) {
     email.className = "valid";
+    form.classList.remove("invalid");
     emailSuccessEl.textContent = "Your email is valid!";
   }
 }
@@ -34,6 +38,7 @@ function emailSuccess() {
 function emailError() {
   if (email.validity.valueMissing || email.validity.typeMismatch) {
     email.className = "invalid";
+    form.classList.add("invalid");
   }
 
   if (email.validity.valueMissing) {

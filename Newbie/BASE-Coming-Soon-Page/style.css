@@ -191,7 +191,7 @@ header {
   opacity: 1;
 }
 
-.hero__cta:has(.invalid) {
+.hero__cta.invalid {
   /*   border: 2px solid var(--softred); */
   box-shadow: 0 0 0 2px var(--softred);
 }
