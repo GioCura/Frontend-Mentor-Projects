@@ -1,13 +1,19 @@
 "use strict";
 
 const signupFormEl = document.querySelector(".signup__form");
-
+const inputEl = document.querySelectorAll(".input");
 const signupName = document.querySelectorAll(".signup__name");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
 const emailErrorEl = document.querySelector(".error__email");
 const passwordErrorEl = document.querySelector(".error__password");
+
+// REENABLES AUTOCOMPLETE //
+inputEl.forEach(function (e) {
+  e.autocomplete = "on";
+});
+
 // FORM VALIDATION WHILE USER IS INPUTTING DATA //
 signupName.forEach((el) => {
   el.addEventListener("change", () => {
