@@ -189,6 +189,29 @@ Another funky glitch I only encountered on Safari was that the `input` was still
 }
 ```
 
+I went back to this project again to make a workaround for the :has pseudoclass, which isn't available for Firefox. I was using it to change the "Dark Mode" title when the form is hovered.
+I tried doing this:
+
+```
+.darkmode__form:hover ~ .darkmode__title {
+  color: var(--darktext2);
+}
+```
+
+However, it wasn't working because, in the html, the title came first before the form. Instead, I found out that I could write the form first before the title and, since their nesting class is a flex item, I can just reorder them:
+
+```
+.darkmode__title {
+  order: 1;
+}
+
+.darkmode__form {
+  order: 2;
+}
+```
+
+Another thing I learned about Firefox is that pseudoelements aren't enabled for checkboxes by default. To workaround this, I learned to set `-moz-appearance: initial` to the checkbox element.
+
 ### Continued development
 
 - I want to practice building larger projects that requires me to refactor and make helper classes.
@@ -201,6 +224,8 @@ Another funky glitch I only encountered on Safari was that the `input` was still
 - [The MDN page about `will-change`](https://developer.mozilla.org/en-US/docs/Web/CSS/will-change) taught me to remove said attribute once I no longer need it.
 - [The stackoverflow thread](https://stackoverflow.com/questions/8796988/binding-multiple-events-to-a-listener-without-jquery) taught me to how to bind two events to a listener.
 - [This w3schools article](https://www.w3schools.com/jsref/met_win_cleartimeout.asp) taught me how to write a timeout function so that it can be called upon by `clearTimeout()`
+- [The stackoverflow thread](https://stackoverflow.com/questions/35378360/before-after-pseudo-elements-not-showing-firefox) taught me to how to enable pseudoelements for checkboxes on Firefox.
+- [The stackoverflow thread](https://stackoverflow.com/questions/1817792/is-there-a-previous-sibling-selector) taught me to use flex `order` as a workaround in situations where I want to select preceding siblings.
 
 ## Author
 

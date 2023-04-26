@@ -5,7 +5,7 @@
   color: var(--lighttext1);
 }
 
-.light .header__darkmode:has(form:hover) {
+.light .darkmode__form:hover ~ .darkmode__title {
   color: var(--lighttext1);
 }
 

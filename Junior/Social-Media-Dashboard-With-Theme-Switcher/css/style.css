@@ -102,7 +102,7 @@ header,
 }
 
 .header__title h1,
-.header__darkmode:has(form:hover),
+.darkmode__form:hover ~ .darkmode__title,
 .card__number,
 .dashboard__bottom h2 {
   color: var(--darktext2);
@@ -167,6 +167,16 @@ header {
 
 .header__darkmode {
   justify-content: space-between;
+}
+
+/* Re-orients elements */
+
+.darkmode__title {
+  order: 1;
+}
+
+.darkmode__form {
+  order: 2;
 }
 
 .darkmode__input {
