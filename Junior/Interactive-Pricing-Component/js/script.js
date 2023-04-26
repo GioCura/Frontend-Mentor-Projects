@@ -7,8 +7,6 @@ const toggle = document.querySelector(".toggle");
 const toggleRipple = document.querySelector(".toggle__ripple");
 const ratePrice = document.querySelector(".rate__price");
 
-sliderInput.autocomplete = "on";
-
 sliderInput.addEventListener("input", (event) => {
   // Dynamically sets progress bar
   let progressValue =
