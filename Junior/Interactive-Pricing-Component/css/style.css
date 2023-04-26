@@ -181,7 +181,6 @@ main {
 
 .slider {
   grid-area: slider;
-  user-select: none;
 }
 
 .slider__input {
