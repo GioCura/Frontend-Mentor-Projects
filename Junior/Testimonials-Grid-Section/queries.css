@@ -71,6 +71,7 @@
   .card:hover::before {
     width: 100%;
     border: 3px solid gold;
+    background-color: gold;
   }
 
   .card:hover {
