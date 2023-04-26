@@ -289,7 +289,7 @@ label[for="cvc"] {
 }
 
 .invalid ~ .error,
-div:has(.invalid) ~ .error {
+.mmyy__inputs.invalid ~ .error {
   opacity: 1;
 }
 

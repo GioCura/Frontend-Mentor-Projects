@@ -15,6 +15,7 @@ const inputEl = document.querySelectorAll(".input");
 const nameEl = document.querySelector(".input--name");
 const numberEl = document.querySelectorAll(".input--number");
 const cardNumberEl = document.querySelector(".input--cardnumber");
+const mmyyInputs = document.querySelector(".mmyy__inputs");
 const mmEl = document.querySelector(".input--mm");
 const yyEl = document.querySelector(".input--yy");
 const cvcEl = document.querySelector(".input--cvc");
@@ -73,6 +74,7 @@ numberEl.forEach((el) => {
     if (el.validity.valid) {
       el.classList.remove("invalid");
       if (el === yyEl || el === mmEl) {
+        mmyyInputs.classList.remove("invalid");
         if (mmEl.validity.valid || yyEl.validity.valid) {
           if (!mmEl.validity.valid || !yyEl.validity.valid) {
             errorNumberEl[e].style.height =
@@ -180,6 +182,10 @@ function numberElError(el) {
   ) {
     el.classList.add("invalid");
     errorNumberEl[e].style.height = errorNumberEl[e].scrollHeight + "px";
+  }
+
+  if (el === yyEl || el === mmEl) {
+    mmyyInputs.classList.add("invalid");
   }
 }
 

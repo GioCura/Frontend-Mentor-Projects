@@ -79,7 +79,6 @@ Mobile
 I used `indexOf()` as a means to get the correct node index of each input's error message:
 
 ```
-
 let e = numberElArray.indexOf(el, 0) - 1;
 if (e === -1 || e === 0) {
 e++;
@@ -88,30 +87,25 @@ e++;
 if (el.validity.valueMissing) {
 errorNumberEl[e].textContent = "Can't be blank";
 }
-
 ```
 
 I used `test()` to match the input value to a regular expression:
 
 ```
-
 let correctFormat = regExNumber.test(el.value);
 
     if (el.validity.tooShort && correctFormat) {
     errorNumberEl[e].textContent = "Incomplete";
 
 }
-
 ```
 
 Then, I used `location.reload()` to reload the page upon the user's clicking of the continue button:
 
 ```
-
 continueEl.addEventListener("click", function () {
 location.reload();
 });
-
 ```
 
 Aside from new functions, I also wrote more complex script.
@@ -119,10 +113,10 @@ Aside from new functions, I also wrote more complex script.
 Since the MM/YY input must only remove error messages when both are valid. I wrote this:
 
 ```
-
     if (el.validity.valid) {
       el.classList.remove("invalid");
       if (el === yyEl || el === mmEl) {
+        mmyyInputs.classList.remove("invalid");
         if (mmEl.validity.valid || yyEl.validity.valid) {
           if (!mmEl.validity.valid || !yyEl.validity.valid) {
             errorNumberEl[e].style.height =
@@ -137,13 +131,11 @@ Since the MM/YY input must only remove error messages when both are valid. I wro
     } else {
       numberElError(el);
     }
-
 ```
 
 I also wrote an animation script that resets the style once it's finished, so that it is repeatable:
 
 ```
-
 function errorAnim(el) {
 el.style.animation = ".5s shake";
 
@@ -151,8 +143,21 @@ el.addEventListener("animationend", function () {
 el.style.animation = "none";
 });
 }
+```
+
+Another thing I learned is that Firefox has an autocomplete function that saves people's inputs. This is not ideal for the toggles and inputs that I've made so far, so I found a workaround.
+
+First, I set `autocomplete` to `off` in the html code of the input.
+
+Then, I use Javascript to set that to "on":
 
 ```
+inputEl.forEach(function (e) {
+  e.autocomplete = "on";
+});
+```
+
+So, as the page loads, the autocomplete is turned off, but is immediately turned on again once the browser loads the script.
 
 ### Continued development
 
@@ -169,6 +174,7 @@ el.style.animation = "none";
 - [This SO thread](https://stackoverflow.com/questions/27660423/fieldset-width-100-of-parent) taught me how to override the `fieldset`'s default width by using `min-width: 0;`
 - [This blog post](https://codyhouse.co/nuggets/css-gradient-borders) taught me how to make a gradient border.
 - [This W3Schools page](https://www.w3schools.com/jsref/met_loc_reload.asp) taught me how to trigger a reload event.
+- [This SO thread](https://stackoverflow.com/questions/2486474/preventing-firefox-from-remembering-the-input-value-on-refresh-with-a-meta-tag) taught me how to override the `autocomplete` on Firefox.
 
 ## Author
 
