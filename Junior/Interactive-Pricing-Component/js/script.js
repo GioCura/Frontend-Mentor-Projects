@@ -1,16 +1,11 @@
 "use strict";
 
 const sliderInput = document.querySelector(".slider__input");
-const sliderMeasure = document.querySelector(".slider__measure");
 const pricingCategory = document.querySelector(".pricing__category");
 const toggleInput = document.querySelector(".toggle__input");
 const ratePrice = document.querySelector(".rate__price");
 
-sliderMeasure.textContent = sliderInput.value;
-
 sliderInput.addEventListener("input", (event) => {
-  sliderMeasure.textContent = event.target.value;
-
   // Dynamically sets progress bar
   let progressValue =
     ((event.target.value - event.target.min) /
