@@ -170,6 +170,9 @@ header {
 }
 
 .darkmode__input {
+  /* Enables :pseudoelements on Firefox */
+  -moz-appearance: initial;
+
   animation: 1s hideRipple forwards;
 
   /* Fixes safari bug -- checkbox still showing desipite width set to 0 */
