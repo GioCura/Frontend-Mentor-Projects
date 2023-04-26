@@ -181,10 +181,6 @@ main {
 
 .slider {
   grid-area: slider;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  padding: 4.1rem 0 4rem;
 }
 
 .slider__input {
@@ -202,7 +198,7 @@ main {
   width: 279px;
   transition: background 450ms ease-in;
   cursor: pointer;
-  /* margin: 4.1rem 0 4rem; */
+  margin: 4.1rem 0 4rem;
 }
 
 /* .slider__input::-webkit-slider-runnable-track {
