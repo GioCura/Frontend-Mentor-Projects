@@ -3,6 +3,8 @@
 const sliderInput = document.querySelector(".slider__input");
 const pricingCategory = document.querySelector(".pricing__category");
 const toggleInput = document.querySelector(".toggle__input");
+const toggle = document.querySelector(".toggle");
+const toggleRipple = document.querySelector(".toggle__ripple");
 const ratePrice = document.querySelector(".rate__price");
 
 sliderInput.addEventListener("input", (event) => {
@@ -37,4 +39,20 @@ sliderInput.addEventListener("input", (event) => {
 
 toggleInput.addEventListener("change", function () {
   ratePrice.classList.toggle("yearly");
+  addRipple(toggleRipple);
 });
+
+toggle.addEventListener("keydown", function (e) {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    toggleInput.click();
+  }
+});
+
+function addRipple(el) {
+  el.style.animation = ".5s ripple ease-out";
+
+  el.addEventListener("animationend", function () {
+    el.style.animation = "none";
+  });
+}
