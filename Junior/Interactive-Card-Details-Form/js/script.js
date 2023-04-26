@@ -11,6 +11,7 @@ const bgCVCEl = document.querySelector(".bg__cvc");
 const detailsEl = document.querySelector(".details");
 const detailsFormEl = document.querySelector(".details__form");
 const thanksEl = document.querySelector(".thanks");
+const inputEl = document.querySelectorAll(".input");
 const nameEl = document.querySelector(".input--name");
 const numberEl = document.querySelectorAll(".input--number");
 const cardNumberEl = document.querySelector(".input--cardnumber");
@@ -23,6 +24,11 @@ const continueEl = document.querySelector(".form__continue");
 const errorNameEl = document.querySelector(".error__name");
 const errorNumberEl = document.querySelectorAll(".error__number");
 let regExNumber = /^[0-9\s]*$/;
+
+// REENABLES AUTOCOMPLETE //
+inputEl.forEach(function (e) {
+  e.autocomplete = "on";
+});
 
 // Match background card to input
 nameEl.addEventListener("input", function () {
