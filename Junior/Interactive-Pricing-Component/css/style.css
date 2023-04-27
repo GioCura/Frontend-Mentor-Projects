@@ -322,7 +322,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
+  /* Firefox size adjustment */
+  font-size: 1.199rem;
   padding: 0 1.2rem 3.8rem 4.45rem;
   border-bottom: 1px solid var(--emptyslider);
   margin-bottom: 2.4rem;
