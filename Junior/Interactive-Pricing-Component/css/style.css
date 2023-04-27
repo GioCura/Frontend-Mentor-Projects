@@ -102,7 +102,8 @@ header p {
 
 main {
   width: 100%;
-  max-width: 54rem;
+  /* max-width: 54rem; */
+  max-width: 58.8rem;
   padding: 0 2.4rem;
 }
 
@@ -119,6 +120,7 @@ main {
     "views"
     "slider"
     "price";
+  grid-template-columns: 1fr;
   justify-content: center;
   padding: 0 2.4rem;
 }
@@ -173,10 +175,20 @@ main {
   width: 100%;
   top: 0;
   left: 0;
-  transform: translateY(-2rem);
+  /* transform: translateY(-2rem); */
   opacity: 0;
   transition: all 0.5s;
   pointer-events: none;
+}
+
+.number {
+  transform: translateY(-2rem);
+}
+
+.price .number,
+.price__yearly,
+.yearly .price__monthly {
+  transform: translateY(-4rem);
 }
 
 .category--10k .number--10k,
@@ -194,9 +206,11 @@ main {
 .slider {
   display: flex;
   align-items: center;
+  justify-content: center;
   grid-area: slider;
   height: 4rem;
-  margin-bottom: 2.4rem;
+  /* margin-bottom: 2.4rem; */
+  margin: 0 0 2.4rem;
 }
 
 .slider__input {
@@ -210,8 +224,9 @@ main {
     var(--emptyslider) 100%
   );
   border-radius: 5px;
-  height: 8px;
-  width: 279px;
+  height: 0.8rem;
+  /* width: 27.9rem; */
+  width: 100%;
   transition: background 450ms ease-in;
   cursor: pointer;
   /* margin: 4.1rem 0 4rem; */
@@ -236,8 +251,8 @@ main {
 .slider__input::-webkit-slider-thumb {
   appearance: none;
   -webkit-appearance: none;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   border: 1px solid transparent;
   background: url(../images/icon-slider.svg), var(--sliderbg);
@@ -251,8 +266,8 @@ main {
 .slider__input::-moz-range-thumb {
   appearance: none;
   -webkit-appearance: none;
-  height: 40px;
-  width: 40px;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   border: 1px solid transparent;
   background: url(../images/icon-slider.svg), var(--sliderbg);
@@ -308,9 +323,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  padding-left: 4.45rem;
-  padding-right: 1.2rem;
-  padding-bottom: 3.8rem;
+  padding: 0 1.2rem 3.8rem 4.45rem;
   border-bottom: 1px solid var(--emptyslider);
   margin-bottom: 2.4rem;
 }
@@ -329,14 +342,8 @@ main {
 }
 
 .discount {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 4.2rem;
-  height: 1.9rem; */
   font-size: 1rem;
   font-weight: var(--fw-2);
-  /* padding: 0.2rem 0.8rem 0.3rem 0.7rem; */
   padding: 0.2rem 0.894rem 0.3rem 0.793rem;
   text-align: center;
   color: var(--discounttext);
@@ -450,7 +457,6 @@ main {
 .cta button {
   font-weight: var(--fw-2);
   color: var(--ctatext);
-  /* padding: 1.2rem 4.6rem 1.3rem; */
   padding: 1.15rem 4.63rem 1.25rem;
   background: var(--textctabg);
   border-radius: 20.5px;

@@ -50,7 +50,7 @@ toggle.addEventListener("keydown", function (e) {
 });
 
 function addRipple(el) {
-  el.style.animation = ".5s ripple ease-out";
+  el.style.animation = ".4s ripple ease-out";
 
   el.addEventListener("animationend", function () {
     el.style.animation = "none";

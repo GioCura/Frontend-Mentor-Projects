@@ -1,0 +1,122 @@
+@media (min-width: 1441px) {
+  body::after {
+    background-size: 100vw;
+  }
+}
+
+@media (min-width: 614px) {
+  body::after {
+    height: 44.9rem;
+    background-position: initial;
+  }
+
+  header {
+    gap: 1.2rem;
+    margin: 6.7rem 0 5.4rem;
+  }
+
+  header h1 {
+    font-size: 2.8rem;
+  }
+
+  br {
+    display: none;
+  }
+
+  header p {
+    font-size: 1.5rem;
+  }
+
+  .pricing {
+    padding: 4rem 0 3.2rem;
+  }
+
+  .pricing__category {
+    grid-template-areas:
+      "views price"
+      "slider slider";
+    padding: 0;
+    row-gap: 2.4rem;
+  }
+
+  .pageviews {
+    justify-content: initial;
+    align-items: center;
+    font-size: 1.4rem;
+    margin-left: 4.6rem;
+    margin-bottom: 0;
+  }
+
+  .rate {
+    gap: 0.8rem;
+    margin-bottom: 0;
+    margin-right: 4.8rem;
+  }
+
+  .rate__price {
+    font-size: 4rem;
+  }
+
+  .rate__period {
+    font-size: 1.6rem;
+  }
+
+  .slider {
+    margin: 0 4.8rem 4rem;
+  }
+
+  .billing--monthly {
+    margin-right: 1.6rem;
+  }
+
+  .billing--yearly {
+    margin-right: 0.9rem;
+  }
+
+  .discount {
+    padding: 0.2rem 0.7rem 0.3rem 0.6rem;
+  }
+
+  .discount::before {
+    content: "25% discount";
+  }
+
+  .pricing__toggle {
+    /* padding: 0 1.2rem 4rem 4.45rem; */
+    padding: 0 6.5rem 4rem 15.4rem;
+    margin-bottom: 3.2rem;
+    justify-content: initial;
+  }
+
+  .toggle {
+    margin-right: 1.6rem;
+  }
+
+  .cta {
+    flex-direction: row;
+    gap: 13rem;
+    margin: 0 4.4rem 0 4.8rem;
+  }
+
+  .cta__features {
+    align-items: initial;
+    margin-bottom: initial;
+  }
+
+  .cta button {
+    /* For Firefox */
+    font-size: 1.199rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .pricing__toggle {
+    padding: 0 0 3.8rem;
+  }
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 52.5%;
+  }
+}
