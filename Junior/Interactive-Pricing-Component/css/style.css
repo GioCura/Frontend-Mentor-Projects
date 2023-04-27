@@ -17,9 +17,18 @@ li {
   list-style: none;
 }
 
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  font-size: inherit;
+}
+
 :root {
   /* PRIMARY */
-  --slider: hsl(174, 77%, 80%);
+  --slider: hsl(174, 76%, 80%);
   --sliderbg: hsl(174, 86%, 45%);
   --discountbg: hsl(14, 92%, 95%);
   --discounttext: hsl(15, 100%, 70%);
@@ -50,30 +59,31 @@ body {
 }
 
 body::after {
-  position: absolute;
   content: "";
+  position: absolute;
+  z-index: -1;
   width: 100%;
   height: 40rem;
   background: url(../images/bg-pattern.svg);
-  background-size: 100vw 40rem;
+  /* background-size: 100vw 40rem; */
+  background-position: 0 -4.5rem;
   background-repeat: no-repeat;
-  z-index: -1;
 }
 
 /* HEADER */
 
 header {
-  margin: 5.7rem 0 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
   height: 14.5rem;
+  margin: 5.7rem 0 3.2rem;
+  text-align: center;
   background: url(../images/pattern-circles.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 14.6rem 14.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  gap: 0.8rem;
 }
 
 header h1 {
@@ -84,8 +94,8 @@ header h1 {
 
 header p {
   font-size: 1.3rem;
-  color: var(--text);
   line-height: 2.3rem;
+  color: var(--text);
 }
 
 /* PRICE CARD */
@@ -97,9 +107,10 @@ main {
 }
 
 .pricing {
-  background: var(--pricingbg);
   padding: 3.4rem 0 3.2rem;
   border-radius: 8px;
+  background: var(--pricingbg);
+  box-shadow: 0px 20px 30px -5px hsla(231, 29%, 61%, 0.1521);
 }
 
 .pricing__category {
@@ -113,15 +124,16 @@ main {
 }
 
 .pageviews {
-  grid-area: views;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  font-weight: var(--fw-2);
-  color: var(--text);
-  letter-spacing: 0.171rem;
   display: flex;
-  gap: 0.5rem;
   justify-content: center;
+  grid-area: views;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: var(--fw-2);
+  letter-spacing: 0.171rem;
+  color: var(--text);
 }
 
 .pageviews__number {
@@ -129,11 +141,11 @@ main {
 }
 
 .rate {
-  grid-area: price;
   display: flex;
   align-items: center;
-  gap: 1rem;
   justify-content: center;
+  grid-area: price;
+  gap: 1rem;
   margin-bottom: 3.4rem;
 }
 
@@ -146,8 +158,8 @@ main {
 }
 
 .rate__period {
-  color: var(--text);
   font-size: 1.4rem;
+  color: var(--text);
 }
 
 .price__monthly {
@@ -157,13 +169,13 @@ main {
 .number,
 .price__yearly,
 .yearly .price__monthly {
-  transition: all 0.5s;
   position: absolute;
-  opacity: 0;
   width: 100%;
   top: 0;
   left: 0;
   transform: translateY(-2rem);
+  opacity: 0;
+  transition: all 0.5s;
   pointer-events: none;
 }
 
@@ -173,14 +185,18 @@ main {
 .category--500k .number--500k,
 .category--1m .number--1m,
 .yearly .price__yearly {
-  opacity: 1;
   position: static;
   transform: translateY(0);
+  opacity: 1;
   pointer-events: auto;
 }
 
 .slider {
+  display: flex;
+  align-items: center;
   grid-area: slider;
+  height: 4rem;
+  margin-bottom: 2.4rem;
 }
 
 .slider__input {
@@ -188,17 +204,17 @@ main {
   -webkit-appearance: none;
   background: linear-gradient(
     to right,
-    #a4f3eb 0%,
-    #a4f3eb 50%,
-    #ecf0fb 50%,
-    #ecf0fb 100%
+    var(--slider) 0%,
+    var(--slider) 50%,
+    var(--emptyslider) 50%,
+    var(--emptyslider) 100%
   );
   border-radius: 5px;
   height: 8px;
   width: 279px;
   transition: background 450ms ease-in;
   cursor: pointer;
-  margin: 4.1rem 0 4rem;
+  /* margin: 4.1rem 0 4rem; */
 }
 
 /* .slider__input::-webkit-slider-runnable-track {
@@ -224,7 +240,7 @@ main {
   width: 40px;
   border-radius: 50%;
   border: 1px solid transparent;
-  background: url(../images/icon-slider.svg), #10d8c4;
+  background: url(../images/icon-slider.svg), var(--sliderbg);
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0px 15px 30px hsla(174, 100%, 50%, 0.6);
@@ -239,7 +255,7 @@ main {
   width: 40px;
   border-radius: 50%;
   border: 1px solid transparent;
-  background: url(../images/icon-slider.svg), #10d8c4;
+  background: url(../images/icon-slider.svg), var(--sliderbg);
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: 0px 15px 30px hsla(174, 100%, 50%, 0.6);
@@ -290,7 +306,46 @@ main {
 .pricing__toggle {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 1.2rem;
+  padding-left: 4.45rem;
+  padding-right: 1.2rem;
+  padding-bottom: 3.8rem;
+  border-bottom: 1px solid var(--emptyslider);
+  margin-bottom: 2.4rem;
+}
+
+.billing {
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.billing--monthly {
+  margin-right: 1.2rem;
+}
+
+.billing--yearly {
+  margin-right: 0.5rem;
+}
+
+.discount {
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.2rem;
+  height: 1.9rem; */
+  font-size: 1rem;
+  font-weight: var(--fw-2);
+  /* padding: 0.2rem 0.8rem 0.3rem 0.7rem; */
+  padding: 0.2rem 0.894rem 0.3rem 0.793rem;
+  text-align: center;
+  color: var(--discounttext);
+  background: var(--discountbg);
+  border-radius: 9.5px;
+}
+
+.discount::before {
+  content: "-25%";
 }
 
 .toggle__input {
@@ -298,12 +353,13 @@ main {
 }
 
 .toggle {
+  position: relative;
   display: block;
   width: 4.3rem;
   height: 2.2rem;
-  background: var(--togglebg);
   border-radius: 15px;
-  position: relative;
+  margin-right: 1.2rem;
+  background: var(--togglebg);
   transition: all 0.3s;
   cursor: pointer;
 }
@@ -313,14 +369,14 @@ main {
 }
 
 .toggle::after {
-  position: absolute;
   content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
   width: 1.4rem;
   height: 1.4rem;
   border-radius: 50%;
   background: var(--pricingbg);
-  top: 0.4rem;
-  left: 0.4rem;
   transition: all 0.3s;
 }
 
@@ -329,12 +385,12 @@ main {
 }
 
 .toggle__ripple {
-  position: absolute;
   content: "";
-  background: var(--sliderbg);
-  border-radius: 50%;
+  position: absolute;
   top: -1.2rem;
   left: -0.01rem;
+  border-radius: 50%;
+  background: var(--sliderbg);
   opacity: 0;
 }
 
@@ -351,4 +407,56 @@ main {
     top: -2.5rem;
     left: -1.31rem;
   }
+}
+
+/* CTA */
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.cta__features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  color: var(--text);
+  width: 14.8rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.605rem;
+  text-align: center;
+}
+
+.feature:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.check {
+  width: 0.696rem;
+  height: 0.506rem;
+  background: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: 0.695rem 0.504rem;
+  background-position: center;
+}
+
+.cta button {
+  font-weight: var(--fw-2);
+  color: var(--ctatext);
+  /* padding: 1.2rem 4.6rem 1.3rem; */
+  padding: 1.15rem 4.63rem 1.25rem;
+  background: var(--textctabg);
+  border-radius: 20.5px;
+  transition: all 0.3s;
+}
+
+.cta button:hover {
+  color: var(--pricingbg);
 }

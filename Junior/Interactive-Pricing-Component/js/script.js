@@ -15,11 +15,11 @@ sliderInput.addEventListener("input", (event) => {
     100;
 
   event.target.style.background =
-    "linear-gradient(to right, #A4F3EB 0%, #A4F3EB " +
+    "linear-gradient(to right, var(--slider) 0%, var(--slider) " +
     progressValue +
-    "%, #ecf0fb " +
+    "%, var(--emptyslider) " +
     progressValue +
-    "%, #ecf0fb 100%)";
+    "%, var(--emptyslider) 100%)";
 
   // Switches between categories
   let e = Number(event.target.value);
