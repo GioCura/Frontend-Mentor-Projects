@@ -8,7 +8,8 @@ html {
   font-size: 62.5%;
 }
 
-h1 {
+h1,
+h2 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -47,6 +48,22 @@ button {
   --fw-2: 800;
 }
 
+body {
+  min-height: 100vh;
+  font-family: var(--font);
+  font-weight: var(--fw-1);
+  background: var(--mainbg);
+  font-size: 1.5rem;
+}
+
+body::before {
+  content: "";
+  z-index: -1;
+  height: 40rem;
+  background: url(../images/bg-pattern.svg);
+  background-position: 0 -4.5rem;
+}
+
 /* HELPER CLASSES & SHARED ATTRIBUTES */
 
 .pageviews__number,
@@ -64,15 +81,7 @@ body::before,
   position: absolute;
 }
 
-body,
-header,
-.pageviews,
-.rate,
-.slider,
-.pricing__toggle,
-.cta,
-.cta__features,
-.feature {
+.flex {
   display: flex;
 }
 
@@ -83,13 +92,7 @@ header,
   flex-direction: column;
 }
 
-body,
-.rate,
-.slider,
-.pricing__toggle,
-.cta,
-.cta__features,
-.feature {
+.align-center {
   align-items: center;
 }
 
@@ -134,22 +137,6 @@ header p,
 }
 
 /* ///////////////////////////////// */
-
-body {
-  min-height: 100vh;
-  font-family: var(--font);
-  font-weight: var(--fw-1);
-  background: var(--mainbg);
-  font-size: 1.5rem;
-}
-
-body::before {
-  content: "";
-  z-index: -1;
-  height: 40rem;
-  background: url(../images/bg-pattern.svg);
-  background-position: 0 -4.5rem;
-}
 
 /* HEADER */
 

@@ -26,8 +26,8 @@
 
     <title>Frontend Mentor | Interactive pricing component</title>
   </head>
-  <body>
-    <header>
+  <body class="flex align-center">
+    <header class="flex">
       <h1>Simple, traffic-based pricing</h1>
       <p>
         Sign-up for our 30-day trial.<br />
@@ -38,7 +38,7 @@
     <main>
       <article class="pricing">
         <div class="pricing__category category--100k">
-          <div class="pageviews">
+          <div class="pageviews flex">
             <div class="pageviews__number">
               <span class="number number--10k">10k</span>
               <span class="number number--50k">50k</span>
@@ -48,7 +48,7 @@
             </div>
             <span>Pageviews</span>
           </div>
-          <div class="slider">
+          <div class="slider flex align-center">
             <input
               type="range"
               min="1"
@@ -59,7 +59,7 @@
               autocomplete="off"
             />
           </div>
-          <div class="rate">
+          <div class="rate flex align-center">
             <div class="rate__price">
               <div class="price price__monthly">
                 <span class="number number--10k">$8.00</span>
@@ -80,8 +80,8 @@
           </div>
         </div>
 
-        <div class="pricing__toggle">
-          <span class="billing billing--monthly">Monthly Billing</span>
+        <div class="pricing__toggle flex align-center">
+          <h2 class="billing billing--monthly">Monthly Billing</h2>
           <label for="toggle">
             <input
               type="checkbox"
@@ -94,21 +94,21 @@
               <span class="toggle__ripple"></span>
             </span>
           </label>
-          <span class="billing billing--yearly">Yearly Billing</span>
+          <h2 class="billing billing--yearly">Yearly Billing</h2>
           <span class="discount"></span>
         </div>
 
-        <div class="cta">
-          <ul class="cta__features">
-            <li class="feature">
+        <div class="cta flex align-center">
+          <ul class="cta__features flex align-center">
+            <li class="feature flex align-center">
               <div class="check"></div>
               <span>Unlimited websites</span>
             </li>
-            <li class="feature">
+            <li class="feature flex align-center">
               <div class="check"></div>
               <span>100% data ownership</span>
             </li>
-            <li class="feature">
+            <li class="feature flex align-center">
               <div class="check"></div>
               <span>Email reports</span>
             </li>

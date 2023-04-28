@@ -84,6 +84,14 @@ Mobile
     "%, var(--emptyslider) 100%)";
 ```
 
+I almost didn't notice that the discount text changes between mobile and desktop layouts. Instead of Javacript, I just left the text content blank on the html, and used pseudoelements:
+
+```
+.discount::before {
+  content: "-25%";
+}
+```
+
 ### Continued development
 
 I'd like to do more projects involving sliders.
@@ -92,6 +100,7 @@ I'd like to do more projects involving sliders.
 
 - [This guide](https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/) was invaluable in helping make the slider look the same across all browsers.
 - [dargue3's answer in this SO thread](https://stackoverflow.com/questions/18389224/how-to-style-html5-range-input-to-have-different-color-before-and-after-slider) taught me a simple way to style the progressed section of the slider.
+- [This SO thread](https://stackoverflow.com/questions/7896402/how-can-i-replace-text-with-css) helped me figure out how to change text content using pseudoelements and media queries.
 
 ## Author
 
@@ -100,11 +109,3 @@ I'd like to do more projects involving sliders.
 ## Acknowledgments
 
 Thank you to Zellene for helping test the project on Safari.
-
-```
-
-```
-
-```
-
-```
