@@ -1,11 +1,11 @@
 @media (min-width: 1441px) {
-  body::after {
+  body::before {
     background-size: 100vw;
   }
 }
 
 @media (min-width: 614px) {
-  body::after {
+  body::before {
     height: 44.9rem;
     background-position: initial;
   }
