@@ -441,11 +441,16 @@ main {
 }
 
 .check {
-  width: 0.696rem;
-  height: 0.506rem;
+  width: 0.896rem;
+  height: 0.706rem;
   background: url(../images/icon-check.svg);
-  background-size: 0.695rem 0.504rem;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0.895rem 0.704rem;
+
+  /* width: 0.696rem;
+  height: 0.506rem;
+  background-size: 0.695rem 0.504rem; */
 }
 
 .cta button {

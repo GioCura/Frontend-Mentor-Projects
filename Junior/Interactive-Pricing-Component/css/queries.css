@@ -5,6 +5,38 @@
   }
 }
 
+/* @media (min-width: 1024px) {
+  header > * {
+    animation: 1s slideleft;
+  }
+
+  @keyframes slideleft {
+    0% {
+      transform: translateX(-20rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .pricing {
+    animation: 1s slideright;
+  }
+
+  @keyframes slideright {
+    0% {
+      transform: translateX(20rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+} */
+
 @media (min-width: 614px) {
   body::before {
     height: 44.9rem;
