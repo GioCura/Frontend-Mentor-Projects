@@ -1,6 +1,7 @@
 @media (min-width: 1441px) {
   body::before {
-    background-size: 100vw;
+    background-size: 100vw 44.9rem;
+    background-repeat: no-repeat;
   }
 }
 
