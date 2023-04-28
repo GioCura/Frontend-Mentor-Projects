@@ -46,6 +46,7 @@
     font-size: 1.4rem;
     margin-left: 4.6rem;
     margin-bottom: 0;
+    letter-spacing: 0.2rem;
   }
 
   .rate {
@@ -56,6 +57,7 @@
 
   .rate__price {
     font-size: 4rem;
+    letter-spacing: -0.1rem;
   }
 
   .rate__period {
