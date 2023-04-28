@@ -5,6 +5,9 @@ const darkmodeToggleEl = document.querySelector(".darkmode__toggle");
 const renderFixEl = document.querySelectorAll(".renderfix");
 let timeout;
 
+// Resets checked state for Firefox
+darkmodeInputEl.checked = false;
+
 // Resets the will-change as per best practice
 function renderFix() {
   timeout = setTimeout(function () {

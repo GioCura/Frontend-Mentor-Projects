@@ -7,6 +7,9 @@ const toggle = document.querySelector(".toggle");
 const toggleRipple = document.querySelector(".toggle__ripple");
 const ratePrice = document.querySelector(".rate__price");
 
+// Resets toggle state on Firefox
+toggleInput.checked = false;
+
 sliderInput.addEventListener("input", (event) => {
   // Dynamically sets progress bar
   let progressValue =

@@ -92,6 +92,12 @@ I almost didn't notice that the discount text changes between mobile and desktop
 }
 ```
 
+I learned that setting `autocomplete=off` to a `checkbox` isn't valid html, so I had to reset it on Firefox in a different way. I learned to just do it via JS:
+
+```
+toggleInput.checked = false;
+```
+
 ### Continued development
 
 I'd like to do more projects involving sliders.
