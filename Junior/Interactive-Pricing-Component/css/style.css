@@ -47,11 +47,96 @@ button {
   --fw-2: 800;
 }
 
+/* HELPER CLASSES & SHARED ATTRIBUTES */
+
+.pageviews__number,
+.rate__price,
+.toggle {
+  position: relative;
+}
+
+body::before,
+.number,
+.price__yearly,
+.yearly .price__monthly,
+.toggle::after,
+.toggle__ripple {
+  position: absolute;
+}
+
+body,
+header,
+.pageviews,
+.rate,
+.slider,
+.pricing__toggle,
+.cta,
+.cta__features,
+.feature {
+  display: flex;
+}
+
+body,
+header,
+.cta,
+.cta__features {
+  flex-direction: column;
+}
+
+body,
+.rate,
+.slider,
+.pricing__toggle,
+.cta,
+.cta__features,
+.feature {
+  align-items: center;
+}
+
+header,
+.pageviews,
+.rate,
+.pricing__toggle {
+  justify-content: center;
+}
+
+body::before,
+main,
+.slider__input {
+  width: 100%;
+}
+
+header h1,
+.pageviews,
+.rate__price,
+.discount,
+.cta button {
+  font-weight: var(--fw-2);
+}
+
+.pageviews,
+.pricing__toggle,
+.cta {
+  font-size: 1.2rem;
+}
+
+header h1,
+.rate__price {
+  color: var(--textctabg);
+}
+
+header p,
+.pageviews,
+.rate__period,
+.pricing__toggle,
+.cta__features {
+  color: var(--text);
+}
+
+/* ///////////////////////////////// */
+
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   font-family: var(--font);
   font-weight: var(--fw-1);
   background: var(--mainbg);
@@ -60,21 +145,15 @@ body {
 
 body::before {
   content: "";
-  position: absolute;
   z-index: -1;
-  width: 100%;
   height: 40rem;
   background: url(../images/bg-pattern.svg);
   background-position: 0 -4.5rem;
-  background-repeat: no-repeat;
 }
 
 /* HEADER */
 
 header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   gap: 0.8rem;
   height: 14.5rem;
   margin: 5.7rem 0 3.2rem;
@@ -86,21 +165,17 @@ header {
 }
 
 header h1 {
-  font-weight: var(--fw-2);
   font-size: 2rem;
-  color: var(--textctabg);
 }
 
 header p {
   font-size: 1.3rem;
   line-height: 2.3rem;
-  color: var(--text);
 }
 
 /* PRICE CARD */
 
 main {
-  width: 100%;
   max-width: 58.8rem;
   padding: 0 2.4rem;
   margin-bottom: 2rem;
@@ -120,54 +195,35 @@ main {
     "slider"
     "price";
   grid-template-columns: 1fr;
-  justify-content: center;
   padding: 0 2.4rem;
 }
 
 .pageviews {
-  display: flex;
-  justify-content: center;
   grid-area: views;
   gap: 0.5rem;
   margin-bottom: 2.5rem;
   text-transform: uppercase;
-  font-size: 1.2rem;
-  font-weight: var(--fw-2);
   letter-spacing: 0.171rem;
-  color: var(--text);
-}
-
-.pageviews__number {
-  position: relative;
 }
 
 .rate {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   grid-area: price;
   gap: 1rem;
   margin-bottom: 3.4rem;
 }
 
 .rate__price {
-  position: relative;
   font-size: 3.2rem;
   letter-spacing: -0.08rem;
-  font-weight: var(--fw-2);
-  color: var(--textctabg);
 }
 
 .rate__period {
   font-size: 1.4rem;
-  color: var(--text);
 }
 
 .number,
 .price__yearly,
 .yearly .price__monthly {
-  position: absolute;
-  width: 100%;
   top: 0;
   left: 0;
   opacity: 0;
@@ -204,9 +260,6 @@ main {
 /* SLIDER */
 
 .slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   grid-area: slider;
   height: 4rem;
   margin: 0 0 2.4rem;
@@ -224,7 +277,6 @@ main {
   );
   border-radius: 5px;
   height: 0.8rem;
-  width: 100%;
   transition: background 450ms ease-in;
   cursor: pointer;
 }
@@ -303,14 +355,9 @@ main {
 /* TOGGLE */
 
 .pricing__toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
   padding: 0 1.2rem 3.8rem 4.45rem;
   border-bottom: 1px solid var(--emptyslider);
   margin-bottom: 2.4rem;
-  color: var(--text);
 }
 
 .billing--monthly {
@@ -323,9 +370,7 @@ main {
 
 .discount {
   font-size: 1rem;
-  font-weight: var(--fw-2);
   padding: 0.2rem 0.894rem 0.3rem 0.793rem;
-  text-align: center;
   color: var(--discounttext);
   background: var(--discountbg);
   border-radius: 9.5px;
@@ -340,7 +385,6 @@ main {
 }
 
 .toggle {
-  position: relative;
   display: block;
   width: 4.3rem;
   height: 2.2rem;
@@ -357,7 +401,6 @@ main {
 
 .toggle::after {
   content: "";
-  position: absolute;
   top: 0.4rem;
   left: 0.4rem;
   width: 1.4rem;
@@ -373,7 +416,6 @@ main {
 
 .toggle__ripple {
   content: "";
-  position: absolute;
   top: -1.2rem;
   left: -0.01rem;
   border-radius: 50%;
@@ -398,27 +440,13 @@ main {
 
 /* CTA */
 
-.cta {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.2rem;
-}
-
 .cta__features {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 3.2rem;
-  color: var(--text);
   width: 14.8rem;
 }
 
 .feature {
-  display: flex;
-  align-items: center;
   gap: 1.605rem;
-  text-align: center;
 }
 
 .feature:not(:last-child) {
@@ -429,13 +457,11 @@ main {
   width: 0.696rem;
   height: 0.506rem;
   background: url(../images/icon-check.svg);
-  background-repeat: no-repeat;
   background-size: 0.695rem 0.504rem;
   background-position: center;
 }
 
 .cta button {
-  font-weight: var(--fw-2);
   color: var(--ctatext);
   padding: 1.15rem 4.63rem 1.25rem;
   background: var(--textctabg);
