@@ -5,7 +5,7 @@
   }
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
   header > * {
     animation: 1s slideleft;
   }
@@ -35,7 +35,7 @@
       opacity: 1;
     }
   }
-} */
+}
 
 @media (min-width: 614px) {
   body::before {
