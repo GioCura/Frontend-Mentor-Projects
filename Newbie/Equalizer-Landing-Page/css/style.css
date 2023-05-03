@@ -1,0 +1,236 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+:root {
+  --pricingcard: #fa7453;
+  --ioshover: #66e2dc;
+  --android: #ffb964;
+  --text: #191826;
+  --white: #fcfaf9;
+  --font: "IBM Plex Sans", sans-serif;
+  --fw-1: 400;
+  --fw-2: 700;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  background: url(../assets/bg-main-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  font-weight: var(--fw-2);
+  font-family: var(--font);
+}
+
+header {
+  margin: 3.99rem 0 6.401rem 2.415rem;
+}
+
+.logo {
+  width: 14.61rem;
+  height: 3.2rem;
+}
+
+.hero {
+  margin: 0 2.4rem 16.6rem;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  line-height: 48px;
+  letter-spacing: -0.45px;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.hero p {
+  font-weight: var(--fw-1);
+  font-size: 1.6rem;
+  line-height: 26px;
+  color: var(--text);
+}
+
+.cta {
+  position: relative;
+  background: url(../assets/bg-pattern-2.svg), var(--text);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 28rem 42rem;
+  border-radius: 12px;
+  height: 60rem;
+  margin-top: 9.8rem;
+  /* margin-bottom: 32.7rem; */
+  margin-bottom: 39.1rem;
+}
+
+.cta__phone {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cta__phone img {
+  position: absolute;
+  width: 20.897rem;
+  height: 43rem;
+  top: -9.8rem;
+  margin: 0 8.536rem 0 8.067rem;
+}
+
+.cta__card {
+  position: absolute;
+  top: 38rem;
+  background: var(--pricingcard);
+  border-radius: 12px;
+  padding: 4.8rem 3.7rem 4.8rem 3.6rem;
+  color: var(--white);
+  width: 100%;
+}
+
+.cta__card h2 {
+  font-size: 3.2rem;
+  line-height: 40px;
+
+  margin-bottom: 1.2rem;
+}
+
+.cta__description {
+  font-weight: var(--fw-1);
+  font-size: 1.8rem;
+  line-height: 28px;
+  margin-bottom: 3.6rem;
+}
+
+.cta__pricing {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-left: 0.6rem;
+  margin-bottom: 3.2rem;
+}
+
+.pricing__amount {
+  font-size: 6.5rem;
+  line-height: 52px;
+}
+
+.pricing__rate {
+  font-weight: var(--fw-1);
+  font-size: 2rem;
+  line-height: 32px;
+  letter-spacing: -0.2px;
+}
+
+.cta button {
+  width: 98%;
+  margin-left: 0.6rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.4rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.cta button > span {
+  font-size: 1.8rem;
+  line-height: 32px;
+  letter-spacing: -0.18px;
+}
+
+.ios {
+  background: var(--text);
+  color: var(--white);
+  margin-bottom: 1.6rem;
+  gap: 0.792rem;
+}
+
+.ios__logo {
+  background: url(../assets/icon-apple.svg);
+  width: 1.708rem;
+  height: 2rem;
+  transform: translateY(-0.15rem);
+}
+
+.ios:hover {
+  background: var(--ioshover);
+}
+
+.android {
+  background: var(--white);
+  color: var(--text);
+  gap: 0.78rem;
+}
+
+.android:hover {
+  background: var(--android);
+}
+
+.android__logo {
+  background: url(../assets/icon-android.svg);
+  width: 1.675rem;
+  height: 2rem;
+}
+
+footer {
+  margin: 0 2.4rem;
+}
+
+footer > .logo {
+  margin-bottom: 3.201rem;
+}
+
+.footer__text {
+  font-weight: var(--fw-1);
+  font-size: 1.6rem;
+  line-height: 26px;
+  margin-bottom: 6.4rem;
+}
+
+.footer__text span {
+  font-weight: var(--fw-2);
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 8rem;
+}
+
+.socials__logo {
+  transition: all 0.3s;
+  color: var(--text);
+}
+
+.socials__link:visited {
+  color: inherit;
+}
+
+.socials__link:hover .socials__logo {
+  color: var(--pricingcard);
+}
