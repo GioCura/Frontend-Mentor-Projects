@@ -37,12 +37,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  font-weight: var(--fw-2);
+  font-family: var(--font);
   background: url(../assets/bg-main-mobile.svg), var(--white);
   background-repeat: no-repeat;
   background-position: top right;
-  font-weight: var(--fw-2);
-  font-family: var(--font);
 }
 
 header {
@@ -64,10 +63,10 @@ main {
 }
 
 .hero h1 {
+  margin-bottom: 2rem;
   font-size: 4rem;
   line-height: 48px;
   letter-spacing: -0.45px;
-  margin-bottom: 2rem;
   color: var(--text);
 }
 
@@ -80,15 +79,13 @@ main {
 
 .cta {
   position: relative;
+  height: 60rem;
+  margin: 9.8rem 0 39.1rem;
+  border-radius: 12px;
   background: url(../assets/bg-pattern-2.svg), var(--text);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 28rem 42rem;
-  border-radius: 12px;
-  height: 60rem;
-  margin-top: 9.8rem;
-  /* margin-bottom: 32.7rem; */
-  margin-bottom: 39.1rem;
 }
 
 .cta__phone {
@@ -109,33 +106,31 @@ main {
 .cta__card {
   position: absolute;
   top: 38rem;
-  background: var(--pricingcard);
-  border-radius: 12px;
-  padding: 4.8rem 3.7rem 4.8rem 3.6rem;
-  color: var(--white);
   width: 100%;
+  padding: 4.8rem 3.7rem 4.8rem 3.6rem;
+  border-radius: 12px;
+  color: var(--white);
+  background: var(--pricingcard);
 }
 
 .cta__card h2 {
+  margin-bottom: 1.2rem;
   font-size: 3.2rem;
   line-height: 40px;
-
-  margin-bottom: 1.2rem;
 }
 
 .cta__description {
+  margin-bottom: 3.6rem;
   font-weight: var(--fw-1);
   font-size: 1.8rem;
   line-height: 28px;
-  margin-bottom: 3.6rem;
 }
 
 .cta__pricing {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  margin-left: 0.6rem;
-  margin-bottom: 3.2rem;
+  margin: 0 0 3.2rem 0.6rem;
 }
 
 .pricing__amount {
@@ -151,14 +146,14 @@ main {
 }
 
 .cta button {
-  width: 98%;
-  margin-left: 0.6rem;
-  padding-top: 1.5rem;
-  padding-bottom: 1.4rem;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 98%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.4rem;
+  border-radius: 12px;
+  margin-left: 0.6rem;
   transition: all 0.3s;
 }
 
@@ -169,16 +164,16 @@ main {
 }
 
 .ios {
-  background: var(--text);
-  color: var(--white);
-  margin-bottom: 1.6rem;
   gap: 0.792rem;
+  margin-bottom: 1.6rem;
+  color: var(--white);
+  background: var(--text);
 }
 
 .ios__logo {
-  background: url(../assets/icon-apple.svg);
   width: 1.708rem;
   height: 2rem;
+  background: url(../assets/icon-apple.svg);
   transform: translateY(-0.15rem);
 }
 
@@ -187,9 +182,9 @@ main {
 }
 
 .android {
-  background: var(--white);
-  color: var(--text);
   gap: 0.78rem;
+  color: var(--text);
+  background: var(--white);
 }
 
 .android:hover {
@@ -197,9 +192,9 @@ main {
 }
 
 .android__logo {
-  background: url(../assets/icon-android.svg);
   width: 1.675rem;
   height: 2rem;
+  background: url(../assets/icon-android.svg);
 }
 
 footer {
@@ -211,14 +206,21 @@ footer > .logo {
 }
 
 .footer__text {
+  margin-bottom: 6.4rem;
   font-weight: var(--fw-1);
   font-size: 1.6rem;
   line-height: 26px;
-  margin-bottom: 6.4rem;
 }
 
-.footer__text span {
+.footer__link {
   font-weight: var(--fw-2);
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.footer__link:hover {
+  color: var(--pricingcard);
 }
 
 .break--tablet {
@@ -231,8 +233,8 @@ footer > .logo {
 }
 
 .socials__logo {
-  transition: all 0.3s;
   color: var(--text);
+  transition: all 0.3s;
 }
 
 .socials__link:visited {
