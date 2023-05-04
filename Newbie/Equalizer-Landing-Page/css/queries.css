@@ -1,0 +1,187 @@
+@media (min-width: 1366px) {
+  body {
+    background: url(../assets/bg-pattern-1.svg),
+      url(../assets/bg-main-desktop.svg), var(--white);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 31.2rem 46.8rem, 100vw;
+    background-position: top -4rem right, top;
+  }
+
+  header {
+    margin: 6.199rem 0 12.701rem 16.615rem;
+  }
+
+  .hero {
+    width: initial;
+    margin: 0 16.4rem 10.8rem;
+  }
+
+  .hero h1 {
+    width: 85.6rem;
+    margin-left: 0.5rem;
+    font-size: 8.8rem;
+    line-height: 88px;
+    letter-spacing: -1px;
+    margin-bottom: 4rem;
+  }
+
+  .hero p {
+    width: 82.5rem;
+    font-size: 2rem;
+    line-height: 34px;
+  }
+
+  .cta {
+    width: 100%;
+    max-width: 110rem;
+    align-self: center;
+    background-size: 31.2rem 46.8rem;
+    background-position: top -4rem right 46.2rem;
+    margin-top: 21.3rem;
+    /* margin-bottom: 11.5rem; */
+    margin-bottom: 20.2rem;
+  }
+
+  .cta__phone img {
+    width: 31.2rem;
+    height: 64.2rem;
+    top: -21.3rem;
+    left: 10.2rem;
+  }
+
+  .cta__card {
+    width: 44.6rem;
+    top: 9rem;
+    right: 9.5rem;
+    padding: 5.8rem 4.9rem 4.8rem 4.8rem;
+  }
+
+  .cta__card h2 {
+    font-size: 4rem;
+    line-height: 52px;
+    margin-bottom: 2.2rem;
+  }
+
+  .cta__description {
+    font-size: 2rem;
+    line-height: 34px;
+    margin-bottom: 3.9rem;
+  }
+
+  .cta__pricing {
+    margin-bottom: 4.6rem;
+  }
+
+  footer {
+    grid-template-areas: "logo foottext socials";
+    grid-template-columns: max-content;
+    margin: 0 16.5rem 9.1rem;
+  }
+
+  footer > .logo {
+    margin-right: 13.776rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1365px) {
+  body {
+    background: url(../assets/bg-pattern-1.svg),
+      url(../assets/bg-main-tablet.svg), var(--white);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 26.67rem 40rem, 100vw;
+    background-position: top -3.2rem right -3.567rem, top;
+  }
+
+  header {
+    margin: 6.199rem 0 9.501rem 3.915rem;
+  }
+
+  .hero {
+    /* width: 51.4rem; */
+    width: 66.928%;
+    margin: 0 3.9rem 11.1rem;
+  }
+
+  .hero h1 {
+    font-size: 6.4rem;
+    line-height: 64px;
+    letter-spacing: -0.73px;
+    margin-bottom: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.8rem;
+    line-height: 28px;
+  }
+
+  .cta {
+    /* margin-left: 3.3rem;
+    margin-right: 3.9rem; */
+    margin-top: 13.8rem;
+    /* margin-bottom: 9.9rem; */
+    width: 90.625%;
+    align-self: center;
+    max-width: 81.8rem;
+    margin-bottom: 18.6rem;
+    background-position: top -3rem right 9rem;
+  }
+
+  .cta__phone img {
+    width: 27.021rem;
+    height: 55.6rem;
+    top: -13.8rem;
+    left: 6.4rem;
+  }
+
+  .cta__card {
+    width: 39.9rem;
+    top: 15rem;
+    right: 5.8rem;
+    padding: 4.8rem 4.9rem 4.8rem 4.8rem;
+  }
+
+  footer {
+    grid-template-areas:
+      "logo ."
+      "foottext socials";
+    margin: 0 3.3rem 8.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta {
+    height: 60rem;
+  }
+
+  .cta__phone img {
+    margin: 0;
+  }
+
+  footer {
+    display: grid;
+  }
+
+  footer > .logo {
+    grid-area: logo;
+  }
+
+  .footer__text {
+    grid-area: foottext;
+    margin-bottom: 0;
+  }
+
+  .break--mobile {
+    display: none;
+  }
+
+  .break--tablet {
+    display: block;
+  }
+
+  .socials {
+    grid-area: socials;
+    margin-bottom: 0;
+    align-self: center;
+    justify-self: end;
+  }
+}
