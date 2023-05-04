@@ -1,10 +1,19 @@
 @media (min-width: 1366px) {
   body {
-    background: url(../assets/bg-pattern-1.svg),
-      url(../assets/bg-main-desktop.svg), var(--white);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 31.2rem 46.8rem, 100vw;
-    background-position: top -4rem right, top;
+    background: url(../assets/bg-main-desktop.svg), var(--white);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: top;
+  }
+
+  .wrapper {
+    align-self: center;
+    width: 100%;
+    max-width: 192rem;
+    background: url(../assets/bg-pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: 31.2rem 46.8rem;
+    background-position: top -4rem right;
   }
 
   header {
@@ -88,11 +97,17 @@
 
 @media (min-width: 768px) and (max-width: 1365px) {
   body {
-    background: url(../assets/bg-pattern-1.svg),
-      url(../assets/bg-main-tablet.svg), var(--white);
-    background-repeat: no-repeat, no-repeat;
-    background-size: 26.67rem 40rem, 100vw;
-    background-position: top -3.2rem right -3.567rem, top;
+    background: url(../assets/bg-main-tablet.svg), var(--white);
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: top;
+  }
+
+  .wrapper {
+    background: url(../assets/bg-pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: 26.67rem 40rem;
+    background-position: top -3.2rem right -3.567rem;
   }
 
   header {
