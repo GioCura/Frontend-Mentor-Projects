@@ -25,7 +25,8 @@
   }
 
   .hero p {
-    width: 82.5rem;
+    /* width: 82.5rem; */
+    width: 86.5rem;
     font-size: 2rem;
     line-height: 34px;
   }
@@ -63,6 +64,7 @@
     font-size: 2rem;
     line-height: 34px;
     margin-bottom: 3.9rem;
+    padding-right: 0.3rem;
   }
 
   .cta__pricing {
