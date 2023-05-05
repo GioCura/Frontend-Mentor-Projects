@@ -27,7 +27,14 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Desktop
+![Desktop](screenshots/screenshot-desktop.png)
+Desktop - Active
+![Desktop - Active](screenshots/screenshot-desktop-active.png)
+Tablet
+![Tablet](screenshots/screenshot-tablet.png)
+Mobile
+![Mobile](screenshots/screenshot-mobile.png)
 
 ### Links
 
