@@ -33,10 +33,82 @@ button {
   --fw-2: 700;
 }
 
+/* HELPER CLASSES, SHARED ATTRIBUTES */
+
+.cta,
+.cta__phone {
+  position: relative;
+}
+
+.cta__phone img,
+.cta__card {
+  position: absolute;
+}
+
+body,
+main,
+.cta__phone,
+.cta__pricing,
+.cta button,
+.socials {
+  display: flex;
+}
+
+body,
+main {
+  flex-direction: column;
+}
+
+.cta__pricing,
+.cta button {
+  align-items: center;
+}
+
+.cta__phone,
+.cta button {
+  justify-content: center;
+}
+
+.hero p,
+.cta__description,
+.pricing__rate,
+.footer__text {
+  font-weight: var(--fw-1);
+}
+
+.hero p,
+.footer__text {
+  font-size: 1.6rem;
+  line-height: 26px;
+}
+
+.hero h1,
+.hero p,
+.android,
+.socials__logo {
+  color: var(--text);
+}
+
+.cta__card,
+.ios {
+  color: var(--white);
+}
+
+.footer__link:hover,
+.socials__link:hover .socials__logo {
+  color: var(--pricingcard);
+}
+
+.cta button,
+.footer__link,
+.socials__logo {
+  transition: all 0.3s;
+}
+
+/* ////////////////////////////////  */
+
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   font-weight: var(--fw-2);
   font-family: var(--font);
   background: url(../assets/bg-main-mobile.svg), var(--white);
@@ -53,11 +125,6 @@ header {
   height: 3.2rem;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-}
-
 .hero {
   margin: 0 2.4rem 6.8rem;
 }
@@ -67,18 +134,9 @@ main {
   font-size: 4rem;
   line-height: 48px;
   letter-spacing: -0.45px;
-  color: var(--text);
-}
-
-.hero p {
-  font-weight: var(--fw-1);
-  font-size: 1.6rem;
-  line-height: 26px;
-  color: var(--text);
 }
 
 .cta {
-  position: relative;
   height: 60rem;
   margin: 9.8rem 0 39.1rem;
   border-radius: 12px;
@@ -89,14 +147,10 @@ main {
 }
 
 .cta__phone {
-  position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 .cta__phone img {
-  position: absolute;
   width: 20.897rem;
   height: 43rem;
   top: -9.8rem;
@@ -104,12 +158,10 @@ main {
 }
 
 .cta__card {
-  position: absolute;
   top: 38rem;
   width: 100%;
   padding: 4.8rem 3.7rem 4.8rem 3.6rem;
   border-radius: 12px;
-  color: var(--white);
   background: var(--pricingcard);
 }
 
@@ -121,14 +173,11 @@ main {
 
 .cta__description {
   margin-bottom: 3.6rem;
-  font-weight: var(--fw-1);
   font-size: 1.8rem;
   line-height: 28px;
 }
 
 .cta__pricing {
-  display: flex;
-  align-items: center;
   gap: 1.6rem;
   margin: 0 0 3.2rem 0.6rem;
 }
@@ -139,22 +188,17 @@ main {
 }
 
 .pricing__rate {
-  font-weight: var(--fw-1);
   font-size: 2rem;
   line-height: 32px;
   letter-spacing: -0.2px;
 }
 
 .cta button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 98%;
   padding-top: 1.5rem;
   padding-bottom: 1.4rem;
   border-radius: 12px;
   margin-left: 0.6rem;
-  transition: all 0.3s;
 }
 
 .cta button > span {
@@ -166,7 +210,6 @@ main {
 .ios {
   gap: 0.792rem;
   margin-bottom: 1.6rem;
-  color: var(--white);
   background: var(--text);
 }
 
@@ -183,7 +226,6 @@ main {
 
 .android {
   gap: 0.78rem;
-  color: var(--text);
   background: var(--white);
 }
 
@@ -207,20 +249,12 @@ footer > .logo {
 
 .footer__text {
   margin-bottom: 6.4rem;
-  font-weight: var(--fw-1);
-  font-size: 1.6rem;
-  line-height: 26px;
 }
 
 .footer__link {
   font-weight: var(--fw-2);
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s;
-}
-
-.footer__link:hover {
-  color: var(--pricingcard);
 }
 
 .break--tablet {
@@ -228,19 +262,9 @@ footer > .logo {
 }
 
 .socials {
-  display: flex;
   gap: 2rem;
-}
-
-.socials__logo {
-  color: var(--text);
-  transition: all 0.3s;
 }
 
 .socials__link:visited {
   color: inherit;
-}
-
-.socials__link:hover .socials__logo {
-  color: var(--pricingcard);
 }

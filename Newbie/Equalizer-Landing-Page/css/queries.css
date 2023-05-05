@@ -62,7 +62,6 @@
   }
 
   .hero p {
-    /* width: 82.5rem; */
     width: 86.5rem;
     font-size: 2rem;
     line-height: 34px;
@@ -77,12 +76,16 @@
     margin: 21.3rem 0 20.2rem;
   }
 
+  .cta__phone img,
+  .cta__card {
+    transition: transform 0.8s, blur 0.8s, opacity 0.8s;
+  }
+
   .cta__phone img {
     top: -21.3rem;
     left: 10.2rem;
     width: 31.2rem;
     height: 64.2rem;
-    transition: transform 0.8s, blur 0.8s, opacity 0.8s;
   }
 
   .hidden-left {
@@ -94,7 +97,6 @@
     right: 9.5rem;
     width: 44.6rem;
     padding: 5.8rem 5.9rem 4.8rem 5.4rem;
-    transition: transform 0.8s, blur 0.8s, opacity 0.8s;
   }
 
   .hidden-right {
