@@ -82,6 +82,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background: url(../images/icon-prev.svg);
+  cursor: pointer;
 }
 
 .slider__next {
@@ -90,6 +91,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background: url(../images/icon-next.svg);
+  cursor: pointer;
 }
 
 .testimonials {

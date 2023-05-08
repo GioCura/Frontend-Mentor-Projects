@@ -6,6 +6,7 @@ showSlides(slideIndex);
 
 // Slider Controls
 
+const slider = document.querySelector(".slider");
 const sliderPrev = document.querySelector(".slider__prev");
 const sliderNext = document.querySelector(".slider__next");
 
@@ -19,6 +20,14 @@ sliderPrev.addEventListener("click", function () {
 
 sliderNext.addEventListener("click", function () {
   moveSlide(1);
+});
+
+slider.addEventListener("keydown", function (e) {
+  if (e.key === "Enter" || e.key === "ArrowRight") {
+    sliderNext.click();
+  } else if (e.key === "Backspace" || e.key === "ArrowLeft") {
+    sliderPrev.click();
+  }
 });
 
 function showSlides(n) {
