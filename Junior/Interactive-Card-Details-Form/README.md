@@ -110,27 +110,38 @@ location.reload();
 
 Aside from new functions, I also wrote more complex script.
 
-Since the MM/YY input must only remove error messages when both are valid. I wrote this:
+Since the MM/YY input must only remove error messages when both are valid. I wrote validations for them separate from the other number inputs:
 
 ```
-    if (el.validity.valid) {
+    if (el.validity.valid && el != mmEl && el != yyEl) {
       el.classList.remove("invalid");
-      if (el === yyEl || el === mmEl) {
-        mmyyInputs.classList.remove("invalid");
-        if (mmEl.validity.valid || yyEl.validity.valid) {
-          if (!mmEl.validity.valid || !yyEl.validity.valid) {
-            errorNumberEl[e].style.height =
-              errorNumberEl[e].scrollHeight + "px";
-          } else {
-            errorNumberEl[e].style.height = "0";
-          }
-        }
-      } else {
-        errorNumberEl[e].style.height = "0";
-      }
+      errorNumberEl[e].style.height = "0";
     } else {
       numberElError(el);
     }
+
+    if (el === mmEl && mmEl.validity.valid) {
+      mmEl.classList.remove("invalid");
+      mmyyCheck(yyEl);
+    }
+
+    if (el === yyEl && yyEl.validity.valid) {
+      yyEl.classList.remove("invalid");
+      mmyyCheck(mmEl);
+    }
+
+    if (mmEl.validity.valid && yyEl.validity.valid) {
+      mmyyInputs.classList.remove("invalid");
+      errorMMYYEl.style.height = 0;
+    }
+```
+
+```
+function mmyyCheck(e) {
+  if (!e.validity.valid) {
+    numberElError(e);
+  }
+}
 ```
 
 I also wrote an animation script that resets the style once it's finished, so that it is repeatable:

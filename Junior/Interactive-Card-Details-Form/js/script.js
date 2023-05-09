@@ -24,6 +24,7 @@ const continueEl = document.querySelector(".form__continue");
 
 const errorNameEl = document.querySelector(".error__name");
 const errorNumberEl = document.querySelectorAll(".error__number");
+const errorMMYYEl = document.querySelector(".error__mmyy");
 let regExNumber = /^[0-9\s]*$/;
 
 // REENABLES AUTOCOMPLETE //
@@ -71,23 +72,26 @@ numberEl.forEach((el) => {
       e++;
     }
 
-    if (el.validity.valid) {
+    if (el.validity.valid && el != mmEl && el != yyEl) {
       el.classList.remove("invalid");
-      if (el === yyEl || el === mmEl) {
-        mmyyInputs.classList.remove("invalid");
-        if (mmEl.validity.valid || yyEl.validity.valid) {
-          if (!mmEl.validity.valid || !yyEl.validity.valid) {
-            errorNumberEl[e].style.height =
-              errorNumberEl[e].scrollHeight + "px";
-          } else {
-            errorNumberEl[e].style.height = "0";
-          }
-        }
-      } else {
-        errorNumberEl[e].style.height = "0";
-      }
+      errorNumberEl[e].style.height = "0";
     } else {
       numberElError(el);
+    }
+
+    if (el === mmEl && mmEl.validity.valid) {
+      mmEl.classList.remove("invalid");
+      mmyyCheck(yyEl);
+    }
+
+    if (el === yyEl && yyEl.validity.valid) {
+      yyEl.classList.remove("invalid");
+      mmyyCheck(mmEl);
+    }
+
+    if (mmEl.validity.valid && yyEl.validity.valid) {
+      mmyyInputs.classList.remove("invalid");
+      errorMMYYEl.style.height = 0;
     }
   });
 });
@@ -186,6 +190,12 @@ function numberElError(el) {
 
   if (el === yyEl || el === mmEl) {
     mmyyInputs.classList.add("invalid");
+  }
+}
+
+function mmyyCheck(e) {
+  if (!e.validity.valid) {
+    numberElError(e);
   }
 }
 
