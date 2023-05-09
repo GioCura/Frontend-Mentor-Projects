@@ -1,14 +1,13 @@
 const portrait = document.querySelectorAll(".portrait");
 const testimonial = document.querySelectorAll(".testimonial");
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Slider Controls
-
 const slider = document.querySelector(".slider");
 const sliderPrev = document.querySelector(".slider__prev");
 const sliderNext = document.querySelector(".slider__next");
+
+let slideIndex = 1;
+// showSlides(slideIndex);
+
+// Slider Controls
 
 function moveSlide(n) {
   showSlides((slideIndex += n));
