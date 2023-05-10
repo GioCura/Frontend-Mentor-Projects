@@ -29,17 +29,17 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--font);
-}
-
-main {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: url(../images/pattern-curve.svg);
   background-size: 28.5rem 7.059rem;
   background-repeat: no-repeat;
   background-position: bottom left;
+}
+
+main {
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imagebox {
@@ -147,6 +147,7 @@ main {
 
 .active {
   opacity: 1;
+  position: static;
 }
 
 .quotemark {

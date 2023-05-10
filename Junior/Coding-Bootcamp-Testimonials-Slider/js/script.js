@@ -1,16 +1,8 @@
 const portrait = document.querySelectorAll(".portrait");
-const testimonialParent = document.querySelector(".testimonials");
 const testimonial = document.querySelectorAll(".testimonial");
 const slider = document.querySelector(".slider");
 const sliderPrev = document.querySelector(".slider__prev");
 const sliderNext = document.querySelector(".slider__next");
-const testimonialResize = new ResizeObserver(function (entries) {
-  let rect = entries[0].contentRect;
-  let height = rect.height;
-  testimonialParent.style.height = height + "px";
-});
-
-testimonialResize.observe(document.querySelector(".testimonial--john"));
 
 let slideIndex = 1;
 // showSlides(slideIndex);

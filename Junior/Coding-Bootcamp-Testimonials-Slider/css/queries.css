@@ -1,0 +1,92 @@
+@media (min-width: 1440px) {
+  body {
+    align-items: center;
+    justify-content: center;
+    background-size: 61rem 15.094rem;
+  }
+
+  main {
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    max-width: 120.2rem;
+    /* height: 65.7rem; */
+    /* margin: 5rem 7.3rem 9.3rem 16.5rem; */
+    margin-left: 16.5rem;
+    margin-right: 7.3rem;
+  }
+
+  .imagebox {
+    position: absolute;
+    right: 0;
+    order: 2;
+    width: 69.7rem;
+    height: 65.7rem;
+    align-items: initial;
+    justify-content: initial;
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+
+  .portraits {
+    width: 54rem;
+    height: 54rem;
+    margin: 6.3rem 9.2rem 5.4rem 6.5rem;
+  }
+
+  .slider {
+    width: 11.2rem;
+    height: 5.6rem;
+    padding: 0 2rem;
+    bottom: -2.8rem;
+    left: 6.2rem;
+  }
+
+  .slider__prev {
+    width: 1.3rem;
+    height: 2rem;
+    background: url(../images/arrow-left-desktop.svg);
+  }
+
+  .slider__next {
+    width: 1.3rem;
+    height: 2rem;
+    background: url(../images/arrow-right-desktop.svg);
+  }
+
+  .testimonials {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    order: 1;
+    /* max-width: 63.5rem; */
+    max-width: 63.8rem;
+    margin-bottom: 0;
+  }
+
+  .testimonial {
+    text-align: initial;
+    padding: 0;
+  }
+
+  .testimonial blockquote {
+    margin-top: 6.4rem;
+    margin-bottom: 3.2rem;
+    font-size: 3.2rem;
+    line-height: 44px;
+  }
+
+  .byline {
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+    line-height: 38px;
+  }
+
+  .quotemark {
+    width: 12rem;
+    height: 10rem;
+    align-self: initial;
+    left: 9.5rem;
+  }
+}
