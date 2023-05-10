@@ -51,6 +51,7 @@ main {
   margin-top: 2.4rem;
   background: url(../images/pattern-bg.svg);
   background-size: contain;
+  background-repeat: no-repeat;
   margin-bottom: 3.2rem;
 }
 
@@ -63,6 +64,7 @@ main {
   height: 25.3rem;
   margin-top: 0.5rem;
   box-shadow: 0px 40px 50px -30px rgba(36, 36, 113, 0.495);
+  border-radius: 5px;
 }
 
 .portrait {
@@ -84,21 +86,29 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.714rem;
+  overflow: hidden;
 }
 
-.slider__prev {
-  width: 0.9rem;
-  height: 1.4rem;
-  background: url(../images/arrow-left-mobile.svg);
+.slider__btn {
+  width: 50%;
+  height: 100%;
+  background-size: 0.9rem 1.4rem;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
-.slider__next {
-  width: 0.9rem;
-  height: 1.4rem;
-  background: url(../images/arrow-right-mobile.svg);
-  cursor: pointer;
+.slider__btn--prev {
+  background: url(../images/arrow-left-mobile.svg) no-repeat center;
+  padding-left: 1.714rem;
+}
+
+.slider__btn--next {
+  background: url(../images/arrow-right-mobile.svg) no-repeat center;
+  padding-right: 1.714rem;
+}
+
+.slider__btn:hover {
+  background-color: #e8e8f9;
 }
 
 .testimonials {

@@ -1,4 +1,4 @@
-@media (min-width: 1440px) {
+@media (min-width: 1315px) {
   body {
     align-items: center;
     justify-content: center;
@@ -37,21 +37,22 @@
   .slider {
     width: 11.2rem;
     height: 5.6rem;
-    padding: 0 2rem;
     bottom: -2.8rem;
     left: 6.2rem;
   }
 
-  .slider__prev {
-    width: 1.3rem;
-    height: 2rem;
-    background: url(../images/arrow-left-desktop.svg);
+  .slider__btn {
+    background-size: 1.3rem 2rem;
   }
 
-  .slider__next {
-    width: 1.3rem;
-    height: 2rem;
-    background: url(../images/arrow-right-desktop.svg);
+  .slider__btn--prev {
+    background: url(../images/arrow-left-desktop.svg) no-repeat center;
+    padding-left: 2rem;
+  }
+
+  .slider__btn--next {
+    background: url(../images/arrow-right-desktop.svg) no-repeat center;
+    padding-right: 2rem;
   }
 
   .testimonials {
@@ -88,5 +89,30 @@
     height: 10rem;
     align-self: initial;
     left: 9.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1314px) {
+  .imagebox {
+    width: 47.7rem;
+    height: 43.7rem;
+  }
+
+  .portraits {
+    width: 38rem;
+    height: 38rem;
+  }
+
+  .testimonial blockquote {
+    font-size: 2.5rem;
+    line-height: 33px;
+  }
+
+  .byline {
+    font-size: 1.8rem;
+  }
+
+  .byline h1 {
+    margin-bottom: 0.5rem;
   }
 }

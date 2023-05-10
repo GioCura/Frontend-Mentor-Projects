@@ -1,8 +1,8 @@
 const portrait = document.querySelectorAll(".portrait");
 const testimonial = document.querySelectorAll(".testimonial");
 const slider = document.querySelector(".slider");
-const sliderPrev = document.querySelector(".slider__prev");
-const sliderNext = document.querySelector(".slider__next");
+const sliderPrev = document.querySelector(".slider__btn--prev");
+const sliderNext = document.querySelector(".slider__btn--next");
 
 let slideIndex = 1;
 // showSlides(slideIndex);
@@ -22,7 +22,7 @@ sliderNext.addEventListener("click", function () {
 });
 
 slider.addEventListener("keydown", function (e) {
-  if (e.key === "Enter" || e.key === "ArrowRight") {
+  if (e.key === "Enter" || e.key === "ArrowRight" || e.key === " ") {
     sliderNext.click();
   } else if (e.key === "Backspace" || e.key === "ArrowLeft") {
     sliderPrev.click();
