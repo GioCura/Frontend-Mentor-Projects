@@ -1,8 +1,19 @@
+const imageBox = document.querySelector(".imagebox");
+const testimonials = document.querySelector(".testimonials");
 const portrait = document.querySelectorAll(".portrait");
 const testimonial = document.querySelectorAll(".testimonial");
 const slider = document.querySelector(".slider");
 const sliderPrev = document.querySelector(".slider__btn--prev");
 const sliderNext = document.querySelector(".slider__btn--next");
+
+window.addEventListener("load", function () {
+  imageBox.classList.remove("hidden-right");
+  testimonials.classList.remove("hidden-left");
+
+  imageBox.addEventListener("transitionend", function () {
+    document.body.classList.remove("overflow");
+  });
+});
 
 let slideIndex = 1;
 // showSlides(slideIndex);

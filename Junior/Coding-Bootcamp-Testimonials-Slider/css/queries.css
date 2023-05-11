@@ -1,8 +1,22 @@
+@media (prefers-reduced-motion) {
+  .imagebox {
+    transition: none;
+  }
+
+  .testimonials {
+    transition: none;
+  }
+}
+
 @media (min-width: 1315px) {
   body {
     align-items: center;
     justify-content: center;
     background-size: 61rem 15.094rem;
+  }
+
+  .overflow {
+    overflow: hidden;
   }
 
   main {
@@ -26,6 +40,12 @@
     justify-content: initial;
     margin-top: initial;
     margin-bottom: initial;
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  .hidden-right {
+    opacity: 0;
+    transform: translateX(100rem);
   }
 
   .portraits {
@@ -60,14 +80,26 @@
     z-index: 2;
     left: 0;
     order: 1;
-    /* max-width: 63.5rem; */
     max-width: 63.8rem;
     margin-bottom: 0;
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  .hidden-left {
+    opacity: 0;
+    transform: translateX(-100rem);
   }
 
   .testimonial {
     text-align: initial;
     padding: 0;
+    transform: translateX(-120rem);
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  .active {
+    transition: opacity 0.8s, transform 0.8s;
+    transform: translateX(0);
   }
 
   .testimonial blockquote {
