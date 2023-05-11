@@ -9,6 +9,7 @@ html {
 }
 
 h1,
+h2,
 blockquote {
   font-size: inherit;
   font-weight: inherit;
@@ -146,7 +147,7 @@ main {
   line-height: 20px;
 }
 
-.byline h1 {
+.byline h2 {
   font-weight: var(--fw-3);
 }
 
