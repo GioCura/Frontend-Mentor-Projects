@@ -24,10 +24,10 @@
     flex-direction: row;
     width: 100%;
     max-width: 120.2rem;
-    /* height: 65.7rem; */
-    /* margin: 5rem 7.3rem 9.3rem 16.5rem; */
-    margin-left: 16.5rem;
-    margin-right: 7.3rem;
+    height: 65.7rem;
+    margin: 5rem 7.3rem 9.3rem 16.5rem;
+    /* margin-left: 16.5rem;
+    margin-right: 7.3rem; */
   }
 
   .imagebox {
