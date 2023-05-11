@@ -115,7 +115,7 @@ I'd like to do more sliders with different components, such as captions and thum
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/GioCura)
+- [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
