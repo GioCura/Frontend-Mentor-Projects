@@ -34,10 +34,10 @@
     position: absolute;
     right: 0;
     order: 2;
-    width: 69.7rem;
-    height: 65.7rem;
     align-items: initial;
     justify-content: initial;
+    width: 69.7rem;
+    height: 65.7rem;
     margin-top: initial;
     margin-bottom: initial;
     transition: opacity 0.8s, transform 0.8s;
@@ -55,10 +55,10 @@
   }
 
   .slider {
-    width: 11.2rem;
-    height: 5.6rem;
     bottom: -2.8rem;
     left: 6.2rem;
+    width: 11.2rem;
+    height: 5.6rem;
   }
 
   .slider__btn {
@@ -66,13 +66,13 @@
   }
 
   .slider__btn--prev {
-    background: url(../images/arrow-left-desktop.svg) no-repeat center;
     padding-left: 2rem;
+    background: url(../images/arrow-left-desktop.svg) no-repeat center;
   }
 
   .slider__btn--next {
-    background: url(../images/arrow-right-desktop.svg) no-repeat center;
     padding-right: 2rem;
+    background: url(../images/arrow-right-desktop.svg) no-repeat center;
   }
 
   .testimonials {
@@ -91,8 +91,8 @@
   }
 
   .testimonial {
-    text-align: initial;
     padding: 0;
+    text-align: initial;
     transform: translateX(-120rem);
     transition: opacity 0.8s, transform 0.8s;
   }
@@ -117,10 +117,10 @@
   }
 
   .quotemark {
+    left: 9.5rem;
     width: 12rem;
     height: 10rem;
     align-self: initial;
-    left: 9.5rem;
   }
 }
 
