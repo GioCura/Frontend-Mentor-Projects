@@ -72,7 +72,7 @@ numberEl.forEach((el) => {
       e++;
     }
 
-    if (el.validity.valid && el != mmEl && el != yyEl) {
+    if (el.validity.valid && el !== mmEl && el !== yyEl) {
       el.classList.remove("invalid");
       errorNumberEl[e].style.height = "0";
     } else {
