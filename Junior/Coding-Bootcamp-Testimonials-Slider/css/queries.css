@@ -24,14 +24,28 @@
     flex-direction: row;
     width: 100%;
     max-width: 120.2rem;
-    /* height: 65.7rem; */
-    /* margin: 5rem 7.3rem 9.3rem 16.5rem; */
     margin-left: 16.5rem;
     margin-right: 7.3rem;
   }
 
-  .imagebox {
+  .imagebox,
+  .testimonials {
     position: absolute;
+  }
+
+  .imagebox,
+  .testimonials,
+  .testimonial,
+  .active {
+    transition: opacity 0.8s, transform 0.8s;
+  }
+
+  .hidden-right,
+  .hidden-left {
+    opacity: 0;
+  }
+
+  .imagebox {
     right: 0;
     order: 2;
     align-items: initial;
@@ -40,11 +54,9 @@
     height: 65.7rem;
     margin-top: initial;
     margin-bottom: initial;
-    transition: opacity 0.8s, transform 0.8s;
   }
 
   .hidden-right {
-    opacity: 0;
     transform: translateX(100rem);
   }
 
@@ -76,17 +88,14 @@
   }
 
   .testimonials {
-    position: absolute;
     z-index: 2;
     left: 0;
     order: 1;
     max-width: 63.8rem;
     margin-bottom: 0;
-    transition: opacity 0.8s, transform 0.8s;
   }
 
   .hidden-left {
-    opacity: 0;
     transform: translateX(-100rem);
   }
 
@@ -94,11 +103,9 @@
     padding: 0;
     text-align: initial;
     transform: translateX(-120rem);
-    transition: opacity 0.8s, transform 0.8s;
   }
 
   .active {
-    transition: opacity 0.8s, transform 0.8s;
     transform: translateX(0);
   }
 
