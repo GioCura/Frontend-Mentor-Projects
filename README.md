@@ -5,6 +5,7 @@ TABLE OF CONTENTS
 JUNIOR CHALLENGES
 | Challenge | Code | Live URL |
 | :--- | :---: | :---: |
+| Coding Bootcamp Testimonials Slider | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Coding-Bootcamp-Testimonials-Slider) | [Live Site](https://gc30-testimonials-slider.netlify.app/) |
 | Interactive Pricing Component | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Interactive-Pricing-Component) | [Live Site](https://gc28-interactive-pricing-component.netlify.app/) |
 | Interactive Card Details Form | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Interactive-Card-Details-Form) | [Live Site](https://gc27-interactive-card-details-form.netlify.app/) |
 | Social Media Dashboard With Theme Switcher | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Social-Media-Dashboard-With-Theme-Switcher) | [Live Site](https://gc26-social-dashboard-theme-switcher.netlify.app/) |

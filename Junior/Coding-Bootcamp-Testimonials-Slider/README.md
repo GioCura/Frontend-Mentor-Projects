@@ -1,6 +1,6 @@
 # Frontend Mentor - Coding bootcamp testimonials slider solution
 
-This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the [Coding bootcamp testimonials slider challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/coding-bootcamp-testimonials-slider-4FNyLA8JL).
 
 ## Table of contents
 
@@ -16,8 +16,6 @@ This is a solution to the [Coding bootcamp testimonials slider challenge on Fron
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -29,20 +27,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+Desktop
+![Desktop](images/screenshot-desktop.png)
+Desktop-2
+![Desktop-2](images/screenshot-desktop-2.png)
+Mobile
+![Mobile](images/screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc30-testimonials-slider.netlify.app/)
 
 ## My process
 
@@ -51,51 +45,78 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
 The slider, to me, is like a more complex toggle switch. Sliders must accommodate for more than two states.
 
-The slider I made relies on an index number, which to an item in the slider. 1 refers to the first slide, 2 for the second, etc. Its value is modified by interacting with the slider arrows.
+The slider I made relies on an index number, which to an item in the slider. 1 refers to the first slide, 2 for the second, etc:
+
+```
+let slideIndex = 1;
+```
+
+Its value is modified by interacting with the slider arrows:
+
+```
+function moveSlide(n) {
+  showSlides((slideIndex += n));
+}
+
+sliderPrev.addEventListener("click", function () {
+  moveSlide(-1);
+});
+
+sliderNext.addEventListener("click", function () {
+  moveSlide(1);
+});
+```
 
 The main function for the slider initially checks that index number.
 
-Of course, the slider must restart from 1 when the user tries to click next on the final slide, and vice versa.
+Of course, the slider must restart from 1 when the user tries to click next on the final slide, and vice versa:
 
-The function then adds an active class to the slide with the corresponding index. However, since the variable being used to call the slides returns a nodeList, the list starts off from 0 instead of 1. I must then subtract 1 to the index.
+```
+  if (n > portrait.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = portrait.length;
+  }
+```
 
-The function also loops around the rest of the nodeList to remove the active class.
+The function then adds an active class to the slide with the corresponding index. However, since the variable being used to call the slides returns a nodeList, the list starts off from 0 instead of 1. I must then subtract 1 to the index:
+
+```
+  for (let i = 0; i < portrait.length; i++) {
+    portrait[i].classList.remove("active");
+    testimonial[i].classList.remove("active");
+  }
+```
+
+The function also loops around the rest of the nodeList to remove the active class:
+
+```
+  for (let i = 0; i < portrait.length; i++) {
+    portrait[i].classList.remove("active");
+    testimonial[i].classList.remove("active");
+  }
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'd like to do more sliders with different components, such as captions and thumbnails.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This w3schools tutorial](https://www.w3schools.com/howto/howto_js_slideshow.asp) is what I mostly based my code off of.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to Zellene for helping check the site on Safari.

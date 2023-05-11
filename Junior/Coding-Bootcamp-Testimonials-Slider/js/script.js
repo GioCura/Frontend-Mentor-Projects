@@ -16,7 +16,6 @@ window.addEventListener("load", function () {
 });
 
 let slideIndex = 1;
-// showSlides(slideIndex);
 
 // Slider Controls
 
@@ -39,6 +38,8 @@ slider.addEventListener("keydown", function (e) {
     sliderPrev.click();
   }
 });
+
+// Shows the corresponding slide
 
 function showSlides(n) {
   if (n > portrait.length) {
