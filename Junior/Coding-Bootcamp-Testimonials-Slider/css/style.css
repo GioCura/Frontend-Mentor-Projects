@@ -140,7 +140,8 @@ body {
 
 .testimonials {
   min-width: 31.1rem;
-  max-width: 60rem;
+  /* max-width: 60rem; */
+  max-width: 80rem;
   margin-bottom: 3.5rem;
 }
 
