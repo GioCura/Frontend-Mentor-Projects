@@ -16,6 +16,11 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script defer src="js/script.js"></script>
+
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
@@ -25,16 +30,34 @@
         <div class="nav__left">
           <ul>
             <li>
-              Features
+              <div class="dropdown__heading">
+                <span>Features</span>
+                <div class="dropdown__arrow"></div>
+              </div>
               <ul class="dropdown">
-                <li>Todo list</li>
-                <li>Calendar</li>
-                <li>Reminders</li>
-                <li>Planning</li>
+                <li>
+                  <div class="dropdown__icon icon--todo"></div>
+                  <span>Todo list</span>
+                </li>
+                <li>
+                  <div class="dropdown__icon icon--calendar"></div>
+                  <span>Calendar</span>
+                </li>
+                <li>
+                  <div class="dropdown__icon icon--reminders"></div>
+                  <span>Reminders</span>
+                </li>
+                <li>
+                  <div class="dropdown__icon icon--planning"></div>
+                  <span>Planning</span>
+                </li>
               </ul>
             </li>
             <li>
-              Company
+              <div class="dropdown__heading">
+                <span>Company</span>
+                <div class="dropdown__arrow"></div>
+              </div>
               <ul class="dropdown">
                 <li>History</li>
                 <li>Our Team</li>
@@ -52,10 +75,12 @@
           </ul>
         </div>
       </nav>
-      <button class="header__mobile-menu"></button>
+      <button class="header__mobile-menu">
+        <span class="menu--open"></span>
+        <span class="menu--close"></span>
+      </button>
     </header>
     <main></main>
-
     <!-- Make remote work Get your team in sync, no matter your location. Streamline
     processes, create team rituals, and watch productivity soar. Learn more -->
   </body>
