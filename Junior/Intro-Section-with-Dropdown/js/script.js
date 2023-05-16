@@ -14,8 +14,15 @@ const dropdownItem = document.querySelectorAll(".dropdown__item");
 
 var navMenuState = window.getComputedStyle(navMenu, null).display;
 
+// For future media query that will reset the tabindex for the nav links.
+if (navMenuState === "none") {
+  console.log("Yahoo!");
+}
+
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
+  navMenu.classList.remove("hide-load");
+  dimmer.style.zIndex = "-1";
 });
 
 dropdownTitle.forEach((el) => {
@@ -63,13 +70,26 @@ navMenu.addEventListener("click", function () {
     navItem.forEach((e) => {
       e.tabIndex = "0";
     });
+    dimmer.style.zIndex = "1";
   }
+
+  // if (dimmer.style.zIndex === "1") {
+  //   dimmer.addEventListener("transitionend", function () {
+  //     this.style.zIndex = "-1";
+  //     console.log("Wahh");
+  //   });
+  // }
 
   dimmer.classList.toggle("dimmer--active");
   headerNav.classList.toggle("nav--active");
+
+  document.body.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" || e.key === "Backspace") {
+      navMenu.click();
+    }
+  });
 });
 
-// For future media query that will reset the tabindex for the nav links.
-if (navMenuState === "none") {
-  console.log("Yahoo!");
-}
+dimmer.addEventListener("click", function () {
+  navMenu.click();
+});
