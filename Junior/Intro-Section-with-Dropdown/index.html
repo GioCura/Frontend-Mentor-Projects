@@ -24,64 +24,91 @@
     <title>Frontend Mentor | Intro section with dropdown navigation</title>
   </head>
   <body>
+    <div class="dimmer"></div>
     <header>
       <img src="images/logo.svg" alt="The Snap logo" />
-      <nav>
+      <nav class="header__nav hide-load">
         <div class="nav__left">
           <ul>
             <li>
-              <div class="dropdown__heading">
-                <span>Features</span>
-                <div class="dropdown__arrow"></div>
-              </div>
+              <button class="dropdown__heading">
+                Features
+                <span class="dropdown__arrow"></sp>
+              </button>
               <ul class="dropdown">
                 <li>
-                  <div class="dropdown__icon icon--todo"></div>
-                  <span>Todo list</span>
+                  <a href="#">
+                    <span class="dropdown__icon icon--todo"></span>
+                    Todo list
+                  </a>
                 </li>
                 <li>
-                  <div class="dropdown__icon icon--calendar"></div>
-                  <span>Calendar</span>
+                  <a href="#">
+                    <span class="dropdown__icon icon--calendar"></span>
+                    Calendar
+                  </a>
                 </li>
                 <li>
-                  <div class="dropdown__icon icon--reminders"></div>
-                  <span>Reminders</span>
+                  <a href="#">
+                    <span class="dropdown__icon icon--reminders"></span>
+                    Reminders
+                  </a>
                 </li>
                 <li>
-                  <div class="dropdown__icon icon--planning"></div>
-                  <span>Planning</span>
+                  <a href="#">
+                    <span class="dropdown__icon icon--planning"></span>
+                    Planning
+                  </a>
                 </li>
               </ul>
             </li>
             <li>
-              <div class="dropdown__heading">
-                <span>Company</span>
+              <button class="dropdown__heading">
+                Company
                 <div class="dropdown__arrow"></div>
-              </div>
+              </button>
               <ul class="dropdown">
-                <li>History</li>
-                <li>Our Team</li>
-                <li>Blog</li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
               </ul>
             </li>
-            <li>Careers</li>
-            <li>Aboat</li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
           </ul>
         </div>
         <div class="nav__right">
           <ul>
-            <li>Login</li>
-            <li>Register</li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+            <li>
+              <a href="#">Register</a>
+            </li>
           </ul>
         </div>
       </nav>
-      <button class="header__mobile-menu">
+      <button class="nav__menu" aria-label="Navigation menu">
         <span class="menu--open"></span>
         <span class="menu--close"></span>
       </button>
     </header>
-    <main></main>
-    <!-- Make remote work Get your team in sync, no matter your location. Streamline
-    processes, create team rituals, and watch productivity soar. Learn more -->
+    <main>
+      <div class="hero__background"></div>
+      <section class="hero__content">
+        <div class="hero__cta">
+          <h1>Make remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.</p>
+          <button class="hero__button">Learn more</button>
+        </div>
+        <div class="hero__featured">
+          <img src="images/client-databiz.svg" alt="The logo of Databiz, a client of Snap">
+          <img src="images/client-audiophile.svg" alt="The logo of Audiophile, a client of Snap">
+          <img src="images/client-meet.svg" alt="The logo of Meet, a client of Snap">
+          <img src="images/client-maker.svg" alt="The logo of Maker, a client of Snap">
+        </div>
+      </section>
+    </main>
   </body>
 </html>

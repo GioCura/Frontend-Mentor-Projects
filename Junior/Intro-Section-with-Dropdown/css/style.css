@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+button,
+a {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.dimmer {
+  position: fixed;
+  transition: all 0.5s;
+  height: 100%;
+  width: 100%;
+}
+
+.dimmer--active {
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 1;
+}
+
+.header__nav {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  right: 0;
+  transition: all 0.5s;
+  background-color: pink;
+  transform: translateX(100%);
+  z-index: 2;
+}
+
+.hide-load {
+  display: none;
+}
+
+.nav--active {
+  transform: translateX(0);
+}
+
+.nav__menu {
+  z-index: 3;
+}
+
+.nav--active ~ .nav__menu > .menu--open {
+  display: none;
+}
+
+.nav--active ~ .nav__menu > .menu--close {
+  display: block;
+}
+
+.menu--open {
+  display: block;
+  background: url(../images/icon-menu.svg) no-repeat;
+  height: 1.8rem;
+  width: 3.2rem;
+  transition: all 0.3;
+}
+
+.menu--close {
+  display: block;
+  background: url(../images/icon-close-menu.svg) no-repeat;
+  height: 2.404rem;
+  width: 2.404rem;
+  display: none;
+}
+
+.dropdown {
+  transition: all 0.5s;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.dropdown--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dropdown__heading {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  width: max-content;
+}
+
+.dropdown__arrow {
+  display: block;
+  background: url(../images/icon-arrow-down.svg);
+  height: 0.6rem;
+  width: 1rem;
+  transition: all 0.3s;
+}
+
+.flip {
+  transform: rotate(-180deg);
+}
