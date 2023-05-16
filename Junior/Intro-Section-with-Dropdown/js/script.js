@@ -4,35 +4,72 @@ const headerNav = document.querySelector(".header__nav");
 const navMenu = document.querySelector(".nav__menu");
 const dimmer = document.querySelector(".dimmer");
 
-const dropdownHeading = document.querySelectorAll(".dropdown__heading");
+const dropdownTitle = document.querySelectorAll(".dropdown__title");
 const dropdown = document.querySelectorAll(".dropdown");
-const dropdownHeadingArray = [
-  ...document.querySelectorAll(".dropdown__heading"),
-];
+const dropdownTitleArray = [...document.querySelectorAll(".dropdown__title")];
 const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
+
+const navItem = document.querySelectorAll(".nav__item");
+const dropdownItem = document.querySelectorAll(".dropdown__item");
+
+var navMenuState = window.getComputedStyle(navMenu, null).display;
 
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
 });
 
-navMenu.addEventListener("click", function () {
-  dimmer.classList.toggle("dimmer--active");
-  headerNav.classList.toggle("nav--active");
-});
-
-dropdownHeading.forEach((el) => {
+dropdownTitle.forEach((el) => {
   el.addEventListener("click", function () {
-    // console.log(dropdownHeadingArray.indexOf(el, 0));
-    let e = dropdownHeadingArray.indexOf(el, 0);
+    let e = dropdownTitleArray.indexOf(el, 0);
+    let dropdownItemCurrent = dropdown[e].querySelectorAll(".dropdown__item");
 
     dropdownArrow[e].classList.toggle("flip");
 
     if (dropdown[e].classList.contains("dropdown--active")) {
       dropdown[e].style.height = "0";
+      dropdownItemCurrent.forEach((e) => {
+        e.tabIndex = "-1";
+      });
     } else {
       dropdown[e].style.height = dropdown[e].scrollHeight + "px";
+      dropdownItemCurrent.forEach((e) => {
+        e.tabIndex = "0";
+      });
     }
 
     dropdown[e].classList.toggle("dropdown--active");
   });
 });
+
+navMenu.addEventListener("click", function () {
+  if (headerNav.classList.contains("nav--active")) {
+    // resets the dropdown state
+    dropdown.forEach((e) => {
+      e.classList.remove("dropdown--active");
+      e.style.height = "0";
+    });
+    dropdownArrow.forEach((e) => {
+      e.classList.remove("flip");
+    });
+    // disables tab selection of nav items while menu is closed
+    dropdownItem.forEach((e) => {
+      e.tabIndex = "-1";
+    });
+    navItem.forEach((e) => {
+      e.tabIndex = "-1";
+    });
+  } else {
+    // enables tab selection of nav items
+    navItem.forEach((e) => {
+      e.tabIndex = "0";
+    });
+  }
+
+  dimmer.classList.toggle("dimmer--active");
+  headerNav.classList.toggle("nav--active");
+});
+
+// For future media query that will reset the tabindex for the nav links.
+if (navMenuState === "none") {
+  console.log("Yahoo!");
+}

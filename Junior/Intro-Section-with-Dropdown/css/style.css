@@ -45,10 +45,12 @@ a {
   transition: all 0.5s;
   height: 100%;
   width: 100%;
+  z-index: -1;
 }
 
 .dimmer--active {
   background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1;
   opacity: 1;
 }
 
@@ -73,6 +75,7 @@ a {
 
 .nav__menu {
   z-index: 3;
+  /* display: none; */
 }
 
 .nav--active ~ .nav__menu > .menu--open {
@@ -111,7 +114,7 @@ a {
   pointer-events: auto;
 }
 
-.dropdown__heading {
+.dropdown__title {
   display: flex;
   align-items: center;
   gap: 1.7rem;
