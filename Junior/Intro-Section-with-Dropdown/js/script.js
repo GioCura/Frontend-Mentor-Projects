@@ -15,9 +15,9 @@ const dropdownItem = document.querySelectorAll(".dropdown__item");
 var navMenuState = window.getComputedStyle(navMenu, null).display;
 
 // For future media query that will reset the tabindex for the nav links.
-if (navMenuState === "none") {
-  console.log("Yahoo!");
-}
+// if (navMenuState === "none") {
+//   console.log("Yahoo!");
+// }
 
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
@@ -49,6 +49,14 @@ dropdownTitle.forEach((el) => {
 });
 
 navMenu.addEventListener("click", function () {
+  // resets the z-index -- avoids flashing of featured images on transition
+  if (dimmer.classList.contains("dimmer--active")) {
+    dimmer.addEventListener("transitionend", resetIndex);
+  } else {
+    dimmer.style.zIndex = "1";
+    dimmer.removeEventListener("transitionend", resetIndex);
+  }
+
   if (headerNav.classList.contains("nav--active")) {
     // resets the dropdown state
     dropdown.forEach((e) => {
@@ -70,15 +78,7 @@ navMenu.addEventListener("click", function () {
     navItem.forEach((e) => {
       e.tabIndex = "0";
     });
-    dimmer.style.zIndex = "1";
   }
-
-  // if (dimmer.style.zIndex === "1") {
-  //   dimmer.addEventListener("transitionend", function () {
-  //     this.style.zIndex = "-1";
-  //     console.log("Wahh");
-  //   });
-  // }
 
   dimmer.classList.toggle("dimmer--active");
   headerNav.classList.toggle("nav--active");
@@ -93,3 +93,7 @@ navMenu.addEventListener("click", function () {
 dimmer.addEventListener("click", function () {
   navMenu.click();
 });
+
+function resetIndex() {
+  dimmer.style.zIndex = "-1";
+}
