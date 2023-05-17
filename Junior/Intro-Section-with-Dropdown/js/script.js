@@ -19,12 +19,14 @@ var navMenuState = window.getComputedStyle(navMenu, null).display;
 //   console.log("Yahoo!");
 // }
 
+// Prevents the nav from flashing on load, for mobile phones.
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
   navMenu.classList.remove("hide-load");
   dimmer.style.zIndex = "-1";
 });
 
+// Controls the dropdown
 dropdownTitle.forEach((el) => {
   el.addEventListener("click", function () {
     let e = dropdownTitleArray.indexOf(el, 0);
@@ -48,6 +50,7 @@ dropdownTitle.forEach((el) => {
   });
 });
 
+// Controls the hamburger menu
 navMenu.addEventListener("click", function () {
   // resets the z-index -- avoids flashing of featured images on transition
   if (dimmer.classList.contains("dimmer--active")) {
@@ -90,6 +93,7 @@ navMenu.addEventListener("click", function () {
   });
 });
 
+// Closes the nav menu when clicking outside of it
 dimmer.addEventListener("click", function () {
   navMenu.click();
 });
