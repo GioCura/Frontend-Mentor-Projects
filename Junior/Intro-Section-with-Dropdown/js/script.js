@@ -11,21 +11,44 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
+var desktop = window.matchMedia("(min-width:1440px)");
 
-var navMenuState = window.getComputedStyle(navMenu, null).opacity;
+// Media query that sets the tabindex for the nav buttons tab index.
+function layoutShift(desktop) {
+  if (desktop.matches) {
+    console.log("Desktop!");
+    navItem.forEach((e) => {
+      enableTabIndex(e);
+    });
+  } else {
+    console.log("Mobile!");
+    navItem.forEach((e) => {
+      disableTabIndex(e);
+    });
+  }
+}
 
-// For future media query that will reset the tabindex for the nav links.
-if (window.screen.availWidth >= 1440) {
-  console.log("Yahoo");
-} else {
-  console.log("Wahoo");
+layoutShift(desktop);
+desktop.addEventListener("change", layoutShift);
+
+// General functions
+function resetIndex() {
+  dimmer.style.zIndex = "-1";
+}
+
+function disableTabIndex(el) {
+  el.tabIndex = "-1";
+}
+
+function enableTabIndex(el) {
+  el.tabIndex = "0";
 }
 
 // Prevents the nav from flashing on load, for mobile phones.
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
   navMenu.classList.remove("hide-load");
-  dimmer.style.zIndex = "-1";
+  resetIndex();
 });
 
 // Controls the dropdown
@@ -66,22 +89,22 @@ navMenu.addEventListener("click", function () {
     // resets the dropdown state
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
-      e.style.height = "0";
+      enableTabIndex(e);
     });
     dropdownArrow.forEach((e) => {
       e.classList.remove("flip");
     });
     // disables tab selection of nav items while menu is closed
     dropdownItem.forEach((e) => {
-      e.tabIndex = "-1";
+      disableTabIndex(e);
     });
     navItem.forEach((e) => {
-      e.tabIndex = "-1";
+      disableTabIndex(e);
     });
   } else {
     // enables tab selection of nav items
     navItem.forEach((e) => {
-      e.tabIndex = "0";
+      enableTabIndex(e);
     });
   }
 
@@ -99,7 +122,3 @@ navMenu.addEventListener("click", function () {
 dimmer.addEventListener("click", function () {
   navMenu.click();
 });
-
-function resetIndex() {
-  dimmer.style.zIndex = "-1";
-}
