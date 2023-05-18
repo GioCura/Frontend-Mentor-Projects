@@ -11,20 +11,21 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
+const navLeft = document.querySelector(".nav__left");
 var desktop = window.matchMedia("(min-width:1440px)");
 
 // Media query that sets the tabindex for the nav buttons tab index.
 function layoutShift(desktop) {
   if (desktop.matches) {
-    console.log("Desktop!");
     navItem.forEach((e) => {
       enableTabIndex(e);
     });
+    window.addEventListener("click", dropdownClickOutside);
   } else {
-    console.log("Mobile!");
     navItem.forEach((e) => {
       disableTabIndex(e);
     });
+    window.removeEventListener("click", dropdownClickOutside);
   }
 }
 
@@ -42,6 +43,16 @@ function disableTabIndex(el) {
 
 function enableTabIndex(el) {
   el.tabIndex = "0";
+}
+
+function dropdownClickOutside(event) {
+  const withinBoundaries = event.composedPath().includes(navLeft);
+
+  if (!withinBoundaries) {
+    dropdown.forEach((e) => {
+      e.classList.remove("dropdown--active");
+    });
+  }
 }
 
 // Prevents the nav from flashing on load, for mobile phones.
