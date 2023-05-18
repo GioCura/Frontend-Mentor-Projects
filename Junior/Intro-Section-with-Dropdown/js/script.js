@@ -12,12 +12,14 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
 
-var navMenuState = window.getComputedStyle(navMenu, null).display;
+var navMenuState = window.getComputedStyle(navMenu, null).opacity;
 
 // For future media query that will reset the tabindex for the nav links.
-// if (navMenuState === "none") {
-//   console.log("Yahoo!");
-// }
+if (window.screen.availWidth >= 1440) {
+  console.log("Yahoo");
+} else {
+  console.log("Wahoo");
+}
 
 // Prevents the nav from flashing on load, for mobile phones.
 window.addEventListener("load", function () {

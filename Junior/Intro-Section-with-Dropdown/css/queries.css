@@ -1,0 +1,128 @@
+@media (min-width: 1440px) {
+  .dimmer {
+    display: none;
+  }
+
+  header {
+    justify-content: initial;
+    gap: 6rem;
+  }
+
+  .nav__menu {
+    display: none;
+  }
+
+  .header__nav {
+    position: static;
+    /* position: relative; */
+    transform: translateX(0);
+    height: initial;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__left {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    font-size: 1.4rem;
+    line-height: 16px;
+  }
+
+  .nav__left > ul {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .nav__left li:not(:last-child) {
+    margin-bottom: initial;
+  }
+
+  .nav__right > ul {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .nav__login {
+    margin-bottom: initial;
+  }
+
+  .dropdown {
+    margin-bottom: initial;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.141);
+  }
+
+  .dropdown--features.dropdown--active,
+  .dropdown--company.dropdown--active {
+    margin-top: initial;
+  }
+
+  .dropdown--features {
+    width: 15.3rem;
+    top: 4.9rem;
+    left: -6rem;
+  }
+
+  .dropdown--features li {
+    margin-left: 2.4rem;
+  }
+
+  .dropdown li:not(:last-child) {
+    margin-bottom: 1.6rem;
+  }
+
+  .dropdown__icon {
+    display: inline-block;
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+
+  .icon--todo {
+    width: 1.4rem;
+    height: 1.6rem;
+    margin-right: 1.5rem;
+  }
+
+  .icon--calendar {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1.4rem;
+  }
+
+  .icon--reminders {
+    width: 1.2rem;
+    height: 1.6rem;
+    margin-right: 1.559rem;
+    margin-left: 0.241rem;
+  }
+
+  .icon--planning {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1.4rem;
+  }
+
+  .dropdown--company {
+    width: 11.6rem;
+    top: 4.9rem;
+  }
+
+  .dropdown--company li {
+    margin-left: 2.5rem;
+  }
+
+  .nav__register {
+    padding-left: 2.3rem;
+    padding-right: 2.2rem;
+  }
+}

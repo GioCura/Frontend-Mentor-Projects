@@ -161,7 +161,7 @@ header > img {
   overflow: visible;
 }
 
-.dropdown--features {
+.dropdown--features li {
   margin-left: 2.3rem;
 }
 
@@ -169,7 +169,7 @@ header > img {
   margin-top: 2.4rem;
 }
 
-.dropdown--company {
+.dropdown--company li {
   margin-left: 2.4rem;
 }
 
