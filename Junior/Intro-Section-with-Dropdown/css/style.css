@@ -124,6 +124,10 @@ header > img {
   margin-right: 2.1rem;
 }
 
+.nav__item {
+  transition: all 0.3s;
+}
+
 .nav__login {
   display: block;
   margin-bottom: 1.6rem;
@@ -136,6 +140,11 @@ header > img {
   width: 100%;
   border: 1.5px solid var(--mediumgray);
   border-radius: 14px;
+  transition: all 0.3s;
+}
+
+.nav__register:hover {
+  border-color: #000;
 }
 
 /* DROPDOWNS */
@@ -196,6 +205,7 @@ header > img {
 .dropdown__item {
   display: flex;
   width: max-content;
+  transition: all 0.3s;
 }
 
 .dropdown__icon {
@@ -241,7 +251,9 @@ header > img {
 /* MOBILE NAV HAMBURGER */
 
 .nav__menu {
+  position: fixed;
   z-index: 3;
+  right: 1.6rem;
   /* display: none; */
 }
 
@@ -279,11 +291,12 @@ main {
 /* BACKGROUND IMAGE */
 
 .hero__background {
-  /* factor = 1.54666666667 - max height should be 43.5rem*/
+  /* factor = 1.3333 - max height should be 37.5rem*/
   /* width: 37.5rem; */
   width: 100%;
-  max-width: 58rem;
-  height: 28.125rem;
+  max-width: 50rem;
+  /* height: 28.125rem; */
+  height: clamp(28.125rem, 75vw, 37.5rem);
   background: url(../images/image-hero-mobile.png) no-repeat;
   background-size: cover;
   background-position: center;
@@ -291,6 +304,11 @@ main {
 }
 
 /* HERO */
+
+.hero__content {
+  width: 100%;
+  max-width: 70rem;
+}
 
 .hero__cta {
   text-align: center;
@@ -336,4 +354,13 @@ main {
   align-items: center;
   justify-content: space-between;
   margin: 0 1.6rem 6rem;
+}
+
+.nav__item:hover,
+.dropdown__item:hover {
+  color: #000;
+}
+
+.dropdown__title:hover .dropdown__arrow {
+  filter: brightness(0);
 }
