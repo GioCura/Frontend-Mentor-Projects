@@ -148,8 +148,8 @@ a {
 /* HEADER AND NAV */
 
 header {
-  margin: 1.6rem 0 2.4rem 0;
-  padding: 0 1.6rem 0;
+  margin: 1.6rem 0 2.4rem;
+  padding: 0 1.6rem;
 }
 
 header > img {
