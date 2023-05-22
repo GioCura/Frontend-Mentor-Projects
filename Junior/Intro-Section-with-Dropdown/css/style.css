@@ -18,9 +18,92 @@ html {
   --fw-2: 700;
 }
 
-body {
+/* SHARED ATTRIBUTES */
+.dimmer,
+.header__nav,
+.nav__menu {
+  position: fixed;
+}
+
+body,
+header,
+.dropdown__title,
+.dropdown__item,
+main,
+.hero__featured {
   display: flex;
+}
+
+body,
+main {
   flex-direction: column;
+}
+
+header,
+.dropdown__title,
+main,
+.hero__featured {
+  align-items: center;
+}
+
+header,
+.hero__featured {
+  justify-content: space-between;
+}
+
+.nav__login,
+.nav__register,
+.dropdown__arrow,
+.nav--active ~ .nav__menu > .menu--close,
+.menu--open {
+  display: block;
+}
+
+.hide-load,
+.nav--active ~ .nav__menu > .menu--open,
+.menu--close {
+  display: none;
+}
+
+.dimmer,
+.nav__register,
+.hero__background,
+.hero__content {
+  width: 100%;
+}
+
+.dropdown__title,
+.dropdown__item {
+  width: max-content;
+}
+
+.hero__cta > h1,
+.hero__cta > button {
+  font-weight: var(--fw-2);
+}
+
+.nav__item,
+.nav__register,
+.dropdown__arrow,
+.dropdown__item,
+.hero__cta > button {
+  transition: all 0.3s;
+}
+
+.header__nav,
+.dropdown {
+  transition: all 0.5s;
+}
+
+.nav__item:hover,
+.dropdown__item:hover,
+.hero__cta > button:hover {
+  color: #000;
+}
+
+/* //////////////// */
+
+body {
   min-height: 100vh;
   font-family: var(--font);
   font-size: 1.8rem;
@@ -54,9 +137,7 @@ a {
 /* DIMMER */
 
 .dimmer {
-  position: fixed;
   height: 100%;
-  width: 100%;
   transition: width 0.5s, height 0.5s, background-color 0.5s;
 }
 
@@ -67,13 +148,8 @@ a {
 /* HEADER AND NAV */
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1.6rem;
-  padding-right: 1.6rem;
-  margin-bottom: 2.4rem;
-  padding-left: 1.6rem;
+  margin: 1.6rem 0 2.4rem 0;
+  padding: 0 1.6rem 0;
 }
 
 header > img {
@@ -81,19 +157,13 @@ header > img {
 }
 
 .header__nav {
-  position: fixed;
   z-index: 2;
   top: 0;
   right: 0;
   width: 24rem;
   height: 100vh;
   background-color: #fff;
-  transition: all 0.5s;
   transform: translateX(100%);
-}
-
-.hide-load {
-  display: none;
 }
 
 .nav--active {
@@ -101,9 +171,7 @@ header > img {
 }
 
 .nav__left {
-  margin-top: 7.8rem;
-  margin-bottom: 3.2rem;
-  margin-left: 2.4rem;
+  margin: 7.8rem 0 3.2rem 2.4rem;
   font-size: 1.6rem;
   line-height: 26px;
 }
@@ -113,30 +181,20 @@ header > img {
 }
 
 .nav__right {
-  margin-right: 2.1rem;
-  margin-left: 2.4rem;
-  font-size: 14px;
+  margin: 0 2.1rem 0 2.4rem;
+  font-size: 1.4rem;
   line-height: 16px;
   text-align: center;
 }
 
-.nav__item {
-  transition: all 0.3s;
-}
-
 .nav__login {
-  display: block;
   margin-bottom: 1.6rem;
 }
 
 .nav__register {
-  display: block;
-  width: 100%;
-  padding-top: 1.3rem;
-  padding-bottom: 1.3rem;
+  padding: 1.3rem 0;
   border-radius: 14px;
   border: 1.5px solid var(--mediumgray);
-  transition: all 0.3s;
 }
 
 .nav__register:hover {
@@ -147,7 +205,6 @@ header > img {
 
 .dropdown {
   height: 0;
-  transition: all 0.5s;
   opacity: 0;
   pointer-events: none;
   overflow: hidden;
@@ -178,45 +235,34 @@ header > img {
 }
 
 .dropdown__title {
-  display: flex;
-  align-items: center;
-  width: max-content;
   gap: 1.7rem;
-  padding-top: 0.45rem;
-  padding-bottom: 0.45rem;
+  padding: 0.45rem 0;
 }
 
 .dropdown__arrow {
-  display: block;
   width: 1rem;
   height: 0.7rem;
   background: url(../images/icon-arrow-mobile.svg);
-  transition: all 0.3s;
+}
+
+.dropdown__title:hover .dropdown__arrow {
+  filter: brightness(0);
 }
 
 .flip {
   transform: rotate(-180deg);
 }
 
-.dropdown__item {
-  display: flex;
-  width: max-content;
-  transition: all 0.3s;
-}
-
 .dropdown__icon {
   display: inline-block;
-  margin-top: 0.2rem;
-  margin-bottom: 0.4rem;
+  margin: 0.2rem 0 0.4rem;
 }
 
 .icon--todo {
   width: 1.75rem;
   height: 2rem;
-  margin-right: 1.55rem;
-  margin-left: 0.1rem;
+  margin: 0 1.55rem 0 0.1rem;
   background: url(../images/icon-todo.svg) center no-repeat;
-  background-size: contain;
 }
 
 .icon--calendar {
@@ -224,16 +270,13 @@ header > img {
   height: 2rem;
   margin-right: 1.4rem;
   background: url(../images/icon-calendar.svg) center no-repeat;
-  background-size: contain;
 }
 
 .icon--reminders {
   width: 1.5rem;
   height: 2rem;
-  margin-right: 1.6rem;
-  margin-left: 0.3rem;
+  margin: 0 1.6rem 0 0.3rem;
   background: url(../images/icon-reminders.svg) center no-repeat;
-  background-size: contain;
 }
 
 .icon--planning {
@@ -241,63 +284,41 @@ header > img {
   height: 2rem;
   margin-right: 1.4rem;
   background: url(../images/icon-planning.svg) center no-repeat;
-  background-size: contain;
 }
 
 /* MOBILE NAV HAMBURGER */
 
 .nav__menu {
-  position: fixed;
   z-index: 3;
   right: 1.6rem;
 }
 
-.nav--active ~ .nav__menu > .menu--open {
-  display: none;
-}
-
-.nav--active ~ .nav__menu > .menu--close {
-  display: block;
-}
-
 .menu--open {
-  display: block;
   width: 3.2rem;
   height: 1.8rem;
   background: url(../images/icon-menu.svg) no-repeat;
-  transition: all 0.3;
 }
 
 .menu--close {
-  display: none;
   width: 2.404rem;
   height: 2.404rem;
   background: url(../images/icon-close-menu.svg) no-repeat;
   background-size: contain;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 /* BACKGROUND IMAGE */
 
 .hero__background {
-  width: 100%;
   max-width: 50rem;
   height: clamp(28.125rem, 75vw, 37.5rem);
-  background: url(../images/image-hero-mobile.png) no-repeat;
-  background-size: cover;
-  background-position: center;
   margin-bottom: 4.775rem;
+  background: url(../images/image-hero-mobile.png) center no-repeat;
+  background-size: cover;
 }
 
 /* HERO */
 
 .hero__content {
-  width: 100%;
   max-width: 70rem;
 }
 
@@ -308,7 +329,6 @@ main {
 
 .hero__cta > h1 {
   margin-bottom: 1.6rem;
-  font-weight: var(--fw-2);
   font-size: 3.6rem;
   line-height: 42px;
   letter-spacing: -0.5px;
@@ -325,25 +345,19 @@ main {
 .hero__cta > button {
   padding: 1.1rem 1.95rem 0.9rem 2.305rem;
   border-radius: 15px;
-  font-weight: var(--fw-2);
   font-size: 1.6rem;
   line-height: 26px;
   letter-spacing: -0.22px;
   color: var(--almostwhite);
   border: 1px solid #000;
   background-color: #000;
-  transition: all 0.3s;
 }
 
 .hero__cta > button:hover {
-  color: #000;
   background-color: transparent;
 }
 
 .hero__featured {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0 1.6rem 6rem;
 }
 
@@ -365,13 +379,4 @@ main {
 .featured__maker {
   width: 58.9px;
   height: 17.23px;
-}
-
-.nav__item:hover,
-.dropdown__item:hover {
-  color: #000;
-}
-
-.dropdown__title:hover .dropdown__arrow {
-  filter: brightness(0);
 }
