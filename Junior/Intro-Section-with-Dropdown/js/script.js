@@ -12,9 +12,9 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
 const navLeft = document.querySelector(".nav__left");
-var tablet = window.matchMedia("(min-width:1024px)");
-
 const heroContent = document.querySelector(".hero__content");
+
+var tablet = window.matchMedia("(min-width:1024px)");
 
 // On load fade-in (on desktops and tablets only)
 

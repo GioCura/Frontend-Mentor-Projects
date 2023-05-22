@@ -347,6 +347,26 @@ main {
   margin: 0 1.6rem 6rem;
 }
 
+.featured__databiz {
+  width: 81.25px;
+  height: 14.36px;
+}
+
+.featured__audiophile {
+  width: 52.87px;
+  height: 26px;
+}
+
+.featured__meet {
+  width: 64.14px;
+  height: 14.36px;
+}
+
+.featured__maker {
+  width: 58.9px;
+  height: 17.23px;
+}
+
 .nav__item:hover,
 .dropdown__item:hover {
   color: #000;

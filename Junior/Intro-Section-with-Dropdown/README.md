@@ -1,6 +1,6 @@
 # Frontend Mentor - Intro section with dropdown navigation solution
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5).
 
 ## Table of contents
 
@@ -16,8 +16,6 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -32,18 +30,9 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc31-intro-section-dropdown.netlify.app/)
 
 ## My process
 
@@ -52,61 +41,116 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned that dropdowns behave and are programmed similarly to accordions or tooltips, which I've done in previous projects.
 
-To see how you can add code snippets, see below:
+I learned that what can and can't be nested under `<ul>` or `<li>` elements. I also learned that inline declaration of widths and heights are not valid if they are decimals.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+To darken the page except for the activated nav on mobile, I opted to use a `<div>` that has fixed position. The darkened effect comes from `background-color` and `opacity`:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+.dimmer {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition: width 0.5s, height 0.5s, background-color 0.5s;
+}
+
+.dimmer--active {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+
+This is the first time I've used `removeEventListener`. I needed it to stop the site from modifying the z-index of the dimmer component when the nav is being opened:
+
+```
+  if (dimmer.classList.contains("dimmer--active")) {
+    dimmer.addEventListener("transitionend", resetIndex);
+  } else {
+    dimmer.style.zIndex = "1";
+    dimmer.removeEventListener("transitionend", resetIndex);
+  }
+```
+
+I learned that functions need to be named for `removeEventListener` to work.
+
+I learned how to do media queries using JavaScript. I needed it to enable tab indexing for the nav items, as well as observe click away events for the dropdowns, only for tablets and desktops:
+
+First, a variable must be declared which contains the media query:
+
+```
+var tablet = window.matchMedia("(min-width:1024px)");
+```
+
+Then, this variable's true or false state will be checked using `.matches`. This will be stored in a function:
+
+```
+function layoutShift(tablet) {
+  if (tablet.matches) {
+    navItem.forEach((e) => {
+      enableTabIndex(e);
+    });
+    window.addEventListener("click", dropdownClickOutside);
+  } else {
+    navItem.forEach((e) => {
+      disableTabIndex(e);
+    });
+    window.removeEventListener("click", dropdownClickOutside);
+  }
 }
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+The function is then called on load, and whenever the truth or falsity of it changes:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```
+layoutShift(tablet);
+tablet.addEventListener("change", layoutShift);
+```
+
+I also learned how to observe clicks outside an element, using `composedPath()`. I used it to collapse dropdown menu's on the desktop layout when the user clicks away from the nav:
+
+```
+function dropdownClickOutside(event) {
+  const withinBoundaries = event.composedPath().includes(navLeft);
+
+  if (!withinBoundaries) {
+    dropdown.forEach((e) => {
+      e.classList.remove("dropdown--active");
+      resetScrollHeight(e);
+    });
+    dropdownArrow.forEach((e) => {
+      e.classList.remove("flip");
+    });
+    dropdownItem.forEach((e) => {
+      e.tabIndex = "-1";
+    });
+  }
+}
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'd like to do more dropdowns, especially program what events modify them (ex. clicking away from the dropdown)
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This thread](https://stackoverflow.com/questions/12129037/correct-semantics-for-ul-in-ulm)helped me learn correct semantics for `<ul>` and `<li>`
+- [This thread too.](https://stackoverflow.com/questions/11755628/can-i-use-div-as-a-direct-child-of-ul)
+- [Ditto.](https://stackoverflow.com/questions/6449772/can-i-use-a-div-inside-a-list-item)
+- [This thread](https://stackoverflow.com/questions/10237037/entire-drop-down-menu-quickly-flashes-upon-page-load) taught me how to prevent the mobile nav menu from flashing on load.
+- [This thread](https://stackoverflow.com/questions/3772438/can-i-dynamically-set-tabindex-in-javascript) taught me how to manipulate an element's tabindex via JS.
+- [This thread](https://stackoverflow.com/questions/4402287/how-can-i-remove-a-javascript-event-listener) taught me about the `removeEventListener` function.
+- [Cesar Agusto's answer in this thread](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element) taught me how to observe click-away events using `composedPath()`.
+- [This article](https://www.w3schools.com/howto/howto_js_media_queries.asp) was my basis for how to set up media queries on my script.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to Zellene for checking the site out on Safari for me.
