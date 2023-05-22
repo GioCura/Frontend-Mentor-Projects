@@ -162,6 +162,11 @@
     margin-left: 2.5rem;
   }
 
+  .nav__right {
+    margin-left: initial;
+    margin-right: initial;
+  }
+
   .nav__register {
     padding-left: 2.3rem;
     padding-right: 2.2rem;
