@@ -17,33 +17,6 @@ const heroContent = document.querySelector(".hero__content");
 var tablet = window.matchMedia("(min-width:1024px)");
 let timeout;
 
-// On load fade-in (on desktops and tablets only)
-
-window.addEventListener("load", function () {
-  heroContent.classList.remove("fade-in");
-});
-
-// Media query that sets the tabindex for the nav buttons tab index.
-function layoutShift(tablet) {
-  if (tablet.matches) {
-    navItem.forEach((e) => {
-      enableTabIndex(e);
-    });
-    window.addEventListener("click", dropdownClickOutside);
-    clearTimeout(timeout);
-    headerNav.style.transition = "none";
-  } else {
-    navItem.forEach((e) => {
-      disableTabIndex(e);
-    });
-    window.removeEventListener("click", dropdownClickOutside);
-    resetHeaderTransition();
-  }
-}
-
-layoutShift(tablet);
-tablet.addEventListener("change", layoutShift);
-
 // General functions
 function resetIndex() {
   dimmer.style.zIndex = "-1";
@@ -85,12 +58,12 @@ function dropdownClickOutside(event) {
       e.classList.remove("flip");
     });
     dropdownItem.forEach((e) => {
-      e.tabIndex = "-1";
+      disableTabIndex(e);
     });
   }
 }
 
-// Prevents the nav from flashing on load, for mobile phones.
+// Prevents the nav from flashing on load, for mobile phones, as well as setting the dimmer's z-index.
 window.addEventListener("load", function () {
   headerNav.classList.remove("hide-load");
   navMenu.classList.remove("hide-load");
@@ -108,12 +81,12 @@ dropdownTitle.forEach((el) => {
     if (dropdown[e].classList.contains("dropdown--active")) {
       resetScrollHeight(dropdown[e]);
       dropdownItemCurrent.forEach((e) => {
-        e.tabIndex = "-1";
+        disableTabIndex(e);
       });
     } else {
       dropdown[e].style.height = dropdown[e].scrollHeight + "px";
       dropdownItemCurrent.forEach((e) => {
-        e.tabIndex = "0";
+        enableTabIndex(e);
       });
     }
 
@@ -168,3 +141,30 @@ navMenu.addEventListener("click", function () {
 dimmer.addEventListener("click", function () {
   navMenu.click();
 });
+
+// On load fade-in (on desktops and tablets only)
+
+window.addEventListener("load", function () {
+  heroContent.classList.remove("fade-in");
+});
+
+// Media queries that include resetting tabindex for nav buttons, among other things.
+function layoutShift(tablet) {
+  if (tablet.matches) {
+    navItem.forEach((e) => {
+      enableTabIndex(e);
+    });
+    window.addEventListener("click", dropdownClickOutside);
+    clearTimeout(timeout);
+    headerNav.style.transition = "none";
+  } else {
+    navItem.forEach((e) => {
+      disableTabIndex(e);
+    });
+    window.removeEventListener("click", dropdownClickOutside);
+    resetHeaderTransition();
+  }
+}
+
+layoutShift(tablet);
+tablet.addEventListener("change", layoutShift);
