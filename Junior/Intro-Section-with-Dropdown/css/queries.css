@@ -187,6 +187,12 @@
   .hero__content {
     order: 1;
     max-width: 54rem;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateX(-100%);
   }
 
   .hero__cta {

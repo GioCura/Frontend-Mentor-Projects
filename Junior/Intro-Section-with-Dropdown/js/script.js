@@ -14,6 +14,14 @@ const dropdownItem = document.querySelectorAll(".dropdown__item");
 const navLeft = document.querySelector(".nav__left");
 var desktop = window.matchMedia("(min-width:1024px)");
 
+const heroContent = document.querySelector(".hero__content");
+
+// On load fade-in (on desktops and tablets only)
+
+window.addEventListener("load", function () {
+  heroContent.classList.remove("fade-in");
+});
+
 // Media query that sets the tabindex for the nav buttons tab index.
 function layoutShift(desktop) {
   if (desktop.matches) {
