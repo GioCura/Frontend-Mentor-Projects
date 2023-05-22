@@ -12,7 +12,7 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
 const navLeft = document.querySelector(".nav__left");
-var desktop = window.matchMedia("(min-width:1440px)");
+var desktop = window.matchMedia("(min-width:1024px)");
 
 // Media query that sets the tabindex for the nav buttons tab index.
 function layoutShift(desktop) {
@@ -45,6 +45,10 @@ function enableTabIndex(el) {
   el.tabIndex = "0";
 }
 
+function resetScrollHeight(el) {
+  el.style.height = "0";
+}
+
 // Disables dropdown menus when clicking outside of them
 function dropdownClickOutside(event) {
   const withinBoundaries = event.composedPath().includes(navLeft);
@@ -52,6 +56,7 @@ function dropdownClickOutside(event) {
   if (!withinBoundaries) {
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
+      resetScrollHeight(e);
     });
     dropdownArrow.forEach((e) => {
       e.classList.remove("flip");
@@ -78,7 +83,7 @@ dropdownTitle.forEach((el) => {
     dropdownArrow[e].classList.toggle("flip");
 
     if (dropdown[e].classList.contains("dropdown--active")) {
-      dropdown[e].style.height = "0";
+      resetScrollHeight(dropdown[e]);
       dropdownItemCurrent.forEach((e) => {
         e.tabIndex = "-1";
       });
@@ -107,7 +112,7 @@ navMenu.addEventListener("click", function () {
     // resets the dropdown state
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
-      e.style.height = "0";
+      resetScrollHeight(e);
     });
     dropdownArrow.forEach((e) => {
       e.classList.remove("flip");
