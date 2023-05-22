@@ -12,7 +12,7 @@ const dropdownArrow = document.querySelectorAll(".dropdown__arrow");
 const navItem = document.querySelectorAll(".nav__item");
 const dropdownItem = document.querySelectorAll(".dropdown__item");
 const navLeft = document.querySelector(".nav__left");
-var desktop = window.matchMedia("(min-width:1024px)");
+var tablet = window.matchMedia("(min-width:1024px)");
 
 const heroContent = document.querySelector(".hero__content");
 
@@ -23,8 +23,8 @@ window.addEventListener("load", function () {
 });
 
 // Media query that sets the tabindex for the nav buttons tab index.
-function layoutShift(desktop) {
-  if (desktop.matches) {
+function layoutShift(tablet) {
+  if (tablet.matches) {
     navItem.forEach((e) => {
       enableTabIndex(e);
     });
@@ -37,8 +37,8 @@ function layoutShift(desktop) {
   }
 }
 
-layoutShift(desktop);
-desktop.addEventListener("change", layoutShift);
+layoutShift(tablet);
+tablet.addEventListener("change", layoutShift);
 
 // General functions
 function resetIndex() {
