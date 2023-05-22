@@ -15,6 +15,7 @@ const navLeft = document.querySelector(".nav__left");
 const heroContent = document.querySelector(".hero__content");
 
 var tablet = window.matchMedia("(min-width:1024px)");
+let timeout;
 
 // On load fade-in (on desktops and tablets only)
 
@@ -29,11 +30,14 @@ function layoutShift(tablet) {
       enableTabIndex(e);
     });
     window.addEventListener("click", dropdownClickOutside);
+    clearTimeout(timeout);
+    headerNav.style.transition = "none";
   } else {
     navItem.forEach((e) => {
       disableTabIndex(e);
     });
     window.removeEventListener("click", dropdownClickOutside);
+    resetHeaderTransition();
   }
 }
 
@@ -55,6 +59,17 @@ function enableTabIndex(el) {
 
 function resetScrollHeight(el) {
   el.style.height = "0";
+}
+
+// Temporarily disables header's transition, then quickly re-enables it (to prevent the mobile header from flashing when resizing the window.)
+
+function resetHeaderTransition() {
+  headerNav.style.transition = "none";
+
+  timeout = setTimeout(function () {
+    headerNav.style.transition = "all 0.5s";
+    console.log("Yooo!");
+  }, 100);
 }
 
 // Disables dropdown menus when clicking outside of them

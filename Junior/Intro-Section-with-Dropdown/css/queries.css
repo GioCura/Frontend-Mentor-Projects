@@ -1,3 +1,9 @@
+@media (prefers-reduced-motion) {
+  .hero__content {
+    transition: none;
+  }
+}
+
 @media (min-width: 1440px) {
   main {
     gap: 12.5rem;
