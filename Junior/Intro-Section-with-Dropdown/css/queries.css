@@ -1,15 +1,48 @@
 @media (min-width: 1440px) {
+  main {
+    gap: 12.5rem;
+  }
+
+  .hero__cta {
+    margin-top: 10.4rem;
+    margin-bottom: 10.8rem;
+  }
+
+  .hero__cta h1 {
+    font-size: 8rem;
+  }
+}
+
+@media (min-width: 1260px) {
+  main {
+    margin-left: 16.5rem;
+    margin-right: 13rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .hero__cta h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    align-items: center;
+  }
+
   .dimmer {
     display: none;
   }
 
   header {
+    width: 100%;
     justify-content: initial;
     gap: 6rem;
-    margin-top: 1.6rem;
-    margin-right: 4rem;
-    margin-bottom: 2.4rem;
-    margin-left: 4rem;
+    margin-top: 2.1rem;
+    padding-right: 4rem;
+    margin-bottom: 6.7rem;
+    padding-left: 4rem;
   }
 
   .nav__menu {
@@ -55,6 +88,10 @@
     margin-bottom: initial;
   }
 
+  .dropdown__title {
+    gap: 0.9rem;
+  }
+
   .dropdown {
     margin-bottom: initial;
     padding-top: 2.4rem;
@@ -74,7 +111,7 @@
   .dropdown--features {
     width: 15.3rem;
     top: 4.9rem;
-    left: -6rem;
+    left: -7.4rem;
   }
 
   .dropdown--features li {
@@ -128,5 +165,83 @@
   .nav__register {
     padding-left: 2.3rem;
     padding-right: 2.2rem;
+  }
+
+  /* HERO */
+
+  main {
+    flex-direction: row;
+    /* width: 100%;
+    justify-content: center; */
+    /* gap: 12.5rem; */
+    /* margin-left: 16.5rem; */
+    /* margin-right: 13rem; */
+    margin-bottom: 5rem;
+  }
+
+  .hero__content {
+    order: 1;
+    max-width: 54rem;
+  }
+
+  .hero__cta {
+    text-align: left;
+    /* margin-top: 10.4rem; */
+    /* margin-bottom: 10.8rem; */
+  }
+
+  .hero__cta h1 {
+    line-height: 80px;
+    letter-spacing: -1.111px;
+    margin-right: 1rem;
+    margin-bottom: 4.8rem;
+  }
+
+  .hero__cta > p {
+    font-size: 1.8rem;
+    line-height: 28px;
+    margin: 0 5.6rem 5.1rem 0;
+  }
+
+  .hero__cta > button {
+    font-size: 1.8rem;
+    line-height: 28px;
+    padding: 1.5rem 2.8rem 1.3rem 3.1rem;
+  }
+
+  .hero__background {
+    order: 2;
+    /* width: 48rem; */
+    width: clamp(36rem, 34vw, 48rem);
+    /* height: 64rem; */
+    height: clamp(48rem, 45vw, 64rem);
+    background: url(../images/image-hero-desktop.png) no-repeat;
+    background-size: contain;
+    margin-bottom: 0;
+  }
+
+  .hero__featured {
+    margin: 0;
+    width: 47.763rem;
+  }
+
+  .featured__databiz {
+    width: 11.314rem;
+    height: 2rem;
+  }
+
+  .featured__audiophile {
+    width: 7.3rem;
+    height: 3.59rem;
+  }
+
+  .featured__meet {
+    width: 8.931rem;
+    height: 2rem;
+  }
+
+  .featured__maker {
+    width: 8.201rem;
+    height: 2.4rem;
   }
 }

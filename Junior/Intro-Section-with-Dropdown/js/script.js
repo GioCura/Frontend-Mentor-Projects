@@ -45,12 +45,19 @@ function enableTabIndex(el) {
   el.tabIndex = "0";
 }
 
+// Disables dropdown menus when clicking outside of them
 function dropdownClickOutside(event) {
   const withinBoundaries = event.composedPath().includes(navLeft);
 
   if (!withinBoundaries) {
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
+    });
+    dropdownArrow.forEach((e) => {
+      e.classList.remove("flip");
+    });
+    dropdownItem.forEach((e) => {
+      e.tabIndex = "-1";
     });
   }
 }
@@ -100,7 +107,7 @@ navMenu.addEventListener("click", function () {
     // resets the dropdown state
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
-      enableTabIndex(e);
+      e.style.height = "0";
     });
     dropdownArrow.forEach((e) => {
       e.classList.remove("flip");
