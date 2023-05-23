@@ -101,6 +101,11 @@ header,
   color: #000;
 }
 
+body,
+.header__nav {
+  background-color: var(--almostwhite);
+}
+
 /* //////////////// */
 
 body {
@@ -162,7 +167,6 @@ header > img {
   right: 0;
   width: 24rem;
   height: 100vh;
-  background-color: #fff;
   transform: translateX(100%);
 }
 
