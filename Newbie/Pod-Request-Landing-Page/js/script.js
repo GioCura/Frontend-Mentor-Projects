@@ -11,7 +11,7 @@ ctaInput.autocomplete = "on";
 function emailError() {
   ctaInput.classList.add("error");
   ctaError.classList.add("error--active");
-  ctaError.style.height = ctaInput.scrollHeight + "px";
+  ctaError.style.height = ctaError.scrollHeight + "px";
 }
 
 // Form validation upon submission
