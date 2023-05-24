@@ -4,6 +4,8 @@ const heroCta = document.querySelector(".hero__cta");
 const ctaInput = document.querySelector(".cta__input");
 const ctaError = document.querySelector(".cta__error");
 
+let tablet = window.matchMedia("(min-width: 768px)");
+
 // Re-enables autocomplete upon page load (for Firefox)
 ctaInput.autocomplete = "on";
 
@@ -11,7 +13,19 @@ ctaInput.autocomplete = "on";
 function emailError() {
   ctaInput.classList.add("error");
   ctaError.classList.add("error--active");
-  ctaError.style.height = ctaError.scrollHeight + "px";
+  addHeight(ctaError);
+}
+
+function addHeight() {
+  if (!tablet.matches) {
+    ctaError.style.height = ctaError.scrollHeight + "px";
+  }
+}
+
+function removeHeight() {
+  if (!tablet.matches) {
+    ctaError.style.height = "0";
+  }
 }
 
 // Form validation upon submission
@@ -29,7 +43,7 @@ ctaInput.addEventListener("change", function () {
   if (ctaInput.validity.valid) {
     ctaInput.classList.remove("error");
     ctaError.classList.remove("error--active");
-    ctaError.style.height = "0";
+    removeHeight(ctaError);
   } else {
     emailError();
   }
