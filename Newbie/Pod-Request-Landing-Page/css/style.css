@@ -1,3 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --green: #54e6af;
+  --darkblue: #2c344b;
+  --darkestblue: #121725;
+  --lightblue: #5a668a;
+  --lightestblue: #c2cbe5;
+  --font: "Chivo", sans-serif;
+  --fw-1: 400;
+  --fw-2: 900;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--darkestblue);
+  font-family: var(--font);
+}
+
 .hero__cta {
   display: flex;
   flex-direction: column;
@@ -5,5 +34,10 @@
 
 .cta__error {
   height: 0;
+  opacity: 0;
   transition: all 0.3s;
+}
+
+.error--active {
+  opacity: 1;
 }

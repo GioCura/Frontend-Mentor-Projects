@@ -10,6 +10,7 @@ ctaInput.autocomplete = "on";
 // Error script for the input
 function emailError() {
   ctaInput.classList.add("error");
+  ctaError.classList.add("error--active");
   ctaError.style.height = ctaInput.scrollHeight + "px";
 }
 
@@ -27,6 +28,7 @@ heroCta.addEventListener("submit", function (e) {
 ctaInput.addEventListener("change", function () {
   if (ctaInput.validity.valid) {
     ctaInput.classList.remove("error");
+    ctaError.classList.remove("error--active");
     ctaError.style.height = "0";
   } else {
     emailError();
