@@ -23,8 +23,63 @@
     <title>Frontend Mentor | Pod request access landing page</title>
   </head>
   <body>
-    Publish your podcasts everywhere. Upload your audio to Pod with a single
-    click. We’ll then distribute your podcast to Spotify, Apple Podcasts, Google
-    Podcasts, Pocket Casts and more! Request access
+    <div>
+      <header>
+        <img src="images/logo.svg" alt="The Pod logo" class="logo" />
+      </header>
+      <main>
+        <section class="hero">
+          <h1>Publish your podcasts everywhere.</h1>
+          <p>
+            Upload your audio to Pod with a single click. We’ll then distribute
+            your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
+            Casts and more!
+          </p>
+          <div class="hero__featured">
+            <img
+              src="images/spotify.svg"
+              alt="The logo for Spotify, which supports Pod"
+              class="featured__spotify"
+              width="56"
+              height="17"
+            />
+            <img
+              src="images/apple-podcast.svg"
+              alt="The logo for Apple Podcasts, which supports Pod"
+              class="featured__apple"
+              width="45"
+              height="17"
+            />
+            <img
+              src="images/google-podcasts.svg"
+              alt="The logo for Google Podcasts, which supports Pod"
+              class="featured__google"
+              width="73"
+              height="11"
+            />
+            <img
+              src="images/pocket-casts.svg"
+              alt="The logo for Pocket Casts, which supports Pod"
+              class="featured__pocket"
+              width="77"
+              height="15"
+            />
+          </div>
+          <form class="hero__cta">
+            <label for="email">
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Email address"
+                class="cta__input"
+              />
+            </label>
+            <span class="cta__error">Oops! Please check your email</span>
+            <button class="cta__button">Request Access</button>
+          </form>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
