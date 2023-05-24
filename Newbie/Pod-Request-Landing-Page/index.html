@@ -65,7 +65,7 @@
               height="15"
             />
           </div>
-          <form class="hero__cta">
+          <form class="hero__cta" novalidate>
             <label for="email">
               <input
                 id="email"
@@ -73,10 +73,12 @@
                 name="email"
                 placeholder="Email address"
                 class="cta__input"
+                required
+                autocomplete="off"
               />
             </label>
             <span class="cta__error">Oops! Please check your email</span>
-            <button class="cta__button">Request Access</button>
+            <button type="submit" class="cta__button">Request Access</button>
           </form>
         </section>
       </main>

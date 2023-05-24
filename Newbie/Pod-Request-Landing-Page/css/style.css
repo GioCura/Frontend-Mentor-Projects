@@ -1,0 +1,9 @@
+.hero__cta {
+  display: flex;
+  flex-direction: column;
+}
+
+.cta__error {
+  height: 0;
+  transition: all 0.3s;
+}
