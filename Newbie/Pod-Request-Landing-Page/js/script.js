@@ -4,21 +4,31 @@ const heroCta = document.querySelector(".hero__cta");
 const ctaInput = document.querySelector(".cta__input");
 const ctaError = document.querySelector(".cta__error");
 
-function emailCheck() {
-  if (ctaInput.validity.valid) {
-    ctaInput.classList.remove("error");
-    ctaError.style.height = "0";
-  } else if (!ctaInput.validity.valid) {
-    ctaInput.classList.add("error");
-    ctaError.style.height = ctaError.scrollHeight + "px";
-  }
+// Re-enables autocomplete upon page load (for Firefox)
+ctaInput.autocomplete = "on";
+
+// Error script for the input
+function emailError() {
+  ctaInput.classList.add("error");
+  ctaError.style.height = ctaInput.scrollHeight + "px";
 }
 
+// Form validation upon submission
 heroCta.addEventListener("submit", function (e) {
   if (!ctaInput.validity.valid) {
     e.preventDefault();
-    emailCheck();
+    emailError();
+  } else {
+    alert("Email sumbitted!");
   }
 });
 
-ctaInput.addEventListener("change", emailCheck);
+// Form validation upon changing input
+ctaInput.addEventListener("change", function () {
+  if (ctaInput.validity.valid) {
+    ctaInput.classList.remove("error");
+    ctaError.style.height = "0";
+  } else {
+    emailError();
+  }
+});
