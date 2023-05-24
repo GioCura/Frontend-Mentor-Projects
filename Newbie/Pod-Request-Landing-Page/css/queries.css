@@ -1,0 +1,110 @@
+@media (min-width: 768px) and (max-width: 1023px) {
+  body::before {
+    background: url(../images/image-host-tablet.jpg),
+      url(../images/bg-pattern-dots.svg);
+    background-repeat: no-repeat;
+    background-size: 49.1rem 76.7rem, 23.2rem 10.4rem;
+    background-position: top right, bottom left 3rem;
+    opacity: 1;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    /* width: 82.684%; */
+    width: 63.5rem;
+    margin: 5rem 0 0 3.9rem;
+  }
+
+  .logo {
+    margin-bottom: 15.2rem;
+  }
+
+  .hero {
+    background-color: var(--darkestblue);
+    padding-top: 9.3rem;
+    text-align: left;
+    margin-bottom: 25.7rem;
+    padding-bottom: 2rem;
+  }
+
+  .hero > h1 {
+    order: 1;
+    font-size: 4.8rem;
+    line-height: 56px;
+    margin-bottom: 3.1rem;
+  }
+
+  .hero > p {
+    order: 2;
+    font-size: 1.8rem;
+    line-height: 28px;
+    margin-right: 19rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero__cta {
+    order: 3;
+    margin-bottom: 6.4rem;
+  }
+
+  .hero__featured {
+    order: 4;
+    margin: initial;
+    width: 53.6rem;
+  }
+
+  .featured__spotify {
+    width: 9.6rem;
+    height: 2.9rem;
+  }
+
+  .featured__apple {
+    width: 7.8rem;
+    height: 2.9rem;
+  }
+
+  .featured__google {
+    width: 12.5rem;
+    height: 1.8rem;
+  }
+
+  .featured__pocket {
+    width: 12.9rem;
+    height: 2.6rem;
+  }
+
+  .hero__cta {
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 42.7rem;
+    background-color: var(--darkblue);
+    border-radius: 28px;
+    padding: 0.5rem 0.5rem 0.5rem 3.2rem;
+  }
+
+  .cta__input {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    width: 22rem;
+  }
+
+  .cta__error {
+    position: absolute;
+    bottom: -2rem;
+    margin-bottom: initial;
+  }
+
+  .error--active {
+    margin-top: initial;
+    height: auto;
+  }
+
+  .cta__button {
+    padding: 0.9rem 2.7rem;
+  }
+}
