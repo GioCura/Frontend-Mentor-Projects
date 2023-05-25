@@ -4,7 +4,7 @@ const heroCta = document.querySelector(".hero__cta");
 const ctaInput = document.querySelector(".cta__input");
 const ctaError = document.querySelector(".cta__error");
 
-let tablet = window.matchMedia("(min-width: 768px)");
+let tablet = window.matchMedia("(min-width: 48em)");
 
 // Re-enables autocomplete upon page load (for Firefox)
 ctaInput.autocomplete = "on";
