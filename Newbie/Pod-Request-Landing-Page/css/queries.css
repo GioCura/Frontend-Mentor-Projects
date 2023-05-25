@@ -13,13 +13,12 @@
     margin: 5rem 0 0 3.9rem;
   }
 
-  .logo {
+  header {
     margin-bottom: 15.2rem;
   }
 
   .hero {
     padding-top: 9.3rem;
-    margin-bottom: 25.7rem;
     padding-bottom: 2rem;
   }
 
@@ -34,10 +33,6 @@
     line-height: 28px;
     margin-right: 19rem;
     margin-bottom: 4rem;
-  }
-
-  .cta__button {
-    padding: 0.9rem 2.7rem;
   }
 }
 
@@ -71,24 +66,31 @@
     align-items: center;
     justify-content: space-between;
     width: 42.7rem;
-    background-color: var(--darkblue);
     border-radius: 28px;
     margin-bottom: 6.4rem;
-    padding: 0.5rem 0.5rem 0.5rem 3.2rem;
+  }
+
+  label[for="email"] {
+    width: 100%;
   }
 
   .cta__input {
-    padding: 0;
-    border-radius: 0;
-    background-color: transparent;
-    width: 22rem;
+    padding: 1.4rem 0.5rem 1.4rem 3.2rem;
+    border-radius: 28px;
   }
 
   .cta__error {
     position: absolute;
     bottom: -2rem;
+    left: 3.2rem;
     margin-bottom: initial;
     height: auto;
+  }
+
+  .cta__button {
+    padding: 0.9rem 2.7rem;
+    position: absolute;
+    right: 0.5rem;
   }
 
   .error--active {

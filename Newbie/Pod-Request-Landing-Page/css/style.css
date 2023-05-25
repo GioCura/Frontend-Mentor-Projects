@@ -41,6 +41,7 @@ button {
 }
 
 body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: var(--darkestblue);
@@ -67,10 +68,13 @@ body::before {
   margin: 6.2rem 2.4rem 0;
 }
 
+header {
+  margin-bottom: 5.7rem;
+}
+
 .logo {
   width: 13.485rem;
   height: 5.6rem;
-  margin-bottom: 5.7rem;
 }
 
 .hero {
