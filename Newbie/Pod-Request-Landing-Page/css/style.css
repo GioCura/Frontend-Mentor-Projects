@@ -25,6 +25,10 @@ button {
   cursor: pointer;
 }
 
+li {
+  list-style: none;
+}
+
 :root {
   --green: #54e6af;
   --darkblue: #2c344b;

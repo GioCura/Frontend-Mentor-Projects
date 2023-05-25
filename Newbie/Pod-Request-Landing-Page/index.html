@@ -33,7 +33,7 @@
     <div class="wrapper">
       <header>
         <a href="#"
-          ><img src="images/logo.svg" alt="The Pod logo" class="logo"
+          ><img src="images/logo.svg" alt="Pod - Home" class="logo"
         /></a>
       </header>
       <main>
@@ -44,49 +44,62 @@
             your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
             Casts and more!
           </p>
-          <div class="hero__featured">
-            <img
-              src="images/spotify.svg"
-              alt="The logo for Spotify, which supports Pod"
-              class="featured__spotify"
-              width="56"
-              height="17"
-            />
-            <img
-              src="images/apple-podcast.svg"
-              alt="The logo for Apple Podcasts, which supports Pod"
-              class="featured__apple"
-              width="45"
-              height="17"
-            />
-            <img
-              src="images/google-podcasts.svg"
-              alt="The logo for Google Podcasts, which supports Pod"
-              class="featured__google"
-              width="73"
-              height="11"
-            />
-            <img
-              src="images/pocket-casts.svg"
-              alt="The logo for Pocket Casts, which supports Pod"
-              class="featured__pocket"
-              width="77"
-              height="15"
-            />
-          </div>
+          <ul
+            class="hero__featured"
+            aria-label="List of companies supporting Pod"
+          >
+            <li>
+              <img
+                src="images/spotify.svg"
+                alt="Spotify"
+                class="featured__spotify"
+                width="56"
+                height="17"
+              />
+            </li>
+            <li>
+              <img
+                src="images/apple-podcast.svg"
+                alt="Apple Podcasts"
+                class="featured__apple"
+                width="45"
+                height="17"
+              />
+            </li>
+            <li>
+              <img
+                src="images/google-podcasts.svg"
+                alt="Google Podcasts"
+                class="featured__google"
+                width="73"
+                height="11"
+              />
+            </li>
+            <li>
+              <img
+                src="images/pocket-casts.svg"
+                alt="Pocket Casts"
+                class="featured__pocket"
+                width="77"
+                height="15"
+              />
+            </li>
+          </ul>
           <form class="hero__cta" novalidate>
             <label for="email">
               <input
                 id="email"
                 type="email"
                 name="email"
+                aria-label="Enter email address here"
                 placeholder="Email address"
                 class="cta__input"
                 autocomplete="off"
+                aria-describedby="ctaError"
                 required
               />
             </label>
-            <span class="cta__error">Oops! Please check your email</span>
+            <span class="cta__error" id="ctaError" aria-live="polite"></span>
             <button type="submit" class="cta__button">Request Access</button>
           </form>
         </section>

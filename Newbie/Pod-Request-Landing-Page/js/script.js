@@ -12,7 +12,9 @@ ctaInput.autocomplete = "on";
 // Error script for the input
 function emailError() {
   ctaInput.classList.add("error");
+  ctaInput.setAttribute("aria-invalid", "true");
   ctaError.classList.add("error--active");
+  ctaError.textContent = "Oops! Please check your email";
   addHeight(ctaError);
 }
 
@@ -42,7 +44,9 @@ heroCta.addEventListener("submit", function (e) {
 ctaInput.addEventListener("change", function () {
   if (ctaInput.validity.valid) {
     ctaInput.classList.remove("error");
+    ctaInput.removeAttribute("aria-invalid");
     ctaError.classList.remove("error--active");
+    ctaError.textContent = "";
     removeHeight(ctaError);
   } else {
     emailError();
