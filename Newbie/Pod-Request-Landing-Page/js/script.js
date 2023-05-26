@@ -3,6 +3,7 @@
 const heroCta = document.querySelector(".hero__cta");
 const ctaInput = document.querySelector(".cta__input");
 const ctaError = document.querySelector(".cta__error");
+const loadAnim = document.querySelectorAll(".load-anim");
 
 let tablet = window.matchMedia("(min-width: 48em)");
 
@@ -51,4 +52,12 @@ ctaInput.addEventListener("change", function () {
   } else {
     emailError();
   }
+});
+
+// Fade in animation for desktop screens
+window.addEventListener("load", function () {
+  loadAnim.forEach((el) => {
+    el.classList.remove("hidden");
+    el.classList.remove("hidden-down");
+  });
 });

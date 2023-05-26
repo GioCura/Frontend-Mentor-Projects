@@ -38,15 +38,17 @@
       </header>
       <main>
         <section class="hero">
-          <h1>Publish your podcasts <span>everywhere.</span></h1>
-          <p>
+          <h1 class="load-anim hidden-down">
+            Publish your podcasts <span>everywhere.</span>
+          </h1>
+          <p class="load-anim hidden">
             Upload your audio to Pod with a single click. We’ll then distribute
             your podcast to Spotify, Apple Podcasts, Google Podcasts, Pocket
             Casts and more!
           </p>
           <ul
-            class="hero__featured"
-            aria-label="List of companies supporting Pod"
+            class="hero__featured load-anim hidden"
+            aria-description="List of companies supporting Pod"
           >
             <li>
               <img
@@ -85,7 +87,7 @@
               />
             </li>
           </ul>
-          <form class="hero__cta" novalidate>
+          <form class="hero__cta load-anim hidden" novalidate>
             <label for="email">
               <input
                 id="email"

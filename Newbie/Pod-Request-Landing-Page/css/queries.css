@@ -45,6 +45,7 @@
     background-repeat: no-repeat, no-repeat;
     background-size: 23.2rem 10.4rem, 88.8rem 64rem;
     background-position: bottom right, top 2.8rem right;
+    /* overflow: hidden; */
   }
 
   .hero {
@@ -52,6 +53,31 @@
     /* max-width: 72.3rem; */
     padding-top: 8.8rem;
     padding-bottom: 0;
+  }
+
+  .load-anim {
+    transition: transform 0.6s, opacity 0.6s;
+  }
+
+  .load-anim:nth-child(2) {
+    transition-delay: 1s;
+  }
+
+  .load-anim:nth-child(4) {
+    transition-delay: 1.1s;
+  }
+
+  .load-anim:nth-child(3) {
+    transition-delay: 1.2s;
+  }
+
+  .hidden,
+  .hidden-down {
+    opacity: 0;
+  }
+
+  .hidden-down {
+    transform: translateY(200%);
   }
 
   .hero > h1 {
