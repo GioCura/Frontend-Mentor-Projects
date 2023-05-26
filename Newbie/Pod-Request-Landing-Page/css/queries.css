@@ -1,18 +1,18 @@
 /* px divided by 16 to get em */
-@media (min-width: 100.3125em) {
+@media (min-width: 1606px) {
   .wrapper {
     align-self: center;
     margin: 10.2rem 0 7.8rem;
   }
 }
 
-@media (min-width: 64em) and (max-width: 100.25em) {
+@media (min-width: 1280px) and (max-width: 1605px) {
   .wrapper {
     margin: 10.2rem 0 7.8rem 16.5rem;
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 1280px) {
   body::before {
     display: none;
   }
@@ -24,9 +24,6 @@
   .wrapper {
     /* width: 127.5rem; */
     max-width: 127.5rem;
-    /* height: 72rem; */
-    /* align-self: flex-end; */
-    /* margin: 10.2rem 0 7.8rem 16.5rem; */
     background-image: url(../images/bg-pattern-dots.svg),
       url(../images/image-host-desktop.jpg);
     background-repeat: no-repeat, no-repeat;
@@ -35,8 +32,8 @@
   }
 
   .hero {
-    /* width: 72.3rem; */
     width: 56.706%;
+    /* max-width: 72.3rem; */
     padding-top: 8.8rem;
     padding-bottom: 0;
   }
@@ -52,16 +49,37 @@
   }
 }
 
-@media (min-width: 48em) and (max-width: 63.9375em) {
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body::before {
+    background: url(../images/bg-pattern-dots.svg),
+      url(../images/image-host-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: 23.2rem 10.4rem, 88.8rem 64rem;
+    background-position: bottom 2.2rem right, top right -20rem;
+    height: 76.8rem;
+  }
+
+  .hero {
+    padding-top: 3.3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
   body::before {
     background: url(../images/image-host-tablet.jpg),
       url(../images/bg-pattern-dots.svg);
     background-repeat: no-repeat;
     background-size: 49.1rem 76.7rem, 23.2rem 10.4rem;
     background-position: top right, bottom left 3rem;
-    opacity: 1;
+    height: 102.4rem;
   }
 
+  .hero {
+    padding-top: 9.3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
   .wrapper {
     width: 63.5rem;
     margin: 5rem 0 0 3.9rem;
@@ -72,7 +90,6 @@
   }
 
   .hero {
-    padding-top: 9.3rem;
     padding-bottom: 2rem;
   }
 
@@ -87,7 +104,11 @@
   }
 }
 
-@media (min-width: 48em) {
+@media (min-width: 768px) {
+  body::before {
+    opacity: 1;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -121,7 +142,8 @@
     justify-content: space-between;
     width: 42.7rem;
     border-radius: 28px;
-    margin-bottom: 6.4rem;
+    /* margin-bottom: 6.4rem; */
+    margin-bottom: 6.25rem;
   }
 
   label[for="email"] {
