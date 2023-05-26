@@ -17,6 +17,7 @@ JUNIOR CHALLENGES
 NEWBIE CHALLENGES
 | Challenge | Code | Live URL |
 | :--- | :---: | :---: |
+| Pod Request Landing Page | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Newbie/Pod-Request-Landing-Page) | [Live Site](https://gc32-pod-landing.netlify.app/) |
 | Equalizer Landing Page | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Newbie/Equalizer-Landing-Page) | [Live Site](https://gc29-equalizer-landing.netlify.app/) |
 | Social Proof Section | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Newbie/Social-Proof-Section) | [Live Site](https://gc22-social-proof.netlify.app/) |
 | BASE Coming Soon Page | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Newbie/BASE-Coming-Soon-Page) | [Live Site](https://gc21-base-coming-soon.netlify.app/) |
