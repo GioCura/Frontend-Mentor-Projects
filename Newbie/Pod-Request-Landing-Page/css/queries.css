@@ -2,17 +2,31 @@
 @media (min-width: 1606px) {
   .wrapper {
     align-self: center;
-    margin: 10.2rem 0 7.8rem;
+    /* margin: 10.2rem 0 7.8rem; */
+    margin: 2.4rem 0 0;
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1605px) {
+@media (min-width: 1440px) and (max-width: 1605px) {
   .wrapper {
-    margin: 10.2rem 0 7.8rem 16.5rem;
+    margin: 2.4rem 0 0 16.5rem;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .wrapper {
+    /* margin: 10.2rem 0 7.8rem 16.5rem; */
+    /* margin: 2.4rem 0 0 16.5rem; */
+    margin: 2.4rem 0 0;
+    align-self: flex-end;
   }
 }
 
 @media (min-width: 1280px) {
+  body {
+    justify-content: center;
+  }
+
   body::before {
     display: none;
   }
@@ -23,7 +37,9 @@
 
   .wrapper {
     /* width: 127.5rem; */
+    width: 95%;
     max-width: 127.5rem;
+    height: 72rem;
     background-image: url(../images/bg-pattern-dots.svg),
       url(../images/image-host-desktop.jpg);
     background-repeat: no-repeat, no-repeat;
@@ -62,6 +78,10 @@
   .hero {
     padding-top: 3.3rem;
   }
+
+  .wrapper {
+    margin: 5rem 0 0 5rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -77,12 +97,15 @@
   .hero {
     padding-top: 9.3rem;
   }
+
+  .wrapper {
+    margin: 5rem 0 0 3.9rem;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1279px) {
   .wrapper {
     width: 63.5rem;
-    margin: 5rem 0 0 3.9rem;
   }
 
   header {
