@@ -1,25 +1,25 @@
 /* px divided by 16 to get em */
-@media (min-width: 1606px) {
+@media (min-width: 100.375em) {
   .wrapper {
     align-self: center;
     margin: 2.4rem 0 0;
   }
 }
 
-@media (min-width: 1440px) and (max-width: 1605px) {
+@media (min-width: 90em) and (max-width: 100.3125em) {
   .wrapper {
     margin: 2.4rem 0 0 16.5rem;
   }
 }
 
-@media (min-width: 1280px) and (max-width: 1439px) {
+@media (min-width: 80em) and (max-width: 89.9375em) {
   .wrapper {
     margin: 2.4rem 0 0;
     align-self: flex-end;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 80em) {
   body {
     justify-content: center;
   }
@@ -85,7 +85,7 @@
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
+@media (min-width: 64em) and (max-width: 79.9375em) {
   body::before {
     height: 76.8rem;
     background: url(../images/bg-pattern-dots.svg),
@@ -104,7 +104,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48em) and (max-width: 63.9375em) {
   body::before {
     height: 102.4rem;
     background: url(../images/image-host-tablet.jpg),
@@ -123,7 +123,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 48em) and (max-width: 79.9375em) {
   .wrapper {
     width: 63.5rem;
   }
@@ -147,7 +147,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   body::before {
     opacity: 1;
   }
