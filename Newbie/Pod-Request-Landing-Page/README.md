@@ -30,7 +30,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Desktop](images/screenshot-desktop.png)
+![Desktop-Active](images/screenshot-desktop-active.png)
+![Tablet](images/screenshot-tablet.png)
+![Mobile](images/screenshot-mobile.png)
 
 ### Links
 
