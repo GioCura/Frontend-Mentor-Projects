@@ -64,11 +64,11 @@
   }
 
   .load-anim:nth-child(4) {
-    transition-delay: 0.85s;
+    transition-delay: 0.9s;
   }
 
   .load-anim:nth-child(3) {
-    transition-delay: 0.9s;
+    transition-delay: 1s;
   }
 
   .hidden,
