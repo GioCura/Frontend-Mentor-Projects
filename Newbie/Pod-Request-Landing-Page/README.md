@@ -1,6 +1,6 @@
 # Frontend Mentor - Pod request access landing page solution
 
-This is a solution to the [Pod request access landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Pod request access landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pod-request-access-landing-page-eyTmdkLSG).
 
 ## Table of contents
 
@@ -15,8 +15,6 @@ This is a solution to the [Pod request access landing page challenge on Frontend
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -34,18 +32,9 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live site](https://gc32-pod-landing.netlify.app/)
 
 ## My process
 
@@ -54,61 +43,77 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I took this on because the layout seemed unique, stylish, and challenging.
 
-To see how you can add code snippets, see below:
+I brushed up on some concepts I've learned previously to make it. Like, how to use a pseudoelement to achieve the transparent background on mobile. I also had to make an input that houses a button for the desktop layout.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+Last time, I nested the input and button under a `<div>`, and let the latter have the background color and border-radius.
+
+However, I realized that tab-focusing on the input when it's styled like this doesn't outline the whole thing. This time, taking inspiration from [Vanza Setia's solution this challenge](https://officialpod.netlify.app/), I let the `<div>` have the `width`, but let the input keep the background color and border-radius. Also, the button is absolutely positioned relative to the `<div>`. The input then has `width: 100`. To make sure that the text written into the input doesn't overlap the button, the input is given a large padding to the right.
+
+A major thing that I've learned and practiced here is to make the site accessible for screen readers. Firsty, the screen reader needs to know what the input is about upon highlighting it. This can be done via `aria-label`:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+<input
+  aria-label="Enter email address here"
+/>
+```
+
+When there's an `aria-label`, the screen reader ignores the `placeholder`.
+
+Next, the reader should be informed if the form is invalid. For custom form validations, you can do it yourself by setting the input's `aria-invalid` value via `setAttribute`:
+
+```
+function emailError() {
+  ctaInput.setAttribute("aria-invalid", "true");
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+
+Which you can then remove if the input is valid:
+
+```
+ctaInput.addEventListener("change", function () {
+  if (ctaInput.validity.valid) {
+    ctaInput.removeAttribute("aria-invalid");
+  } else {
+    emailError();
+  }
+});
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+It also helps if the screen reader is made to read the error message. This can be done by using `aria-describedby`, which refers to the error message's id:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```
+<input
+  aria-describedby="ctaError"
+/>
+<span class="cta__error" id="ctaError" aria-live="polite"></span>
+```
+
+When the script confirms that the input is invalid, the error message is written into the `<span>`.
+With `aria-live` set to `polite` the screen reader reads the message.
+
+In my code, it is crucial to remove the text content of the error upon validation, so that the reader won't detect it. I learned that, in general, adding `aria-hidden="true"` does the same trick. However, since the input is described by the error, it overlooks `aria-hidden`.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I'll go back to my previous projects to ensure accessiblity.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I also want to go back and convert my media query values from `px` to `em`, as I learned that it's generally better. It's as simple as dividing the pixel values to 16.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This guide](https://www.smashingmagazine.com/2023/02/guide-accessible-form-validation/) taught me about making form validation accessible, particulary through `aria-invalid`, `aria-describedby`, and `aria-live`.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Many thanks to [Vanza Setia's solution this challenge](https://officialpod.netlify.app/). I re-styled my desktop layout's input and button according to his, since it looks better when tab-focused. Also, I learn a bit about accesibility by looking at his code.
