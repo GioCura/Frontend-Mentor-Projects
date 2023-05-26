@@ -156,6 +156,7 @@ header {
 .cta__error {
   height: 0;
   margin-bottom: 1.6rem;
+  font-weight: var(--fw-4);
   font-size: 1.2rem;
   line-height: 1.428rem;
   color: var(--red);
