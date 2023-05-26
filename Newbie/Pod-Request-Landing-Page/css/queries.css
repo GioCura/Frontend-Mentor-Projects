@@ -2,7 +2,6 @@
 @media (min-width: 1606px) {
   .wrapper {
     align-self: center;
-    /* margin: 10.2rem 0 7.8rem; */
     margin: 2.4rem 0 0;
   }
 }
@@ -15,8 +14,6 @@
 
 @media (min-width: 1280px) and (max-width: 1439px) {
   .wrapper {
-    /* margin: 10.2rem 0 7.8rem 16.5rem; */
-    /* margin: 2.4rem 0 0 16.5rem; */
     margin: 2.4rem 0 0;
     align-self: flex-end;
   }
@@ -36,7 +33,6 @@
   }
 
   .wrapper {
-    /* width: 127.5rem; */
     width: 95%;
     max-width: 127.5rem;
     height: 72rem;
@@ -45,12 +41,10 @@
     background-repeat: no-repeat, no-repeat;
     background-size: 23.2rem 10.4rem, 88.8rem 64rem;
     background-position: bottom right, top 2.8rem right;
-    /* overflow: hidden; */
   }
 
   .hero {
     width: 56.706%;
-    /* max-width: 72.3rem; */
     padding-top: 8.8rem;
     padding-bottom: 0;
   }
@@ -81,9 +75,9 @@
   }
 
   .hero > h1 {
+    margin-bottom: 2.4rem;
     font-size: 5.2rem;
     line-height: 6.2rem;
-    margin-bottom: 2.4rem;
   }
 
   .hero > p {
@@ -93,12 +87,12 @@
 
 @media (min-width: 1024px) and (max-width: 1279px) {
   body::before {
+    height: 76.8rem;
     background: url(../images/bg-pattern-dots.svg),
       url(../images/image-host-desktop.jpg);
     background-repeat: no-repeat;
     background-size: 23.2rem 10.4rem, 88.8rem 64rem;
     background-position: bottom 2.2rem right, top right -20rem;
-    height: 76.8rem;
   }
 
   .hero {
@@ -112,12 +106,12 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   body::before {
+    height: 102.4rem;
     background: url(../images/image-host-tablet.jpg),
       url(../images/bg-pattern-dots.svg);
     background-repeat: no-repeat;
     background-size: 49.1rem 76.7rem, 23.2rem 10.4rem;
     background-position: top right, bottom left 3rem;
-    height: 102.4rem;
   }
 
   .hero {
@@ -191,7 +185,6 @@
     justify-content: space-between;
     width: 42.7rem;
     border-radius: 28px;
-    /* margin-bottom: 6.4rem; */
     margin-bottom: 6.25rem;
   }
 
@@ -205,17 +198,17 @@
   }
 
   .cta__error {
-    position: absolute;
-    bottom: -2rem;
-    left: 3.2rem;
-    margin-bottom: initial;
     height: auto;
+    position: absolute;
+    left: 3.2rem;
+    bottom: -2rem;
+    margin-bottom: initial;
   }
 
   .cta__button {
-    padding: 0.9rem 2.7rem;
     position: absolute;
     right: 0.5rem;
+    padding: 0.9rem 2.7rem;
   }
 
   .error--active {
@@ -224,8 +217,8 @@
 
   .hero__featured {
     order: 4;
-    margin: initial;
     width: 53.6rem;
+    margin: initial;
   }
 
   .featured__spotify {
