@@ -194,11 +194,8 @@
     margin-bottom: 6.25rem;
   }
 
-  label[for="email"] {
-    width: 100%;
-  }
-
   .cta__input {
+    width: 100%;
     padding: 1.4rem 17rem 1.4rem 3.2rem;
   }
 
