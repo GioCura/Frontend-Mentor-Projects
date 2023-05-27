@@ -180,6 +180,13 @@
     margin-bottom: 4rem;
   }
 
+  .hero__cta,
+  .hero__featured {
+    width: initial;
+    align-self: initial;
+    max-width: initial;
+  }
+
   .hero__cta {
     order: 3;
   }

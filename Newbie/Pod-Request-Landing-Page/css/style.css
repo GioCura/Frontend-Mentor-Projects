@@ -71,6 +71,13 @@ body,
   text-align: center;
 }
 
+.hero__cta,
+.hero__featured {
+  width: 100%;
+  align-self: center;
+  max-width: 38rem;
+}
+
 .cta__input,
 .cta__button {
   font-weight: bold;
