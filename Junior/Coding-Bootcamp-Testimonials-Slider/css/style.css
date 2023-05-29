@@ -142,6 +142,16 @@ body {
   background-color: #e8e8f9;
 }
 
+.slider__notifier {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
 .testimonials {
   min-width: 31.1rem;
   /* max-width: 60rem; */

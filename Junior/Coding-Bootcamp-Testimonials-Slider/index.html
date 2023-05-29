@@ -48,10 +48,27 @@
             class="portrait portrait--john"
             width="540"
             height="540"
+            aria-hidden="true"
           />
-          <div class="slider" tabindex="0">
-            <div class="slider__btn slider__btn--prev"></div>
-            <div class="slider__btn slider__btn--next"></div>
+          <div
+            class="slider"
+            tabindex="0"
+            aria-label="slider controls"
+            aria-describedby="slider__notifier"
+          >
+            <div
+              class="slider__btn slider__btn--prev"
+              aria-label="previous slide"
+            ></div>
+            <div
+              class="slider__btn slider__btn--next"
+              aria-label="next slide"
+            ></div>
+            <div
+              id="slider__notifier"
+              role="alert"
+              class="slider__notifier"
+            ></div>
           </div>
         </div>
       </section>
@@ -67,7 +84,7 @@
             <span>UX Engineer</span>
           </div>
         </div>
-        <div class="testimonial testimonial--john">
+        <div class="testimonial testimonial--john" aria-hidden="true">
           <blockquote>
             “ If you want to lay the best foundation possible I'd recommend
             taking this course. The depth the instructors go into is incredible.
