@@ -88,6 +88,8 @@ hiddenLazy.forEach((el) => {
 });
 ```
 
+Update 05/29/2023 -> In changing the logo image into a clickable home link, I learned that images nested within links aren't centered by default. In this case, I set the images to `vertical-align: middle`.
+
 ### Continued development
 
 - I'd like to do more landing pages, for they are a good practice for lazy-loading.

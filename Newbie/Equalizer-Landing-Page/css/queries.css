@@ -13,7 +13,7 @@
   }
 }
 
-@media (min-width: 1366px) {
+@media (min-width: 85.375em) {
   body {
     background: url(../assets/bg-main-desktop.svg), var(--white);
     background-repeat: no-repeat;
@@ -57,14 +57,14 @@
     width: 85.6rem;
     margin: 0 0 4rem 0.05rem;
     font-size: 8.8rem;
-    line-height: 88px;
-    letter-spacing: -1px;
+    line-height: 8.8rem;
+    letter-spacing: -0.1rem;
   }
 
   .hero p {
     width: 86.5rem;
     font-size: 2rem;
-    line-height: 34px;
+    line-height: 3.4rem;
   }
 
   .cta {
@@ -105,13 +105,13 @@
 
   .cta__card h2 {
     font-size: 4rem;
-    line-height: 52px;
+    line-height: 5.2rem;
     margin-bottom: 2.2rem;
   }
 
   .cta__description {
     font-size: 2rem;
-    line-height: 34px;
+    line-height: 3.4rem;
     margin-bottom: 3.9rem;
   }
 
@@ -131,12 +131,14 @@
     transition: opacity 0.8s;
   }
 
-  footer > .logo {
+  .footer__home {
     margin-right: 13.776rem;
+    margin-bottom: initial;
+    height: max-content;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1365px) {
+@media (min-width: 48em) and (max-width: 85.3125em) {
   body {
     background: url(../assets/bg-main-tablet.svg), var(--white);
     background-repeat: no-repeat;
@@ -163,13 +165,13 @@
   .hero h1 {
     margin-bottom: 2.8rem;
     font-size: 6.4rem;
-    line-height: 64px;
-    letter-spacing: -0.73px;
+    line-height: 6.4rem;
+    letter-spacing: -0.073rem;
   }
 
   .hero p {
     font-size: 1.8rem;
-    line-height: 28px;
+    line-height: 2.8rem;
   }
 
   .cta {
@@ -202,7 +204,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   .cta {
     height: 60rem;
   }
@@ -215,8 +217,12 @@
     display: grid;
   }
 
-  footer > .logo {
+  .footer__home {
     grid-area: logo;
+  }
+
+  .footer__home > .logo {
+    vertical-align: bottom;
   }
 
   .footer__text {
