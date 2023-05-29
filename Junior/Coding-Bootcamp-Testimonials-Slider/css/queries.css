@@ -8,7 +8,36 @@
   }
 }
 
-@media (min-width: 82.1875em) {
+@media (min-width: 81.25em) {
+  main {
+    width: 88%;
+    max-width: 120.2rem;
+  }
+
+  .imagebox {
+    align-items: initial;
+    justify-content: initial;
+    width: 69.7rem;
+    height: 65.7rem;
+    margin-top: initial;
+    margin-bottom: initial;
+  }
+
+  .portraits {
+    width: 54rem;
+    height: 54rem;
+    margin: 6.3rem 9.2rem 5.4rem 6.5rem;
+  }
+}
+
+@media (min-width: 64em) and (max-width: 81.1875em) {
+  main {
+    width: 84%;
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 64em) {
   body {
     align-items: center;
     justify-content: center;
@@ -22,11 +51,8 @@
   main {
     position: relative;
     flex-direction: row;
-    width: 100%;
-    max-width: 120.2rem;
     height: 65.7rem;
-    margin-left: 16.5rem;
-    margin-right: 7.3rem;
+    margin-left: 9.14rem;
   }
 
   .imagebox,
@@ -49,22 +75,12 @@
   .imagebox {
     right: 0;
     order: 2;
-    align-items: initial;
-    justify-content: initial;
-    width: 69.7rem;
-    height: 65.7rem;
     margin-top: initial;
     margin-bottom: initial;
   }
 
   .hidden-right {
     transform: translateX(100rem);
-  }
-
-  .portraits {
-    width: 54rem;
-    height: 54rem;
-    margin: 6.3rem 9.2rem 5.4rem 6.5rem;
   }
 
   .slider {
@@ -94,6 +110,7 @@
     order: 1;
     max-width: 63.8rem;
     margin-bottom: 0;
+    width: 60%;
   }
 
   .hidden-left {
@@ -132,7 +149,7 @@
   }
 }
 
-@media (min-width: 48em) and (max-width: 82.1875em) {
+@media (min-width: 48em) and (max-width: 81.1875em) {
   .imagebox {
     width: 47.7rem;
     height: 43.7rem;
