@@ -22,6 +22,10 @@ button {
   cursor: pointer;
 }
 
+li {
+  list-style: none;
+}
+
 :root {
   --pricingcard: #fa7453;
   --ioshover: #66e2dc;
