@@ -136,6 +136,8 @@ let resetSlider = () =>
   }, 100);
 ```
 
+- Also, I learned to add a `role` to a `<div>` so that an `aria-label` will be valid.
+
 ### Continued development
 
 I'd like to do more sliders with different components, such as captions and thumbnails.

@@ -40,15 +40,6 @@ sliderNext.addEventListener("click", function () {
   resetSlider();
 });
 
-// Resets the notifier's alert message
-slider.addEventListener("keydown", function (e) {
-  if (e.key === "Enter" || e.key === "ArrowRight" || e.key === " ") {
-    sliderNext.click();
-  } else if (e.key === "Backspace" || e.key === "ArrowLeft") {
-    sliderPrev.click();
-  }
-});
-
 // Shows the corresponding slide
 
 function showSlides(n) {
