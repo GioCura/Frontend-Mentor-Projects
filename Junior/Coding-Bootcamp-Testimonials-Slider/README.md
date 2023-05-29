@@ -105,6 +105,37 @@ The function also loops around the rest of the nodeList to remove the active cla
   }
 ```
 
+Update 05/29/2023 -> I added some accesibility features:
+
+- My script now controls the `aria-hidden` values of the testimonials, so that the screen reader will only read the ones on screen.
+- Also, I added alerts for when the slider buttons are pressed. This time, I learned how to style an alert element only visible to screen readers:
+
+```
+<div id="slider__notifier" role="alert" class="slider__notifier"></div>
+```
+
+```
+.slider__notifier {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+```
+
+- Upon click, the script adds the appropriate message to the slider. I made a `setTimeout` to remove the message quickly after, so that the screenreader
+  is repeatedly made to read the message every button click:
+
+```
+let resetSlider = () =>
+  setTimeout(function () {
+    sliderNotifier.textContent = "";
+  }, 100);
+```
+
 ### Continued development
 
 I'd like to do more sliders with different components, such as captions and thumbnails.

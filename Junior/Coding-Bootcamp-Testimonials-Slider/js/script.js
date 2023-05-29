@@ -31,6 +31,7 @@ function moveSlide(n) {
 sliderPrev.addEventListener("click", function () {
   moveSlide(-1);
   sliderNotifier.textContent = "moving to previous slide";
+  resetSlider();
 });
 
 sliderNext.addEventListener("click", function () {
