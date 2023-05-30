@@ -135,6 +135,23 @@ function dropdownClickOutside(event) {
 }
 ```
 
+**Update 05/30/23** - In adding accessibility to this project, I learned about `aria-expanded` and `aria-controls`.
+`aria-expanded` can inform screen readers whether an element, such as a button, is collapsed or not. `aria-controls`
+refers to the id of an element that is under control by a certain element. I controlled these values accordingly using JS:
+
+```
+<button aria-controls="dropdownCompany"
+  aria-expanded="false" tabindex="-1">
+  Company
+  <span class="dropdown__arrow"></sp>
+</button>
+<ul id="dropdownCompany" aria-hidden="true">
+  <li><a href="#">History</a></li>
+  <li><a href="#">Our Team</a></li>
+  <li><a href="#">Blog</a></li>
+</ul>
+```
+
 ### Continued development
 
 I'd like to do more dropdowns, especially program what events modify them (ex. clicking away from the dropdown)
@@ -149,6 +166,7 @@ I'd like to do more dropdowns, especially program what events modify them (ex. c
 - [This thread](https://stackoverflow.com/questions/4402287/how-can-i-remove-a-javascript-event-listener) taught me about the `removeEventListener` function.
 - [Cesar Agusto's answer in this thread](https://stackoverflow.com/questions/152975/how-do-i-detect-a-click-outside-an-element) taught me how to observe click-away events using `composedPath()`.
 - [This article](https://www.w3schools.com/howto/howto_js_media_queries.asp) was my basis for how to set up media queries on my script.
+- [This article](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded) taught me about `aria-controls` and `aria-expanded`.
 
 ## Author
 
