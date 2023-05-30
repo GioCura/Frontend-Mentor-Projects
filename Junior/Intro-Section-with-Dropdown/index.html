@@ -33,19 +33,19 @@
       <a href="#">
         <img src="images/logo.svg" alt="Snap - Home" width="84" height="35" />
       </a>
-      <button class="nav__menu hide-load" aria-label="Navigation menu">
+      <button class="nav__menu hide-load" aria-label="Navigation menu" aria-controls="headerNav" aria-expanded="false">
         <span class="menu--open"></span>
         <span class="menu--close"></span>
       </button>
-      <nav class="header__nav hide-load" aria-hidden="true">
+      <nav id="headerNav" class="header__nav hide-load" aria-hidden="true">
         <div class="nav__left">
           <ul>
             <li>
-              <button class="dropdown__title nav__item" tabindex="-1">
+              <button class="dropdown__title nav__item" tabindex="-1" aria-controls="dropdownFeatures" aria-expanded="false">
                 Features
                 <span class="dropdown__arrow"></sp>
               </button>
-              <ul class="dropdown dropdown--features" aria-hidden="true">
+              <ul id="dropdownFeatures" class="dropdown dropdown--features" aria-hidden="true">
                 <li>
                   <a href="#" tabindex="-1" class="dropdown__item">
                     <span class="dropdown__icon icon--todo"></span>
@@ -73,11 +73,11 @@
               </ul>
             </li>
             <li>
-              <button class="dropdown__title nav__item" tabindex="-1">
+              <button class="dropdown__title nav__item" tabindex="-1" aria-controls="dropdownCompany" aria-expanded="false">
                 Company
                 <span class="dropdown__arrow"></sp>
               </button>
-              <ul class="dropdown dropdown--company" aria-hidden="true">
+              <ul id="dropdownCompany" class="dropdown dropdown--company" aria-hidden="true">
                 <li><a href="#" tabindex="-1" class="dropdown__item">History</a></li>
                 <li><a href="#" tabindex="-1" class="dropdown__item">Our Team</a></li>
                 <li><a href="#" tabindex="-1" class="dropdown__item">Blog</a></li>
@@ -109,10 +109,22 @@
           <button tabindex="0">Learn more</button>
         </div>
         <ul class="hero__featured">
-          <li><img src="images/client-databiz.svg" alt="The logo of Databiz, a client of Snap" class="featured__databiz"></li>
-          <li><img src="images/client-audiophile.svg" alt="The logo of Audiophile, a client of Snap" class="featured__audiophile"></li>
-          <li><img src="images/client-meet.svg" alt="The logo of Meet, a client of Snap" class="featured__meet"></li>
-          <li><img src="images/client-maker.svg" alt="The logo of Maker, a client of Snap" class="featured__maker"></li>
+          <li>
+            <img src="images/client-databiz.svg" alt="The logo of Databiz, a client of Snap"
+             class="featured__databiz">
+          </li>
+          <li>
+            <img src="images/client-audiophile.svg" alt="The logo of Audiophile, a client of Snap"
+             class="featured__audiophile">
+          </li>
+          <li>
+            <img src="images/client-meet.svg" alt="The logo of Meet, a client of Snap"
+             class="featured__meet">
+          </li>
+          <li>
+            <img src="images/client-maker.svg" alt="The logo of Maker, a client of Snap"
+             class="featured__maker">
+          </li>
         </ul>
       </section>
     </main>

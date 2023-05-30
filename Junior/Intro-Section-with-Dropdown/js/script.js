@@ -44,6 +44,14 @@ function removeAriaHidden(el) {
   el.removeAttribute("aria-hidden");
 }
 
+function ariaExpandedTrue(el) {
+  el.ariaExpanded = true;
+}
+
+function ariaExpandedFalse(el) {
+  el.ariaExpanded = false;
+}
+
 // Temporarily disables header's transition, then quickly re-enables it (to prevent the mobile header from flashing when resizing the window.)
 
 function resetHeaderTransition() {
@@ -94,12 +102,14 @@ dropdownTitle.forEach((el) => {
         disableTabIndex(e);
       });
       ariaHiddenTrue(dropdown[e]);
+      ariaExpandedFalse(el);
     } else {
       dropdown[e].style.height = dropdown[e].scrollHeight + "px";
       dropdownItemCurrent.forEach((e) => {
         enableTabIndex(e);
       });
       removeAriaHidden(dropdown[e]);
+      ariaExpandedTrue(el);
     }
 
     dropdown[e].classList.toggle("dropdown--active");
@@ -120,6 +130,7 @@ navMenu.addEventListener("click", function () {
     menuClose.style.display = "none";
     menuOpen.style.display = "block";
     ariaHiddenTrue(headerNav);
+    ariaExpandedFalse(navMenu);
     // resets the dropdown state
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
@@ -139,6 +150,7 @@ navMenu.addEventListener("click", function () {
     menuClose.style.display = "block";
     menuOpen.style.display = "none";
     removeAriaHidden(headerNav);
+    ariaExpandedTrue(navMenu);
     // enables tab selection of nav items
     navItem.forEach((e) => {
       enableTabIndex(e);
@@ -166,6 +178,16 @@ window.addEventListener("load", function () {
   heroContent.classList.remove("fade-in");
 });
 
+// Checks if nav is opened when resizing to tablet layout.
+function navCheck() {
+  if (!headerNav.classList.contains("nav--active")) {
+    ariaHiddenTrue(headerNav);
+    navItem.forEach((e) => {
+      disableTabIndex(e);
+    });
+  }
+}
+
 // Media queries that include resetting tabindex for nav buttons, among other things.
 function layoutShift(tablet) {
   if (tablet.matches) {
@@ -177,12 +199,9 @@ function layoutShift(tablet) {
     headerNav.style.transition = "none";
     removeAriaHidden(headerNav);
   } else {
-    navItem.forEach((e) => {
-      disableTabIndex(e);
-    });
     window.removeEventListener("click", dropdownClickOutside);
     resetHeaderTransition();
-    ariaHiddenTrue(headerNav);
+    navCheck();
   }
 }
 
