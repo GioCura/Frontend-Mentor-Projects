@@ -51,16 +51,16 @@ header,
   justify-content: space-between;
 }
 
+header img,
 .nav__login,
 .nav__register,
 .dropdown__arrow,
-.nav--active ~ .nav__menu > .menu--close,
-.menu--open {
+.menu--open,
+.hero__featured img {
   display: block;
 }
 
 .hide-load,
-.nav--active ~ .nav__menu > .menu--open,
 .menu--close {
   display: none;
 }
@@ -158,7 +158,6 @@ header {
 }
 
 header img {
-  display: block;
   padding-top: 0.8rem;
 }
 
@@ -364,10 +363,6 @@ header img {
 
 .hero__featured {
   margin: 0 1.6rem 6rem;
-}
-
-.hero__featured img {
-  display: block;
 }
 
 .featured__databiz {

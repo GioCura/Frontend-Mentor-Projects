@@ -33,7 +33,11 @@
       <a href="#">
         <img src="images/logo.svg" alt="Snap - Home" width="84" height="35" />
       </a>
-      <nav class="header__nav hide-load">
+      <button class="nav__menu hide-load" aria-label="Navigation menu">
+        <span class="menu--open"></span>
+        <span class="menu--close"></span>
+      </button>
+      <nav class="header__nav hide-load" aria-hidden="true">
         <div class="nav__left">
           <ul>
             <li>
@@ -41,7 +45,7 @@
                 Features
                 <span class="dropdown__arrow"></sp>
               </button>
-              <ul class="dropdown dropdown--features">
+              <ul class="dropdown dropdown--features" aria-hidden="true">
                 <li>
                   <a href="#" tabindex="-1" class="dropdown__item">
                     <span class="dropdown__icon icon--todo"></span>
@@ -73,7 +77,7 @@
                 Company
                 <span class="dropdown__arrow"></sp>
               </button>
-              <ul class="dropdown dropdown--company">
+              <ul class="dropdown dropdown--company" aria-hidden="true">
                 <li><a href="#" tabindex="-1" class="dropdown__item">History</a></li>
                 <li><a href="#" tabindex="-1" class="dropdown__item">Our Team</a></li>
                 <li><a href="#" tabindex="-1" class="dropdown__item">Blog</a></li>
@@ -94,10 +98,6 @@
           </ul>
         </div>
       </nav>
-      <button class="nav__menu hide-load" aria-label="Navigation menu">
-        <span class="menu--open"></span>
-        <span class="menu--close"></span>
-      </button>
     </header>
     <main>
       <div class="hero__background"></div>

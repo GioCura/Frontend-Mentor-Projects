@@ -2,6 +2,8 @@
 
 const headerNav = document.querySelector(".header__nav");
 const navMenu = document.querySelector(".nav__menu");
+const menuOpen = document.querySelector(".menu--open");
+const menuClose = document.querySelector(".menu--close");
 const dimmer = document.querySelector(".dimmer");
 
 const dropdownTitle = document.querySelectorAll(".dropdown__title");
@@ -34,6 +36,14 @@ function resetScrollHeight(el) {
   el.style.height = "0";
 }
 
+function ariaHiddenTrue(el) {
+  el.ariaHidden = true;
+}
+
+function removeAriaHidden(el) {
+  el.removeAttribute("aria-hidden");
+}
+
 // Temporarily disables header's transition, then quickly re-enables it (to prevent the mobile header from flashing when resizing the window.)
 
 function resetHeaderTransition() {
@@ -41,7 +51,6 @@ function resetHeaderTransition() {
 
   timeout = setTimeout(function () {
     headerNav.style.transition = "all 0.5s";
-    console.log("Yooo!");
   }, 100);
 }
 
@@ -53,6 +62,7 @@ function dropdownClickOutside(event) {
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
       resetScrollHeight(e);
+      ariaHiddenTrue(e);
     });
     dropdownArrow.forEach((e) => {
       e.classList.remove("flip");
@@ -83,11 +93,13 @@ dropdownTitle.forEach((el) => {
       dropdownItemCurrent.forEach((e) => {
         disableTabIndex(e);
       });
+      ariaHiddenTrue(dropdown[e]);
     } else {
       dropdown[e].style.height = dropdown[e].scrollHeight + "px";
       dropdownItemCurrent.forEach((e) => {
         enableTabIndex(e);
       });
+      removeAriaHidden(dropdown[e]);
     }
 
     dropdown[e].classList.toggle("dropdown--active");
@@ -105,6 +117,9 @@ navMenu.addEventListener("click", function () {
   }
 
   if (headerNav.classList.contains("nav--active")) {
+    menuClose.style.display = "none";
+    menuOpen.style.display = "block";
+    ariaHiddenTrue(headerNav);
     // resets the dropdown state
     dropdown.forEach((e) => {
       e.classList.remove("dropdown--active");
@@ -121,6 +136,9 @@ navMenu.addEventListener("click", function () {
       disableTabIndex(e);
     });
   } else {
+    menuClose.style.display = "block";
+    menuOpen.style.display = "none";
+    removeAriaHidden(headerNav);
     // enables tab selection of nav items
     navItem.forEach((e) => {
       enableTabIndex(e);
@@ -157,12 +175,14 @@ function layoutShift(tablet) {
     window.addEventListener("click", dropdownClickOutside);
     clearTimeout(timeout);
     headerNav.style.transition = "none";
+    removeAriaHidden(headerNav);
   } else {
     navItem.forEach((e) => {
       disableTabIndex(e);
     });
     window.removeEventListener("click", dropdownClickOutside);
     resetHeaderTransition();
+    ariaHiddenTrue(headerNav);
   }
 }
 
