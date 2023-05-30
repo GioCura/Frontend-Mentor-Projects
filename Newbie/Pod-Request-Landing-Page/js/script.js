@@ -47,8 +47,10 @@ ctaInput.addEventListener("change", function () {
     ctaInput.classList.remove("error");
     ctaInput.removeAttribute("aria-invalid");
     ctaError.classList.remove("error--active");
-    ctaError.textContent = "";
     removeHeight(ctaError);
+    setTimeout(() => {
+      ctaError.textContent = "";
+    }, 500);
   } else {
     emailError();
   }
