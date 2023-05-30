@@ -135,9 +135,7 @@ function dropdownClickOutside(event) {
 }
 ```
 
-**Update 05/30/23** - In adding accessibility to this project, I learned about `aria-expanded` and `aria-controls`.
-`aria-expanded` can inform screen readers whether an element, such as a button, is collapsed or not. `aria-controls`
-refers to the id of an element that is under control by a certain element. I controlled these values accordingly using JS:
+**Update 05/30/23** - In adding accessibility to this project, I learned about `aria-expanded` and `aria-controls`. `aria-expanded` can inform screen readers whether an element, such as a button, is collapsed or not. `aria-controls` refers to the id of an element that is under control by a certain element. I controlled these values accordingly using JS:
 
 ```
 <button aria-controls="dropdownCompany"
