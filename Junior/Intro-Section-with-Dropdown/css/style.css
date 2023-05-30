@@ -157,7 +157,8 @@ header {
   padding: 0 1.6rem;
 }
 
-header > img {
+header img {
+  display: block;
   padding-top: 0.8rem;
 }
 
@@ -363,6 +364,10 @@ header > img {
 
 .hero__featured {
   margin: 0 1.6rem 6rem;
+}
+
+.hero__featured img {
+  display: block;
 }
 
 .featured__databiz {
