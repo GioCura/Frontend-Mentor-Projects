@@ -52,9 +52,9 @@ function showSlides(n) {
 
   for (let i = 0; i < portrait.length; i++) {
     portrait[i].classList.remove("active");
-    portrait[i].ariaHidden = "true";
+    portrait[i].setAttribute("aria-hidden", true);
     testimonial[i].classList.remove("active");
-    testimonial[i].ariaHidden = "true";
+    testimonial[i].setAttribute("aria-hidden", true);
   }
 
   portrait[slideIndex - 1].classList.add("active");
