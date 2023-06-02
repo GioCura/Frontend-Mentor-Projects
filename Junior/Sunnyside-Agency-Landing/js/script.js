@@ -6,14 +6,14 @@ const navItem = document.querySelectorAll(".nav__item");
 
 hamburger.addEventListener("click", function () {
   if (!headerNav.classList.contains("nav--active")) {
-    hamburger.ariaExpanded = true;
-    headerNav.ariaHidden = false;
+    hamburger.setAttribute("aria-expanded", true);
+    headerNav.removeAttribute("aria-hidden");
     navItem.forEach((e) => {
       e.tabIndex = "0";
     });
   } else {
-    hamburger.ariaExpanded = false;
-    headerNav.ariaHidden = true;
+    hamburger.setAttribute("aria-expanded", false);
+    headerNav.setAttribute("aria-hidden", true);
     navItem.forEach((e) => {
       e.tabIndex = "1";
     });

@@ -13,6 +13,7 @@ button {
   background: none;
 }
 
+h1,
 a,
 li {
   font-family: inherit;
@@ -27,6 +28,11 @@ li {
 
 a {
   text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
 }
 
 :root {
@@ -47,6 +53,7 @@ body {
 
 header {
   position: absolute;
+  z-index: 2;
   top: 3.2rem;
   left: 0;
   display: flex;
@@ -103,6 +110,11 @@ header {
   color: #24303e;
   border-radius: 28px;
   text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.nav__contact:hover {
+  background-color: #3dbeff;
 }
 
 .header__nav::before {
@@ -117,6 +129,37 @@ header {
 
 .nav--active {
   opacity: 1;
+  pointer-events: auto;
+}
+
+/* HOME */
+
+.home {
+  position: relative;
+}
+
+.home__content {
+  position: absolute;
+  top: 14.4rem;
+  left: 0;
+  width: 100%;
+
+  font-family: var(--font2);
+  font-weight: var(--fw-3);
+  color: #fff;
+  font-size: 4rem;
+  line-height: 4.932rem;
+  letter-spacing: 6.25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.home__content h1 {
+  margin-bottom: 5.2rem;
+}
+
+.home__content a {
+  display: inline-block;
 }
 
 /* IMAGES */
@@ -124,4 +167,5 @@ header {
 img {
   width: 100%;
   object-fit: cover;
+  vertical-align: bottom;
 }
