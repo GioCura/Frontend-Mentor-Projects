@@ -16,6 +16,13 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
 
@@ -26,24 +33,36 @@
   <body>
     <header>
       <a href="#">
-        <img src="images/logo.svg" alt="Sunnyside - Home" />
+        <img src="images/logo.svg" alt="Sunnyside - Home" class="logo" />
       </a>
-      <button class="hamburger">
-        <span></span>
+      <button
+        class="hamburger"
+        aria-label="Navigation menu"
+        aria-expanded="false"
+      >
+        <svg width="24" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M24 16v2H0v-2h24zm0-8v2H0V8h24zm0-8v2H0V0h24z"
+            fill="#FFF"
+            fill-rule="evenodd"
+          />
+        </svg>
       </button>
-      <nav>
+      <nav class="header__nav" aria-hidden="true">
         <ul class="nav__list">
           <li>
-            <a href="#">About</a>
+            <a href="#" tabindex="-1" class="nav__item">About</a>
           </li>
           <li>
-            <a href="#">Services</a>
+            <a href="#" tabindex="-1" class="nav__item">Services</a>
           </li>
           <li>
-            <a href="#">Projects</a>
+            <a href="#" tabindex="-1" class="nav__item">Projects</a>
           </li>
           <li>
-            <a href="#" class="nav__contact">Contact</a>
+            <a href="#" class="nav__contact" tabindex="-1" class="nav__item"
+              >Contact</a
+            >
           </li>
         </ul>
       </nav>
@@ -251,10 +270,10 @@
           />
           <source
             media="(min-width: 0)"
-            srcset="images/mobile/image-gallery-sugarcubes.jpg"
+            srcset="images/mobile/image-gallery-sugar-cubes.jpg"
           />
           <img
-            src="images/mobile/image-gallery-sugarcubes.jpg"
+            src="images/mobile/image-gallery-sugar-cubes.jpg"
             alt="Photo of sugarcubes"
           />
         </picture>
