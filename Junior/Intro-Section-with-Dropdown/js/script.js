@@ -37,7 +37,7 @@ function resetScrollHeight(el) {
 }
 
 function ariaHiddenTrue(el) {
-  el.ariaHidden = true;
+  el.setAttribute("aria-hidden", true);
 }
 
 function removeAriaHidden(el) {
@@ -45,11 +45,11 @@ function removeAriaHidden(el) {
 }
 
 function ariaExpandedTrue(el) {
-  el.ariaExpanded = true;
+  el.setAttribute("aria-expanded", true);
 }
 
 function ariaExpandedFalse(el) {
-  el.ariaExpanded = false;
+  el.setAttribute("aria-expanded", false);
 }
 
 // Temporarily disables header's transition, then quickly re-enables it (to prevent the mobile header from flashing when resizing the window.)
