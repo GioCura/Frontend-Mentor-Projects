@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 button {
@@ -54,12 +55,13 @@ body {
 header {
   position: absolute;
   z-index: 2;
-  top: 3.2rem;
+  top: 0;
   left: 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 2.4rem;
+  padding: 3.2rem 2.4rem 1.8rem;
+  transition: background-color 0.3s;
 }
 
 .logo {
@@ -70,7 +72,7 @@ header {
 .header__nav {
   pointer-events: none;
   position: absolute;
-  top: 7.4rem;
+  top: 10.6rem;
   right: 2.4rem;
   padding: 3.9rem 0 3.9rem;
 
@@ -130,6 +132,15 @@ header {
 .nav--active {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* STICKY HEADER */
+
+.sticky {
+  position: fixed;
+  background-color: rgba(61, 190, 255, 0.9);
+  transition: background-color 0.3s;
+  box-shadow: 0px 5px 30px rgb(0, 0, 0, 0.15);
 }
 
 /* HOME */
