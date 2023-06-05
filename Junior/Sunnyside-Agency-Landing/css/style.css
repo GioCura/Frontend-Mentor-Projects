@@ -89,6 +89,10 @@ header {
   transition: opacity 0.3s ease-in-out;
 }
 
+.hide-load {
+  display: none;
+}
+
 .nav__list {
   display: flex;
   flex-direction: column;
@@ -180,7 +184,7 @@ main {
   display: inline-block;
 }
 
-/* TRANSFORM  & STANDOUT */
+/* ABOUT */
 
 .about {
   text-align: center;
@@ -294,7 +298,8 @@ main {
 /* TESTIMONIALS */
 
 .testimonials {
-  padding: 6.4rem 2.4rem 8.6rem;
+  /* padding: 6.4rem 2.4rem 8.6rem; */
+  padding: 6.4rem 2.4rem 0;
   text-align: center;
 }
 
@@ -334,7 +339,7 @@ main {
   font-family: var(--font2);
   font-weight: var(--fw-3);
   font-size: 1.8rem;
-  line-height: 2.218rem;
+  line-height: 2.219rem;
   letter-spacing: -0.013rem;
   color: #24303e;
   margin-bottom: 0.9rem;
@@ -355,6 +360,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  padding-top: 8.6rem;
 }
 
 /* FOOTER */
