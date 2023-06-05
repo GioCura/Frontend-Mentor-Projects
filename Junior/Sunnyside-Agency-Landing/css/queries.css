@@ -1,13 +1,6 @@
-@media (min-width: 1440px) {
-  /* HEADER */
+@media (min-width: 1024px) {
   header {
-    align-items: center;
     padding: 3.4rem 4.8rem 1.8rem;
-  }
-
-  .logo {
-    width: 17rem;
-    height: 3.3rem;
   }
 
   .hamburger {
@@ -42,11 +35,6 @@
   }
 
   /* HOME */
-
-  .home img {
-    height: 80rem;
-  }
-
   .home__content {
     top: 19.5rem;
     font-size: 5.6rem;
@@ -58,9 +46,68 @@
     margin-bottom: 9.654rem;
   }
 
+  .home img {
+    height: 80rem;
+  }
+
+  /* ABOUT */
+  .about .content {
+    padding: 0.1rem 0 0;
+  }
+
+  .about .content h2 {
+    font-size: 4rem;
+    line-height: 4.932rem;
+    letter-spacing: -0.029rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .transform .content {
+    padding: 0 11rem 0 16.5rem;
+  }
+
+  .standout .content {
+    padding: 0 16.5rem 0 11rem;
+  }
+
+  /* SERVICES */
+
+  .services .content {
+    padding: 0 19rem 0 19.1rem;
+  }
+
+  /* PROJECTS */
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    padding-top: 12rem;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 16rem 16.5rem 4rem;
+  }
+
+  .testimonial {
+    width: 35rem;
+  }
+}
+
+@media (min-width: 768px) {
+  /* HEADER */
+  .logo {
+    width: 17rem;
+    height: 3.3rem;
+  }
+
   /* ABOUT */
   .about {
     text-align: initial;
+  }
+
+  .about img {
+    height: 50rem;
+    max-height: initial;
   }
 
   .about .content,
@@ -72,14 +119,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.1rem 0 0;
-  }
-
-  .about .content h2 {
-    font-size: 4rem;
-    line-height: 4.932rem;
-    letter-spacing: -0.029rem;
-    margin-bottom: 3.2rem;
+    padding: 0.1rem 4.5rem 0;
   }
 
   .about .content p {
@@ -97,11 +137,6 @@
 
   .transform .content {
     order: 1;
-    padding: 0 11rem 0 16.5rem;
-  }
-
-  .standout .content {
-    padding: 0 16.5rem 0 11rem;
   }
 
   /* SERVICES */
@@ -110,19 +145,16 @@
     display: flex;
   }
 
-  .services .content {
-    padding: 0 19rem 0 19.1rem;
-  }
-
   .services__design,
   .services__photography {
     width: 50%;
   }
 
-  /* TESTIMONIALS */
-  .testimonials {
-    padding: 16rem 16.5rem 4rem;
+  .services .content p {
+    min-height: 8.1rem;
   }
+
+  /* TESTIMONIALS */
 
   .testimonials h2 {
     font-size: 2rem;
@@ -131,8 +163,10 @@
     margin-bottom: 8.1rem;
   }
 
-  .testimonials div {
-    display: flex;
+  .testimonials__wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
     justify-content: space-between;
     max-width: 170rem;
     margin: 0 auto;
@@ -142,18 +176,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 35rem;
+    width: 29rem;
   }
 
-  .testimonial:not(:last-child) {
+  /* .testimonial:not(:last-child) {
     margin-bottom: 0;
-  }
+  } */
 
-  /* PROJECTS */
-  .projects {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
-    padding-top: 12rem;
+  .testimonial__jennie {
+    grid-column: span 2 / 3;
   }
 
   /* FOOTER */
