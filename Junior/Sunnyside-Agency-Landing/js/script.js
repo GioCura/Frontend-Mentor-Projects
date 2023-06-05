@@ -5,8 +5,9 @@ const header = document.querySelector("header");
 const headerNav = document.querySelector(".header__nav");
 const navItem = document.querySelectorAll(".nav__item");
 const sectionHome = document.querySelector(".home");
+const links = document.querySelectorAll("a:link");
 
-let desktop = window.matchMedia("(min-width: 1440px)");
+let desktop = window.matchMedia("(min-width: 1180px)");
 let timeout;
 
 function ariaHiddenTrue(el) {
@@ -25,12 +26,26 @@ function disableTabIndex(el) {
   el.tabIndex = "-1";
 }
 
+// Closes nav upon clicking away from the header
+function navClickOutside(event) {
+  const withinBoundaries = event.composedPath().includes(header);
+
+  if (!withinBoundaries) {
+    closeNav();
+  }
+}
+
 function openNav() {
   headerNav.classList.add("nav--active");
   hamburger.setAttribute("aria-expanded", true);
   removeAriaHidden(headerNav);
   navItem.forEach((e) => {
     enableTabIndex(e);
+  });
+  window.addEventListener("click", navClickOutside);
+  // Close menu upon clicking on a link
+  links.forEach((e) => {
+    e.addEventListener("click", closeNav);
   });
 }
 
@@ -40,6 +55,10 @@ function closeNav() {
   ariaHiddenTrue(headerNav);
   navItem.forEach((e) => {
     disableTabIndex(e);
+  });
+  window.removeEventListener("click", navClickOutside);
+  links.forEach((e) => {
+    e.removeEventListener("click", closeNav);
   });
 }
 
@@ -51,23 +70,6 @@ hamburger.addEventListener("click", function () {
     closeNav();
   }
 });
-
-// Close menu upon clicking on a link
-const links = document.querySelectorAll("a:link");
-links.forEach((e) => {
-  e.addEventListener("click", closeNav);
-});
-
-// Closes nav upon clicking away from the header
-function navClickOutside(event) {
-  const withinBoundaries = event.composedPath().includes(header);
-
-  if (!withinBoundaries) {
-    closeNav();
-  }
-}
-
-window.addEventListener("click", navClickOutside);
 
 // For the sticky header
 
@@ -109,6 +111,10 @@ function layoutShift(desktop) {
     navItem.forEach((e) => {
       enableTabIndex(e);
     });
+    links.forEach((e) => {
+      e.removeEventListener("click", closeNav);
+    });
+    window.removeEventListener("click", navClickOutside);
   } else {
     ariaHiddenTrue(headerNav);
     navItem.forEach((e) => {

@@ -62,7 +62,7 @@
   }
 
   .nav__contact:hover {
-    color: #fff;
+    color: #fff !important;
     background-color: rgba(255, 255, 255, 0.2537);
   }
 
@@ -80,12 +80,10 @@
 
   .home img {
     height: 80rem;
+    /* object-position: bottom; */
   }
 
   /* ABOUT */
-  .about img {
-    max-height: initial;
-  }
 
   .about .content h2 {
     font-size: 4rem;
@@ -160,6 +158,10 @@
   /* ABOUT */
   .about {
     text-align: initial;
+  }
+
+  .about img {
+    max-height: initial;
   }
 
   .about .content,
