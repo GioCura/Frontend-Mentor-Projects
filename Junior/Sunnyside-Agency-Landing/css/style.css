@@ -159,6 +159,7 @@ main {
 
 .home img {
   object-fit: cover;
+  /* object-position: bottom; */
 }
 
 .home__content {
