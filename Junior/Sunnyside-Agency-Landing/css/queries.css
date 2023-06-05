@@ -1,0 +1,60 @@
+@media (min-width: 1440px) {
+  /* HEADER */
+  header {
+    align-items: center;
+    padding: 3.4rem 4.8rem 1.8rem;
+  }
+
+  .logo {
+    width: 17rem;
+    height: 3.3rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .header__nav {
+    pointer-events: auto;
+    position: static;
+    opacity: 1;
+    padding: 0;
+    background-color: transparent;
+    font-size: 1.8rem;
+    letter-spacing: -0.013rem;
+    color: #fff;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    width: initial;
+    gap: 4.7rem;
+  }
+
+  .nav__contact {
+    color: #24303e;
+    background-color: #fff;
+  }
+
+  .nav__contact:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2537);
+  }
+
+  /* HOME */
+
+  .home img {
+    height: 80rem;
+  }
+
+  .home__content {
+    top: 19.5rem;
+    font-size: 5.6rem;
+    line-height: 6.905rem;
+    letter-spacing: 0.875rem;
+  }
+
+  .home__content h1 {
+    margin-bottom: 9.654rem;
+  }
+}

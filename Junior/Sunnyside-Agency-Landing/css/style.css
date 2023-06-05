@@ -144,9 +144,16 @@ header {
 }
 
 /* HOME */
+main {
+  width: 100%;
+}
 
 .home {
   position: relative;
+}
+
+.home img {
+  object-fit: cover;
 }
 
 .home__content {
@@ -203,7 +210,7 @@ header {
   margin-bottom: 3.2rem;
 }
 
-.about a {
+.about__link {
   font-family: var(--font2);
   font-weight: var(--fw-3);
   font-size: 1.5rem;
@@ -215,7 +222,7 @@ header {
   display: inline-block;
 }
 
-.about a:after {
+.about__link:after {
   content: "";
   position: absolute;
   width: 13.7rem;
@@ -225,14 +232,19 @@ header {
   top: 1.5rem;
   left: -0.9rem;
   z-index: -1;
+  transition: all 0.3s;
 }
 
-.transform a:after {
+.transform .about__link:after {
   background-color: #fad400;
 }
 
-.standout a:after {
+.standout .about__link:after {
   background-color: #fe7766;
+}
+
+.about__link:hover.about__link:after {
+  opacity: 1;
 }
 
 /* SERVICES */
@@ -259,6 +271,7 @@ header {
   bottom: 5.9rem;
   text-align: center;
   padding: 0 2.4rem;
+  width: 100%;
 }
 
 .services .content h3 {
@@ -374,6 +387,11 @@ footer .logo {
   margin-bottom: 8.8rem;
 }
 
+.footer__nav li:hover {
+  color: #fff;
+  transition: all 0.3s;
+}
+
 .socials {
   display: flex;
   gap: 2.8rem;
@@ -393,6 +411,5 @@ footer .logo {
 
 img {
   width: 100%;
-  object-fit: cover;
   vertical-align: bottom;
 }
