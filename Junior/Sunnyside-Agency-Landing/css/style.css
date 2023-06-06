@@ -56,6 +56,7 @@ header,
 .header__nav,
 .header__nav::before,
 .home__content,
+.about::before,
 .about__link:after,
 .services .content {
   position: absolute;
@@ -143,7 +144,13 @@ footer {
   color: #24303e;
 }
 
-.nav__contact,
+.header__nav,
+.about::before,
+.testimonials,
+.projects {
+  background-color: #fffcf8;
+}
+
 .about__link:after,
 .footer__nav li {
   transition: all 0.3s;
@@ -183,7 +190,6 @@ header {
   line-height: 2.5rem;
   letter-spacing: -0.014rem;
 
-  background-color: #fffcf8;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
@@ -203,7 +209,7 @@ header {
 }
 
 .nav__item {
-  transition: color 0.3s;
+  transition: color 0.3s, background-color 0.3s;
 }
 
 .nav__item:hover {
@@ -281,6 +287,19 @@ img {
 }
 
 /* ABOUT */
+.about {
+  position: relative;
+}
+
+.about::before {
+  content: "";
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .about img {
   object-fit: cover;
   max-height: 46rem;
@@ -306,6 +325,7 @@ img {
 .about__link {
   display: inline-block;
   width: max-content;
+  margin-left: 0.8rem;
   font-size: 1.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.1rem;
