@@ -99,7 +99,7 @@ img {
 .about__link,
 .services .content h3,
 .testimonials h2,
-.testimonial h4 {
+.testimonial h3 {
   font-family: var(--font2);
   font-weight: var(--fw-3);
 }
@@ -139,7 +139,7 @@ footer {
 .nav__contact,
 .about .content h2,
 .about__link,
-.testimonial h4 {
+.testimonial h3 {
   color: #24303e;
 }
 
@@ -404,7 +404,7 @@ img {
   margin-bottom: 3.2rem;
 }
 
-.testimonial h4 {
+.testimonial h3 {
   margin-bottom: 0.9rem;
   line-height: 2.219rem;
   letter-spacing: -0.013rem;
