@@ -262,7 +262,7 @@ img {
 }
 
 /* HOME */
-.home img {
+.home__img {
   height: 53.8rem;
   object-fit: cover;
 }

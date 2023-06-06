@@ -31,7 +31,7 @@
     <title>Frontend Mentor | Sunnyside agency landing page</title>
   </head>
   <body>
-    <header>
+    <header class="hide-load">
       <a href="#">
         <img src="images/logo.svg" alt="Sunnyside - Home" class="logo" />
       </a>
@@ -51,7 +51,7 @@
       </button>
       <nav
         id="headerNav"
-        class="header__nav hide-load"
+        class="header__nav"
         aria-label="Main navigation"
         aria-hidden="true"
       >
@@ -90,16 +90,17 @@
             alt="Photo of a cut orange"
             width="375"
             height="538"
+            class="home__img fade-up"
           />
         </picture>
         <div class="home__content">
-          <h1>We are creatives</h1>
+          <h1 class="fade-down">We are creatives</h1>
           <a href="#about" aria-label="click to learn more">
             <svg
               width="36"
               height="114"
               xmlns="http://www.w3.org/2000/svg"
-              class="arrow"
+              class="arrow fade-down"
             >
               <g
                 stroke="#FFF"
@@ -131,6 +132,7 @@
               alt="Photo of an egg"
               width="375"
               height="312"
+              loading="lazy"
             />
           </picture>
           <div class="content">
@@ -158,6 +160,7 @@
               alt="Photo of an glass"
               width="375"
               height="312"
+              loading="lazy"
             />
           </picture>
           <div class="content">
@@ -187,6 +190,7 @@
               alt="Photo of cherries"
               width="375"
               height="600"
+              loading="lazy"
             />
           </picture>
           <div class="content">
@@ -213,6 +217,7 @@
               alt="Photo of an uncut orange"
               width="375"
               height="600"
+              loading="lazy"
             />
           </picture>
           <div class="content">
@@ -228,7 +233,11 @@
         <h2>Client testimonials</h2>
         <div class="testimonials__wrapper">
           <div class="testimonial testimonial__emily">
-            <img src="images/image-emily.jpg" alt="Portrait of Emily R." />
+            <img
+              src="images/image-emily.jpg"
+              alt="Portrait of Emily R."
+              loading="lazy"
+            />
             <blockquote>
               We put our trust in Sunnyside and they delivered, making sure our
               needs were met and deadlines were always hit.
@@ -237,7 +246,11 @@
             <span>Marketing Director</span>
           </div>
           <div class="testimonial testimonial__thomas">
-            <img src="images/image-thomas.jpg" alt="Portrait of Thomas S." />
+            <img
+              src="images/image-thomas.jpg"
+              alt="Portrait of Thomas S."
+              loading="lazy"
+            />
             <blockquote>
               Sunnyside’s enthusiasm coupled with their keen interest in our
               brand’s success made it a satisfying and enjoyable experience.
@@ -246,7 +259,11 @@
             <span>Chief Operating Officer</span>
           </div>
           <div class="testimonial testimonial__jennie">
-            <img src="images/image-jennie.jpg" alt="Portrait of Jennie F." />
+            <img
+              src="images/image-jennie.jpg"
+              alt="Portrait of Jennie F."
+              loading="lazy"
+            />
             <blockquote>
               Incredible end result! Our sales increased over 400% when we
               worked with Sunnyside. Highly recommended!
@@ -271,6 +288,7 @@
             alt="Photo of milk bottles"
             width="188"
             height="188"
+            loading="lazy"
           />
         </picture>
         <picture>
@@ -287,6 +305,7 @@
             alt="Photo of an orange in a bowl"
             width="188"
             height="188"
+            loading="lazy"
           />
         </picture>
         <picture>
@@ -303,6 +322,7 @@
             alt="Photo of an ice cream cone"
             width="188"
             height="188"
+            loading="lazy"
           />
         </picture>
         <picture>
@@ -319,6 +339,7 @@
             alt="Photo of sugarcubes"
             width="188"
             height="188"
+            loading="lazy"
           />
         </picture>
       </section>
@@ -326,7 +347,12 @@
 
     <footer id="contact">
       <a href="#" class="footer__home">
-        <img src="images/logo-footer.svg" alt="Sunnyside - Home" class="logo" />
+        <img
+          src="images/logo-footer.svg"
+          alt="Sunnyside - Home"
+          class="logo"
+          loading="lazy"
+        />
       </a>
       <nav class="footer__nav" aria-label="Footer navigation">
         <ul>

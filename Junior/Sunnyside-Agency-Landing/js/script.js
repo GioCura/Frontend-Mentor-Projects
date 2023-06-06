@@ -3,6 +3,9 @@
 const hamburger = document.querySelector(".hamburger");
 const header = document.querySelector("header");
 const headerNav = document.querySelector(".header__nav");
+const homeImg = document.querySelector(".home__img");
+const homeTitle = document.querySelector(".home__content h1");
+const arrow = document.querySelector(".arrow");
 const navItem = document.querySelectorAll(".nav__item");
 const sectionHome = document.querySelector(".home");
 const links = document.querySelectorAll("a:link");
@@ -129,5 +132,8 @@ layoutShift(desktop);
 desktop.addEventListener("change", layoutShift);
 
 window.addEventListener("load", function () {
-  headerNav.classList.remove("hide-load");
+  header.classList.remove("hide-load");
+  homeImg.classList.remove("fade-up");
+  homeTitle.classList.remove("fade-down");
+  arrow.classList.remove("fade-down");
 });
