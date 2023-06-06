@@ -126,6 +126,10 @@
   .testimonial blockquote {
     margin-bottom: 6.9rem;
   }
+
+  .testimonial:not(:last-child) {
+    margin-bottom: 0;
+  }
 }
 
 @media (min-width: 1024px) {
