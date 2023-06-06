@@ -5,6 +5,7 @@ TABLE OF CONTENTS
 JUNIOR CHALLENGES
 | Challenge | Code | Live URL |
 | :--- | :---: | :---: |
+| Sunnyside Landing Page | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Sunnyside-Agency-Landing) | [Live Site](https://gc33-sunnyside-landing.netlify.app/) |
 | Intro Section with Dropdown | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Intro-Section-with-Dropdown) | [Live Site](https://gc31-intro-section-dropdown.netlify.app/) |
 | Coding Bootcamp Testimonials Slider | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Coding-Bootcamp-Testimonials-Slider) | [Live Site](https://gc30-testimonials-slider.netlify.app/) |
 | Interactive Pricing Component | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Interactive-Pricing-Component) | [Live Site](https://gc28-interactive-pricing-component.netlify.app/) |
