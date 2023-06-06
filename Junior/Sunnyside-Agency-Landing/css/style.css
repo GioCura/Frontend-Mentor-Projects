@@ -143,8 +143,13 @@ footer {
   color: #24303e;
 }
 
-header,
 .nav__contact,
+.about__link:after,
+.footer__nav li {
+  transition: all 0.3s;
+}
+
+header,
 .sticky {
   transition: background-color 0.3s;
 }
@@ -315,7 +320,6 @@ img {
   height: 1rem;
   border-radius: 28px;
   opacity: 0.25;
-  transition: all 0.3s;
 }
 
 .transform .about__link:after {
@@ -444,10 +448,6 @@ footer .logo {
   line-height: 2.5rem;
   letter-spacing: -0.013rem;
   color: #458d7e;
-}
-
-.footer__nav li {
-  transition: all 0.3s;
 }
 
 .socials {
