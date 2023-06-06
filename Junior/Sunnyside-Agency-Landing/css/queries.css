@@ -40,14 +40,14 @@
   }
 
   .header__nav {
-    pointer-events: auto;
     position: static;
     opacity: 1;
     padding: 0;
-    background-color: transparent;
     font-size: 1.8rem;
     letter-spacing: -0.013rem;
     color: #fff;
+    background-color: transparent;
+    pointer-events: auto;
   }
 
   .nav__list {
@@ -86,10 +86,10 @@
   /* ABOUT */
 
   .about .content h2 {
+    margin-bottom: 3.2rem;
     font-size: 4rem;
     line-height: 4.932rem;
     letter-spacing: -0.029rem;
-    margin-bottom: 3.2rem;
   }
 
   /* SERVICES */
@@ -101,7 +101,6 @@
 
   /* TESTIMONIALS */
   .testimonials {
-    /* padding: 16rem 16.5rem 4rem; */
     padding: 16rem 2.5rem 4rem;
   }
 
@@ -210,10 +209,10 @@
   /* TESTIMONIALS */
 
   .testimonials h2 {
+    margin-bottom: 8.1rem;
     font-size: 2rem;
     line-height: 2.466rem;
     letter-spacing: 0.5rem;
-    margin-bottom: 8.1rem;
   }
 
   .testimonials__wrapper {

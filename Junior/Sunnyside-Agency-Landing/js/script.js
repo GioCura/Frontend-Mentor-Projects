@@ -71,7 +71,7 @@ hamburger.addEventListener("click", function () {
   }
 });
 
-// For the sticky header
+// Sticky header upon scrolling past home section
 
 const obs = new IntersectionObserver(
   function (entries) {
@@ -116,12 +116,12 @@ function layoutShift(desktop) {
     });
     window.removeEventListener("click", navClickOutside);
   } else {
+    resetHeaderTransition();
+    closeNav();
     ariaHiddenTrue(headerNav);
     navItem.forEach((e) => {
       disableTabIndex(e);
     });
-    resetHeaderTransition();
-    closeNav();
   }
 }
 
