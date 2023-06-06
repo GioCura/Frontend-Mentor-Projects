@@ -10,7 +10,7 @@ const navItem = document.querySelectorAll(".nav__item");
 const sectionHome = document.querySelector(".home");
 const links = document.querySelectorAll("a:link");
 
-let desktop = window.matchMedia("(min-width: 1180px)");
+let desktop = window.matchMedia("(min-width: 73.75em)");
 let timeout;
 
 function ariaHiddenTrue(el) {

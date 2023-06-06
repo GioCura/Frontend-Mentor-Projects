@@ -1,4 +1,4 @@
-@media (min-width: 1440px) {
+@media (min-width: 90em) {
   .transform .content {
     padding: 0 11rem 0 16.5rem;
   }
@@ -20,7 +20,7 @@
   }
 }
 
-@media (min-width: 1180px) and (max-width: 1439px) {
+@media (min-width: 73.753em) and (max-width: 89.9375em) {
   .transform .content {
     padding: 0 5rem 0 6.5rem;
   }
@@ -42,7 +42,7 @@
   }
 }
 
-@media (min-width: 1180px) {
+@media (min-width: 73.75em) {
   header {
     padding: 3.4rem 4.8rem 1.8rem 4rem;
   }
@@ -169,7 +169,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64em) {
   /* PROJECTS */
   .projects {
     grid-template-columns: repeat(4, 1fr);
@@ -178,7 +178,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1179px) {
+@media (min-width: 48em) and (max-width: 73.6875em) {
   .about img {
     height: 50rem;
   }
