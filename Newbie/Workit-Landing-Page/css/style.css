@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url(../fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/manrope/static/Manrope-Regular.ttf);
+}
+
+/* :root {
+  --font1: "Fraunces", serif;
+  --font2: "Manrope", sans-serif;
+  --fw-1: 300;
+  --fw-2: 400;
+  --fw-3: 600;
+  --fw-4: 700;
+} */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Fraunces";
+  background-color: #24053e;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 3.2rem;
+  padding-bottom: 6.4rem;
+  padding-left: 1.6rem;
+  padding-right: 1.63rem;
+}
+
+.logo {
+  width: 9.576rem;
+  height: 2.461rem;
+}
+
+.header__cta {
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  letter-spacing: -0.016rem;
+  color: #fff;
+  padding-bottom: 0.2rem;
+  border-bottom: 3px solid #44ffa1;
+}
+
+/* HOME */
+.home {
+  text-align: center;
+}
+
+.home h1 {
+  font-weight: 600;
+  font-size: 5rem;
+  line-height: 5rem;
+  color: #fff;
+}
+
+.cta img {
+  display: none;
+}
