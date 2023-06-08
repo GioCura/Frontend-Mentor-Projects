@@ -24,6 +24,10 @@ a {
   cursor: pointer;
 }
 
+li {
+  list-style: none;
+}
+
 @font-face {
   font-family: "Fraunces";
   src: url(../fonts/fraunces/static/Fraunces_144pt-SemiBold.ttf);
@@ -49,7 +53,6 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Fraunces";
-  background-color: #24053e;
 }
 
 /* HEADER */
@@ -62,27 +65,54 @@ header {
   padding-bottom: 6.4rem;
   padding-left: 1.6rem;
   padding-right: 1.63rem;
+  background-color: #24053e;
 }
 
 .logo {
   width: 9.576rem;
   height: 2.461rem;
+  vertical-align: bottom;
 }
 
 .header__cta {
   font-family: "Manrope";
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.6rem;
-  line-height: 3.2rem;
+  line-height: 2.9rem;
   letter-spacing: -0.016rem;
   color: #fff;
-  padding-bottom: 0.2rem;
   border-bottom: 3px solid #44ffa1;
+  transition: color 0.3s;
+}
+
+.header__cta:hover {
+  color: #44ffa1;
 }
 
 /* HOME */
+main {
+  width: 100%;
+}
+
 .home {
   text-align: center;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 15.671rem;
+  /* margin-bottom: 15.529rem; */
+  background-color: #fcf8ff;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #24053e;
+  z-index: -1;
+  clip-path: ellipse(170% 100% at top center);
 }
 
 .home h1 {
@@ -90,8 +120,107 @@ header {
   font-size: 5rem;
   line-height: 5rem;
   color: #fff;
+  margin-bottom: 4rem;
+}
+
+.tailored {
+  position: relative;
+}
+
+.tailored::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  bottom: 0.35rem;
+  left: 0;
+  height: 0.3rem;
+  background-color: #44ffa1;
 }
 
 .cta img {
   display: none;
+}
+
+.home a {
+  display: inline-block;
+  font-family: "Manrope";
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.016rem;
+  color: #24053e;
+  padding: 1.4rem 2.45rem 1.5rem 2.35rem;
+  background-color: #44ffa1;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.home a:hover {
+  color: #44ffa1;
+  background-color: transparent;
+  border: 2px solid #44ffa1;
+}
+
+.phone {
+  position: absolute;
+  width: 100%;
+  height: 18.4rem;
+  bottom: -9.271rem;
+  background: url(/images/image-hero.webp) no-repeat;
+  background-size: 32rem 18.4rem;
+  background-position: center;
+}
+
+.features {
+  position: relative;
+  text-align: center;
+  padding: 15.529rem 1.63rem 7.171rem 1.6rem;
+  margin-bottom: 10.029rem;
+}
+
+.features::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #fcf8ff;
+  clip-path: ellipse(170% 100% at top center);
+}
+
+.features li:not(:last-child) {
+  margin-bottom: 4rem;
+}
+
+.features__number {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 3.6rem;
+  padding: 0.4rem 1.93rem;
+  border: 1px solid #584d62;
+  border-radius: 50%;
+  margin-bottom: 2.4rem;
+}
+
+.features h2 {
+  font-size: 2.8rem;
+  line-height: 3.6rem;
+  color: #24053e;
+  margin-bottom: 1.6rem;
+}
+
+.features p {
+  font-family: "Manrope";
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  color: #584d62;
+}
+
+/* CTA */
+
+.cta {
+  background-color: #fff;
 }
