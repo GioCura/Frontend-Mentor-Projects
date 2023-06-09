@@ -40,20 +40,11 @@ li {
   src: url(../fonts/manrope/static/Manrope-Regular.ttf);
 }
 
-/* :root {
-  --font1: "Fraunces", serif;
-  --font2: "Manrope", sans-serif;
-  --fw-1: 300;
-  --fw-2: 400;
-  --fw-3: 600;
-  --fw-4: 700;
-} */
-
 body {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
   font-family: "Fraunces";
 }
 
@@ -63,10 +54,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-top: 3.2rem;
-  padding-bottom: 6.4rem;
-  padding-left: 1.6rem;
-  padding-right: 1.63rem;
+  padding: 3.2rem 1.63rem 6.4rem 1.6rem;
   background-color: #24053e;
 }
 
@@ -77,13 +65,14 @@ header {
 }
 
 .header__cta {
+  padding: 0.1rem 0;
   font-family: "Manrope";
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.9rem;
+  border-bottom: 3px solid #44ffa1;
   letter-spacing: -0.016rem;
   color: #fff;
-  border-bottom: 3px solid #44ffa1;
   transition: color 0.3s;
 }
 
@@ -97,36 +86,36 @@ main {
 }
 
 .home {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
-  position: relative;
-  z-index: 1;
-  /* margin-bottom: 15.529rem; */
+
   background-color: #fcf8ff;
 }
 
 .home::after {
   content: "";
   position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
   bottom: 0;
   left: 0;
   background: #24053e;
-  z-index: -1;
-  /* clip-path: ellipse(170% 100% at top center); */
-  clip-path: ellipse(170% 79.84% at top center);
+  clip-path: ellipse(160% 79.84% at top center);
 }
 
 .home h1 {
+  /* padding: 0 3.4rem; */
+  margin-bottom: 4rem;
   font-weight: 600;
   font-size: 5rem;
   line-height: 5rem;
   color: #fff;
-  margin-bottom: 4rem;
 }
 
 .tailored {
@@ -145,20 +134,20 @@ main {
 
 .green-link {
   display: inline-block;
+  border: 2px solid transparent;
   font-family: "Manrope";
   font-weight: 700;
   font-size: 1.6rem;
   letter-spacing: -0.016rem;
   color: #24053e;
   background-color: #44ffa1;
-  border: 2px solid transparent;
   transition: all 0.3s;
 }
 
 .green-link:hover {
+  border: 2px solid #44ffa1;
   color: #44ffa1;
   background-color: transparent;
-  border: 2px solid #44ffa1;
 }
 
 .green-link--home {
@@ -177,20 +166,21 @@ main {
 .features {
   position: relative;
   text-align: center;
-  padding: 6.4rem 1.63rem 7.171rem 1.6rem;
+  padding: 6.4rem 1.6rem 7.171rem;
   margin-bottom: 10.029rem;
 }
 
 .features::after {
   content: "";
   position: absolute;
+  z-index: -1;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
   background-color: #fcf8ff;
-  clip-path: ellipse(170% 100% at top center);
+  /* clip-path: ellipse(170% 100% at top center); */
+  clip-path: ellipse(257% 100% at top center);
 }
 
 .features li:not(:last-child) {
@@ -199,20 +189,20 @@ main {
 
 .features__number {
   display: inline-block;
+  padding: 0.4rem 1.93rem;
+  border-radius: 50%;
+  margin-bottom: 2.4rem;
+  border: 1px solid #584d62;
   font-weight: 600;
   font-size: 2rem;
   line-height: 3.6rem;
-  padding: 0.4rem 1.93rem;
-  border: 1px solid #584d62;
-  border-radius: 50%;
-  margin-bottom: 2.4rem;
 }
 
 .features h2 {
+  margin-bottom: 1.6rem;
   font-size: 2.8rem;
   line-height: 3.6rem;
   color: #24053e;
-  margin-bottom: 1.6rem;
 }
 
 .features p {
@@ -227,8 +217,8 @@ main {
 
 .cta {
   position: relative;
-  padding: 22.8rem 1.6rem 0;
-  margin-bottom: 7.4rem;
+  padding-top: 22.8rem;
+  margin: 0 1.6rem 7.4rem;
 }
 
 .cta img {
@@ -241,26 +231,26 @@ main {
 }
 
 .cta__card {
-  background: #24053e;
   padding: 3.2rem 3.1rem;
   text-align: center;
   color: #fff;
+  background: #24053e;
 }
 
 .cta__card h2 {
+  margin-bottom: 1.6rem;
   font-family: "Fraunces";
   font-weight: 600;
   font-size: 3.2rem;
   line-height: 4.8rem;
-  margin-bottom: 1.6rem;
 }
 
 .cta__card blockquote {
+  margin-bottom: 2.4rem;
   font-family: "Manrope";
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 2.8rem;
-  margin-bottom: 2.4rem;
 }
 
 .green-link--cta {
@@ -275,7 +265,7 @@ footer {
   margin-bottom: 6.378rem;
 }
 
-footer .logo {
+footer a {
   margin-bottom: 5.762rem;
 }
 
@@ -288,6 +278,7 @@ footer .logo {
 .socials__icon {
   color: #584d62;
   transition: color 0.3s;
+  vertical-align: bottom;
 }
 
 .socials__icon:hover {

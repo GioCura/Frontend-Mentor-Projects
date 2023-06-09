@@ -1,0 +1,95 @@
+@media (min-width: 768px) {
+  header {
+    padding: 3.2rem 4rem 5.6rem 3.9rem;
+  }
+
+  .home::after {
+    background: url(/images/bg-pattern-left.svg),
+      url(/images/bg-pattern-right.svg), #24053e;
+    background-repeat: no-repeat;
+    background-position: top -5rem left, top 13rem right;
+    clip-path: ellipse(125% 73.84% at top center);
+  }
+
+  .home h1 {
+    padding: 0 14.4rem;
+    margin-bottom: 3.9rem;
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+
+  .green-link--home {
+    margin-bottom: 5.5rem;
+  }
+
+  .phone {
+    /* width: 85.335%;
+    max-width: 51.4rem;
+    height: auto; */
+    margin-right: 10.3rem;
+    margin-left: 15.1rem;
+  }
+
+  .features {
+    text-align: left;
+    padding: 5.6rem 9.7rem 10.373rem;
+    margin-bottom: 10.027rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .features::after {
+    clip-path: ellipse(153% 100% at top center);
+  }
+
+  .features li {
+    display: flex;
+    align-items: center;
+    gap: 3.2rem;
+  }
+
+  .features li:not(:last-child) {
+    margin-bottom: 4.8rem;
+  }
+
+  .cta {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 15.1rem;
+    margin: 0 4rem 8rem;
+  }
+
+  .cta__card {
+    position: relative;
+    text-align: left;
+    width: 74.71%;
+    padding: 4.8rem 5.6rem 5.6rem;
+  }
+
+  .cta__card::after {
+    content: "";
+    position: absolute;
+    width: 22rem;
+    height: 19.5rem;
+    background: url(/images/bg-pattern-3.svg);
+    right: 1.269rem;
+    /* bottom: -10.574rem; */
+    bottom: -8.874rem;
+  }
+
+  .cta__card h2 {
+    margin-bottom: 2.4rem;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    padding-left: 0.05rem;
+  }
+
+  .cta img {
+    width: initial;
+  }
+
+  footer {
+    margin-bottom: 12.178rem;
+  }
+}
