@@ -1,4 +1,121 @@
-@media (min-width: 768px) {
+@media (min-width: 1440px) {
+  header {
+    padding: 5.6rem 16.5rem 5.5rem 16.53rem;
+  }
+
+  .home::after {
+    background: url(/images/bg-pattern-left.svg),
+      url(/images/bg-pattern-right.svg), #24053e;
+    background-repeat: no-repeat;
+    /* background-position: top -3rem left -14rem, top 17rem right -5rem; */
+    background-position: top -2.2rem left -14rem, top 17rem right -5rem;
+    clip-path: ellipse(107% 76.84% at top center);
+  }
+
+  .home h1 {
+    margin-bottom: 3.7rem;
+    font-size: 8rem;
+    line-height: 8rem;
+  }
+
+  .green-link {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+    letter-spacing: -0.018rem;
+  }
+
+  .green-link--home {
+    padding: 1.2rem 3.2rem 1.3rem 3.3rem;
+    margin-bottom: 6.6rem;
+  }
+
+  .features {
+    padding: 9rem 16.1rem 17.1rem 16.5rem;
+    margin-bottom: 11rem;
+  }
+
+  .features::after {
+    clip-path: ellipse(103% 100% at top center);
+  }
+
+  .features ol {
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+  }
+
+  .features li {
+    flex-direction: column;
+    width: 35.4rem;
+  }
+
+  .features li:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  .features__number {
+    padding: 0.7rem 2.25rem;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    margin-bottom: 5.6rem;
+  }
+
+  .features h2 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .features p {
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+  }
+
+  .cta {
+    max-width: 110rem;
+    margin: 0 auto 6.03rem;
+    padding-top: 17.3rem;
+  }
+
+  .cta img {
+    width: 47.7rem;
+    height: 47.7rem;
+  }
+
+  .cta__card {
+    margin-bottom: 6.174rem;
+    padding: 6.4rem;
+    width: 73rem;
+  }
+
+  .cta__card h2 {
+    margin-bottom: 3.2rem;
+    font-size: 5.6rem;
+    line-height: 6.4rem;
+    padding-left: 0.1rem;
+  }
+
+  .cta__card blockquote {
+    margin-bottom: 3.2rem;
+    font-size: 1.8rem;
+    line-height: 3.2rem;
+  }
+
+  .green-link--cta {
+    padding: 1.2rem 2.45rem 1.3rem 2.55rem;
+  }
+
+  .cta__card::after {
+    right: 7.269rem;
+    bottom: -4.874rem;
+  }
+
+  footer {
+    margin-bottom: 11rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
   header {
     padding: 3.2rem 4rem 5.6rem 3.9rem;
   }
@@ -7,12 +124,12 @@
     background: url(/images/bg-pattern-left.svg),
       url(/images/bg-pattern-right.svg), #24053e;
     background-repeat: no-repeat;
-    background-position: top -5rem left, top 13rem right;
+    background-position: top -5rem left -23rem, top 13rem right -9rem;
     clip-path: ellipse(125% 73.84% at top center);
   }
 
   .home h1 {
-    padding: 0 14.4rem;
+    /* padding: 0 14.4rem; */
     margin-bottom: 3.9rem;
     font-size: 6rem;
     line-height: 6rem;
@@ -22,19 +139,10 @@
     margin-bottom: 5.5rem;
   }
 
-  .phone {
-    width: 66.93%;
-    max-width: 76.7rem;
-    margin-right: 10.3rem;
-    margin-left: 15.1rem;
-  }
-
   .features {
     text-align: left;
     padding: 5.6rem 9.7rem 10.373rem;
     margin-bottom: 10.027rem;
-    display: flex;
-    justify-content: center;
   }
 
   .features::after {
@@ -42,8 +150,6 @@
   }
 
   .features li {
-    display: flex;
-    align-items: center;
     gap: 3.2rem;
   }
 
@@ -56,29 +162,13 @@
   }
 
   .cta {
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
     padding-top: 15.1rem;
     margin: 0 4rem 8rem;
   }
 
   .cta__card {
-    position: relative;
-    text-align: left;
     width: 74.71%;
     padding: 4.8rem 5.6rem 5.6rem;
-  }
-
-  .cta__card::after {
-    content: "";
-    position: absolute;
-    width: 22rem;
-    height: 19.5rem;
-    background: url(/images/bg-pattern-3.svg);
-    right: 1.269rem;
-    /* bottom: -10.574rem; */
-    bottom: -8.874rem;
   }
 
   .cta__card h2 {
@@ -88,11 +178,54 @@
     padding-left: 0.05rem;
   }
 
-  .cta img {
-    width: initial;
+  .cta__card::after {
+    right: 1.269rem;
+    bottom: -8.874rem;
   }
 
   footer {
     margin-bottom: 12.178rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .phone {
+    width: 66.93%;
+    max-width: 76.7rem;
+    margin-right: 10.3rem;
+    margin-left: 15.1rem;
+  }
+
+  .features {
+    display: flex;
+    justify-content: center;
+  }
+
+  .features li {
+    display: flex;
+    align-items: center;
+  }
+
+  .cta {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .cta__card {
+    position: relative;
+    text-align: left;
+  }
+
+  .cta__card::after {
+    content: "";
+    position: absolute;
+    width: 22rem;
+    height: 19.5rem;
+    background: url(/images/bg-pattern-3.svg);
+  }
+
+  .cta img {
+    width: initial;
   }
 }
