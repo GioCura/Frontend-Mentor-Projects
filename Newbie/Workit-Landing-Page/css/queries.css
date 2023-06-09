@@ -23,9 +23,8 @@
   }
 
   .phone {
-    /* width: 85.335%;
-    max-width: 51.4rem;
-    height: auto; */
+    width: 66.93%;
+    max-width: 76.7rem;
     margin-right: 10.3rem;
     margin-left: 15.1rem;
   }
@@ -50,6 +49,10 @@
 
   .features li:not(:last-child) {
     margin-bottom: 4.8rem;
+  }
+
+  .features__number {
+    margin-bottom: 0;
   }
 
   .cta {
