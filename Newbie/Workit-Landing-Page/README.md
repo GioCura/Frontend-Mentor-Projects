@@ -1,6 +1,6 @@
 # Frontend Mentor - Workit landing page solution
 
-This is a solution to the [Workit landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/workit-landing-page-2fYnyle5lu). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Workit landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/workit-landing-page-2fYnyle5lu).
 
 ## Table of contents
 
@@ -14,9 +14,6 @@ This is a solution to the [Workit landing page challenge on Frontend Mentor](htt
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -31,18 +28,9 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live Site](https://gc34-workit-landing.netlify.app/)
 
 ## My process
 
@@ -51,61 +39,33 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I learned how to use `clip-path` to make the curved borders for this layout. The background color and curve itself was applied via pseudoelements.
 
-To see how you can add code snippets, see below:
+I couldn't figure out how to get the curve's exact values from Figma, so instead I used glass2k, a program, that could render windows transparent. I overlayed my site and the figma mockup, and matched the curve's dimensions there.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
+I similarly used a pseudoelement to draw the underline for the word "tailored" inside the `<h1>` tag.
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I also learned that setting `z-index: 1` to a container with `position: relative` actually does make a difference. In this case, I had to make sure that the background color underneath the curved background would still show up.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+As I was finishing up the project with animations, I also started to wonder how people with JS disabled can access my site. I learned to use the `<noscript>` tag on the head and make a `no-js` class that overrides the attributes of my animations.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+From now on I'd like to make projects with fallbacks for users that have JavaScript disabled.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I'd like to take on designs with more challenging `clip-path` shapes.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [The glass2k program](https://chime.tv/products/glass2k.shtml) helped me match my layout to the figma design.
+- [This SO thread](https://stackoverflow.com/questions/62105821/how-does-the-clip-path-ellipse-property-work) explained how to set parameters with `clip-path`
+- [This SO thread](https://stackoverflow.com/questions/22203063/how-to-write-css-fallbacks-for-when-javascript-is-disabled) helped me figure out how to make a fallback for the fade-in animations if the user has JavaScript disabled.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@GioCura](https://www.frontendmentor.io/profile/GioCura)
