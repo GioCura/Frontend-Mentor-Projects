@@ -132,7 +132,8 @@ main {
   content: "";
   position: absolute;
   width: 100%;
-  bottom: 0.35rem;
+  /* bottom: 0.35rem; */
+  bottom: 0.75rem;
   left: 0;
   height: 0.3rem;
   background-color: #44ffa1;

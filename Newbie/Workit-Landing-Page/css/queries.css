@@ -17,6 +17,10 @@
     line-height: 8rem;
   }
 
+  .header__cta {
+    font-size: 1.8rem;
+  }
+
   .green-link {
     font-size: 1.8rem;
     line-height: 3.2rem;
@@ -25,7 +29,7 @@
 
   .green-link--home {
     padding: 1.2rem 3.2rem 1.3rem 3.3rem;
-    margin-bottom: 6.6rem;
+    margin-bottom: 5rem;
   }
 
   .features {
