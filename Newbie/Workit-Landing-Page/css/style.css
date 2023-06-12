@@ -51,11 +51,18 @@ body {
 /* HEADER */
 header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   padding: 3.2rem 1.63rem 6.4rem 1.6rem;
   background-color: #24053e;
+}
+
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 135rem;
 }
 
 .logo {

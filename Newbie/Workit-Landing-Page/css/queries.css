@@ -1,4 +1,4 @@
-@media (min-width: 1440px) {
+@media (min-width: 1180px) {
   header {
     padding: 5.6rem 16.5rem 5.5rem 16.53rem;
   }
@@ -7,7 +7,6 @@
     background: url(/images/bg-pattern-left.svg),
       url(/images/bg-pattern-right.svg), #24053e;
     background-repeat: no-repeat;
-    /* background-position: top -3rem left -14rem, top 17rem right -5rem; */
     background-position: top -2.2rem left -14rem, top 17rem right -5rem;
     clip-path: ellipse(107% 76.84% at top center);
   }
@@ -115,7 +114,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 1179px) {
   header {
     padding: 3.2rem 4rem 5.6rem 3.9rem;
   }
