@@ -18,7 +18,22 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
 
-    <script src="js/script.js"></script>
+    <script defer src="js/script.js"></script>
+    <noscript>
+      <style>
+        .no-js.fade-in,
+        .no-js.fade-left,
+        .no-js.fade-right {
+          opacity: 1;
+          filter: blur(0px);
+        }
+
+        .no-js.fade-left,
+        .no-js.fade-right {
+          transform: translateX(0);
+        }
+      </style>
+    </noscript>
 
     <title>Frontend Mentor | Workit landing page</title>
   </head>
@@ -34,11 +49,13 @@
 
     <main>
       <section class="home">
-        <h1>
+        <h1 class="no-js fade-in">
           Data <span class="tailored">tailored</span> to<br />
           your needs.
         </h1>
-        <a href="#features" class="green-link green-link--home">Learn more</a>
+        <a href="#features" class="no-js green-link green-link--home fade-in"
+          >Learn more</a
+        >
         <img
           src="images/image-hero.webp"
           alt="Mockup of the Workit App on mobile phones"
@@ -48,7 +65,7 @@
         />
       </section>
       <section id="features" class="features" aria-label="App features">
-        <ol class="fade-in">
+        <ol class="no-js features__list load-anim fade-in">
           <li>
             <span class="features__number">1</span>
             <div>
@@ -89,8 +106,9 @@
           alt="Portrait of Louis Graham, founder of Workit"
           width="281"
           height="281"
+          class="no-js load-anim fade-left"
         />
-        <article class="cta__card fade-in">
+        <article class="no-js cta__card load-anim fade-right">
           <h2>Be the first to test</h2>
           <blockquote>
             Hi, I'm Louis Graham, the founder of the company. Book a demo call
@@ -103,7 +121,7 @@
       </section>
     </main>
 
-    <footer class="fade-in">
+    <footer>
       <a href="#">
         <img src="images/logo-dark.svg" alt="Workit - Home" class="logo" />
       </a>

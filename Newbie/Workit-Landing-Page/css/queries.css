@@ -1,3 +1,12 @@
+@media (prefers-reduced-motion) {
+  .home h1,
+  .features__list,
+  .cta img,
+  .cta__card {
+    transition: none;
+  }
+}
+
 @media (min-width: 1180px) {
   header {
     padding: 5.6rem 16.5rem 5.5rem 16.53rem;
@@ -15,6 +24,7 @@
     margin-bottom: 3.7rem;
     font-size: 8rem;
     line-height: 8rem;
+    transition: opacity 0.6s, filter 0.6s;
   }
 
   .header__cta {
@@ -30,27 +40,33 @@
   .green-link--home {
     padding: 1.2rem 3.2rem 1.3rem 3.3rem;
     margin-bottom: 5rem;
+    transition: opacity 0.6s 0.9s, filter 0.6s 0.9s, background 0.3s, color 0.3s,
+      border 0.3s;
   }
 
   .features {
     padding: 9rem 16.1rem 17.1rem 16.5rem;
     margin-bottom: 11rem;
+    height: 56.9rem;
   }
 
   .features::after {
     clip-path: ellipse(103% 100% at top center);
   }
 
-  .features ol {
+  .features__list {
     display: flex;
     align-items: center;
     gap: 2.6rem;
-    transition: opacity 0.5s;
+    transition: opacity 0.5s, filter 0.5s;
   }
 
-  /* .fade-in {
+  .fade-in,
+  .fade-left,
+  .fade-right {
     opacity: 0;
-  } */
+    filter: blur(10px);
+  }
 
   .features li {
     flex-direction: column;
@@ -83,24 +99,28 @@
     max-width: 111.2rem;
     margin: 0 auto 6.03rem;
     padding-top: 17.3rem;
+    height: 64.73rem;
   }
 
   .cta img {
     width: 47.7rem;
     height: 47.7rem;
-    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, filter 0.5s;
   }
 
-  /* .fade-left {
-    left: initial;
-    opacity: 0;
-  } */
+  .fade-left {
+    transform: translateX(133%);
+  }
 
   .cta__card {
     margin-bottom: 6.174rem;
     padding: 6.4rem;
     width: 73rem;
-    transition: opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, filter 0.5s;
+  }
+
+  .fade-right {
+    transform: translateX(-52%);
   }
 
   .cta__card h2 {
@@ -127,7 +147,6 @@
 
   footer {
     margin-bottom: 11rem;
-    transition: opacity 0.5s;
   }
 }
 
