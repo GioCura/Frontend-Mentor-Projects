@@ -40,17 +40,141 @@ li {
   src: url(../fonts/manrope/static/Manrope-Regular.ttf);
 }
 
-body {
+/* SHARED ATTRIBUTES */
+.home,
+.tailored,
+.features,
+.cta {
+  position: relative;
+}
+
+.home::after,
+.tailored::after,
+.features::after,
+.cta img {
+  position: absolute;
+}
+
+.green-link,
+.features__number {
+  display: inline-block;
+}
+
+body,
+header,
+.header__wrapper,
+.home,
+footer,
+.socials {
   display: flex;
+}
+
+body,
+.home,
+footer {
   flex-direction: column;
+}
+
+body,
+.header__wrapper,
+.home,
+footer,
+.socials {
   align-items: center;
+}
+
+.home,
+.features,
+.cta__card {
+  text-align: center;
+}
+
+.header__cta,
+.green-link,
+.features p,
+.cta__card blockquote {
+  font-family: "Manrope";
+  font-size: 1.6rem;
+}
+
+.header__cta,
+.green-link {
+  font-weight: 700;
+}
+
+.home h1,
+.features__number,
+.cta__card h2 {
+  font-weight: 600;
+}
+
+.features p,
+.cta__card blockquote {
+  font-weight: 400;
+  line-height: 2.8rem;
+}
+
+.features__number,
+.features h2 {
+  line-height: 3.6rem;
+}
+
+.logo,
+.socials__icon {
+  vertical-align: bottom;
+}
+
+.header__cta:hover,
+.green-link:hover {
+  color: #44ffa1;
+}
+
+.header__cta,
+.home h1,
+.cta__card {
+  color: #fff;
+}
+
+.green-link,
+.features h2,
+.socials__icon:hover {
+  color: #24053e;
+}
+
+.features p,
+.socials__icon {
+  color: #584d62;
+}
+
+.home::after,
+.cta__card {
+  background: #24053e;
+}
+
+.home,
+.features::after {
+  background-color: #fcf8ff;
+}
+
+.tailored::after,
+.green-link {
+  background-color: #44ffa1;
+}
+
+.header__cta,
+.socials__icon {
+  transition: color 0.3s;
+}
+
+/* ///////////////// */
+
+body {
   min-height: 100vh;
   font-family: "Fraunces";
 }
 
 /* HEADER */
 header {
-  display: flex;
   justify-content: center;
   width: 100%;
   padding: 3.2rem 1.63rem 6.4rem 1.6rem;
@@ -58,8 +182,6 @@ header {
 }
 
 .header__wrapper {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 135rem;
@@ -68,23 +190,12 @@ header {
 .logo {
   width: 9.576rem;
   height: 2.461rem;
-  vertical-align: bottom;
 }
 
 .header__cta {
   padding: 0.1rem 0;
-  font-family: "Manrope";
-  font-weight: 700;
-  font-size: 1.6rem;
   line-height: 2.9rem;
   border-bottom: 3px solid #44ffa1;
-  /* letter-spacing: -0.016rem; */
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.header__cta:hover {
-  color: #44ffa1;
 }
 
 /* HOME */
@@ -93,67 +204,41 @@ main {
 }
 
 .home {
-  position: relative;
   z-index: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  background-color: #fcf8ff;
 }
 
 .home::after {
   content: "";
-  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
   bottom: 0;
   left: 0;
-  background: #24053e;
   clip-path: ellipse(160% 79.84% at top center);
 }
 
 .home h1 {
   margin-bottom: 4rem;
-  font-weight: 600;
   font-size: 5rem;
   line-height: 5rem;
-  color: #fff;
-}
-
-.tailored {
-  position: relative;
 }
 
 .tailored::after {
   content: "";
-  position: absolute;
   width: 100%;
-  /* bottom: 0.35rem; */
   bottom: 0.75rem;
   left: 0;
   height: 0.3rem;
-  background-color: #44ffa1;
 }
 
 .green-link {
-  display: inline-block;
   border: 2px solid transparent;
-  font-family: "Manrope";
-  font-weight: 700;
-  font-size: 1.6rem;
   letter-spacing: -0.016rem;
-  color: #24053e;
-  background-color: #44ffa1;
   transition: all 0.3s;
 }
 
 .green-link:hover {
   border: 2px solid #44ffa1;
-  color: #44ffa1;
   background-color: transparent;
 }
 
@@ -171,22 +256,17 @@ main {
 }
 
 .features {
-  position: relative;
-  text-align: center;
   padding: 6.4rem 1.6rem 7.171rem;
   margin-bottom: 10.029rem;
 }
 
 .features::after {
   content: "";
-  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #fcf8ff;
-  /* clip-path: ellipse(170% 100% at top center); */
   clip-path: ellipse(257% 100% at top center);
 }
 
@@ -195,41 +275,26 @@ main {
 }
 
 .features__number {
-  display: inline-block;
   padding: 0.4rem 1.93rem;
   border-radius: 50%;
   margin-bottom: 2.4rem;
   border: 1px solid #584d62;
-  font-weight: 600;
   font-size: 2rem;
-  line-height: 3.6rem;
 }
 
 .features h2 {
   margin-bottom: 1.6rem;
   font-size: 2.8rem;
-  line-height: 3.6rem;
-  color: #24053e;
-}
-
-.features p {
-  font-family: "Manrope";
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.8rem;
-  color: #584d62;
 }
 
 /* CTA */
 
 .cta {
-  position: relative;
   padding-top: 22.8rem;
   margin: 0 1.6rem 7.4rem;
 }
 
 .cta img {
-  position: absolute;
   z-index: -1;
   top: 0;
   left: 0;
@@ -239,25 +304,17 @@ main {
 
 .cta__card {
   padding: 3.2rem 3.1rem;
-  text-align: center;
-  color: #fff;
-  background: #24053e;
 }
 
 .cta__card h2 {
   margin-bottom: 1.6rem;
   font-family: "Fraunces";
-  font-weight: 600;
   font-size: 3.2rem;
   line-height: 4.8rem;
 }
 
 .cta__card blockquote {
   margin-bottom: 2.4rem;
-  font-family: "Manrope";
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.8rem;
 }
 
 .green-link--cta {
@@ -266,9 +323,6 @@ main {
 
 /* FOOTER */
 footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin-bottom: 6.378rem;
 }
 
@@ -277,17 +331,5 @@ footer a {
 }
 
 .socials {
-  display: flex;
-  align-items: center;
   gap: 2.8rem;
-}
-
-.socials__icon {
-  color: #584d62;
-  transition: color 0.3s;
-  vertical-align: bottom;
-}
-
-.socials__icon:hover {
-  color: #24053e;
 }

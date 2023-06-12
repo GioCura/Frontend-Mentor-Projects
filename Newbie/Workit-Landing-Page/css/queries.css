@@ -8,6 +8,33 @@
 }
 
 @media (min-width: 1180px) {
+  /* SHARED ATTRIBUTES */
+  .header__cta,
+  .green-link,
+  .features p,
+  .cta__card blockquote {
+    font-size: 1.8rem;
+  }
+
+  .green-link,
+  .features p,
+  .cta__card blockquote {
+    line-height: 3.2rem;
+  }
+
+  .fade-in,
+  .fade-left,
+  .fade-right {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  .cta img,
+  .cta__card {
+    transition: transform 0.5s, opacity 0.5s, filter 0.5s;
+  }
+  /* ///////////////// */
+
   header {
     padding: 5.6rem 16.5rem 5.5rem 16.53rem;
   }
@@ -27,13 +54,7 @@
     transition: opacity 0.6s, filter 0.6s;
   }
 
-  .header__cta {
-    font-size: 1.8rem;
-  }
-
   .green-link {
-    font-size: 1.8rem;
-    line-height: 3.2rem;
     letter-spacing: -0.018rem;
   }
 
@@ -61,13 +82,6 @@
     transition: opacity 0.5s, filter 0.5s;
   }
 
-  .fade-in,
-  .fade-left,
-  .fade-right {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
   .features li {
     flex-direction: column;
     width: 35.4rem;
@@ -90,11 +104,6 @@
     margin-bottom: 2.8rem;
   }
 
-  .features p {
-    font-size: 1.8rem;
-    line-height: 3.2rem;
-  }
-
   .cta {
     max-width: 111.2rem;
     margin: 0 auto 6.03rem;
@@ -105,7 +114,6 @@
   .cta img {
     width: 47.7rem;
     height: 47.7rem;
-    transition: transform 0.5s, opacity 0.5s, filter 0.5s;
   }
 
   .fade-left {
@@ -116,7 +124,6 @@
     margin-bottom: 6.174rem;
     padding: 6.4rem;
     width: 73rem;
-    transition: transform 0.5s, opacity 0.5s, filter 0.5s;
   }
 
   .fade-right {
@@ -132,8 +139,6 @@
 
   .cta__card blockquote {
     margin-bottom: 3.2rem;
-    font-size: 1.8rem;
-    line-height: 3.2rem;
   }
 
   .green-link--cta {
@@ -223,6 +228,19 @@
 }
 
 @media (min-width: 768px) {
+  /* SHARED ATTRIBUTES */
+  .cta,
+  .cta__card {
+    position: relative;
+  }
+
+  .features,
+  .features li,
+  .cta {
+    display: flex;
+  }
+  /* ///////////////// */
+
   .phone {
     width: 66.93%;
     max-width: 76.7rem;
@@ -231,23 +249,18 @@
   }
 
   .features {
-    display: flex;
     justify-content: center;
   }
 
   .features li {
-    display: flex;
     align-items: center;
   }
 
   .cta {
-    position: relative;
-    display: flex;
     justify-content: flex-end;
   }
 
   .cta__card {
-    position: relative;
     text-align: left;
   }
 
