@@ -26,7 +26,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot-Desktop](images/Screenshot-desktop.png)
+![Screenshot-Mobile](images/Screenshot-Mobile.png)
 
 ### Links
 
@@ -44,9 +45,9 @@ Users should be able to:
 
 ### What I learned
 
-I learned how to use `clip-path` to make the curved borders for this layout. The background color and curve itself was applied via pseudoelements.
+I learned how to use `clip-path` to make the curved borders for this layout. The background color and curve itself were applied via pseudoelements.
 
-I couldn't figure out how to get the curve's exact values from Figma, so instead I used glass2k, a program, that could render windows transparent. I overlayed my site and the figma mockup, and matched the curve's dimensions there.
+I couldn't figure out how to get the curve's exact values from Figma, so instead I used glass2k, a program that could render windows transparent. I overlayed my site on the figma mockup, and matched the curve's dimensions there.
 
 I similarly used a pseudoelement to draw the underline for the word "tailored" inside the `<h1>` tag.
 
