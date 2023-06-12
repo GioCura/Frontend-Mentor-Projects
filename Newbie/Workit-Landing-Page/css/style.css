@@ -78,7 +78,7 @@ header {
   font-size: 1.6rem;
   line-height: 2.9rem;
   border-bottom: 3px solid #44ffa1;
-  letter-spacing: -0.016rem;
+  /* letter-spacing: -0.016rem; */
   color: #fff;
   transition: color 0.3s;
 }
