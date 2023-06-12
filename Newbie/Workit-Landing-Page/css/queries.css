@@ -45,7 +45,12 @@
     display: flex;
     align-items: center;
     gap: 2.6rem;
+    transition: opacity 0.5s;
   }
+
+  /* .fade-in {
+    opacity: 0;
+  } */
 
   .features li {
     flex-direction: column;
@@ -75,7 +80,7 @@
   }
 
   .cta {
-    max-width: 110rem;
+    max-width: 111.2rem;
     margin: 0 auto 6.03rem;
     padding-top: 17.3rem;
   }
@@ -83,12 +88,19 @@
   .cta img {
     width: 47.7rem;
     height: 47.7rem;
+    transition: transform 0.5s, opacity 0.5s;
   }
+
+  /* .fade-left {
+    left: initial;
+    opacity: 0;
+  } */
 
   .cta__card {
     margin-bottom: 6.174rem;
     padding: 6.4rem;
     width: 73rem;
+    transition: opacity 0.5s;
   }
 
   .cta__card h2 {
@@ -115,6 +127,7 @@
 
   footer {
     margin-bottom: 11rem;
+    transition: opacity 0.5s;
   }
 }
 
