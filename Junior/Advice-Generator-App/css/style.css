@@ -72,6 +72,13 @@ body {
   margin-bottom: 2.4rem;
 }
 
+noscript {
+  font-size: 2.4rem;
+  line-height: 3.278rem;
+  letter-spacing: -0.026rem;
+  color: var(--lightcyan);
+}
+
 .divider {
   width: 29.5rem;
   height: 1.6rem;
