@@ -10,6 +10,13 @@
       content="Gio Cura's solution to Frontend Mentor's Advice Generator App Challenge"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -25,14 +32,11 @@
   </head>
   <body>
     <main>
-      <article class="advice__generator">
-        <h1>Advice #<span class="advice__id"></span></h1>
+      <article class="advice-generator">
+        <h1>ADVICE #<span class="advice__id"></span></h1>
         <blockquote class="advice"></blockquote>
         <div class="divider"></div>
-        <button class="advice__btn">
-          <span></span>
-          Press
-        </button>
+        <button class="advice__btn" aria-label="Click to get advice"></button>
       </article>
     </main>
   </body>
