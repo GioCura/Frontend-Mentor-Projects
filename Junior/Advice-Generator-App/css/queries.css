@@ -1,1 +1,27 @@
-@media (min-width: 560px);
+@media (min-width: 560px) {
+  main {
+    max-width: 54rem;
+  }
+
+  .advice-generator {
+    padding: 4.8rem 4.8rem 7.2rem;
+  }
+
+  .advice-generator h1 {
+    font-size: 1.3rem;
+    line-height: 1.776rem;
+    letter-spacing: 0.406rem;
+  }
+
+  .advice {
+    font-size: 2.8rem;
+    line-height: 3.825rem;
+    letter-spacing: -0.03rem;
+    margin-bottom: 4rem;
+  }
+
+  .divider {
+    width: 44.4rem;
+    background: url(/images/pattern-divider-desktop.svg);
+  }
+}
