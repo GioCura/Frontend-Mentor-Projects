@@ -18,6 +18,7 @@ button {
 button {
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 :root {
@@ -50,7 +51,7 @@ body {
   text-align: center;
   padding: 4rem 2.4rem 6.4rem;
   margin: 0 1.6rem;
-  box-shadow: 30px 50px 80px 0px rgba(0, 0, 0, 0.102);
+  box-shadow: 30px 50px 80px 0 rgba(0, 0, 0, 0.102);
 }
 
 .advice-generator h1 {
@@ -83,4 +84,9 @@ body {
   background: url(/images/icon-dice.svg) no-repeat, var(--neongreen);
   background-position: center;
   border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.advice__btn:hover {
+  box-shadow: 0 0 40px 0 #53ffaa;
 }
