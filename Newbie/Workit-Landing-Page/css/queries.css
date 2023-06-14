@@ -7,7 +7,7 @@
   }
 }
 
-@media (min-width: 1180px) {
+@media (min-width: 73.75em) {
   /* SHARED ATTRIBUTES */
   .header__cta,
   .green-link,
@@ -155,7 +155,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1179px) {
+@media (min-width: 48em) and (max-width: 73.6875em) {
   header {
     padding: 3.2rem 4rem 5.6rem 3.9rem;
   }
@@ -227,7 +227,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
   /* SHARED ATTRIBUTES */
   .cta,
   .cta__card {
