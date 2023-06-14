@@ -38,7 +38,12 @@
         <h2>ADVICE #<span class="advice__id"></span></h2>
         <blockquote class="advice"></blockquote>
         <div class="divider"></div>
-        <button class="advice__btn" aria-label="Click to get advice"></button>
+        <button
+          class="advice__btn"
+          aria-label="Click to get advice"
+          aria-describedby="notifier"
+        ></button>
+        <div id="notifier" class="notifier sr-only" aria-live="Polite"></div>
       </article>
     </main>
   </body>

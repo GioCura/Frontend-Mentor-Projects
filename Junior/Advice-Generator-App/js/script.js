@@ -4,6 +4,7 @@ const adviceTitle = document.querySelector(".advice-generator h2");
 const adviceId = document.querySelector(".advice__id");
 const advice = document.querySelector(".advice");
 const adviceBtn = document.querySelector(".advice__btn");
+const notifier = document.querySelector(".notifier");
 
 let isDisabled = false;
 
@@ -21,12 +22,21 @@ function spinAnim(el) {
   });
 }
 
+function newAdviceNotifier() {
+  notifier.textContent = "New advice generated";
+  setTimeout(() => {
+    notifier.textContent = "";
+  }, 100);
+}
+
 function getAdvice() {
+  notifier.textContent = "Getting new advice";
   spinAnim(adviceBtn);
   adviceBtn.classList.add("disabled");
   isDisabled = true;
   adviceTitle.style.display = "none";
   advice.innerHTML = `<span class="loading"></span>`;
+
   fetch("https://api.adviceslip.com/advice")
     .then((response) => {
       return response.json();
@@ -39,6 +49,7 @@ function getAdvice() {
       setTimeout(() => {
         adviceBtn.classList.remove("disabled");
         isDisabled = false;
+        newAdviceNotifier();
       }, 1200);
       console.log(isDisabled);
     })
