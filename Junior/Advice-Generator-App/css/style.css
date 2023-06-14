@@ -90,3 +90,12 @@ body {
 .advice__btn:hover {
   box-shadow: 0 0 40px 0 #53ffaa;
 }
+
+.loading {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-image: url(/images/Rolling-1s-200px.gif);
+  background-repeat: repeat;
+  background-size: contain;
+}
