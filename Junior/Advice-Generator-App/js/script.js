@@ -22,8 +22,7 @@ function spinAnim(el) {
   });
 }
 
-function newAdviceNotifier() {
-  notifier.textContent = "New advice generated";
+function resetNotifier() {
   setTimeout(() => {
     notifier.textContent = "";
   }, 100);
@@ -49,7 +48,8 @@ function getAdvice() {
       setTimeout(() => {
         adviceBtn.classList.remove("disabled");
         isDisabled = false;
-        newAdviceNotifier();
+        notifier.textContent = `Now showing advice number ${adviceObj.id}`;
+        resetNotifier();
       }, 1200);
       console.log(isDisabled);
     })
