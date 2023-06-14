@@ -9,6 +9,7 @@ html {
 }
 
 h1,
+h2,
 button {
   font-family: inherit;
   font-weight: inherit;
@@ -54,7 +55,7 @@ body {
   box-shadow: 30px 50px 80px 0 rgba(0, 0, 0, 0.102);
 }
 
-.advice-generator h1 {
+.advice-generator h2 {
   color: var(--neongreen);
   font-size: 1.1rem;
   line-height: 1.503rem;
@@ -107,4 +108,24 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.disabled {
+  cursor: not-allowed;
+  background: url(/images/icon-dice.svg) no-repeat, var(--grayblue);
+  background-position: center;
+}
+
+.disabled.advice__btn:hover {
+  box-shadow: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
