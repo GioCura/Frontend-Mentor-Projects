@@ -7,7 +7,16 @@ const adviceBtn = document.querySelector(".advice__btn");
 
 adviceBtn.addEventListener("click", getAdvice);
 
+function spinAnim(el) {
+  el.style.animation = "0.5s spin ease-out";
+
+  el.addEventListener("animationend", function () {
+    el.style.animation = "none";
+  });
+}
+
 function getAdvice() {
+  spinAnim(adviceBtn);
   adviceTitle.style.display = "none";
   advice.innerHTML = `<span class="loading"></span>`;
   fetch("https://api.adviceslip.com/advice")

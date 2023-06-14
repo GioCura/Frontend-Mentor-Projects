@@ -93,9 +93,18 @@ body {
 
 .loading {
   display: block;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   background-image: url(/images/Rolling-1s-200px.gif);
   background-repeat: repeat;
   background-size: contain;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
