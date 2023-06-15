@@ -59,6 +59,7 @@ I also found out that fetching new advice didn't work right away on Firefox unle
 
 - [This video by Oston Code Cypher](https://youtu.be/2AfzKmgqWUE) helped me understand how to integrate the API into my code.
 - [Shishir Arora's answer to this question](https://stackoverflow.com/questions/53799108/how-to-add-a-loading-animation-while-fetch-data-from-api-vanilla-js) helped me understand how loaders are implemented.
+- [This site](https://loading.io/) is where I got my custom loader from.
 
 ## Author
 
