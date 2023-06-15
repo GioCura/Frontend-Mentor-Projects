@@ -32,10 +32,25 @@ button {
   --font: "Manrope", sans-serif;
 }
 
-body {
-  min-height: 100vh;
+/* SHARED ATTRIBUTES */
+body,
+.advice-generator {
   display: flex;
   align-items: center;
+}
+
+.advice,
+noscript {
+  font-size: 2.4rem;
+  line-height: 3.278rem;
+  letter-spacing: -0.026rem;
+  color: var(--lightcyan);
+}
+
+/* ///////////////// */
+
+body {
+  min-height: 100vh;
   justify-content: center;
   font-family: var(--font);
   background: var(--darkblue);
@@ -44,9 +59,7 @@ body {
 
 .advice-generator {
   position: relative;
-  display: flex;
   flex-direction: column;
-  align-items: center;
   background: var(--darkgrayblue);
   border-radius: 15px;
   text-align: center;
@@ -65,18 +78,7 @@ body {
 }
 
 .advice {
-  font-size: 2.4rem;
-  line-height: 3.278rem;
-  letter-spacing: -0.026rem;
-  color: var(--lightcyan);
   margin-bottom: 2.4rem;
-}
-
-noscript {
-  font-size: 2.4rem;
-  line-height: 3.278rem;
-  letter-spacing: -0.026rem;
-  color: var(--lightcyan);
 }
 
 .divider {

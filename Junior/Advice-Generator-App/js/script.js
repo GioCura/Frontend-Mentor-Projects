@@ -6,18 +6,7 @@ const advice = document.querySelector(".advice");
 const adviceBtn = document.querySelector(".advice__btn");
 const notifier = document.querySelector(".notifier");
 
-window.addEventListener("load", getAdvice);
-
 let isDisabled = false;
-
-adviceBtn.addEventListener("click", function () {
-  if (isDisabled === false) {
-    notifier.textContent = "Getting new advice";
-    spinAnim(adviceBtn);
-    adviceBtn.classList.add("disabled");
-    getAdvice();
-  }
-});
 
 function spinAnim(el) {
   el.style.animation = "0.5s spin ease-out";
@@ -58,3 +47,14 @@ function getAdvice() {
       console.log(error);
     });
 }
+
+window.addEventListener("load", getAdvice);
+
+adviceBtn.addEventListener("click", function () {
+  if (isDisabled === false) {
+    notifier.textContent = "Getting new advice";
+    spinAnim(adviceBtn);
+    adviceBtn.classList.add("disabled");
+    getAdvice();
+  }
+});
