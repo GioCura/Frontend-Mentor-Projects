@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
 
-    <script defer src="js/script.js"></script>
+    <script type="module" src="js/controller.js"></script>
 
     <title>Frontend Mentor | Advice generator app</title>
   </head>
@@ -37,7 +37,7 @@
         <h1 class="sr-only">Advice Generator</h1>
         <noscript>This app requires JavaScript to work properly.</noscript>
         <h2>ADVICE #<span class="advice__id"></span></h2>
-        <blockquote class="advice"></blockquote>
+        <blockquote class="advice" aria-live="polite"></blockquote>
         <div class="divider"></div>
         <button
           class="advice__btn"

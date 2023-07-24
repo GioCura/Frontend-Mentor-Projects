@@ -10,25 +10,44 @@ let tablet = window.matchMedia("(min-width: 48em)");
 // Re-enables autocomplete upon page load (for Firefox)
 ctaInput.autocomplete = "on";
 
+function addHeight(el) {
+  el.style.height = el.scrollHeight + "px";
+}
+
+function removeHeight(el) {
+  el.style.height = "0";
+}
+
+function setAriaInvalid(el) {
+  el.setAttribute("aria-invalid", "true");
+}
+
+function removeAriaInvalid(el) {
+  el.removeAttribute("aria-invalid");
+}
+
+function clear(el) {
+  el.textContent = "";
+}
+
 // Error script for the input
 function emailError() {
   ctaInput.classList.add("error");
-  ctaInput.setAttribute("aria-invalid", "true");
   ctaError.classList.add("error--active");
   ctaError.textContent = "Oops! Please check your email";
-  addHeight(ctaError);
+  setAriaInvalid(ctaInput);
+  if (!tablet.matches) addHeight(ctaError);
 }
 
-function addHeight() {
-  if (!tablet.matches) {
-    ctaError.style.height = ctaError.scrollHeight + "px";
-  }
-}
-
-function removeHeight() {
-  if (!tablet.matches) {
-    ctaError.style.height = "0";
-  }
+// Success script for the input
+function emailSuccess() {
+  ctaInput.classList.remove("error");
+  ctaError.classList.remove("error--active");
+  setTimeout(() => {
+    clear(ctaError);
+  }, 500);
+  removeAriaInvalid(ctaInput);
+  if (!tablet.matches) removeHeight(ctaError);
 }
 
 // Form validation upon submission
@@ -44,13 +63,7 @@ heroCta.addEventListener("submit", function (e) {
 // Form validation upon changing input
 ctaInput.addEventListener("change", function () {
   if (ctaInput.validity.valid) {
-    ctaInput.classList.remove("error");
-    ctaInput.removeAttribute("aria-invalid");
-    ctaError.classList.remove("error--active");
-    removeHeight(ctaError);
-    setTimeout(() => {
-      ctaError.textContent = "";
-    }, 500);
+    emailSuccess();
   } else {
     emailError();
   }
@@ -59,7 +72,6 @@ ctaInput.addEventListener("change", function () {
 // Fade in animation for desktop screens
 window.addEventListener("load", function () {
   loadAnim.forEach((el) => {
-    el.classList.remove("hidden");
-    el.classList.remove("hidden-down");
+    el.classList.remove("hidden", "hidden-down");
   });
 });
