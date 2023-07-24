@@ -1,25 +1,25 @@
 "use strict";
 
 import * as model from "./model.js";
-import View from "./views/View.js";
+import adviceView from "./views/adviceView.js";
 
 const controlAdvice = async function () {
   try {
-    if (View._buttonIsDisabled) return;
-    View._buttonSpin();
-    View._renderLoader();
-    View._setFetchingState();
+    if (adviceView._buttonIsDisabled) return;
+    adviceView.renderLoader();
+    adviceView._buttonSpin();
+    adviceView._setFetchingState();
     await model.loadAdvice();
-    View._renderAdvice(model.state.advice);
-    View._setReadyState(model.state.advice);
+    adviceView._renderAdvice(model.state.advice);
+    adviceView._setReadyState(model.state.advice);
   } catch (err) {
-    View._renderError(err);
-    View._setReadyState(model.state.advice);
+    adviceView.renderError(err);
+    adviceView._setReadyState(model.state.advice);
   }
 };
 
 const init = function () {
-  View.addHandlerNewAdvice(controlAdvice);
+  adviceView.addHandlerNewAdvice(controlAdvice);
   controlAdvice();
 };
 

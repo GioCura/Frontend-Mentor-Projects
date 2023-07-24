@@ -49,11 +49,17 @@ I learned how to use API's through this project. I now know that it starts with 
 
 Additionally, I learned how to add loaders. It first involves styling a loader class with the appropriate gif, svg, etc. For this project, the loader is written into the `innerHTML` upon the click of the dice button. After that, the fetch action is done, and that changes the `innerHTML` to the requested data.
 
-I also found out that fetching new advice didn't work right away on Firefox unless you add `{ cache: "no-cache" }` to the fetch parameter.
+I also found out that fetching new advice didn't work right away on Firefox unless you add `{ cache: "no-cache" }` to the fetch parameters.
+
+///////////////
+UPDATE 07/24/23
+
+After finishing Jonas Schmedtmann's JavaScript course, I went back and refactored my code to reflect the MVC model. Although this requires splitting the script into multiple files, hopefully this code is more organized, reusable, and easier to update. I've alsoimplemented try catch statements and guard clauses for the first time.
 
 ### Continued development
 
 - I'd like more practice using API's.
+- I'd like more practice implementing the MVC model.
 
 ### Useful resources
 
