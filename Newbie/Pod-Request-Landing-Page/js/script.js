@@ -4,6 +4,8 @@ const heroCta = document.querySelector(".hero__cta");
 const ctaInput = document.querySelector(".cta__input");
 const ctaError = document.querySelector(".cta__error");
 const loadAnim = document.querySelectorAll(".load-anim");
+const CLEAR_TIMEOUT = 500;
+const errorMessage = "Oops! Please check your email";
 
 let tablet = window.matchMedia("(min-width: 48em)");
 
@@ -34,7 +36,7 @@ function clear(el) {
 function emailError() {
   ctaInput.classList.add("error");
   ctaError.classList.add("error--active");
-  ctaError.textContent = "Oops! Please check your email";
+  ctaError.textContent = `${errorMessage}`;
   setAriaInvalid(ctaInput);
   if (!tablet.matches) addHeight(ctaError);
 }
@@ -45,7 +47,7 @@ function emailSuccess() {
   ctaError.classList.remove("error--active");
   setTimeout(() => {
     clear(ctaError);
-  }, 500);
+  }, CLEAR_TIMEOUT);
   removeAriaInvalid(ctaInput);
   if (!tablet.matches) removeHeight(ctaError);
 }
