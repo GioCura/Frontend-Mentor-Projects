@@ -9,8 +9,7 @@ const errorMessage = "Oops! Please check your email";
 
 let tablet = window.matchMedia("(min-width: 48em)");
 
-// Re-enables autocomplete upon page load (for Firefox)
-ctaInput.autocomplete = "on";
+// General functions
 
 function addHeight(el) {
   el.style.height = el.scrollHeight + "px";
@@ -53,27 +52,37 @@ function emailSuccess() {
 }
 
 // Form validation upon submission
-heroCta.addEventListener("submit", function (e) {
+function validateFormSubmission() {
   if (!ctaInput.validity.valid) {
     e.preventDefault();
     emailError();
   } else {
     alert("Email sumbitted!");
   }
-});
+}
 
 // Form validation upon changing input
-ctaInput.addEventListener("change", function () {
+function validateFormInput() {
   if (ctaInput.validity.valid) {
     emailSuccess();
   } else {
     emailError();
   }
-});
+}
 
 // Fade in animation for desktop screens
-window.addEventListener("load", function () {
+function loadAnimations() {
   loadAnim.forEach((el) => {
     el.classList.remove("hidden", "hidden-down");
   });
-});
+}
+
+function init() {
+  heroCta.addEventListener("submit", validateFormSubmission);
+  ctaInput.addEventListener("change", validateFormInput);
+  window.addEventListener("load", loadAnimations);
+  // Re-enables autocomplete upon page load (for Firefox)
+  ctaInput.autocomplete = "on";
+}
+
+init();
