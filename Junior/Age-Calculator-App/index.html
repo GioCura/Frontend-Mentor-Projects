@@ -17,21 +17,48 @@
       href="./assets/images/favicon-32x32.png"
     />
 
+    <script defer src="js/script.js"></script>
+
     <title>Frontend Mentor | Age calculator app</title>
   </head>
   <body>
     <main>
       <article class="age-calculator">
         <h1 class="sr-only">Age Calculator</h1>
-        <form for="age-calculator">
-          <label for="day">
-            <input type="text" name="day" placeholder="DD" required />
+        <form for="age-calculator" class="age-calculator__form" novalidate>
+          <label for="date">
+            <input
+              type="text"
+              id="date"
+              name="date"
+              placeholder="DD"
+              maxlength="2"
+              pattern="^(0?[1-9]|[12][0-9]|3[01])"
+              required
+              autocomplete="off"
+            />
           </label>
           <label for="month">
-            <input type="text" name="month" placeholder="MM" required />
+            <input
+              type="text"
+              id="month"
+              name="month"
+              placeholder="MM"
+              maxlength="2"
+              pattern="^(1[012]|0?[1-9])$"
+              required
+              autocomplete="off"
+            />
           </label>
           <label for="year">
-            <input type="text" name="year" placeholder="YYYY" required />
+            <input
+              type="text"
+              id="year"
+              name="year"
+              placeholder="YYYY"
+              required
+              autocomplete="off"
+            />
           </label>
           <button type="submit" aria-label="calculate age">
             Calculate Age
