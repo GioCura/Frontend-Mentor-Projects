@@ -5,7 +5,11 @@ const inputs = ageCalculator.querySelectorAll("input");
 const inputYear = document.getElementById("year");
 const inputMonth = document.getElementById("month");
 const inputDay = document.getElementById("day");
-const currentDate = new Date()
+const currentDate = new Date();
+const currentDay = currentDate.getDate();
+const currentMonth = currentDate.getMonth();
+const currentYear = currentDate.getFullYear();
+const currentDateStr = currentDate
   .toJSON()
   .slice(0, 10)
   .replace(/-/g, "/")
@@ -19,7 +23,7 @@ function checkValidity(e) {
 }
 
 function checkYearValidity() {
-  if (+inputYear.value > new Date().getFullYear()) {
+  if (+inputYear.value > currentYear) {
     console.log("Must be past or present year!");
   }
 }
@@ -44,15 +48,14 @@ function checkDayValidity() {
 }
 
 function checkDateValidity() {
-  const dateArr = [inputYear.value, inputMonth.value, inputDay.value];
+  const dateArr = [+inputYear.value, +inputMonth.value, +inputDay.value];
   const dateStr = dateArr.join("/");
 
-  if (dateStr > currentDate) console.log(`Must be in the past!`);
+  if (dateStr > currentDateStr) console.log(`Must be in the past!`);
 }
 
-ageCalculator.addEventListener("submit", function (e) {
+ageCalculator.addEventListener("submit", async function (e) {
   e.preventDefault();
-
   inputs.forEach(checkValidity);
   checkYearValidity();
   checkLeapYear();
