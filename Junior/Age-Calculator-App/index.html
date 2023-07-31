@@ -26,11 +26,11 @@
       <article class="age-calculator">
         <h1 class="sr-only">Age Calculator</h1>
         <form for="age-calculator" class="age-calculator__form" novalidate>
-          <label for="date">
+          <label for="day">
             <input
               type="text"
-              id="date"
-              name="date"
+              id="day"
+              name="day"
               placeholder="DD"
               maxlength="2"
               pattern="^(0?[1-9]|[12][0-9]|3[01])"
@@ -56,6 +56,7 @@
               id="year"
               name="year"
               placeholder="YYYY"
+              pattern="\d+"
               required
               autocomplete="off"
             />
