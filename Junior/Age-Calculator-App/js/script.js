@@ -2,6 +2,7 @@
 
 const ageCalculator = document.querySelector(".age-calculator__form");
 const inputs = ageCalculator.querySelectorAll("input");
+const inputsArr = [...inputs];
 const inputYear = document.getElementById("year");
 const inputMonth = document.getElementById("month");
 const inputDay = document.getElementById("day");
@@ -16,49 +17,76 @@ const currentDateStr = currentDate
   .replace(/(?<=\/)0/g, "");
 let dateIsLeapYear;
 
-function checkValidity(e) {
-  if (e.validity.valid) return;
-  if (e.validity.valueMissing) console.log(`This field is required`);
-  if (e.validity.patternMismatch) console.log(`Must be a valid ${e.id}`);
+console.log(inputsArr);
+
+// function only allows one error to be thrown.
+async function checkValidity(e) {
+  try {
+    if (e.validity.valid) return;
+    if (e.validity.valueMissing) throw new Error(`This field is required`);
+    if (e.validity.patternMismatch) throw new Error(`Must be a valid ${e.id}`);
+  } catch (err) {
+    e.parentNode.querySelector(".error").textContent = err.message;
+    throw err;
+  }
 }
 
-function checkYearValidity() {
-  if (+inputYear.value > currentYear) {
-    console.log("Must be past or present year!");
+async function checkYearValidity() {
+  try {
+    if (+inputYear.value > currentYear)
+      throw new Error("Must be past or present year!");
+  } catch (err) {
+    inputYear.parentNode.querySelector(".error").textContent = err.message;
+    throw err;
   }
 }
 
 function checkLeapYear() {
   dateIsLeapYear = +inputYear.value % 4 === 0 ? true : false;
-  console.log(dateIsLeapYear);
+  // console.log(dateIsLeapYear);
 }
 
-function checkDayValidity() {
+async function checkDayValidity() {
   const monthsWith30Days = [4, 6, 9, 11];
   const monthHas30Days = monthsWith30Days.some((month) =>
     inputMonth.value.includes(month)
   );
   const monthIsFebruary = +inputMonth.value === 2;
 
-  if (
-    (monthHas30Days && +inputDay.value > 30) ||
-    (monthIsFebruary && +inputDay.value > (dateIsLeapYear ? 29 : 28))
-  )
-    console.log(`Must be a valid date`);
+  try {
+    if (
+      (monthHas30Days && +inputDay.value > 30) ||
+      (monthIsFebruary && +inputDay.value > (dateIsLeapYear ? 29 : 28))
+    )
+      throw new Error(`Must be a valid date`);
+  } catch (err) {
+    inputDay.parentNode.querySelector(".error").textContent = err.message;
+    throw err;
+  }
 }
 
-function checkDateValidity() {
+async function checkDateValidity() {
   const dateArr = [+inputYear.value, +inputMonth.value, +inputDay.value];
   const dateStr = dateArr.join("/");
 
-  if (dateStr > currentDateStr) console.log(`Must be in the past!`);
+  try {
+    if (dateStr > currentDateStr) throw new Error(`Must be in the past!`);
+  } catch (err) {
+    inputYear.parentNode.querySelector(".error").textContent = err.message;
+    throw err;
+  }
 }
 
 ageCalculator.addEventListener("submit", async function (e) {
-  e.preventDefault();
-  inputs.forEach(checkValidity);
-  checkYearValidity();
-  checkLeapYear();
-  checkDayValidity();
-  checkDateValidity();
+  try {
+    e.preventDefault();
+    await Promise.all([...inputs].map(checkValidity));
+    await checkYearValidity();
+    checkLeapYear();
+    await checkDayValidity();
+    await checkDateValidity();
+    console.log("success");
+  } catch (err) {
+    console.error(err);
+  }
 });
