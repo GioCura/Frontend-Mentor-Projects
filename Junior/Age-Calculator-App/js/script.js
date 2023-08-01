@@ -26,7 +26,13 @@ let calcMonths = 0;
 let calcYears = 0;
 
 function renderError(el, err) {
+  el.parentNode.classList.add("error");
   el.parentNode.querySelector(".error").textContent = err.message;
+}
+
+function clearError(el) {
+  el.parentNode.classList.remove("error");
+  el.parentNode.querySelector(".error").textContent = "";
 }
 
 function checkLeapYear(year) {
@@ -34,17 +40,24 @@ function checkLeapYear(year) {
 }
 
 function checkMonthHas30Days(el) {
-  if (monthsWith30Days.some((month) => el.includes(month)))
+  if (monthsWith30Days.some((month) => el.includes(month))) {
     monthHas30Days = true;
+  } else {
+    monthHas30Days = false;
+  }
 }
 
 function checkMonthIsFebruary(month) {
-  if (month === 2) monthIsFebruary = true;
+  if (month === 2) {
+    monthIsFebruary = true;
+  } else {
+    monthIsFebruary = false;
+  }
 }
 
 async function checkValidity(entry) {
   try {
-    if (entry.validity.valid) return;
+    if (entry.validity.valid) clearError(entry);
     if (entry.validity.valueMissing) throw new Error(`This field is required`);
     if (entry.validity.patternMismatch)
       throw new Error(`Must be a valid ${entry.id}`);
@@ -107,6 +120,9 @@ async function calculateAge() {
   let previousMonth = currentMonth - 1;
   let dayOffset = 31;
   const monthOffset = 12;
+  calcDays = currentDay - +inputDay.value;
+  calcMonths = currentMonth - +inputMonth.value;
+  calcYears = currentYear - +inputYear.value;
 
   checkMonthHas30Days(previousMonth.toString());
   checkMonthIsFebruary(previousMonth);
@@ -114,10 +130,6 @@ async function calculateAge() {
 
   if (monthHas30Days) dayOffset = 30;
   if (monthIsFebruary) dayOffset = dateIsLeapYear ? 29 : 28;
-
-  calcDays = currentDay - +inputDay.value;
-  calcMonths = currentMonth - +inputMonth.value;
-  calcYears = currentYear - +inputYear.value;
 
   if (calcDays < 0) {
     calcMonths -= 1;
@@ -129,11 +141,18 @@ async function calculateAge() {
   }
 }
 
+function renderAge() {
+  document.querySelector(".result--years").textContent = calcYears;
+  document.querySelector(".result--months").textContent = calcMonths;
+  document.querySelector(".result--days").textContent = calcDays;
+}
+
 ageCalculator.addEventListener("submit", async function (e) {
   try {
     e.preventDefault();
     await checkFormValidity();
     await calculateAge();
+    renderAge();
     console.log("success");
   } catch (err) {
     console.log(err);
