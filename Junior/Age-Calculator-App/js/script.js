@@ -29,8 +29,8 @@ function renderError(el, err) {
   el.parentNode.querySelector(".error").textContent = err.message;
 }
 
-function checkLeapYear() {
-  dateIsLeapYear = +inputYear.value % 4 === 0 ? true : false;
+function checkLeapYear(year) {
+  dateIsLeapYear = year % 4 === 0 ? true : false;
 }
 
 function checkMonthHas30Days(el) {
@@ -65,6 +65,7 @@ async function checkYearValidity() {
 }
 
 async function checkDayValidity() {
+  checkLeapYear(+inputYear.value);
   checkMonthHas30Days(inputMonth.value);
   checkMonthIsFebruary(+inputMonth.value);
 
@@ -82,7 +83,6 @@ async function checkDayValidity() {
 
 async function checkDateValidity() {
   const dateStr = `${+inputYear.value}/${+inputMonth.value}/${+inputDay.value}`;
-  console.log(dateStr);
 
   try {
     if (dateStr > currentDateStr) throw new Error(`Must be in the past!`);
@@ -96,7 +96,6 @@ async function checkFormValidity() {
   try {
     await Promise.all([...inputs].map(checkValidity));
     await checkYearValidity();
-    checkLeapYear();
     await checkDayValidity();
     await checkDateValidity();
   } catch (err) {
@@ -111,6 +110,7 @@ async function calculateAge() {
 
   checkMonthHas30Days(previousMonth.toString());
   checkMonthIsFebruary(previousMonth);
+  checkLeapYear(currentYear);
 
   if (monthHas30Days) dayOffset = 30;
   if (monthIsFebruary) dayOffset = dateIsLeapYear ? 29 : 28;
@@ -119,7 +119,6 @@ async function calculateAge() {
   calcMonths = currentMonth - +inputMonth.value;
   calcYears = currentYear - +inputYear.value;
 
-  console.log(calcDays);
   if (calcDays < 0) {
     calcMonths -= 1;
     calcDays += dayOffset;
@@ -128,9 +127,6 @@ async function calculateAge() {
     calcYears -= 1;
     calcMonths += monthOffset;
   }
-  console.log(calcDays);
-  console.log(calcMonths);
-  console.log(calcYears);
 }
 
 ageCalculator.addEventListener("submit", async function (e) {
