@@ -11,11 +11,6 @@ const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
 const currentYear = currentDate.getFullYear();
-const currentDateStr = currentDate
-  .toJSON()
-  .slice(0, 10)
-  .replace(/-/g, "/")
-  .replace(/(?<=\/)0/g, "");
 
 let dateIsLeapYear;
 let monthHas30Days;
@@ -95,10 +90,14 @@ async function checkDayValidity() {
 }
 
 async function checkDateValidity() {
-  const dateStr = `${+inputYear.value}/${+inputMonth.value}/${+inputDay.value}`;
+  const inputDate = `${+inputYear.value}/${+inputMonth.value}/${+inputDay.value}`;
+  const inputDateTime = new Date(inputDate).getTime();
+  const dateDiff = new Date().getTime() - inputDateTime;
+
+  console.log(dateDiff);
 
   try {
-    if (dateStr > currentDateStr) throw new Error(`Must be in the past!`);
+    if (dateDiff < 0) throw new Error(`Must be in the past!`);
   } catch (err) {
     renderError(inputYear, err);
     throw err;
