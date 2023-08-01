@@ -15,6 +15,9 @@ const currentDateStr = currentDate
   .replace(/-/g, "/")
   .replace(/(?<=\/)0/g, "");
 let dateIsLeapYear;
+let calcDays = 0;
+let calcMonths = 0;
+let calcYears = 0;
 
 function renderError(el, err) {
   el.parentNode.querySelector(".error").textContent = err.message;
@@ -91,24 +94,34 @@ async function checkFormValidity() {
 }
 
 async function calculateAge() {
-  let calcDays = 0;
-  let calcMonths = 0;
-  let calcYears = 0;
+  let previousMonth = currentMonth - 1;
+  const monthsWith30Days = [4, 6, 9, 11];
+  const monthHas30Days = monthsWith30Days.some((month) =>
+    previousMonth.toString().includes(month)
+  );
+  const monthIsFebruary = previousMonth === 2;
+
+  const monthOffset = 12;
+  let dayOffset = 31;
 
   calcDays = currentDay - +inputDay.value;
-  calcMonths += currentMonth - +inputMonth.value;
+  calcMonths = currentMonth - +inputMonth.value;
+  calcYears = currentYear - +inputYear.value;
+
+  if (monthHas30Days) dayOffset = 30;
+  if (monthIsFebruary) dayOffset = isLeapYear ? 29 : 28;
+
   console.log(calcDays);
   if (calcDays < 0) {
     calcMonths -= 1;
-    calcDays += 30;
+    calcDays += dayOffset;
   }
   if (calcMonths < 0) {
     calcYears -= 1;
-    calcMonths += 12;
+    calcMonths += monthOffset;
   }
   console.log(calcDays);
   console.log(calcMonths);
-  calcYears += currentYear - +inputYear.value;
   console.log(calcYears);
 }
 
