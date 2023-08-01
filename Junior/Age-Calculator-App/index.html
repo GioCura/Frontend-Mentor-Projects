@@ -10,6 +10,13 @@
       content="Gio Cura's solution to Frontend Mentor's Age Calculator App Challenge"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -28,53 +35,59 @@
       <article class="age-calculator">
         <h1 class="sr-only">Age Calculator</h1>
         <form for="age-calculator" class="age-calculator__form" novalidate>
-          <label for="day">
-            <input
-              type="text"
-              id="day"
-              name="day"
-              placeholder="DD"
-              maxlength="2"
-              pattern="^(0?[1-9]|[12][0-9]|3[01])"
-              required
-              autocomplete="off"
-            />
-            <span class="error"></span>
-          </label>
-          <label for="month">
-            <input
-              type="text"
-              id="month"
-              name="month"
-              placeholder="MM"
-              maxlength="2"
-              pattern="^(1[012]|0?[1-9])$"
-              required
-              autocomplete="off"
-            />
-            <span class="error"></span>
-          </label>
-          <label for="year">
-            <input
-              type="text"
-              id="year"
-              name="year"
-              placeholder="YYYY"
-              pattern="\d+"
-              required
-              autocomplete="off"
-            />
-            <span class="error"></span>
-          </label>
-          <button type="submit" aria-label="calculate age">
-            Calculate Age
-          </button>
+          <div class="inputs-wrapper">
+            <label for="day">
+              <span class="category">Day</span>
+              <input
+                type="text"
+                id="day"
+                name="day"
+                placeholder="DD"
+                maxlength="2"
+                pattern="^(0?[1-9]|[12][0-9]|3[01])"
+                required
+                autocomplete="off"
+              />
+              <span class="error"></span>
+            </label>
+            <label for="month">
+              <span class="category">Month</span>
+              <input
+                type="text"
+                id="month"
+                name="month"
+                placeholder="MM"
+                maxlength="2"
+                pattern="^(1[012]|0?[1-9])$"
+                required
+                autocomplete="off"
+              />
+              <span class="error"></span>
+            </label>
+            <label for="year">
+              <span class="category">Year</span>
+              <input
+                type="text"
+                id="year"
+                name="year"
+                placeholder="YYYY"
+                pattern="\d+"
+                required
+                autocomplete="off"
+              />
+              <span class="error"></span>
+            </label>
+          </div>
+          <div class="button-wrapper">
+            <hr />
+            <button type="submit" aria-label="calculate age"></button>
+          </div>
         </form>
         <section class="results">
           <h2 class="sr-only">Results</h2>
-          <p><span class="result result--years">--</span>years</p>
-          <p><span class="result result--months">--</span>months</p>
-          <p><span class="result result--days">--</span>days</p>
+          <p><span class="result result--years">--</span> years</p>
+          <p><span class="result result--months">--</span> months</p>
+          <p><span class="result result--days">--</span> days</p>
         </section>
       </article>
     </main>

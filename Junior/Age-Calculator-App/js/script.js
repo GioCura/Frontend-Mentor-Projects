@@ -21,12 +21,12 @@ let calcMonths = 0;
 let calcYears = 0;
 
 function renderError(el, err) {
-  el.parentNode.classList.add("error");
+  el.parentNode.classList.add("error-active");
   el.parentNode.querySelector(".error").textContent = err.message;
 }
 
 function clearError(el) {
-  el.parentNode.classList.remove("error");
+  el.parentNode.classList.remove("error-active");
   el.parentNode.querySelector(".error").textContent = "";
 }
 
