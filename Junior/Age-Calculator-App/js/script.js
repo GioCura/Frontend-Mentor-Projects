@@ -5,6 +5,8 @@ const inputs = ageCalculator.querySelectorAll("input");
 const inputYear = document.getElementById("year");
 const inputMonth = document.getElementById("month");
 const inputDay = document.getElementById("day");
+
+const monthsWith30Days = [4, 6, 9, 11];
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
@@ -14,7 +16,11 @@ const currentDateStr = currentDate
   .slice(0, 10)
   .replace(/-/g, "/")
   .replace(/(?<=\/)0/g, "");
+
 let dateIsLeapYear;
+let monthHas30Days;
+let monthIsFebruary;
+
 let calcDays = 0;
 let calcMonths = 0;
 let calcYears = 0;
@@ -23,7 +29,19 @@ function renderError(el, err) {
   el.parentNode.querySelector(".error").textContent = err.message;
 }
 
-// function only allows one error to be thrown.
+function checkLeapYear() {
+  dateIsLeapYear = +inputYear.value % 4 === 0 ? true : false;
+}
+
+function checkMonthHas30Days(el) {
+  if (monthsWith30Days.some((month) => el.includes(month)))
+    monthHas30Days = true;
+}
+
+function checkMonthIsFebruary(month) {
+  if (month === 2) monthIsFebruary = true;
+}
+
 async function checkValidity(entry) {
   try {
     if (entry.validity.valid) return;
@@ -46,16 +64,9 @@ async function checkYearValidity() {
   }
 }
 
-function checkLeapYear() {
-  dateIsLeapYear = +inputYear.value % 4 === 0 ? true : false;
-}
-
 async function checkDayValidity() {
-  const monthsWith30Days = [4, 6, 9, 11];
-  const monthHas30Days = monthsWith30Days.some((month) =>
-    inputMonth.value.includes(month)
-  );
-  const monthIsFebruary = +inputMonth.value === 2;
+  checkMonthHas30Days(inputMonth.value);
+  checkMonthIsFebruary(+inputMonth.value);
 
   try {
     if (
@@ -64,7 +75,7 @@ async function checkDayValidity() {
     )
       throw new Error(`Must be a valid date`);
   } catch (err) {
-    renderError(inputMonth, err);
+    renderError(inputDay, err);
     throw err;
   }
 }
@@ -95,21 +106,18 @@ async function checkFormValidity() {
 
 async function calculateAge() {
   let previousMonth = currentMonth - 1;
-  const monthsWith30Days = [4, 6, 9, 11];
-  const monthHas30Days = monthsWith30Days.some((month) =>
-    previousMonth.toString().includes(month)
-  );
-  const monthIsFebruary = previousMonth === 2;
-
-  const monthOffset = 12;
   let dayOffset = 31;
+  const monthOffset = 12;
+
+  checkMonthHas30Days(previousMonth.toString());
+  checkMonthIsFebruary(previousMonth);
+
+  if (monthHas30Days) dayOffset = 30;
+  if (monthIsFebruary) dayOffset = dateIsLeapYear ? 29 : 28;
 
   calcDays = currentDay - +inputDay.value;
   calcMonths = currentMonth - +inputMonth.value;
   calcYears = currentYear - +inputYear.value;
-
-  if (monthHas30Days) dayOffset = 30;
-  if (monthIsFebruary) dayOffset = isLeapYear ? 29 : 28;
 
   console.log(calcDays);
   if (calcDays < 0) {
