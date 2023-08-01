@@ -6,6 +6,10 @@ const inputYear = document.getElementById("year");
 const inputMonth = document.getElementById("month");
 const inputDay = document.getElementById("day");
 
+const resultYears = document.querySelector(".result--years");
+const resultMonths = document.querySelector(".result--months");
+const resultDays = document.querySelector(".result--days");
+
 const monthsWith30Days = [4, 6, 9, 11];
 const currentDate = new Date();
 const currentDay = currentDate.getDate();
@@ -94,8 +98,6 @@ async function checkDateValidity() {
   const inputDateTime = new Date(inputDate).getTime();
   const dateDiff = new Date().getTime() - inputDateTime;
 
-  console.log(dateDiff);
-
   try {
     if (dateDiff < 0) throw new Error(`Must be in the past!`);
   } catch (err) {
@@ -140,10 +142,28 @@ async function calculateAge() {
   }
 }
 
+// note that you make a new function that executes the parent function in the setTimtout,
+// instead of directly calling the parent function. this leads to the delay needed to make the countdown work.
+function increaseElementNumber(i, el, endNumber) {
+  let speed = 30;
+  if (endNumber >= 100 && endNumber <= 999) speed = 10;
+  if (endNumber >= 1000) speed = 1;
+
+  if (i <= endNumber) {
+    el.textContent = i;
+    setTimeout(function () {
+      increaseElementNumber(i + 1, el, endNumber);
+    }, speed);
+  }
+}
+
 function renderAge() {
-  document.querySelector(".result--years").textContent = calcYears;
-  document.querySelector(".result--months").textContent = calcMonths;
-  document.querySelector(".result--days").textContent = calcDays;
+  // document.querySelector(".result--years").textContent = calcYears;
+  // document.querySelector(".result--months").textContent = calcMonths;
+  // document.querySelector(".result--days").textContent = calcDays;
+  increaseElementNumber(0, resultYears, calcYears);
+  increaseElementNumber(0, resultMonths, calcMonths);
+  increaseElementNumber(0, resultDays, calcDays);
 }
 
 ageCalculator.addEventListener("submit", async function (e) {
