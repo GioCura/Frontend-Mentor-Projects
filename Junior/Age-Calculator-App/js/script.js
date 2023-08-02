@@ -17,158 +17,166 @@ const currentDay = currentDate.getDate();
 const currentMonth = currentDate.getMonth() + 1;
 const currentYear = currentDate.getFullYear();
 
-let dateIsLeapYear;
-let monthHas30Days;
-let monthIsFebruary;
+class App {
+  #dateIsLeapYear;
+  #monthHas30Days;
+  #monthIsFebruary;
+  #calcDays = 0;
+  #calcMonths = 0;
+  #calcYears = 0;
 
-let calcDays = 0;
-let calcMonths = 0;
-let calcYears = 0;
+  constructor() {
+    ageCalculator.addEventListener("submit", this._newAge.bind(this));
+  }
 
-function renderError(el, err) {
-  el.parentNode.classList.add("error-active");
-  el.setAttribute("aria-invalid", true);
-  el.parentNode.querySelector(".error").textContent = err.message;
-}
+  _renderError(el, err) {
+    el.parentNode.classList.add("error-active");
+    el.setAttribute("aria-invalid", true);
+    el.parentNode.querySelector(".error").textContent = err.message;
+  }
 
-function clearError(el) {
-  el.parentNode.classList.remove("error-active");
-  el.removeAttribute("aria-invalid");
-  el.parentNode.querySelector(".error").textContent = "";
-}
+  _clearError(el) {
+    el.parentNode.classList.remove("error-active");
+    el.removeAttribute("aria-invalid");
+    el.parentNode.querySelector(".error").textContent = "";
+  }
 
-function checkLeapYear(year) {
-  dateIsLeapYear = year % 4 === 0 ? true : false;
-}
+  _checkLeapYear(year) {
+    this.#dateIsLeapYear = year % 4 === 0 ? true : false;
+  }
 
-function checkMonthHas30Days(el) {
-  monthHas30Days = monthsWith30Days.some((month) => el.includes(month))
-    ? true
-    : false;
-}
+  _checkMonthHas30Days(el) {
+    this.#monthHas30Days = monthsWith30Days.some((month) => el.includes(month))
+      ? true
+      : false;
+  }
 
-function checkMonthIsFebruary(month) {
-  monthIsFebruary = month === 2 ? true : false;
-}
+  _checkMonthIsFebruary(month) {
+    this.#monthIsFebruary = month === 2 ? true : false;
+  }
 
-async function checkValidity(entry) {
-  try {
-    if (entry.validity.valid) clearError(entry);
-    if (entry.validity.valueMissing) throw new Error(`This field is required`);
-    if (entry.validity.patternMismatch)
-      throw new Error(`Must be a valid ${entry.id}`);
-  } catch (err) {
-    renderError(entry, err);
-    throw err;
+  async _checkValidity(entry) {
+    try {
+      if (entry.validity.valid) this._clearError(entry);
+      if (entry.validity.valueMissing)
+        throw new Error(`This field is required`);
+      if (entry.validity.patternMismatch)
+        throw new Error(`Must be a valid ${entry.id}`);
+    } catch (err) {
+      this._renderError(entry, err);
+      throw err;
+    }
+  }
+
+  async _checkYearValidity() {
+    try {
+      if (+inputYear.value > currentYear)
+        throw new Error("Must be past or present year!");
+    } catch (err) {
+      this._renderError(inputYear, err);
+      throw err;
+    }
+  }
+
+  async _checkDayValidity() {
+    this._checkLeapYear(+inputYear.value);
+    this._checkMonthHas30Days(inputMonth.value);
+    this._checkMonthIsFebruary(+inputMonth.value);
+
+    try {
+      if (
+        (this.#monthHas30Days && +inputDay.value > 30) ||
+        (this.#monthIsFebruary &&
+          +inputDay.value > (this.#dateIsLeapYear ? 29 : 28))
+      )
+        throw new Error(`Must be a valid date`);
+    } catch (err) {
+      this._renderError(inputDay, err);
+      throw err;
+    }
+  }
+
+  async _checkDateValidity() {
+    const inputDate = `${+inputYear.value}/${+inputMonth.value}/${+inputDay.value}`;
+    const inputDateTime = new Date(inputDate).getTime();
+    const dateDiff = new Date().getTime() - inputDateTime;
+
+    try {
+      if (dateDiff < 0) throw new Error(`Must be in the past!`);
+    } catch (err) {
+      this._renderError(inputYear, err);
+      throw err;
+    }
+  }
+
+  async _checkFormValidity() {
+    try {
+      await Promise.all([...inputs].map(this._checkValidity.bind(this)));
+      await this._checkYearValidity();
+      await this._checkDayValidity();
+      await this._checkDateValidity();
+    } catch (err) {
+      throw err;
+    }
+  }
+
+  async _calculateAge() {
+    let previousMonth = currentMonth - 1;
+    let dayOffset = 31;
+    const monthOffset = 12;
+    this.#calcDays = currentDay - +inputDay.value;
+    this.#calcMonths = currentMonth - +inputMonth.value;
+    this.#calcYears = currentYear - +inputYear.value;
+
+    this._checkMonthHas30Days(previousMonth.toString());
+    this._checkMonthIsFebruary(previousMonth);
+    this._checkLeapYear(currentYear);
+
+    if (this.#monthHas30Days) dayOffset = 30;
+    if (this.#monthIsFebruary) dayOffset = this.#dateIsLeapYear ? 29 : 28;
+
+    if (this.#calcDays < 0) {
+      this.#calcMonths -= 1;
+      this.#calcDays += dayOffset;
+    }
+
+    if (this.#calcMonths < 0) {
+      this.#calcYears -= 1;
+      this.#calcMonths += monthOffset;
+    }
+  }
+
+  _increaseElementNumber(i, el, endNumber) {
+    let speed = 30;
+    if (endNumber >= 100 && endNumber <= 999) speed = 10;
+    if (endNumber >= 1000) speed = 1;
+
+    if (i <= endNumber) {
+      el.textContent = i;
+      setTimeout(() => {
+        this._increaseElementNumber(i + 1, el, endNumber);
+      }, speed);
+    }
+  }
+
+  _renderAge() {
+    this._increaseElementNumber(0, resultYears, this.#calcYears);
+    this._increaseElementNumber(0, resultMonths, this.#calcMonths);
+    this._increaseElementNumber(0, resultDays, this.#calcDays);
+    resultsNotifier.textContent = `Calculated age is ${this.#calcYears} years,
+    ${this.#calcMonths} months, and ${this.#calcDays} days`;
+  }
+
+  async _newAge(e) {
+    try {
+      e.preventDefault();
+      await this._checkFormValidity();
+      await this._calculateAge();
+      this._renderAge();
+    } catch (err) {
+      console.log(err);
+    }
   }
 }
 
-async function checkYearValidity() {
-  try {
-    if (+inputYear.value > currentYear)
-      throw new Error("Must be past or present year!");
-  } catch (err) {
-    renderError(inputYear, err);
-    throw err;
-  }
-}
-
-async function checkDayValidity() {
-  checkLeapYear(+inputYear.value);
-  checkMonthHas30Days(inputMonth.value);
-  checkMonthIsFebruary(+inputMonth.value);
-
-  try {
-    if (
-      (monthHas30Days && +inputDay.value > 30) ||
-      (monthIsFebruary && +inputDay.value > (dateIsLeapYear ? 29 : 28))
-    )
-      throw new Error(`Must be a valid date`);
-  } catch (err) {
-    renderError(inputDay, err);
-    throw err;
-  }
-}
-
-async function checkDateValidity() {
-  const inputDate = `${+inputYear.value}/${+inputMonth.value}/${+inputDay.value}`;
-  const inputDateTime = new Date(inputDate).getTime();
-  const dateDiff = new Date().getTime() - inputDateTime;
-
-  try {
-    if (dateDiff < 0) throw new Error(`Must be in the past!`);
-  } catch (err) {
-    renderError(inputYear, err);
-    throw err;
-  }
-}
-
-async function checkFormValidity() {
-  try {
-    await Promise.all([...inputs].map(checkValidity));
-    await checkYearValidity();
-    await checkDayValidity();
-    await checkDateValidity();
-  } catch (err) {
-    throw err;
-  }
-}
-
-async function calculateAge() {
-  let previousMonth = currentMonth - 1;
-  let dayOffset = 31;
-  const monthOffset = 12;
-  calcDays = currentDay - +inputDay.value;
-  calcMonths = currentMonth - +inputMonth.value;
-  calcYears = currentYear - +inputYear.value;
-
-  checkMonthHas30Days(previousMonth.toString());
-  checkMonthIsFebruary(previousMonth);
-  checkLeapYear(currentYear);
-
-  if (monthHas30Days) dayOffset = 30;
-  if (monthIsFebruary) dayOffset = dateIsLeapYear ? 29 : 28;
-
-  if (calcDays < 0) {
-    calcMonths -= 1;
-    calcDays += dayOffset;
-  }
-
-  if (calcMonths < 0) {
-    calcYears -= 1;
-    calcMonths += monthOffset;
-  }
-}
-
-function increaseElementNumber(i, el, endNumber) {
-  let speed = 30;
-  if (endNumber >= 100 && endNumber <= 999) speed = 10;
-  if (endNumber >= 1000) speed = 1;
-
-  if (i <= endNumber) {
-    el.textContent = i;
-    setTimeout(function () {
-      increaseElementNumber(i + 1, el, endNumber);
-    }, speed);
-  }
-}
-
-function renderAge() {
-  increaseElementNumber(0, resultYears, calcYears);
-  increaseElementNumber(0, resultMonths, calcMonths);
-  increaseElementNumber(0, resultDays, calcDays);
-  resultsNotifier.textContent = `Calculated age is ${calcYears} years, ${calcMonths} 
-  months, and ${calcDays} days`;
-}
-
-ageCalculator.addEventListener("submit", async function (e) {
-  try {
-    e.preventDefault();
-    await checkFormValidity();
-    await calculateAge();
-    renderAge();
-    console.log("success");
-  } catch (err) {
-    console.log(err);
-  }
-});
+const app = new App();
