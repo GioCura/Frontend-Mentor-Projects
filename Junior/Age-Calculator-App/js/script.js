@@ -39,19 +39,13 @@ function checkLeapYear(year) {
 }
 
 function checkMonthHas30Days(el) {
-  if (monthsWith30Days.some((month) => el.includes(month))) {
-    monthHas30Days = true;
-  } else {
-    monthHas30Days = false;
-  }
+  monthHas30Days = monthsWith30Days.some((month) => el.includes(month))
+    ? true
+    : false;
 }
 
 function checkMonthIsFebruary(month) {
-  if (month === 2) {
-    monthIsFebruary = true;
-  } else {
-    monthIsFebruary = false;
-  }
+  monthIsFebruary = month === 2 ? true : false;
 }
 
 async function checkValidity(entry) {
@@ -136,14 +130,13 @@ async function calculateAge() {
     calcMonths -= 1;
     calcDays += dayOffset;
   }
+
   if (calcMonths < 0) {
     calcYears -= 1;
     calcMonths += monthOffset;
   }
 }
 
-// note that you make a new function that executes the parent function in the setTimtout,
-// instead of directly calling the parent function. this leads to the delay needed to make the countdown work.
 function increaseElementNumber(i, el, endNumber) {
   let speed = 30;
   if (endNumber >= 100 && endNumber <= 999) speed = 10;
