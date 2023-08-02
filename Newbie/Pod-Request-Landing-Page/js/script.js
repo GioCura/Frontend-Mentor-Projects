@@ -52,7 +52,7 @@ function emailSuccess() {
 }
 
 // Form validation upon submission
-function validateFormSubmission() {
+function validateFormSubmission(e) {
   if (!ctaInput.validity.valid) {
     e.preventDefault();
     emailError();
