@@ -158,9 +158,6 @@ function increaseElementNumber(i, el, endNumber) {
 }
 
 function renderAge() {
-  // document.querySelector(".result--years").textContent = calcYears;
-  // document.querySelector(".result--months").textContent = calcMonths;
-  // document.querySelector(".result--days").textContent = calcDays;
   increaseElementNumber(0, resultYears, calcYears);
   increaseElementNumber(0, resultMonths, calcMonths);
   increaseElementNumber(0, resultDays, calcDays);

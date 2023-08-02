@@ -9,7 +9,7 @@ html {
 }
 
 :root {
-  --Purple: hsl(259, 100%, 65%);
+  --purple: hsl(259, 100%, 65%);
   --lightred: hsl(0, 100%, 67%);
   --white: hsl(0, 0%, 100%);
   --offwhite: hsl(0, 0%, 94%);
@@ -44,6 +44,7 @@ body {
 
 main {
   margin: 8.8rem 1.6rem;
+  max-width: 60rem;
 }
 
 .age-calculator {
@@ -80,17 +81,22 @@ main {
   width: 100%;
   border-radius: 8px;
   padding: 1.2rem 1.2rem 1.2rem 1.6rem;
-  font-size: 20px;
+  font-size: 2rem;
   font-family: var(--font);
   font-weight: var(--fw-2);
-  border: 2px solid #dcdcdc;
+  border: 1px solid #dcdcdc;
+  outline: none;
   letter-spacing: 0.16px;
 }
 
 .inputs-wrapper input::placeholder {
-  font-weight: var(--fw-3);
-  font-size: 2;
+  font-weight: var(--fw-2);
+  font-size: 2rem;
   letter-spacing: 0.16px;
+}
+
+.inputs-wrapper input:focus {
+  border: 1px solid var(--purple);
 }
 
 .error-active input {
@@ -133,7 +139,7 @@ main {
   background: url(../assets/images/icon-arrow.svg) no-repeat;
   background-size: 3rem;
   background-position: center;
-  background-color: var(--Purple);
+  background-color: var(--purple);
   transition: background 0.3s;
   cursor: pointer;
 }
@@ -153,5 +159,5 @@ main {
 }
 
 .result {
-  color: var(--Purple);
+  color: var(--purple);
 }

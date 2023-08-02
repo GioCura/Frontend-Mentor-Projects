@@ -1,0 +1,58 @@
+@media (min-width: 1200px) {
+  body {
+    align-items: center;
+  }
+
+  main {
+    max-width: initial;
+    width: 84rem;
+    margin: 0;
+  }
+
+  .age-calculator {
+    border-radius: 24px 24px 200px 24px;
+    padding: 5.6rem;
+  }
+
+  .age--calculator__form {
+    margin-bottom: 0;
+  }
+
+  .inputs-wrapper label {
+    font-size: 1.4rem;
+  }
+
+  .category {
+    margin-bottom: 0.8rem;
+  }
+
+  .inputs-wrapper {
+    width: 54.4rem;
+    gap: 3.2rem;
+    margin-bottom: 0;
+  }
+
+  .inputs-wrapper input {
+    font-size: 3.2rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  .inputs-wrapper input::placeholder {
+    font-size: 3.2rem;
+  }
+
+  .button-wrapper {
+    height: 9.6rem;
+  }
+
+  .button-wrapper button {
+    right: 0;
+    width: 9.6rem;
+    background-size: 4.4rem;
+  }
+
+  .results {
+    font-size: 10.4rem;
+    line-height: 11.5rem;
+  }
+}
