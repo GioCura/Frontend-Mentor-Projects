@@ -26,11 +26,13 @@ let calcYears = 0;
 
 function renderError(el, err) {
   el.parentNode.classList.add("error-active");
+  el.setAttribute("aria-invalid", true);
   el.parentNode.querySelector(".error").textContent = err.message;
 }
 
 function clearError(el) {
   el.parentNode.classList.remove("error-active");
+  el.removeAttribute("aria-invalid");
   el.parentNode.querySelector(".error").textContent = "";
 }
 
