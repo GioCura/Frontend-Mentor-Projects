@@ -9,6 +9,7 @@ const inputDay = document.getElementById("day");
 const resultYears = document.querySelector(".result--years");
 const resultMonths = document.querySelector(".result--months");
 const resultDays = document.querySelector(".result--days");
+const resultsNotifier = document.querySelector(".results__notifier");
 
 const monthsWith30Days = [4, 6, 9, 11];
 const currentDate = new Date();
@@ -156,6 +157,8 @@ function renderAge() {
   increaseElementNumber(0, resultYears, calcYears);
   increaseElementNumber(0, resultMonths, calcMonths);
   increaseElementNumber(0, resultDays, calcDays);
+  resultsNotifier.textContent = `Calculated age is ${calcYears} years, ${calcMonths} 
+  months, and ${calcDays} days`;
 }
 
 ageCalculator.addEventListener("submit", async function (e) {
