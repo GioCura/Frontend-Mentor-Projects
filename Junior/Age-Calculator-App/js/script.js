@@ -45,8 +45,10 @@ class App {
     this.#dateIsLeapYear = year % 4 === 0 ? true : false;
   }
 
-  _checkMonthHas30Days(el) {
-    this.#monthHas30Days = monthsWith30Days.some((month) => el.includes(month))
+  _checkMonthHas30Days(month) {
+    this.#monthHas30Days = monthsWith30Days.some((monthwith30Days) =>
+      month.includes(monthwith30Days)
+    )
       ? true
       : false;
   }

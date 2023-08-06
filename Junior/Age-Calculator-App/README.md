@@ -34,7 +34,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot - Desktop](/assets/images/screenhot.png)
+![Screenshot - Desktop](../assets/images/screenshot.png)
 
 ### Links
 
