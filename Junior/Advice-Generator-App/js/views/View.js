@@ -3,12 +3,12 @@ export default class View {
     el.textContent = "";
   }
 
-  renderLoader = function () {
+  renderLoader() {
     const markup = `<span class="loading"></span>`;
     this._messageContainer.innerHTML = markup;
-  };
+  }
 
-  renderError = function (message) {
+  renderError(message) {
     this._messageContainer.textContent = `${message}`;
-  };
+  }
 }
