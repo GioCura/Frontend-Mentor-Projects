@@ -3,6 +3,7 @@ import { API__URL } from "./config.js";
 
 export const state = {
   user: {
+    avatarUrl: "",
     name: "",
     regDate: "",
     userName: "",
@@ -17,19 +18,12 @@ export const state = {
   },
 };
 
-const convertDate = function (rawDate) {
-  const date = new Date(rawDate);
-  const dateStr = `${date.getDate()} ${date
-    .toString()
-    .slice(4, 7)} ${date.getFullYear()}`;
-  return dateStr;
-};
-
 const createUserObject = function (data) {
   return {
+    avatarUrl: data.avatar_url,
     name: data.name,
-    regDate: convertDate(data.created_at),
-    userName: `@${data.login}`,
+    regDate: data.created_at,
+    userName: data.login,
     bio: data.bio,
     repos: data.public_repos,
     followers: data.followers,

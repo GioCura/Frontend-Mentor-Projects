@@ -23,7 +23,32 @@
     <title>Frontend Mentor | GitHub user search app</title>
   </head>
   <body>
-    devfinder Light Dark Search GitHub username... Search Joined Repos Followers
-    Following
+    <header>
+      <h1>devfinder</h1>
+      <button class="theme">
+        <span class="theme__icon"></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="searchbar">
+        <h2 class="sr-only">Searchbar</h2>
+        <form>
+          <input
+            type="text"
+            placeholder="Search GitHub username..."
+            aria-label="Write GitHub user name here"
+          />
+          <button>Search</button>
+        </form>
+      </section>
+
+      <section class="result">
+        <h2 class="sr-only">Results</h2>
+        <article class="user">
+          <noscript>This app needs JavaScript to work.</noscript>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
