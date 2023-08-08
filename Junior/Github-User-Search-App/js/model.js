@@ -35,9 +35,9 @@ const createUserObject = function (data) {
   };
 };
 
-export const loadUser = async function () {
+export const loadUser = async function (username) {
   try {
-    const data = await AJAX(API__URL);
+    const data = await AJAX(`${API__URL}${username}`);
     console.log(data);
     state.user = createUserObject(data);
     console.log(state.user);

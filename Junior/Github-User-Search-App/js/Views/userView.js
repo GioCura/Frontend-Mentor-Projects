@@ -62,12 +62,14 @@ class UserView extends View {
         <a href="https://twitter.com/${this._data.twitter}" target="_blank">
           ${checkAvailabilityText(this._data.twitter)}
         </a>
-        </li>
+      </li>
       <li ${checkAvailabilityClass(this._data.company)}>
         <span></span>
-        <span>
+        <a href="https://github.com/${
+          this._data.company ? this._data.company.slice(1) : ""
+        }" target="_blank">
           ${checkAvailabilityText(this._data.company)}
-        </span>
+        </a>
       </li>
     </ul>
     `;
