@@ -5,16 +5,16 @@ import adviceView from "./views/adviceView.js";
 
 const controlAdvice = async function () {
   try {
-    if (adviceView._buttonIsDisabled) return;
+    if (adviceView.buttonIsDisabled) return;
     adviceView.renderLoader();
-    adviceView._buttonSpin();
-    adviceView._setFetchingState();
+    adviceView.buttonSpin();
+    adviceView.setFetchingState();
     await model.loadAdvice();
-    adviceView._renderAdvice(model.state.advice);
-    adviceView._setReadyState(model.state.advice);
+    adviceView.renderAdvice(model.state.advice);
+    adviceView.setReadyState(model.state.advice);
   } catch (err) {
     adviceView.renderError(err);
-    adviceView._setReadyState(model.state.advice);
+    adviceView.setReadyState(model.state.advice);
   }
 };
 

@@ -10,7 +10,7 @@ class AdviceView extends View {
   _id = document.querySelector(".advice__id");
   _btn = document.querySelector(".advice__btn");
   _notifier = document.querySelector(".notifier");
-  _buttonIsDisabled = false;
+  buttonIsDisabled = false;
 
   _clearNotifier() {
     setTimeout(() => {
@@ -18,7 +18,7 @@ class AdviceView extends View {
     }, NOTIFIER_TIMEOUT);
   }
 
-  _buttonSpin() {
+  buttonSpin() {
     this._btn.style.animation = "0.5s spin ease-out";
 
     this._btn.addEventListener("animationend", function () {
@@ -26,23 +26,23 @@ class AdviceView extends View {
     });
   }
 
-  _setReadyState(obj) {
+  setReadyState(obj) {
     setTimeout(() => {
-      this._buttonIsDisabled = false;
+      this.buttonIsDisabled = false;
       this._notifier.textContent = `Now showing advice number ${obj.id}`;
       this._btn.classList.remove("disabled");
       this._clearNotifier();
     }, READYSTATE_TIMEOUT);
   }
 
-  _setFetchingState() {
-    this._buttonIsDisabled = true;
+  setFetchingState() {
+    this.buttonIsDisabled = true;
     this._title.style.display = "none";
     this._notifier.textContent = "Getting new advice";
     this._btn.classList.add("disabled");
   }
 
-  _renderAdvice(data) {
+  renderAdvice(data) {
     this._title.style.display = "block";
     this._id.textContent = data.id;
     this._messageContainer.innerHTML = `“${data.advice}”`;
