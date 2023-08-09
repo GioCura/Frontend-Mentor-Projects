@@ -95,6 +95,7 @@ main {
 }
 
 .searchbar__form {
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
@@ -126,10 +127,19 @@ main {
   font-size: 1.4rem;
   color: white;
   font-weight: 700;
-  padding: 0 1.4rem 0 1.8rem;
+  padding: 0 1.6rem;
   border-radius: 10px;
   background-color: #0079ff;
   height: 100%;
+}
+
+.error-message {
+  position: absolute;
+  color: #f74646;
+  font-size: 1.3rem;
+  font-weight: 700;
+  left: 5rem;
+  top: -1rem;
 }
 
 /* RESULT */
@@ -145,7 +155,8 @@ main {
     "bio bio"
     "stats stats"
     "links links"
-    "loader loader";
+    "loader loader"
+    "error error";
   grid-template-columns: min-content;
   font-size: 1.3rem;
   margin-bottom: 7.9rem;
@@ -171,7 +182,7 @@ main {
 .user__username {
   color: #0079ff;
   margin-bottom: 0.4rem;
-  display: block;
+  display: inline-block;
 }
 
 .user__bio {
@@ -246,9 +257,19 @@ main {
   display: inline-block;
   width: 10rem;
   height: 10rem;
-  background: url(../assets/loader.gif) no-repeat;
+  background: url(../assets/icon-loader.gif) no-repeat;
   background-size: contain;
   grid-area: loader;
+  justify-self: center;
+}
+
+.user .error-icon {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  background: url(../assets/icon-error.png) no-repeat;
+  background-size: contain;
+  grid-area: error;
   justify-self: center;
 }
 

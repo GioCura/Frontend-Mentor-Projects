@@ -3,7 +3,7 @@ import { FETCH_TIMEOUT } from "./config.js";
 const timeout = function (time) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
-      reject(new Error(`Results took too long to load! Please try again.`));
+      reject(new Error(`Search took too long! Please try again.`));
     }, time);
   });
 };

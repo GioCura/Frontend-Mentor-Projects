@@ -2,6 +2,7 @@ import View from "./view.js";
 
 class UserView extends View {
   _parentElement = document.querySelector(".user");
+  _errorContainer = this._parentElement;
 
   _generateMarkup() {
     const formatDate = function (rawDate) {

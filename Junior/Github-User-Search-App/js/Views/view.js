@@ -16,16 +16,8 @@ export default class View {
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }
 
-  // to do
-  renderError() {
-    const markup = ``;
-    this._clear();
-    this._parentElement.insertAdjacentHTML("afterbegin", markup);
-  }
-
-  // to do
-  renderClearBtn() {
-    const markup = ``;
+  renderErrorIcon() {
+    const markup = `<span class="error-icon"></span>`;
     this._clear();
     this._parentElement.insertAdjacentHTML("afterbegin", markup);
   }

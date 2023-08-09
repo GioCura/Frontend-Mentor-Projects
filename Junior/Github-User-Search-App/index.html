@@ -31,7 +31,7 @@
   </head>
   <body>
     <header>
-      <h1><a href="#" aria-label="devfinder home">devfinder</a></h1>
+      <h1>devfinder</h1>
       <button class="theme">
         dark
         <svg
@@ -52,14 +52,16 @@
     <main>
       <section class="searchbar">
         <h2 class="sr-only">Searchbar</h2>
-        <form class="searchbar__form">
+        <form class="searchbar__form" novalidate>
           <span class="searchbar__icon"></span>
           <input
-            type="search"
+            type="text"
+            class="searchbar__input"
             placeholder="Search GitHub username..."
             aria-label="Write GitHub user name here"
           />
           <button class="searchbar__btn">Search</button>
+          <div class="error-container"></div>
         </form>
       </section>
 
