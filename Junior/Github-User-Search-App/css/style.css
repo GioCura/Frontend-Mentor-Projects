@@ -274,8 +274,12 @@ main {
 }
 
 .unavailable {
-  pointer-events: none;
+  /* pointer-events: none; */
   color: inherit;
   text-decoration: none;
   opacity: 0.5;
+}
+
+.unavailable a:hover {
+  text-decoration: none;
 }

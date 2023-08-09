@@ -24,7 +24,9 @@ class UserView extends View {
     return `
     <img src="${this._data.avatarUrl}" alt="The avatar of ${this._data.name}" />
     <div class=user__personal>
-      <h3 class="user__name">${this._data.name}</h3>
+      <h3 class="user__name">${
+        this._data.name ? this._data.name : this._data.userName
+      }</h3>
       <a href="https://github.com/${
         this._data.userName
       }" class="user__username" target="_blank">@${this._data.userName}</a>
@@ -56,21 +58,29 @@ class UserView extends View {
       </li>
       <li ${checkAvailabilityClass(this._data.blog)}>
         <span class="user__icon user__icon--blog"></span>
-        <a href="${this._data.blog}" target="_blank">
+        <a ${
+          this._data.blog ? `href="${this._data.blog}` : ""
+        }" target="_blank">
           ${checkAvailabilityText(this._data.blog)}
         </a>
       </li>
       <li ${checkAvailabilityClass(this._data.twitter)}>
         <span class="user__icon user__icon--twitter"></span>
-        <a href="https://twitter.com/${this._data.twitter}" target="_blank">
+        <a ${
+          this._data.twitter
+            ? `href="https://twitter.com/${this._data.twitter}"`
+            : ""
+        } target="_blank">
           ${checkAvailabilityText(this._data.twitter)}
         </a>
       </li>
       <li ${checkAvailabilityClass(this._data.company)}>
         <span class="user__icon user__icon--company"></span>
-        <a href="https://github.com/${
-          this._data.company ? this._data.company.slice(1) : ""
-        }" target="_blank">
+        <a ${
+          this._data.company
+            ? `href="https://github.com/${this._data.company.slice(1)}"`
+            : ""
+        } target="_blank">
           ${checkAvailabilityText(this._data.company)}
         </a>
       </li>
