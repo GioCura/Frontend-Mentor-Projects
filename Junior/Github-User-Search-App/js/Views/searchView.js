@@ -1,7 +1,7 @@
 import View from "./view.js";
 
 class SearchView extends View {
-  _parentElement = document.querySelector(".searchbar form");
+  _parentElement = document.querySelector(".searchbar__form");
 
   getQuery() {
     const query = this._parentElement.querySelector(".searchbar input").value;

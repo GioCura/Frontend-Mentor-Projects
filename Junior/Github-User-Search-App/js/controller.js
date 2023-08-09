@@ -5,9 +5,9 @@ import { DEFAULT_USER } from "./config.js";
 
 const controlUser = async function (query) {
   try {
-    UserView.renderLoader();
     if (!query) query = SearchView.getQuery();
     if (!query) return;
+    UserView.renderLoader();
     await model.loadUser(query);
     UserView.render(model.state.user);
   } catch (err) {

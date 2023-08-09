@@ -1,5 +1,260 @@
-.unavailable a {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+a {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  padding: 0 2.4rem;
+  min-width: 37.5rem;
+  background-color: #f6f8ff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 3.1rem 0 3.6rem;
+  margin-bottom: 3.6rem;
+}
+
+header h1 {
+  font-size: 2.6rem;
+}
+
+header .theme {
+  display: flex;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.25rem;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+/* MAIN */
+main {
+  width: 100%;
+}
+
+/* SEARCHBAR */
+
+.searchbar {
+  margin-bottom: 1.6rem;
+}
+
+.searchbar__form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  background-color: white;
+  border-radius: 15px;
+  padding: 0.7rem 0.7rem 0.7rem 1.6rem;
+  height: 6rem;
+  box-shadow: 0px 16px 30px -10px rgba(70, 95, 187, 0.1986);
+}
+
+.searchbar__icon {
+  width: 2rem;
+  height: 2rem;
+  background: url(../assets/icon-search.svg) no-repeat;
+  background-size: contain;
+  margin-right: 0.9rem;
+}
+
+.searchbar__form input {
+  flex: 1;
+  margin-right: 0.9rem;
+  font-family: "Space Mono", monospace;
+  line-height: 2.5rem;
+}
+
+.searchbar__btn {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 700;
+  padding: 0 1.4rem 0 1.8rem;
+  border-radius: 10px;
+  background-color: #0079ff;
+  height: 100%;
+}
+
+/* RESULT */
+
+.user {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 16px 30px -10px rgba(70, 95, 187, 0.1986);
+  padding: 3.3rem 2.4rem 4.8rem;
+  display: grid;
+  grid-template-areas:
+    "img person"
+    "bio bio"
+    "stats stats"
+    "links links"
+    "loader loader";
+  grid-template-columns: min-content;
+  font-size: 1.3rem;
+  margin-bottom: 7.9rem;
+}
+
+.user img {
+  width: 7rem;
+  border-radius: 100%;
+  grid-area: img;
+  margin-right: 1.9rem;
+  margin-bottom: 3.3rem;
+}
+
+.user__personal {
+  grid-area: person;
+}
+
+.user__name {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.user__username {
+  color: #0079ff;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.user__bio {
+  grid-area: bio;
+  line-height: 2.5rem;
+  margin-bottom: 2.3rem;
+}
+
+.user__stats {
+  grid-area: stats;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  padding: 1.9rem 0;
+  border-radius: 10px;
+  background: #f6f8ff;
+  margin-bottom: 2.4rem;
+}
+
+.user__stats h4 {
+  font-size: 1.1rem;
+}
+
+.user__stats p {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.user__links {
+  grid-area: links;
+}
+
+.user__links li:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.user__icon {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: bottom;
+  margin-right: 1.3rem;
+}
+
+.user__icon--location {
+  width: 1.375rem;
+  height: 2rem;
+  background: url(../assets/icon-location.svg);
+  margin-right: 1.925rem;
+}
+
+.user__icon--blog {
+  width: 2rem;
+  height: 2rem;
+  background: url(../assets/icon-website.svg);
+}
+
+.user__icon--twitter {
+  width: 2rem;
+  height: 1.625rem;
+  background: url(../assets/icon-twitter.svg);
+  vertical-align: sub;
+}
+
+.user__icon--company {
+  width: 2rem;
+  height: 2rem;
+  background: url(../assets/icon-company.svg);
+}
+
+.user .loader {
+  display: inline-block;
+  width: 10rem;
+  height: 10rem;
+  background: url(../assets/loader.gif) no-repeat;
+  background-size: contain;
+  grid-area: loader;
+  justify-self: center;
+}
+
+.unavailable {
   pointer-events: none;
   color: inherit;
   text-decoration: none;
+  opacity: 0.5;
 }

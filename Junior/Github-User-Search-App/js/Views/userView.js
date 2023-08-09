@@ -22,12 +22,14 @@ class UserView extends View {
 
     return `
     <img src="${this._data.avatarUrl}" alt="The avatar of ${this._data.name}" />
-    <h3 class="user__name">${this._data.name}</h3>
-    <a href="https://github.com/${
-      this._data.userName
-    }" class="user__username" target="_blank">@${this._data.userName}</a>
-    <p class="user__regdate">Joined ${formatDate(this._data.regDate)}</p>
-    <p class="bio">
+    <div class=user__personal>
+      <h3 class="user__name">${this._data.name}</h3>
+      <a href="https://github.com/${
+        this._data.userName
+      }" class="user__username" target="_blank">@${this._data.userName}</a>
+      <p class="user__regdate">Joined ${formatDate(this._data.regDate)}</p>
+    </div>
+    <p class="user__bio">
       ${this._data.bio ? this._data.bio : "This profile has no bio"}
     </p>
     <ul class="user__stats">
@@ -46,25 +48,25 @@ class UserView extends View {
     </ul>
     <ul class="user__links">
       <li ${checkAvailabilityClass(this._data.location)}>
-        <span></span>
+        <span class="user__icon user__icon--location"></span>
         <span>
           ${checkAvailabilityText(this._data.location)}
         </span>
       </li>
       <li ${checkAvailabilityClass(this._data.blog)}>
-        <span></span>
+        <span class="user__icon user__icon--blog"></span>
         <a href="${this._data.blog}" target="_blank">
           ${checkAvailabilityText(this._data.blog)}
         </a>
       </li>
       <li ${checkAvailabilityClass(this._data.twitter)}>
-        <span></span>
+        <span class="user__icon user__icon--twitter"></span>
         <a href="https://twitter.com/${this._data.twitter}" target="_blank">
           ${checkAvailabilityText(this._data.twitter)}
         </a>
       </li>
       <li ${checkAvailabilityClass(this._data.company)}>
-        <span></span>
+        <span class="user__icon user__icon--company"></span>
         <a href="https://github.com/${
           this._data.company ? this._data.company.slice(1) : ""
         }" target="_blank">
