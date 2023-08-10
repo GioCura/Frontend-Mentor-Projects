@@ -112,7 +112,7 @@ header .theme:hover {
   color: var(--clr-header);
 }
 
-.darkmode header .theme:hover {
+.dark-mode header .theme:hover {
   color: var(--clr-themehover);
 }
 
