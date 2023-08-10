@@ -2,11 +2,11 @@ import View from "./view.js";
 
 class ThemeView extends View {
   _parentElement = document.querySelector(".theme");
-  darkModeState = false;
+  defaultTheme = false;
   prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   toggleDarkMode(state) {
-    this.darkModeState = state;
+    this.defaultTheme = state;
     document.documentElement.classList.toggle("dark-mode", state);
   }
 

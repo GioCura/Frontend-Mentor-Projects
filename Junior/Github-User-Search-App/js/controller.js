@@ -20,23 +20,21 @@ const controlGetUser = async function (query) {
 };
 
 const controlChangeTheme = function () {
-  ThemeView.darkModeState = !ThemeView.darkModeState;
-
-  ThemeView.toggleDarkMode(ThemeView.darkModeState);
-  model.setDarkModeLocalStorage(ThemeView.darkModeState);
+  ThemeView.defaultTheme = !ThemeView.defaultTheme;
+  ThemeView.toggleDarkMode(ThemeView.defaultTheme);
+  model.setDarkModeLocalStorage(ThemeView.defaultTheme);
 };
 
 const init = function () {
-  SearchView.addHandlerGetUser(controlGetUser);
-  controlGetUser(DEFAULT_USER);
   ThemeView.addHandlerCheckSettingsChange();
   ThemeView.addHandlerChangeTheme(controlChangeTheme);
   ThemeView.toggleDarkMode(
     model.state.darkMode
-      ? // this has to be a string, because its converted to a string when it's in the state!
-        model.state.darkMode === "true"
+      ? model.state.darkMode == "true"
       : ThemeView.prefersDark.matches
   );
+  SearchView.addHandlerGetUser(controlGetUser);
+  controlGetUser(DEFAULT_USER);
 };
 
 init();
