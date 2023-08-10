@@ -48,6 +48,17 @@ li {
   white-space: nowrap;
 }
 
+:root {
+  --clr-mainbg: #f6f8ff;
+  --clr-header: #222731;
+  --clr-theme: #4b6a9b;
+  --clr-user: #2b3442;
+  --clr-search: #0079ff;
+  --clr-searchhover: #60abff;
+  --clr-bio: #697c9a;
+  --clr-stats: #f6f8ff;
+}
+
 body {
   min-height: 100vh;
   display: flex;
@@ -57,7 +68,7 @@ body {
   font-weight: 400;
   padding: 0 2.4rem;
   min-width: 37.5rem;
-  background-color: #f6f8ff;
+  background-color: var(--mainbg);
 }
 
 header {
@@ -71,6 +82,7 @@ header {
 
 header h1 {
   font-size: 2.6rem;
+  color: var(--clr-header);
 }
 
 header .theme {
@@ -81,6 +93,11 @@ header .theme {
   letter-spacing: 0.25rem;
   gap: 1.6rem;
   align-items: center;
+  color: var(--clr-theme);
+}
+
+header .theme:hover {
+  color: var(--clr-header);
 }
 
 /* MAIN */
@@ -121,6 +138,11 @@ main {
   margin-right: 0.9rem;
   font-family: "Space Mono", monospace;
   line-height: 2.5rem;
+  color: var(--clr-header);
+}
+
+.searchbar__form input::placeholder {
+  color: var(--clr-theme);
 }
 
 .searchbar__btn {
@@ -129,8 +151,12 @@ main {
   font-weight: 700;
   padding: 0 1.6rem;
   border-radius: 10px;
-  background-color: #0079ff;
+  background-color: var(--clr-search);
   height: 100%;
+}
+
+.searchbar__btn:hover {
+  background-color: var(--clr-searchhover);
 }
 
 .error-message {
@@ -177,10 +203,11 @@ main {
 .user__name {
   font-size: 1.6rem;
   font-weight: 700;
+  color: var(--clr-user);
 }
 
 .user__username {
-  color: #0079ff;
+  color: var(--clr-search);
   margin-bottom: 0.4rem;
   display: inline-block;
 }
@@ -189,6 +216,7 @@ main {
   grid-area: bio;
   line-height: 2.5rem;
   margin-bottom: 2.3rem;
+  color: var(--clr-bio);
 }
 
 .user__stats {
@@ -198,21 +226,25 @@ main {
   text-align: center;
   padding: 1.9rem 0;
   border-radius: 10px;
-  background: #f6f8ff;
+  background: var(--clr-stats);
   margin-bottom: 2.4rem;
 }
 
 .user__stats h4 {
   font-size: 1.1rem;
+  color: var(--clr-theme);
+  font-weight: 400;
 }
 
 .user__stats p {
   font-size: 1.6rem;
   font-weight: 700;
+  color: var(--clr-user);
 }
 
 .user__links {
   grid-area: links;
+  color: var(--clr-theme);
 }
 
 .user__links li:not(:last-child) {
@@ -225,32 +257,29 @@ main {
   background-size: contain;
   vertical-align: bottom;
   margin-right: 1.3rem;
+  color: var(--clr-theme);
 }
 
 .user__icon--location {
   width: 1.375rem;
   height: 2rem;
-  background: url(../assets/icon-location.svg);
   margin-right: 1.925rem;
 }
 
 .user__icon--blog {
   width: 2rem;
   height: 2rem;
-  background: url(../assets/icon-website.svg);
 }
 
 .user__icon--twitter {
   width: 2rem;
   height: 1.625rem;
-  background: url(../assets/icon-twitter.svg);
   vertical-align: sub;
 }
 
 .user__icon--company {
   width: 2rem;
   height: 2rem;
-  background: url(../assets/icon-company.svg);
 }
 
 .user .loader {
