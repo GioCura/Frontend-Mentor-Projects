@@ -304,9 +304,9 @@ main {
 
 .user .loader {
   display: inline-block;
-  width: 6rem;
-  height: 6rem;
-  background: url(../assets/icon-loader.gif) no-repeat;
+  width: 10rem;
+  height: 10rem;
+  background: url(../assets/icon-loader.svg) no-repeat;
   background-size: contain;
   grid-area: loader;
   justify-self: center;

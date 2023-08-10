@@ -35,6 +35,7 @@ class ThemeView extends View {
         />
       </g>
     </svg>`;
+
     this.defaultTheme = state;
     document.documentElement.classList.toggle("dark-mode", state);
     this._parentElement.innerHTML = state === true ? markupDark : markupLight;
