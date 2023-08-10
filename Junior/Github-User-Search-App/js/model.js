@@ -16,6 +16,7 @@ export const state = {
     blog: "",
     company: "",
   },
+  darkMode: "",
 };
 
 const createUserObject = function (data) {
@@ -46,3 +47,17 @@ export const loadUser = async function (username) {
     throw err;
   }
 };
+
+export const setDarkModeLocalStorage = function (status) {
+  localStorage.setItem("dark-mode", status);
+  state.darkMode = status;
+  console.log(state.darkMode);
+};
+
+const init = function () {
+  const darkMode = localStorage.getItem("dark-mode");
+  if (darkMode) state.darkMode = darkMode;
+  console.log(state.darkMode);
+};
+
+init();

@@ -2,20 +2,23 @@ import View from "./view.js";
 
 class ThemeView extends View {
   _parentElement = document.querySelector(".theme");
-  useDark = window.matchMedia("(prefers-color-scheme: dark)");
   darkModeState = false;
+  prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   toggleDarkMode(state) {
-    document.documentElement.classList.toggle("darkmode", state);
     this.darkModeState = state;
-    // console.log(this.darkModeState);
+    document.documentElement.classList.toggle("dark-mode", state);
   }
 
-  setDarkModeLocalStorage(state) {
-    localStorage.setItem("darkmode", state);
+  addHandlerCheckSettingsChange() {
+    this.prefersDark.addEventListener("change", (evt) =>
+      this.toggleDarkMode(evt.matches)
+    );
   }
 
-  addHandler;
+  addHandlerChangeTheme(handler) {
+    this._parentElement.addEventListener("click", handler);
+  }
 }
 
 export default new ThemeView();

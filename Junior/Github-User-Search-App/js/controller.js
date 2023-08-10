@@ -1,10 +1,10 @@
 import * as model from "./model.js";
 import UserView from "./Views/userView.js";
 import SearchView from "./Views/searchView.js";
-// import ThemeView from "./Views/themeView.js";
+import ThemeView from "./Views/themeView.js";
 import { DEFAULT_USER } from "./config.js";
 
-const controlUser = async function (query) {
+const controlGetUser = async function (query) {
   try {
     if (!query) query = SearchView.getQuery();
     if (!query) return;
@@ -19,36 +19,24 @@ const controlUser = async function (query) {
   }
 };
 
-// tentative ThemeView code
-let darkModeState = false;
-const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+const controlChangeTheme = function () {
+  ThemeView.darkModeState = !ThemeView.darkModeState;
 
-function toggleDarkMode(state) {
-  darkModeState = state;
-  document.body.classList.toggle("dark-mode", state);
-}
-
-function setDarkModeLocalStorage(state) {
-  localStorage.setItem("dark-mode", state);
-  console.log(`LocalStorage ${state}`);
-}
-
-useDark.addEventListener("change", (evt) => toggleDarkMode(evt.matches));
+  ThemeView.toggleDarkMode(ThemeView.darkModeState);
+  model.setDarkModeLocalStorage(ThemeView.darkModeState);
+};
 
 const init = function () {
-  SearchView.addHandlerGetUser(controlUser);
-  controlUser(DEFAULT_USER);
-  toggleDarkMode(
-    localStorage.getItem("dark-mode")
-      ? localStorage.getItem("dark-mode") === `true`
-      : useDark.matches
+  SearchView.addHandlerGetUser(controlGetUser);
+  controlGetUser(DEFAULT_USER);
+  ThemeView.addHandlerCheckSettingsChange();
+  ThemeView.addHandlerChangeTheme(controlChangeTheme);
+  ThemeView.toggleDarkMode(
+    model.state.darkMode
+      ? // this has to be a string, because its converted to a string when it's in the state!
+        model.state.darkMode === "true"
+      : ThemeView.prefersDark.matches
   );
-  document.querySelector(".theme").addEventListener("click", () => {
-    darkModeState = !darkModeState;
-
-    toggleDarkMode(darkModeState);
-    setDarkModeLocalStorage(darkModeState);
-  });
 };
 
 init();
