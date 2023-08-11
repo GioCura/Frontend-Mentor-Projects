@@ -32,11 +32,13 @@ class UserView extends View {
 
     const checkAvailabilityCompanyLink = function (entry) {
       const content = checkAvailabilityText(entry);
-      return entry.charAt(0) === `@`
-        ? `<a href="https://github.com/${
-            entry.slice(1).split(" ")[0]
-          }" target="_blank">${content}</a>`
-        : `<p>${content}</p>`;
+
+      if (entry && entry.charAt(0) === `@`) {
+        return `<a href="https://github.com/${
+          entry.slice(1).split(" ")[0]
+        }" target="_blank">${content}</a>`;
+      }
+      return `<p>${content}</p>`;
     };
 
     return `
@@ -101,3 +103,10 @@ class UserView extends View {
 }
 
 export default new UserView();
+
+// ${checkAvailabilityLink(
+//   this._data.company,
+//   `https://www.github.com/${
+//     this._data.company ? this._data.company.slice(1) : ""
+//   }`
+// )}
