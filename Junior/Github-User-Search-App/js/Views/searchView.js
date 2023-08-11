@@ -26,7 +26,7 @@ class SearchView extends View {
 
   clearError() {
     this._errorContainer.innerHTML = "";
-    this._addAriaInvalid();
+    this._removeAriaInvalid();
   }
 
   addHandlerGetUser(handler) {

@@ -39,7 +39,11 @@
   <body>
     <header>
       <h1>devfinder</h1>
-      <button class="theme"></button>
+      <button
+        class="theme"
+        aria-label="currently set to darkmode"
+        aria-live="polite"
+      ></button>
     </header>
 
     <main>
@@ -54,7 +58,7 @@
             aria-label="Write GitHub user name here"
           />
           <button class="searchbar__btn">Search</button>
-          <div class="error-container"></div>
+          <div class="error-container" aria-live="polite"></div>
         </form>
       </section>
 

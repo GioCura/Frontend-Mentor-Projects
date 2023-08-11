@@ -22,7 +22,7 @@ class UserView extends View {
       return entry ? entry : `Not available`;
     };
 
-    const checkAvailabilityTag = function (entry, link) {
+    const checkAvailabilityLink = function (entry, link) {
       const content = checkAvailabilityText(entry);
       if (!link) link = entry;
       return entry
@@ -62,25 +62,29 @@ class UserView extends View {
     </ul>
     <ul class="user__links">
       <li ${checkAvailabilityClass(this._data.location)}>
+        <h4 class="sr-only">Location</h4>
         ${iconLocation}
         <p>
           ${checkAvailabilityText(this._data.location)}
         </p>
       </li>
       <li ${checkAvailabilityClass(this._data.blog)}>
+        <h4 class="sr-only">Blog</h4>
         ${iconBlog}
-        ${checkAvailabilityTag(this._data.blog)}
+        ${checkAvailabilityLink(this._data.blog)}
       </li>
       <li ${checkAvailabilityClass(this._data.twitter)}>
+        <h4 class="sr-only">Twitter</h4>
         ${iconTwitter}
-        ${checkAvailabilityTag(
+        ${checkAvailabilityLink(
           this._data.twitter,
           `https://www.twitter.com/${this._data.twitter}`
         )}
       </li>
       <li ${checkAvailabilityClass(this._data.company)}>
+        <h4 class="sr-only">Company</h4>
         ${iconCompany}
-        ${checkAvailabilityTag(
+        ${checkAvailabilityLink(
           this._data.company,
           `https://www.github.com/${
             this._data.company ? this._data.company.slice(1) : ""
