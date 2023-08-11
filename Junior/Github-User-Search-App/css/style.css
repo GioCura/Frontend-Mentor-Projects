@@ -197,8 +197,7 @@ main {
     "bio bio"
     "stats stats"
     "links links"
-    "loader loader"
-    "error error";
+    "popup popup";
   grid-template-columns: min-content;
   font-size: 1.3rem;
   margin-bottom: 7.9rem;
@@ -271,6 +270,10 @@ main {
   margin-bottom: 1.6rem;
 }
 
+.user__links p {
+  display: inline;
+}
+
 .user__icon {
   display: inline-block;
   background-repeat: no-repeat;
@@ -308,7 +311,7 @@ main {
   height: 10rem;
   background: url(../assets/icon-loader.svg) no-repeat;
   background-size: contain;
-  grid-area: loader;
+  grid-area: popup;
   justify-self: center;
 }
 
@@ -318,16 +321,18 @@ main {
   height: 10rem;
   background: url(../assets/icon-error.png) no-repeat;
   background-size: contain;
-  grid-area: error;
+  grid-area: popup;
   justify-self: center;
 }
 
 .unavailable {
-  color: inherit;
-  text-decoration: none;
   opacity: 0.5;
 }
 
-.unavailable a:hover {
-  text-decoration: none;
+.user noscript {
+  grid-area: popup;
+  justify-self: center;
+  color: #f74646;
+  font-size: 1.3rem;
+  font-weight: 700;
 }

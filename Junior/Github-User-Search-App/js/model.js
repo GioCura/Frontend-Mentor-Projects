@@ -39,9 +39,7 @@ const createUserObject = function (data) {
 export const loadUser = async function (username) {
   try {
     const data = await AJAX(`${API__URL}${username}`);
-    // console.log(data);
     state.user = createUserObject(data);
-    // console.log(state.user);
     return data;
   } catch (err) {
     throw err;
@@ -51,7 +49,6 @@ export const loadUser = async function (username) {
 export const setDarkModeLocalStorage = function (status) {
   localStorage.setItem("dark-mode", status);
   state.darkMode = status;
-  console.log(state.darkMode);
 };
 
 const init = function () {
