@@ -30,6 +30,15 @@ class UserView extends View {
         : `<p>${content}</p>`;
     };
 
+    const checkAvailabilityCompanyLink = function (entry) {
+      const content = checkAvailabilityText(entry);
+      return entry.charAt(0) === `@`
+        ? `<a href="https://github.com/${
+            entry.slice(1).split(" ")[0]
+          }" target="_blank">${content}</a>`
+        : `<p>${content}</p>`;
+    };
+
     return `
     <img src="${this._data.avatarUrl}" alt="The avatar of ${
       this._data.name
@@ -84,12 +93,7 @@ class UserView extends View {
       <li ${checkAvailabilityClass(this._data.company)}>
         <h4 class="sr-only">Company</h4>
         ${iconCompany}
-        ${checkAvailabilityLink(
-          this._data.company,
-          `https://www.github.com/${
-            this._data.company ? this._data.company.slice(1) : ""
-          }`
-        )}
+        ${checkAvailabilityCompanyLink(this._data.company)}
       </li>
     </ul>
     `;
