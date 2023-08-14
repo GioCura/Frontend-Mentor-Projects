@@ -1,11 +1,55 @@
+/* DESKTOP */
+@media (min-width: 1440px) {
+  body {
+    justify-content: center;
+  }
+
+  header {
+    margin: 2rem 0 3.6rem;
+  }
+
+  .user {
+    grid-template-areas:
+      "img person"
+      "img bio"
+      "img stats"
+      "img links"
+      "popup popup";
+    padding: 4.4rem 4.8rem;
+  }
+
+  .user img {
+    padding-top: 0.4rem;
+  }
+
+  .user__personal {
+    margin-bottom: 3.2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .user__regdate {
+    padding-top: 0.8rem;
+  }
+
+  .user__stats {
+    margin-bottom: 3.7rem;
+  }
+}
+
 /* TABLETS */
 @media (min-width: 768px) {
   body {
     padding: 0 9.7rem;
+    align-items: center;
   }
 
   header {
-    margin: 14rem 0 3.6rem;
+    max-width: 73rem;
+  }
+
+  main {
+    max-width: 73rem;
   }
 
   .searchbar {
@@ -14,6 +58,7 @@
 
   .searchbar__form {
     padding: 1rem 1rem 1rem 3.2rem;
+    height: 6.9rem;
   }
 
   .searchbar__icon {
@@ -28,10 +73,10 @@
 
   .searchbar__btn {
     font-size: 1.6rem;
+    padding: 0 2.4rem;
   }
 
   .user {
-    padding: 4rem;
     font-size: 1.5rem;
   }
 
@@ -56,7 +101,6 @@
 
   .user__stats {
     text-align: left;
-    margin-bottom: 3rem;
     padding: 1.5rem 9.6rem 1.7rem 3.2rem;
     justify-content: space-between;
   }
@@ -73,6 +117,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 6rem;
+    column-gap: 5.5rem;
     row-gap: 1.9rem;
   }
 
@@ -94,5 +139,35 @@
 
   .user__links li:nth-of-type(4) {
     order: 4;
+  }
+
+  .user__icon {
+    margin-right: 1.6rem;
+  }
+
+  .user__icon--location {
+    margin-right: 1.9rem;
+  }
+
+  .error-message {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439px) {
+  header {
+    margin: 14rem 0 3.6rem;
+  }
+
+  .user {
+    padding: 4rem;
+  }
+
+  .user__personal {
+    padding-top: 1.2rem;
+  }
+
+  .user__stats {
+    margin-bottom: 3rem;
   }
 }

@@ -45,13 +45,15 @@ class UserView extends View {
     <img src="${this._data.avatarUrl}" alt="The avatar of ${
       this._data.name
     }" width="70" height="70"/>
-    <div class=user__personal>
-      <h3 class="user__name">${
-        this._data.name ? this._data.name : this._data.userName
-      }</h3>
-      <a href="https://github.com/${
-        this._data.userName
-      }" class="user__username" target="_blank">@${this._data.userName}</a>
+    <div class="user__personal">
+      <div class="user__names">
+        <h3 class="user__name">${
+          this._data.name ? this._data.name : this._data.userName
+        }</h3>
+        <a href="https://github.com/${
+          this._data.userName
+        }" class="user__username" target="_blank">@${this._data.userName}</a>
+      </div>
       <p class="user__regdate">Joined ${formatDate(this._data.regDate)}</p>
     </div>
     <p class="user__bio">
