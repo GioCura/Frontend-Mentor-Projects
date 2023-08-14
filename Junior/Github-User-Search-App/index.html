@@ -3,7 +3,7 @@
   <head>
     <script>
       if (
-        localStorage.getItem("dark-mode") ||
+        localStorage.getItem("dark-mode") === `true` ||
         window.matchMedia("(prefers-color-scheme: dark)").matches
       )
         document.documentElement.classList.toggle("dark-mode");
