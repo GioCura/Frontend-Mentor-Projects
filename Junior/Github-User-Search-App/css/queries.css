@@ -1,5 +1,5 @@
 /* DESKTOP */
-@media (min-width: 1440px) {
+@media (min-width: 930px) {
   body {
     justify-content: center;
   }
@@ -34,6 +34,11 @@
 
   .user__stats {
     margin-bottom: 3.7rem;
+  }
+
+  .error-message {
+    position: static;
+    margin-right: 2.4rem;
   }
 }
 
@@ -154,7 +159,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1439px) {
+@media (min-width: 768px) and (max-width: 929px) {
   header {
     margin: 14rem 0 3.6rem;
   }
