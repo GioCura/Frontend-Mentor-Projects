@@ -22,9 +22,18 @@ class UserView extends View {
       return entry ? entry : `Not available`;
     };
 
+    const getClickableLink = function (link) {
+      return link.startsWith("http://") || link.startsWith("https://")
+        ? link
+        : `https://${link}`;
+    };
+
     const checkAvailabilityLink = function (entry, link) {
       const content = checkAvailabilityText(entry);
+
       if (!link) link = entry;
+      link = getClickableLink(link);
+
       return entry
         ? `<a href="${link}" target="_blank">${content}</a>`
         : `<p>${content}</p>`;
@@ -105,10 +114,3 @@ class UserView extends View {
 }
 
 export default new UserView();
-
-// ${checkAvailabilityLink(
-//   this._data.company,
-//   `https://www.github.com/${
-//     this._data.company ? this._data.company.slice(1) : ""
-//   }`
-// )}
