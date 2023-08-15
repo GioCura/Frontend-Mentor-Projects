@@ -26,6 +26,7 @@ const controlChangeTheme = function () {
 };
 
 const init = function () {
+  controlGetUser(DEFAULT_USER);
   ThemeView.addHandlerCheckSettingsChange();
   ThemeView.addHandlerChangeTheme(controlChangeTheme);
   ThemeView.toggleDarkMode(
@@ -34,7 +35,6 @@ const init = function () {
       : ThemeView.prefersDark.matches
   );
   SearchView.addHandlerGetUser(controlGetUser);
-  controlGetUser(DEFAULT_USER);
 };
 
 init();

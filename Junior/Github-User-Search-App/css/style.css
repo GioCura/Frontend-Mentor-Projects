@@ -81,7 +81,6 @@ body {
   padding: 0 2.4rem;
   min-width: 37.5rem;
   background-color: var(--clr-mainbg);
-  transition: color 0.5s, background-color 0.5s;
 }
 
 header {
@@ -148,16 +147,22 @@ main {
   transition: color 0.5s, background-color 0.5s;
 }
 
+label[for="search"] {
+  display: contents;
+}
+
 .searchbar__icon {
   width: 2rem;
   height: 2rem;
   background: url(../assets/icon-search.svg) no-repeat;
   background-size: contain;
   margin-right: 0.9rem;
+  cursor: pointer;
 }
 
 .searchbar__input {
   flex: 1;
+  height: 125%;
   margin-right: 0.9rem;
   font-family: "Space Mono", monospace;
   font-size: 1.3rem;

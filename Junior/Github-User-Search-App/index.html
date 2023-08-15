@@ -52,9 +52,13 @@
       <section class="searchbar">
         <h2 class="sr-only">Searchbar</h2>
         <form class="searchbar__form" novalidate>
-          <span class="searchbar__icon"></span>
+          <label for="search">
+            <span class="searchbar__icon"></span>
+          </label>
           <input
             type="text"
+            name="search"
+            id="search"
             class="searchbar__input"
             placeholder="Search GitHub username..."
             aria-label="Write GitHub user name here"
@@ -71,5 +75,9 @@
         </article>
       </section>
     </main>
+
+    <script>
+      document.body.style.transition = "color 0.5s, background-color 0.5s";
+    </script>
   </body>
 </html>
