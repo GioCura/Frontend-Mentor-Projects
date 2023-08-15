@@ -77,7 +77,11 @@
     </main>
 
     <script>
-      document.body.style.transition = "color 0.5s, background-color 0.5s";
+      window.addEventListener(
+        "load",
+        () =>
+          (document.body.style.transition = "color 0.5s, background-color 0.5s")
+      );
     </script>
   </body>
 </html>
