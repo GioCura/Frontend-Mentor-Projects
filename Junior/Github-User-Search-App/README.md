@@ -1,6 +1,6 @@
 # Frontend Mentor - GitHub user search app solution
 
-This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6).
 
 ## Table of contents
 
@@ -15,8 +15,6 @@ This is a solution to the [GitHub user search app challenge on Frontend Mentor](
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -33,20 +31,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop](./assets/screenshot-desktop.png)
+![Mobile](./assets/screenshot-mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live site](https://gc37-devfinder.netlify.app/)
 
 ## My process
 
@@ -54,62 +44,125 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
+- Vanilla JS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- MVC model
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+- I learned how to make an alternate color scheme by having a class (`dark-mode` in this case) that overrides the existing `:root` declarations. The theme is triggered by adding said class to the document's body.
 
-To see how you can add code snippets, see below:
+- I learned how to handle a site's dynamic content (the GitHub user that was searched, in this case) by programmatically changing the index's markup via JS.
 
-```html
-<h1>Some HTML code I'm proud of</h1>
+  - Furthermore, in handling different conditions that affect the element's presentation (ex. unavailable data, date format), I found it helpful to insert helper functions in the template literal. I used a lot of ternary operators, and functions that returned them.
+
+- In handling the toggle between themes, I start by having a default state variable:
+
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
+defaultTheme = false;
+```
+
+- When the toggle is clicked, this value is flipped:
+
+```
+ThemeView.defaultTheme = !ThemeView.defaultTheme;
+```
+
+- And is then used as a parameter for the toggle function:
+
+```
+  ThemeView.toggleDarkMode(ThemeView.defaultTheme);
+```
+
+```
+toggleDarkMode(state) {
+  this.defaultTheme = state;
+  const themeNotification = `theme set to ${
+    state === true ? `dark` : `light`
+  } mode`;
+  document.documentElement.classList.toggle("dark-mode", state);
+  this._parentElement.innerHTML = state === true ? markupDark : markupLight;
+  this._parentElement.setAttribute("aria-label", themeNotification);
 }
 ```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+
+- The setting is saved in local storage:
+
+```
+export const setDarkModeLocalStorage = function (status) {
+  localStorage.setItem("dark-mode", status);
+  state.darkMode = status;
+};
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+- When loading the site, that setting is retrieved:
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```
+const init = function () {
+  const storage = localStorage.getItem("dark-mode");
+  if (storage) state.darkMode = storage;
+};
+
+init();
+```
+
+- And then the toggle function is called, checking whether a setting was previously set and is true, or if the user prefers a dark color scheme by default:
+
+```
+prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+```
+
+```
+ThemeView.toggleDarkMode(
+  model.state.darkMode
+    ? model.state.darkMode == "true"
+    : ThemeView.prefersDark.matches
+);
+```
+
+- To prevent users from seeing the switch between color schemes happen on load, a script of the top of the html's `<head>` is called:
+
+```
+<head>
+  <script>
+    if (
+      localStorage.getItem("dark-mode") === `true` ||
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+    )
+      document.documentElement.classList.add("dark-mode");
+
+    if (
+      localStorage.getItem("dark-mode") === `false` ||
+      window.matchMedia("(prefers-color-scheme: light)").matches
+    )
+      document.documentElement.classList.remove("dark-mode");
+  </script>
+```
+
+- And to prevent the users from seeing the transition animation, a script that declares the transition style is written at the end of the `<body>`:
+
+```
+<script>
+  window.addEventListener("load", function () {
+    document.body.style.transition = "color 0.5s, background-color 0.5s";
+  });
+</script>
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- I'd like to handle projects that incorporate local storage more.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [This tutorial](https://www.ditdot.hr/en/dark-mode-website-tutorial) served as the basis for my theme scripting.
+- [@Chemah's script in this SO thread](https://stackoverflow.com/questions/43803778/href-without-https-prefix) is adapted in my script to produce clickable links to users who didn't write "http://" or "https://" for their website.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- [@GioCura](https://www.frontendmentor.io/profile/GioCura)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+I frequently was looking at the functionality of [@ecemgo](https://ecemgo-github-user-search-app.netlify.app/), [@vanziasetia](https://officialdevfinder.netlify.app/), and [Roan Alpha](https://github-user-search-app-roan-alpha.vercel.app/)'s solutions as I made my own. I'd like to thank them all!
