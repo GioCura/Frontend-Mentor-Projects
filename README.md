@@ -5,6 +5,7 @@ TABLE OF CONTENTS
 JUNIOR CHALLENGES
 | Challenge | Code | Live URL |
 | :--- | :---: | :---: |
+| Github User Search App | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Github-User-Search-App) | [Live Site](https://gc37-devfinder.netlify.app/) |
 | Age Calculator App | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Age-Calculator-App) | [Live Site](https://gc36-age-calculator.netlify.app/) |
 | Advice Generator App | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Advice-Generator-App) | [Live Site](https://gc35-advice-generator.netlify.app/) |
 | Sunnyside Landing Page | [Code](https://github.com/GioCura/Frontend-Mentor-Projects/tree/main/Junior/Sunnyside-Agency-Landing) | [Live Site](https://gc33-sunnyside-landing.netlify.app/) |
